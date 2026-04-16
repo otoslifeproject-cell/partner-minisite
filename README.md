@@ -1,0 +1,2 @@
+# partner-minisite
+partner-minisite
