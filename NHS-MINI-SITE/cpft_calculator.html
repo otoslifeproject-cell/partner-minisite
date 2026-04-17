@@ -3,17 +3,19 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>CPFT ADHD + Addiction Calculator</title>
+  <title>CPFT ADHD + Addiction Savings Calculator</title>
   <style>
     :root {
       --bg: #102a2b;
       --card: #17383a;
+      --card-2: #113133;
       --ink: #f7efe4;
       --muted: #c9c1b4;
       --accent: #f6a93a;
       --line: #335a5d;
       --ok: #90d3a6;
       --warn: #ffd27a;
+      --blue: #8cc8ff;
     }
     * { box-sizing: border-box; }
     body {
@@ -21,10 +23,10 @@
       font-family: Inter, Arial, Helvetica, sans-serif;
       background: var(--bg);
       color: var(--ink);
-      line-height: 1.4;
+      line-height: 1.45;
     }
     .wrap {
-      max-width: 1100px;
+      max-width: 1180px;
       margin: 0 auto;
       padding: 28px;
     }
@@ -34,12 +36,15 @@
     h3 { font-size: 18px; margin-top: 14px; }
     p, li { color: var(--ink); }
     .muted { color: var(--muted); }
+    .small { font-size: 13px; color: var(--muted); }
+
     .grid {
       display: grid;
-      grid-template-columns: 1.2fr 1fr;
+      grid-template-columns: 1.1fr 1fr;
       gap: 18px;
       align-items: start;
     }
+
     .card {
       background: var(--card);
       border: 1px solid var(--line);
@@ -47,27 +52,49 @@
       padding: 18px;
       box-shadow: 0 10px 24px rgba(0,0,0,.16);
     }
+
+    .card-alt {
+      background: var(--card-2);
+    }
+
     .kpis {
       display: grid;
       grid-template-columns: repeat(2, minmax(0,1fr));
       gap: 12px;
       margin-top: 14px;
     }
+
     .kpi {
       background: rgba(255,255,255,.03);
       border: 1px solid var(--line);
       border-radius: 14px;
       padding: 14px;
     }
+
     .kpi .num {
       font-size: 34px;
       font-weight: 800;
       color: var(--accent);
       margin-bottom: 4px;
+      line-height: 1.05;
     }
-    label { display:block; font-weight: 700; margin: 8px 0 6px; }
-    input[type="range"] { width: 100%; }
-    select {
+
+    .kpi .num.money {
+      color: #69f0c1;
+      font-size: 30px;
+    }
+
+    label {
+      display: block;
+      font-weight: 700;
+      margin: 8px 0 6px;
+    }
+
+    input[type="range"] {
+      width: 100%;
+    }
+
+    input[type="number"], select {
       width: 100%;
       padding: 10px 12px;
       border-radius: 10px;
@@ -76,6 +103,7 @@
       color: var(--ink);
       font-size: 15px;
     }
+
     .badge {
       display: inline-block;
       padding: 4px 8px;
@@ -87,23 +115,28 @@
       color: var(--accent);
       border: 1px solid rgba(246,169,58,.28);
     }
-    .small {
-      font-size: 13px;
-      color: var(--muted);
-    }
+
     table {
       width: 100%;
       border-collapse: collapse;
       margin-top: 10px;
       font-size: 14px;
     }
+
     th, td {
       text-align: left;
       padding: 10px 8px;
       border-bottom: 1px solid var(--line);
       vertical-align: top;
     }
-    th { color: var(--accent); font-size: 13px; text-transform: uppercase; letter-spacing: .03em; }
+
+    th {
+      color: var(--accent);
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: .03em;
+    }
+
     .warn {
       background: rgba(255,210,122,.08);
       border-left: 4px solid var(--warn);
@@ -111,6 +144,7 @@
       border-radius: 10px;
       margin-top: 10px;
     }
+
     .ok {
       background: rgba(144,211,166,.08);
       border-left: 4px solid var(--ok);
@@ -118,23 +152,96 @@
       border-radius: 10px;
       margin-top: 10px;
     }
+
+    .info {
+      background: rgba(140,200,255,.08);
+      border-left: 4px solid var(--blue);
+      padding: 10px 12px;
+      border-radius: 10px;
+      margin-top: 10px;
+    }
+
+    .formula-box {
+      margin-top: 14px;
+      background: rgba(255,255,255,.03);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 14px;
+    }
+
+    .formula-line {
+      font-size: 15px;
+      line-height: 1.6;
+      word-break: break-word;
+    }
+
+    .savings-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 12px;
+      margin-top: 14px;
+    }
+
+    .saving-card {
+      background: rgba(255,255,255,.03);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 14px;
+    }
+
+    .saving-label {
+      font-size: 12px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      margin-bottom: 8px;
+    }
+
+    .saving-count {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--accent);
+      margin-bottom: 4px;
+    }
+
+    .saving-money {
+      font-size: 28px;
+      font-weight: 800;
+      color: #69f0c1;
+      line-height: 1.05;
+      margin-bottom: 6px;
+    }
+
+    .summary-strip {
+      margin-top: 18px;
+      background: linear-gradient(90deg, rgba(246,169,58,.12), rgba(105,240,193,.08));
+      border: 1px solid rgba(246,169,58,.22);
+      border-radius: 14px;
+      padding: 16px 18px;
+    }
+
+    .summary-strip strong {
+      color: #fff;
+    }
+
     code { color: #ffe5b6; }
-    a { color: #ffd18b; }
-    @media (max-width: 900px) {
+
+    @media (max-width: 980px) {
       .grid { grid-template-columns: 1fr; }
       .kpis { grid-template-columns: 1fr; }
+      .savings-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
   <div class="wrap">
-    <h1>CPFT ADHD + Addiction Calculator</h1>
-    <p class="muted">Offline file. Built only from the verified public numbers used here. No hidden formulas.</p>
+    <h1>CPFT ADHD + Addiction Savings Calculator</h1>
+    <p class="muted">Live planning model. Savings figures now track the same sliders used for overlap and improvement.</p>
 
     <div class="card">
-      <div><span class="badge">GEOGRAPHY USED</span><span class="badge">NEAREST PUBLIC MATCH TO CPFT</span></div>
-      <p><strong>Cambridgeshire &amp; Peterborough NHS Foundation Trust (CPFT)</strong> says it serves <strong>Cambridgeshire and Peterborough</strong> and supports a population of <strong>just under a million people</strong>. The nearest clean public addiction-treatment denominator is the combined <strong>Cambridgeshire local authority + Peterborough local authority</strong> rows in the official NDTMS local-authority CSV for <strong>2022/23</strong>.</p>
-      <p class="small">This is a geography match, not a person-level linked dataset. It is the cleanest public proxy for the CPFT footprint.</p>
+      <div><span class="badge">GEOGRAPHY USED</span><span class="badge">CPFT PROXY</span></div>
+      <p><strong>Cambridgeshire &amp; Peterborough NHS Foundation Trust (CPFT)</strong> says it serves <strong>Cambridgeshire and Peterborough</strong>. This calculator uses the combined <strong>Cambridgeshire local authority + Peterborough local authority</strong> denominator rows from the official public addiction-treatment dataset for <strong>2022/23</strong>.</p>
+      <p class="small">This is a planning model using public denominators plus editable assumptions. It is not a person-level linked dataset.</p>
     </div>
 
     <div class="grid" style="margin-top:18px;">
@@ -159,17 +266,20 @@
             <tr><td>Opiates and/or crack (any citation)</td><td><strong>2,105</strong></td><td>Observed</td><td>Overlapping citation count. Do not sum with other any-citation rows.</td></tr>
             <tr><td>Alcohol (any citation)</td><td><strong>2,060</strong></td><td>Observed</td><td>Overlapping citation count. Do not sum with other any-citation rows.</td></tr>
             <tr><td>Cocaine (any citation)</td><td><strong>490</strong></td><td>Observed</td><td>Overlapping citation count. Do not sum with other any-citation rows.</td></tr>
-            <tr><td>ADHD prevalence assumption</td><td><strong>5% / 25% / 65%</strong></td><td>Modelled</td><td>User-fixed scenarios</td></tr>
-            <tr><td>START study comparator</td><td><strong>61.3%</strong></td><td>Research comparator</td><td>Improvement in addictive disorders at 6 months after ADHD diagnosis. Not a CPFT observed figure.</td></tr>
+            <tr><td>ADHD prevalence assumption</td><td><strong>User controlled</strong></td><td>Modelled</td><td>Slider below</td></tr>
+            <tr><td>Improvement / effect assumption</td><td><strong>User controlled</strong></td><td>Modelled</td><td>Slider below</td></tr>
+            <tr><td>Annual burden per person</td><td><strong>User controlled</strong></td><td>Modelled</td><td>Editable cost input</td></tr>
           </tbody>
         </table>
+
         <div class="warn">
-          <strong>Important:</strong> the <strong>61.3%</strong> number is <strong>not</strong> the big local CPFT figure. It comes from the START study and should only be used as a <strong>research comparator / scenario slider</strong> unless you get local outcome data.
+          <strong>Important:</strong> this model now ties the savings number directly to the same live slider maths. It does <code>denominator × prevalence × effect × annual burden</code>.
         </div>
       </div>
 
-      <div class="card">
-        <h2>2-slider calculator</h2>
+      <div class="card card-alt">
+        <h2>Live scenario model</h2>
+
         <label for="basis">Denominator</label>
         <select id="basis">
           <option value="4175">All adults in treatment — 4,175</option>
@@ -183,8 +293,11 @@
         <label for="prev">ADHD prevalence scenario: <span id="prevVal">25.0%</span></label>
         <input id="prev" type="range" min="0" max="100" step="0.1" value="25.0">
 
-        <label for="imp">Improvement / effect scenario: <span id="impVal">61.3%</span></label>
-        <input id="imp" type="range" min="0" max="100" step="0.1" value="61.3">
+        <label for="imp">Improvement / effect scenario: <span id="impVal">25.0%</span></label>
+        <input id="imp" type="range" min="0" max="100" step="0.1" value="25.0">
+
+        <label for="costPerPerson">Annual burden / cost per person (£)</label>
+        <input id="costPerPerson" type="number" min="0" step="10" value="40070" />
 
         <div class="kpis">
           <div class="kpi">
@@ -196,49 +309,62 @@
             <div>Modelled ADHD + addiction overlap</div>
           </div>
           <div class="kpi">
-            <div class="num" id="effectOut">640</div>
-            <div>Illustrative cases at effect %</div>
+            <div class="num" id="effectOut">261</div>
+            <div>Illustrative improved cases</div>
           </div>
           <div class="kpi">
-            <div class="num" id="formulaOut">4,175 × 25.0% × 61.3%</div>
-            <div>Visible formula</div>
+            <div class="num money" id="grossSavingsOut">£10.46m</div>
+            <div>Gross annual savings at current settings</div>
           </div>
         </div>
 
-        <div class="ok">
-          <strong>Read this correctly:</strong> the calculator does <code>denominator × prevalence</code> to produce a local overlap estimate, then <code>eligible × effect</code> as a transparent scenario. That last number is <strong>not</strong> a verified local outcome unless you obtain local repeat-episode or re-presentation data.
+        <div class="formula-box">
+          <div class="formula-line"><strong>Live formula</strong></div>
+          <div class="formula-line" id="formulaOut">4,175 × 25.0% × 25.0% × £40,070</div>
+          <div class="small" id="formulaExplain">= 261 improved cases × £40,070 = £10,458,270 gross annual savings</div>
+        </div>
+
+        <div class="info">
+          <strong>How to read it:</strong> overlap is the locally modelled cohort. Improved cases are the portion affected at your chosen effect %. Savings are then that improved-case count multiplied by the annual burden assumption.
         </div>
       </div>
     </div>
 
     <div class="card" style="margin-top:18px;">
-      <h2>Clean CPFT-footprint scenario check</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Using 4,175 adults in treatment</th>
-            <th>Formula</th>
-            <th>Result</th>
-            <th>Then × 61.3%</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td>Low scenario</td><td>4,175 × 5%</td><td><strong>209</strong></td><td>128</td></tr>
-          <tr><td>Mid scenario</td><td>4,175 × 25%</td><td><strong>1,044</strong></td><td>640</td></tr>
-          <tr><td>High scenario</td><td>4,175 × 65%</td><td><strong>2,714</strong></td><td>1,664</td></tr>
-        </tbody>
-      </table>
-      <p class="small">The bold number is the local modelled overlap. The final column is only the arithmetic result of applying the 61.3% research comparator to that overlap count.</p>
-    </div>
+      <h2>Savings comparison at the current overlap</h2>
+      <p class="small">These three cards all use the same live overlap estimate from your denominator and prevalence slider. Only the success / improvement rate changes.</p>
 
-    <div class="card" style="margin-top:18px;">
-      <h2>Sources used in this file</h2>
-      <ul>
-        <li>CPFT footprint statement: https://www.cpft.nhs.uk/aboutus/</li>
-        <li>NDTMS local-authority archive page: https://beta2.ndtms.net/ViewIt/AdultArchive</li>
-        <li>NDTMS local-authority CSV used here: https://beta2.ndtms.net/resources/public/ViewIt%20Export%20Data%20-%20All%20-%2011122023.csv</li>
-        <li>START study page used for the 61.3% comparator: https://www.sciencedirect.com/science/article/pii/S0306460325003260</li>
-      </ul>
+      <div class="savings-grid">
+        <div class="saving-card">
+          <div class="saving-label">Low success scenario</div>
+          <div class="saving-count" id="lowCountOut">157 improved</div>
+          <div class="saving-money" id="lowSavingsOut">£6.29m</div>
+          <div class="small" id="lowExplain">1,044 × 15% × £40,070</div>
+        </div>
+
+        <div class="saving-card">
+          <div class="saving-label">Base success scenario</div>
+          <div class="saving-count" id="baseCountOut">261 improved</div>
+          <div class="saving-money" id="baseSavingsOut">£10.46m</div>
+          <div class="small" id="baseExplain">1,044 × 25% × £40,070</div>
+        </div>
+
+        <div class="saving-card">
+          <div class="saving-label">Current slider scenario</div>
+          <div class="saving-count" id="sliderCountOut">261 improved</div>
+          <div class="saving-money" id="sliderSavingsOut">£10.46m</div>
+          <div class="small" id="sliderExplain">1,044 × 25.0% × £40,070</div>
+        </div>
+      </div>
+
+      <div class="summary-strip">
+        <strong id="headlineOut">Even at a low success rate, this is still a meaningful gross saving.</strong>
+        <div class="small" id="headlineExplain" style="margin-top:6px;">At the current overlap estimate, a 15% success scenario already produces a substantial gross annual saving.</div>
+      </div>
+
+      <div class="ok">
+        <strong>Use in meetings:</strong> move the prevalence slider to show the local planning cohort, move the effect slider to show realistic delivery success, and the savings figure will update immediately. This lets you demonstrate that even a modest success rate can still be a major win.
+      </div>
     </div>
   </div>
 
@@ -246,35 +372,107 @@
     const basis = document.getElementById('basis');
     const prev = document.getElementById('prev');
     const imp = document.getElementById('imp');
+    const costPerPerson = document.getElementById('costPerPerson');
+
     const prevVal = document.getElementById('prevVal');
     const impVal = document.getElementById('impVal');
+
     const denOut = document.getElementById('denOut');
     const eligOut = document.getElementById('eligOut');
     const effectOut = document.getElementById('effectOut');
+    const grossSavingsOut = document.getElementById('grossSavingsOut');
+
     const formulaOut = document.getElementById('formulaOut');
+    const formulaExplain = document.getElementById('formulaExplain');
+
+    const lowCountOut = document.getElementById('lowCountOut');
+    const lowSavingsOut = document.getElementById('lowSavingsOut');
+    const lowExplain = document.getElementById('lowExplain');
+
+    const baseCountOut = document.getElementById('baseCountOut');
+    const baseSavingsOut = document.getElementById('baseSavingsOut');
+    const baseExplain = document.getElementById('baseExplain');
+
+    const sliderCountOut = document.getElementById('sliderCountOut');
+    const sliderSavingsOut = document.getElementById('sliderSavingsOut');
+    const sliderExplain = document.getElementById('sliderExplain');
+
+    const headlineOut = document.getElementById('headlineOut');
+    const headlineExplain = document.getElementById('headlineExplain');
 
     function fmtNum(n) {
       return Math.round(n).toLocaleString('en-GB');
+    }
+
+    function fmtCurrency(n) {
+      return new Intl.NumberFormat('en-GB', {
+        style: 'currency',
+        currency: 'GBP',
+        maximumFractionDigits: 0
+      }).format(n);
+    }
+
+    function fmtCurrencyShort(n) {
+      if (n >= 1000000) {
+        return '£' + (n / 1000000).toFixed(2).replace(/\.00$/, '') + 'm';
+      }
+      if (n >= 1000) {
+        return '£' + (n / 1000).toFixed(1).replace(/\.0$/, '') + 'k';
+      }
+      return fmtCurrency(n);
     }
 
     function update() {
       const d = Number(basis.value);
       const p = Number(prev.value) / 100;
       const i = Number(imp.value) / 100;
+      const cpp = Math.max(0, Number(costPerPerson.value) || 0);
+
       const eligible = d * p;
-      const affected = eligible * i;
+      const improved = eligible * i;
+      const grossSavings = improved * cpp;
+
+      const lowRate = 0.15;
+      const baseRate = 0.25;
+
+      const lowImproved = eligible * lowRate;
+      const baseImproved = eligible * baseRate;
+
+      const lowSavings = lowImproved * cpp;
+      const baseSavings = baseImproved * cpp;
 
       prevVal.textContent = Number(prev.value).toFixed(1) + '%';
       impVal.textContent = Number(imp.value).toFixed(1) + '%';
+
       denOut.textContent = fmtNum(d);
       eligOut.textContent = fmtNum(eligible);
-      effectOut.textContent = fmtNum(affected);
-      formulaOut.textContent = `${fmtNum(d)} × ${Number(prev.value).toFixed(1)}% × ${Number(imp.value).toFixed(1)}%`;
+      effectOut.textContent = fmtNum(improved);
+      grossSavingsOut.textContent = fmtCurrencyShort(grossSavings);
+
+      formulaOut.textContent = `${fmtNum(d)} × ${Number(prev.value).toFixed(1)}% × ${Number(imp.value).toFixed(1)}% × ${fmtCurrency(cpp)}`;
+      formulaExplain.textContent = `= ${fmtNum(improved)} improved cases × ${fmtCurrency(cpp)} = ${fmtCurrency(grossSavings)} gross annual savings`;
+
+      lowCountOut.textContent = `${fmtNum(lowImproved)} improved`;
+      lowSavingsOut.textContent = fmtCurrencyShort(lowSavings);
+      lowExplain.textContent = `${fmtNum(eligible)} × 15% × ${fmtCurrency(cpp)}`;
+
+      baseCountOut.textContent = `${fmtNum(baseImproved)} improved`;
+      baseSavingsOut.textContent = fmtCurrencyShort(baseSavings);
+      baseExplain.textContent = `${fmtNum(eligible)} × 25% × ${fmtCurrency(cpp)}`;
+
+      sliderCountOut.textContent = `${fmtNum(improved)} improved`;
+      sliderSavingsOut.textContent = fmtCurrencyShort(grossSavings);
+      sliderExplain.textContent = `${fmtNum(eligible)} × ${Number(imp.value).toFixed(1)}% × ${fmtCurrency(cpp)}`;
+
+      headlineOut.textContent = `At current settings: ${fmtNum(improved)} improved cases = ${fmtCurrency(grossSavings)} gross annual savings.`;
+      headlineExplain.textContent = `Even the low 15% scenario gives ${fmtNum(lowImproved)} improved cases and ${fmtCurrency(lowSavings)} gross annual savings at the same overlap estimate.`;
     }
 
     basis.addEventListener('input', update);
     prev.addEventListener('input', update);
     imp.addEventListener('input', update);
+    costPerPerson.addEventListener('input', update);
+
     update();
   </script>
 </body>
