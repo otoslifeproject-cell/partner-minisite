@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CPFT ADHD + Addiction Calculator</title>
+  <style>
+    :root {
+      --bg: #102a2b;
+      --card: #17383a;
+      --ink: #f7efe4;
+      --muted: #c9c1b4;
+      --accent: #f6a93a;
+      --line: #335a5d;
+      --ok: #90d3a6;
+      --warn: #ffd27a;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.4;
+    }
+    .wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 28px;
+    }
+    h1, h2, h3 { margin: 0 0 10px; }
+    h1 { font-size: 34px; color: var(--accent); }
+    h2 { font-size: 22px; margin-top: 28px; }
+    h3 { font-size: 18px; margin-top: 14px; }
+    p, li { color: var(--ink); }
+    .muted { color: var(--muted); }
+    .grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 18px;
+      align-items: start;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 18px;
+      box-shadow: 0 10px 24px rgba(0,0,0,.16);
+    }
+    .kpis {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap: 12px;
+      margin-top: 14px;
+    }
+    .kpi {
+      background: rgba(255,255,255,.03);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 14px;
+    }
+    .kpi .num {
+      font-size: 34px;
+      font-weight: 800;
+      color: var(--accent);
+      margin-bottom: 4px;
+    }
+    label { display:block; font-weight: 700; margin: 8px 0 6px; }
+    input[type="range"] { width: 100%; }
+    select {
+      width: 100%;
+      padding: 10px 12px;
+      border-radius: 10px;
+      border: 1px solid var(--line);
+      background: #0f2425;
+      color: var(--ink);
+      font-size: 15px;
+    }
+    .badge {
+      display: inline-block;
+      padding: 4px 8px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+      margin-right: 6px;
+      background: rgba(246,169,58,.14);
+      color: var(--accent);
+      border: 1px solid rgba(246,169,58,.28);
+    }
+    .small {
+      font-size: 13px;
+      color: var(--muted);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+      font-size: 14px;
+    }
+    th, td {
+      text-align: left;
+      padding: 10px 8px;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+    }
+    th { color: var(--accent); font-size: 13px; text-transform: uppercase; letter-spacing: .03em; }
+    .warn {
+      background: rgba(255,210,122,.08);
+      border-left: 4px solid var(--warn);
+      padding: 10px 12px;
+      border-radius: 10px;
+      margin-top: 10px;
+    }
+    .ok {
+      background: rgba(144,211,166,.08);
+      border-left: 4px solid var(--ok);
+      padding: 10px 12px;
+      border-radius: 10px;
+      margin-top: 10px;
+    }
+    code { color: #ffe5b6; }
+    a { color: #ffd18b; }
+    @media (max-width: 900px) {
+      .grid { grid-template-columns: 1fr; }
+      .kpis { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>CPFT ADHD + Addiction Calculator</h1>
+    <p class="muted">Offline file. Built only from the verified public numbers used here. No hidden formulas.</p>
+
+    <div class="card">
+      <div><span class="badge">GEOGRAPHY USED</span><span class="badge">NEAREST PUBLIC MATCH TO CPFT</span></div>
+      <p><strong>Cambridgeshire &amp; Peterborough NHS Foundation Trust (CPFT)</strong> says it serves <strong>Cambridgeshire and Peterborough</strong> and supports a population of <strong>just under a million people</strong>. The nearest clean public addiction-treatment denominator is the combined <strong>Cambridgeshire local authority + Peterborough local authority</strong> rows in the official NDTMS local-authority CSV for <strong>2022/23</strong>.</p>
+      <p class="small">This is a geography match, not a person-level linked dataset. It is the cleanest public proxy for the CPFT footprint.</p>
+    </div>
+
+    <div class="grid" style="margin-top:18px;">
+      <div class="card">
+        <h2>Table of truth</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Item</th>
+              <th>Value</th>
+              <th>Type</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Adults in treatment</td><td><strong>4,175</strong></td><td>Observed</td><td>2,535 Cambridgeshire + 1,640 Peterborough</td></tr>
+            <tr><td>New presentations</td><td><strong>2,020</strong></td><td>Observed</td><td>1,175 + 845</td></tr>
+            <tr><td>Opiate treatment group</td><td><strong>1,975</strong></td><td>Observed</td><td>1,125 + 850</td></tr>
+            <tr><td>Alcohol-only treatment group</td><td><strong>1,280</strong></td><td>Observed</td><td>835 + 445</td></tr>
+            <tr><td>Non-opiates-only treatment group</td><td><strong>455</strong></td><td>Observed</td><td>275 + 180</td></tr>
+            <tr><td>Alcohol + non-opiates treatment group</td><td><strong>465</strong></td><td>Observed</td><td>300 + 165</td></tr>
+            <tr><td>Opiates and/or crack (any citation)</td><td><strong>2,105</strong></td><td>Observed</td><td>Overlapping citation count. Do not sum with other any-citation rows.</td></tr>
+            <tr><td>Alcohol (any citation)</td><td><strong>2,060</strong></td><td>Observed</td><td>Overlapping citation count. Do not sum with other any-citation rows.</td></tr>
+            <tr><td>Cocaine (any citation)</td><td><strong>490</strong></td><td>Observed</td><td>Overlapping citation count. Do not sum with other any-citation rows.</td></tr>
+            <tr><td>ADHD prevalence assumption</td><td><strong>5% / 25% / 65%</strong></td><td>Modelled</td><td>User-fixed scenarios</td></tr>
+            <tr><td>START study comparator</td><td><strong>61.3%</strong></td><td>Research comparator</td><td>Improvement in addictive disorders at 6 months after ADHD diagnosis. Not a CPFT observed figure.</td></tr>
+          </tbody>
+        </table>
+        <div class="warn">
+          <strong>Important:</strong> the <strong>61.3%</strong> number is <strong>not</strong> the big local CPFT figure. It comes from the START study and should only be used as a <strong>research comparator / scenario slider</strong> unless you get local outcome data.
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>2-slider calculator</h2>
+        <label for="basis">Denominator</label>
+        <select id="basis">
+          <option value="4175">All adults in treatment — 4,175</option>
+          <option value="1975">Opiate treatment group — 1,975</option>
+          <option value="1280">Alcohol-only treatment group — 1,280</option>
+          <option value="2105">Opiates and/or crack any citation — 2,105</option>
+          <option value="2060">Alcohol any citation — 2,060</option>
+          <option value="490">Cocaine any citation — 490</option>
+        </select>
+
+        <label for="prev">ADHD prevalence scenario: <span id="prevVal">25.0%</span></label>
+        <input id="prev" type="range" min="0" max="100" step="0.1" value="25.0">
+
+        <label for="imp">Improvement / effect scenario: <span id="impVal">61.3%</span></label>
+        <input id="imp" type="range" min="0" max="100" step="0.1" value="61.3">
+
+        <div class="kpis">
+          <div class="kpi">
+            <div class="num" id="denOut">4,175</div>
+            <div>Chosen denominator</div>
+          </div>
+          <div class="kpi">
+            <div class="num" id="eligOut">1,044</div>
+            <div>Modelled ADHD + addiction overlap</div>
+          </div>
+          <div class="kpi">
+            <div class="num" id="effectOut">640</div>
+            <div>Illustrative cases at effect %</div>
+          </div>
+          <div class="kpi">
+            <div class="num" id="formulaOut">4,175 × 25.0% × 61.3%</div>
+            <div>Visible formula</div>
+          </div>
+        </div>
+
+        <div class="ok">
+          <strong>Read this correctly:</strong> the calculator does <code>denominator × prevalence</code> to produce a local overlap estimate, then <code>eligible × effect</code> as a transparent scenario. That last number is <strong>not</strong> a verified local outcome unless you obtain local repeat-episode or re-presentation data.
+        </div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:18px;">
+      <h2>Clean CPFT-footprint scenario check</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Using 4,175 adults in treatment</th>
+            <th>Formula</th>
+            <th>Result</th>
+            <th>Then × 61.3%</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Low scenario</td><td>4,175 × 5%</td><td><strong>209</strong></td><td>128</td></tr>
+          <tr><td>Mid scenario</td><td>4,175 × 25%</td><td><strong>1,044</strong></td><td>640</td></tr>
+          <tr><td>High scenario</td><td>4,175 × 65%</td><td><strong>2,714</strong></td><td>1,664</td></tr>
+        </tbody>
+      </table>
+      <p class="small">The bold number is the local modelled overlap. The final column is only the arithmetic result of applying the 61.3% research comparator to that overlap count.</p>
+    </div>
+
+    <div class="card" style="margin-top:18px;">
+      <h2>Sources used in this file</h2>
+      <ul>
+        <li>CPFT footprint statement: https://www.cpft.nhs.uk/aboutus/</li>
+        <li>NDTMS local-authority archive page: https://beta2.ndtms.net/ViewIt/AdultArchive</li>
+        <li>NDTMS local-authority CSV used here: https://beta2.ndtms.net/resources/public/ViewIt%20Export%20Data%20-%20All%20-%2011122023.csv</li>
+        <li>START study page used for the 61.3% comparator: https://www.sciencedirect.com/science/article/pii/S0306460325003260</li>
+      </ul>
+    </div>
+  </div>
+
+  <script>
+    const basis = document.getElementById('basis');
+    const prev = document.getElementById('prev');
+    const imp = document.getElementById('imp');
+    const prevVal = document.getElementById('prevVal');
+    const impVal = document.getElementById('impVal');
+    const denOut = document.getElementById('denOut');
+    const eligOut = document.getElementById('eligOut');
+    const effectOut = document.getElementById('effectOut');
+    const formulaOut = document.getElementById('formulaOut');
+
+    function fmtNum(n) {
+      return Math.round(n).toLocaleString('en-GB');
+    }
+
+    function update() {
+      const d = Number(basis.value);
+      const p = Number(prev.value) / 100;
+      const i = Number(imp.value) / 100;
+      const eligible = d * p;
+      const affected = eligible * i;
+
+      prevVal.textContent = Number(prev.value).toFixed(1) + '%';
+      impVal.textContent = Number(imp.value).toFixed(1) + '%';
+      denOut.textContent = fmtNum(d);
+      eligOut.textContent = fmtNum(eligible);
+      effectOut.textContent = fmtNum(affected);
+      formulaOut.textContent = `${fmtNum(d)} × ${Number(prev.value).toFixed(1)}% × ${Number(imp.value).toFixed(1)}%`;
+    }
+
+    basis.addEventListener('input', update);
+    prev.addEventListener('input', update);
+    imp.addEventListener('input', update);
+    update();
+  </script>
+</body>
+</html>
