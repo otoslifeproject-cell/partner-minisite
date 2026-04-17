@@ -8,6 +8,214 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Sora:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .addon-section {
+      padding: 100px 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .addon-intro {
+      max-width: 860px;
+      margin-bottom: 28px;
+    }
+
+    .resource-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
+      margin-top: 28px;
+    }
+
+    .resource-card {
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      min-height: 260px;
+    }
+
+    .resource-kicker {
+      display: inline-flex;
+      align-items: center;
+      width: fit-content;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.08);
+      font-size: 0.75rem;
+      color: rgba(240,237,232,0.7);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .resource-card h3 {
+      font-size: 1.2rem;
+      line-height: 1.3;
+      margin: 0;
+    }
+
+    .resource-card p {
+      color: rgba(240,237,232,0.72);
+      line-height: 1.75;
+      flex: 1;
+      margin: 0;
+    }
+
+    .resource-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 4px;
+    }
+
+    .btn-secondary-inline {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 11px 18px;
+      border-radius: 999px;
+      text-decoration: none;
+      border: 1px solid rgba(255,255,255,0.12);
+      color: #F0EDE8;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: 0.2s ease;
+    }
+
+    .btn-secondary-inline:hover {
+      border-color: rgba(255,255,255,0.28);
+      background: rgba(255,255,255,0.04);
+    }
+
+    .embed-panel {
+      margin-top: 30px;
+      border-radius: 24px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.03);
+      box-shadow: 0 30px 80px rgba(0,0,0,0.25);
+    }
+
+    .embed-topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      padding: 16px 20px;
+      background: rgba(255,255,255,0.04);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      flex-wrap: wrap;
+    }
+
+    .embed-topbar-left {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .embed-label {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: rgba(240,237,232,0.5);
+    }
+
+    .embed-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #F0EDE8;
+    }
+
+    .embed-frame {
+      width: 100%;
+      border: 0;
+      display: block;
+      background: #fff;
+    }
+
+    .embed-frame-demo {
+      height: 860px;
+    }
+
+    .embed-frame-calculator {
+      height: 980px;
+    }
+
+    .calculator-note {
+      margin-top: 18px;
+      padding: 18px 20px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.03);
+      color: rgba(240,237,232,0.72);
+      line-height: 1.7;
+    }
+
+    .inline-links-row {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-top: 24px;
+    }
+
+    .inline-pill-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 16px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.1);
+      background: rgba(255,255,255,0.03);
+      color: #F0EDE8;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .inline-pill-link:hover {
+      border-color: rgba(255,255,255,0.24);
+      background: rgba(255,255,255,0.06);
+    }
+
+    @media (max-width: 1100px) {
+      .resource-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .embed-frame-demo {
+        height: 680px;
+      }
+
+      .embed-frame-calculator {
+        height: 820px;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .addon-section {
+        padding: 76px 0;
+      }
+
+      .resource-card {
+        min-height: auto;
+      }
+
+      .embed-topbar {
+        align-items: flex-start;
+      }
+
+      .embed-frame-demo {
+        height: 560px;
+      }
+
+      .embed-frame-calculator {
+        height: 720px;
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -21,6 +229,7 @@
         <a href="#problem">The Problem</a>
         <a href="#solution">Our Solution</a>
         <a href="#pilot">The Pilot</a>
+        <a href="#demos">Demos</a>
         <a href="#partners">Partners</a>
         <a href="#contact" class="nav-cta">Get Involved</a>
       </div>
@@ -32,6 +241,7 @@
       <a href="#problem">The Problem</a>
       <a href="#solution">Our Solution</a>
       <a href="#pilot">The Pilot</a>
+      <a href="#demos">Demos</a>
       <a href="#partners">Partners</a>
       <a href="#contact">Get Involved</a>
     </div>
@@ -40,7 +250,10 @@
   <!-- BRAIN ICON SVG DEFS for coloured bullets -->
   <svg width="0" height="0" style="position:absolute;" xmlns="http://www.w3.org/2000/svg">
     <defs>
-      <linearGradient id="brainOrange" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#FFD700"/><stop offset="100%" stop-color="#FF7300"/></linearGradient>
+      <linearGradient id="brainOrange" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#FFD700"/>
+        <stop offset="100%" stop-color="#FF7300"/>
+      </linearGradient>
     </defs>
   </svg>
 
@@ -208,6 +421,40 @@
           <p>The model is designed to redirect money already being spent on reactive crisis care into proactive, joined-up early intervention — reducing total cost.</p>
         </div>
       </div>
+
+      <div class="glass-card" style="margin-top:36px; padding:32px;">
+        <div class="section-label">Live Cost Model</div>
+        <h3 style="font-size:1.6rem; margin:8px 0 12px;">CPFT ADHD + Addiction Calculator</h3>
+        <p class="section-intro addon-intro" style="margin-bottom:0;">
+          A live scenario tool showing the denominator, estimated overlap and effect range for the Cambridge / CPFT footprint. This sits directly inside the page so you can model the economics live in meetings.
+        </p>
+
+        <div class="inline-links-row">
+          <a href="cpft_calculator.html" class="btn-primary" target="_blank" rel="noopener">Open calculator full screen</a>
+          <a href="partner-brief.html" class="btn-ghost">Open partner brief</a>
+          <a href="nhs-brief.html" class="btn-ghost">Open NHS brief</a>
+        </div>
+
+        <div class="embed-panel">
+          <div class="embed-topbar">
+            <div class="embed-topbar-left">
+              <div class="embed-label">Embedded Interactive Tool</div>
+              <div class="embed-title">CPFT ADHD + Addiction Calculator</div>
+            </div>
+            <a href="cpft_calculator.html" class="btn-secondary-inline" target="_blank" rel="noopener">Launch full page</a>
+          </div>
+          <iframe
+            src="cpft_calculator.html"
+            title="CPFT ADHD and Addiction Calculator"
+            class="embed-frame embed-frame-calculator"
+            loading="lazy">
+          </iframe>
+        </div>
+
+        <div class="calculator-note">
+          Use this as the live money section. It keeps the numbers interactive while preserving your broader narrative above and below it.
+        </div>
+      </div>
     </div>
   </section>
 
@@ -305,6 +552,82 @@
               <div class="timeline-title">Evidence &amp; Evaluation</div>
               <div class="timeline-desc">Full evaluation report for ICB commissioning decision</div>
             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEMOS -->
+  <section class="addon-section" id="demos">
+    <div class="container">
+      <div class="section-label">Interactive Demo</div>
+      <h2 class="section-title">Make the <span class="accent">screenflow visible</span> in the room.</h2>
+      <p class="section-intro addon-intro">
+        This section is designed to show the product journey live on the page. Users can click through the wireframes directly inside the site rather than opening separate tabs.
+      </p>
+
+      <div class="inline-links-row">
+        <a href="wireframes/index.html" class="btn-primary" target="_blank" rel="noopener">Open demo full screen</a>
+        <a href="partner-brief.html" class="btn-ghost">Partner brief</a>
+        <a href="nhs-brief.html" class="btn-ghost">NHS brief</a>
+      </div>
+
+      <div class="embed-panel">
+        <div class="embed-topbar">
+          <div class="embed-topbar-left">
+            <div class="embed-label">Embedded Clickable Journey</div>
+            <div class="embed-title">OTOS Screenflow Demo</div>
+          </div>
+          <a href="wireframes/index.html" class="btn-secondary-inline" target="_blank" rel="noopener">Launch full page</a>
+        </div>
+        <iframe
+          src="wireframes/index.html"
+          title="OTOS clickable screenflow demo"
+          class="embed-frame embed-frame-demo"
+          loading="lazy">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- BRIEFS -->
+  <section class="addon-section" id="briefs">
+    <div class="container">
+      <div class="section-label">Briefing Documents</div>
+      <h2 class="section-title">Direct access to the <span class="accent">decision materials.</span></h2>
+      <p class="section-intro addon-intro">
+        Once someone is through the gate, they should be able to reach the key documents immediately. These buttons give direct access to the partner brief, NHS brief and public-facing briefing page.
+      </p>
+
+      <div class="resource-grid">
+        <div class="resource-card glass-card">
+          <div class="resource-kicker">Partner</div>
+          <h3>Partner Brief</h3>
+          <p>A clear explainer for partners and delivery stakeholders, suitable for guided conversations and leave-behind circulation.</p>
+          <div class="resource-actions">
+            <a href="partner-brief.html" class="btn-primary">Open brief</a>
+            <a href="partner-brief.html" class="btn-secondary-inline" target="_blank" rel="noopener">Open in new tab</a>
+          </div>
+        </div>
+
+        <div class="resource-card glass-card">
+          <div class="resource-kicker">NHS / ICB</div>
+          <h3>NHS Brief</h3>
+          <p>A commissioner-facing briefing page focused on cohort need, the connected pathway and the case for structured pilot progression.</p>
+          <div class="resource-actions">
+            <a href="nhs-brief.html" class="btn-primary">Open brief</a>
+            <a href="nhs-brief.html" class="btn-secondary-inline" target="_blank" rel="noopener">Open in new tab</a>
+          </div>
+        </div>
+
+        <div class="resource-card glass-card">
+          <div class="resource-kicker">Public Health</div>
+          <h3>Public Health Brief</h3>
+          <p>The public-health framing page focused on cost redirection, reactive spend and population-level opportunity.</p>
+          <div class="resource-actions">
+            <a href="public.html" class="btn-primary">Open brief</a>
+            <a href="public.html" class="btn-secondary-inline" target="_blank" rel="noopener">Open in new tab</a>
           </div>
         </div>
       </div>
@@ -471,6 +794,7 @@
           <a href="#problem">The Problem</a>
           <a href="#solution">Our Solution</a>
           <a href="#pilot">The Pilot</a>
+          <a href="#demos">Demos</a>
           <a href="#partners">Partners</a>
           <a href="#contact">Get Involved</a>
         </div>
