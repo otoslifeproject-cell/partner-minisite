@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="css/style.css" />
   <style>
     .addon-section {
-      padding: 100px 0;
+      padding: 88px 0;
       position: relative;
       overflow: hidden;
     }
@@ -155,43 +155,45 @@
       margin-top: 24px;
     }
 
-    .inline-pill-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 10px 16px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,0.1);
-      background: rgba(255,255,255,0.03);
-      color: #F0EDE8;
-      text-decoration: none;
-      font-size: 0.9rem;
-      font-weight: 600;
-    }
-
-    .inline-pill-link:hover {
-      border-color: rgba(255,255,255,0.24);
-      background: rgba(255,255,255,0.06);
+    .demo-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+      margin-top: 28px;
     }
 
     .demo-stage {
-      margin-top: 30px;
-      padding: 28px;
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .demo-copy h3 {
+      font-size: 1.18rem;
+      margin: 4px 0 8px;
+      line-height: 1.3;
+    }
+
+    .demo-copy p {
+      margin: 0;
+      color: rgba(240,237,232,0.72);
+      line-height: 1.72;
+      font-size: 0.95rem;
     }
 
     .demo-stage-top {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 18px;
+      gap: 14px;
       flex-wrap: wrap;
-      margin-bottom: 20px;
     }
 
     .demo-nav-controls {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
       flex-wrap: wrap;
     }
 
@@ -200,9 +202,9 @@
       border: 1px solid rgba(255,255,255,0.14);
       background: rgba(255,255,255,0.03);
       color: #F0EDE8;
-      padding: 11px 18px;
+      padding: 10px 16px;
       border-radius: 999px;
-      font-size: 0.92rem;
+      font-size: 0.88rem;
       font-weight: 600;
       cursor: pointer;
       transition: 0.2s ease;
@@ -230,65 +232,46 @@
     }
 
     .demo-counter {
-      min-width: 68px;
+      min-width: 58px;
       text-align: center;
-      font-size: 0.9rem;
+      font-size: 0.88rem;
       color: rgba(240,237,232,0.72);
       font-weight: 600;
     }
 
     .demo-viewport {
-      border-radius: 22px;
+      border-radius: 20px;
       overflow: hidden;
       border: 1px solid rgba(255,255,255,0.08);
       background: rgba(255,255,255,0.03);
-      box-shadow: 0 30px 80px rgba(0,0,0,0.25);
+      box-shadow: 0 20px 55px rgba(0,0,0,0.22);
     }
 
     .demo-iframe {
       width: 100%;
-      height: 980px;
+      height: 700px;
       border: 0;
       display: block;
       background: #fff;
     }
 
-    .demo-step-links {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      margin-top: 20px;
-    }
-
-    .demo-step-link {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 10px 14px;
-      border-radius: 999px;
-      text-decoration: none;
-      border: 1px solid rgba(255,255,255,0.1);
+    .demo-footer-note {
+      margin-top: 22px;
+      padding: 16px 18px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.08);
       background: rgba(255,255,255,0.03);
-      color: rgba(240,237,232,0.78);
-      font-size: 0.88rem;
-      font-weight: 600;
-      transition: 0.2s ease;
-    }
-
-    .demo-step-link:hover {
-      border-color: rgba(255,255,255,0.24);
-      background: rgba(255,255,255,0.07);
-      color: #fff;
-    }
-
-    .demo-step-link.is-active {
-      background: rgba(255,122,0,0.14);
-      border-color: rgba(255,122,0,0.35);
-      color: #FFB166;
+      color: rgba(240,237,232,0.7);
+      line-height: 1.7;
+      font-size: 0.94rem;
     }
 
     @media (max-width: 1100px) {
       .resource-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .demo-grid {
         grid-template-columns: 1fr;
       }
     }
@@ -299,13 +282,13 @@
       }
 
       .demo-iframe {
-        height: 760px;
+        height: 620px;
       }
     }
 
     @media (max-width: 700px) {
       .addon-section {
-        padding: 76px 0;
+        padding: 72px 0;
       }
 
       .resource-card {
@@ -317,7 +300,7 @@
       }
 
       .demo-stage {
-        padding: 20px;
+        padding: 18px;
       }
 
       .embed-frame-calculator {
@@ -325,7 +308,7 @@
       }
 
       .demo-iframe {
-        height: 620px;
+        height: 540px;
       }
     }
   </style>
@@ -674,54 +657,82 @@
   <!-- DEMOS -->
   <section class="addon-section" id="demos">
     <div class="container">
-      <div class="section-label">Interactive Demo</div>
-      <h2 class="section-title">Walk through the <span class="accent">onboarding flow</span> live.</h2>
+      <div class="section-label">Interactive Demos</div>
+      <h2 class="section-title">Two <span class="accent">guided product journeys</span> on the page.</h2>
       <p class="section-intro addon-intro">
-        This keeps the real wireframe screens exactly as they are, but presents one guided demo journey directly on the page with Back and Next controls.
+        These keep the original screens intact, but present them in a cleaner on-page wrapper for meetings. On the left is participant onboarding. On the right is the CPFT Alcohol Liaison / Nurse bedside handoff at Addenbrooke’s, including the ADHD referral route.
       </p>
 
       <div class="inline-links-row">
-        <a href="wireframes/flow-overview.html#flow-commissioner" class="btn-primary" target="_blank" rel="noopener">Open full flow map</a>
-        <a href="partner-brief.html" class="btn-ghost">Partner brief</a>
-        <a href="nhs-brief.html" class="btn-ghost">NHS brief</a>
+        <a href="wireframes/flow-overview.html" class="btn-primary" target="_blank" rel="noopener">Open full flow map</a>
       </div>
 
-      <div class="demo-stage glass-card">
-        <div class="demo-stage-top">
-          <div>
-            <div class="embed-label">Embedded clickable journey</div>
-            <div class="embed-title">Participant onboarding demo</div>
+      <div class="demo-grid">
+        <div class="demo-stage glass-card">
+          <div class="demo-copy">
+            <div class="section-label">Demo 1</div>
+            <h3>Participant onboarding</h3>
+            <p>Welcome, consent, anonymous ID, first check-in, next step and completion — shown as one guided sequence.</p>
           </div>
 
-          <div class="demo-nav-controls">
-            <button class="demo-nav-btn" id="demoPrevBtn" type="button">← Back</button>
-            <div class="demo-counter" id="demoCounter">1 / 6</div>
-            <button class="demo-nav-btn demo-nav-btn--primary" id="demoNextBtn" type="button">Next →</button>
+          <div class="demo-stage-top">
+            <div>
+              <div class="embed-label">Embedded onboarding flow</div>
+              <div class="embed-title">Participant journey</div>
+            </div>
+
+            <div class="demo-nav-controls">
+              <button class="demo-nav-btn" id="onboardingPrevBtn" type="button">← Back</button>
+              <div class="demo-counter" id="onboardingCounter">1 / 6</div>
+              <button class="demo-nav-btn demo-nav-btn--primary" id="onboardingNextBtn" type="button">Next →</button>
+            </div>
+          </div>
+
+          <div class="demo-viewport">
+            <iframe
+              id="onboardingFrame"
+              src="wireframes/mobile-onboarding-welcome.html"
+              title="Participant onboarding demo"
+              class="demo-iframe"
+              loading="lazy">
+            </iframe>
           </div>
         </div>
 
-        <div class="demo-viewport">
-          <iframe
-            id="demoFrame"
-            src="wireframes/mobile-onboarding-welcome.html"
-            title="OTOS onboarding demo"
-            class="demo-iframe"
-            loading="lazy">
-          </iframe>
-        </div>
+        <div class="demo-stage glass-card">
+          <div class="demo-copy">
+            <div class="section-label">Demo 2</div>
+            <h3>Bedside handoff & ADHD referral</h3>
+            <p>CPFT Alcohol Liaison / Nurse at Addenbrooke’s bedside: scan or find the participant, record the touchpoint, raise the ADHD flag, confirm the route and generate the receipt.</p>
+          </div>
 
-        <div class="demo-step-links">
-          <a href="wireframes/mobile-onboarding-welcome.html" class="demo-step-link is-active" data-demo-index="0" target="demoFrame">Welcome</a>
-          <a href="wireframes/mobile-onboarding-consent.html" class="demo-step-link" data-demo-index="1" target="demoFrame">Consent</a>
-          <a href="wireframes/mobile-onboarding-id.html" class="demo-step-link" data-demo-index="2" target="demoFrame">Anonymous ID</a>
-          <a href="wireframes/mobile-onboarding-checkin.html" class="demo-step-link" data-demo-index="3" target="demoFrame">Check-in</a>
-          <a href="wireframes/mobile-onboarding-nextstep.html" class="demo-step-link" data-demo-index="4" target="demoFrame">Next step</a>
-          <a href="wireframes/mobile-onboarding-done.html" class="demo-step-link" data-demo-index="5" target="demoFrame">Done</a>
-        </div>
+          <div class="demo-stage-top">
+            <div>
+              <div class="embed-label">Embedded bedside flow</div>
+              <div class="embed-title">Alcohol liaison / Addenbrooke’s</div>
+            </div>
 
-        <div class="calculator-note" style="margin-top:20px;">
-          These are the original screens, unchanged. The page wrapper, controls and layout are new so you can present the flow more cleanly in meetings.
+            <div class="demo-nav-controls">
+              <button class="demo-nav-btn" id="bedsidePrevBtn" type="button">← Back</button>
+              <div class="demo-counter" id="bedsideCounter">1 / 5</div>
+              <button class="demo-nav-btn demo-nav-btn--primary" id="bedsideNextBtn" type="button">Next →</button>
+            </div>
+          </div>
+
+          <div class="demo-viewport">
+            <iframe
+              id="bedsideFrame"
+              src="wireframes/mobile-scan.html"
+              title="Bedside liaison and ADHD referral demo"
+              class="demo-iframe"
+              loading="lazy">
+            </iframe>
+          </div>
         </div>
+      </div>
+
+      <div class="demo-footer-note">
+        The phone screens themselves stay as they are. This wrapper simply makes them easier to present live, with fewer controls on screen and a cleaner narrative.
       </div>
     </div>
   </section>
@@ -944,58 +955,67 @@
   <script src="js/main.js"></script>
   <script>
     (function () {
-      const demoPages = [
-        { title: "Welcome", url: "wireframes/mobile-onboarding-welcome.html" },
-        { title: "Consent", url: "wireframes/mobile-onboarding-consent.html" },
-        { title: "Anonymous ID", url: "wireframes/mobile-onboarding-id.html" },
-        { title: "Check-in", url: "wireframes/mobile-onboarding-checkin.html" },
-        { title: "Next step", url: "wireframes/mobile-onboarding-nextstep.html" },
-        { title: "Done", url: "wireframes/mobile-onboarding-done.html" }
-      ];
+      function setupDemo(options) {
+        const pages = options.pages;
+        const frame = document.getElementById(options.frameId);
+        const prevBtn = document.getElementById(options.prevId);
+        const nextBtn = document.getElementById(options.nextId);
+        const counter = document.getElementById(options.counterId);
 
-      const frame = document.getElementById("demoFrame");
-      const prevBtn = document.getElementById("demoPrevBtn");
-      const nextBtn = document.getElementById("demoNextBtn");
-      const counter = document.getElementById("demoCounter");
-      const stepLinks = Array.from(document.querySelectorAll(".demo-step-link"));
+        let currentIndex = 0;
 
-      let currentIndex = 0;
+        function render() {
+          frame.src = pages[currentIndex];
+          counter.textContent = (currentIndex + 1) + " / " + pages.length;
+          prevBtn.disabled = currentIndex === 0;
+          nextBtn.disabled = currentIndex === pages.length - 1;
+        }
 
-      function renderDemo() {
-        frame.src = demoPages[currentIndex].url;
-        counter.textContent = (currentIndex + 1) + " / " + demoPages.length;
-
-        prevBtn.disabled = currentIndex === 0;
-        nextBtn.disabled = currentIndex === demoPages.length - 1;
-
-        stepLinks.forEach((link, index) => {
-          link.classList.toggle("is-active", index === currentIndex);
+        prevBtn.addEventListener("click", function () {
+          if (currentIndex > 0) {
+            currentIndex -= 1;
+            render();
+          }
         });
+
+        nextBtn.addEventListener("click", function () {
+          if (currentIndex < pages.length - 1) {
+            currentIndex += 1;
+            render();
+          }
+        });
+
+        render();
       }
 
-      prevBtn.addEventListener("click", function () {
-        if (currentIndex > 0) {
-          currentIndex--;
-          renderDemo();
-        }
+      setupDemo({
+        frameId: "onboardingFrame",
+        prevId: "onboardingPrevBtn",
+        nextId: "onboardingNextBtn",
+        counterId: "onboardingCounter",
+        pages: [
+          "wireframes/mobile-onboarding-welcome.html",
+          "wireframes/mobile-onboarding-consent.html",
+          "wireframes/mobile-onboarding-id.html",
+          "wireframes/mobile-onboarding-checkin.html",
+          "wireframes/mobile-onboarding-nextstep.html",
+          "wireframes/mobile-onboarding-done.html"
+        ]
       });
 
-      nextBtn.addEventListener("click", function () {
-        if (currentIndex < demoPages.length - 1) {
-          currentIndex++;
-          renderDemo();
-        }
+      setupDemo({
+        frameId: "bedsideFrame",
+        prevId: "bedsidePrevBtn",
+        nextId: "bedsideNextBtn",
+        counterId: "bedsideCounter",
+        pages: [
+          "wireframes/mobile-scan.html",
+          "wireframes/mobile-participant.html",
+          "wireframes/mobile-record.html",
+          "wireframes/mobile-adhd-route.html",
+          "wireframes/mobile-receipt.html"
+        ]
       });
-
-      stepLinks.forEach((link, index) => {
-        link.addEventListener("click", function (e) {
-          e.preventDefault();
-          currentIndex = index;
-          renderDemo();
-        });
-      });
-
-      renderDemo();
     })();
   </script>
 </body>
