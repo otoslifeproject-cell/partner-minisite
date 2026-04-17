@@ -134,10 +134,6 @@
       background: #fff;
     }
 
-    .embed-frame-demo {
-      height: 860px;
-    }
-
     .embed-frame-calculator {
       height: 980px;
     }
@@ -178,6 +174,119 @@
       background: rgba(255,255,255,0.06);
     }
 
+    .demo-stage {
+      margin-top: 30px;
+      padding: 28px;
+    }
+
+    .demo-stage-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+
+    .demo-nav-controls {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .demo-nav-btn {
+      appearance: none;
+      border: 1px solid rgba(255,255,255,0.14);
+      background: rgba(255,255,255,0.03);
+      color: #F0EDE8;
+      padding: 11px 18px;
+      border-radius: 999px;
+      font-size: 0.92rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
+
+    .demo-nav-btn:hover {
+      border-color: rgba(255,255,255,0.28);
+      background: rgba(255,255,255,0.07);
+    }
+
+    .demo-nav-btn--primary {
+      background: linear-gradient(135deg, #FF7A00, #C8700A);
+      border-color: transparent;
+      color: #fff;
+    }
+
+    .demo-nav-btn--primary:hover {
+      opacity: 0.92;
+      background: linear-gradient(135deg, #FF7A00, #C8700A);
+    }
+
+    .demo-nav-btn:disabled {
+      opacity: 0.45;
+      cursor: not-allowed;
+    }
+
+    .demo-counter {
+      min-width: 68px;
+      text-align: center;
+      font-size: 0.9rem;
+      color: rgba(240,237,232,0.72);
+      font-weight: 600;
+    }
+
+    .demo-viewport {
+      border-radius: 22px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.03);
+      box-shadow: 0 30px 80px rgba(0,0,0,0.25);
+    }
+
+    .demo-iframe {
+      width: 100%;
+      height: 980px;
+      border: 0;
+      display: block;
+      background: #fff;
+    }
+
+    .demo-step-links {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    .demo-step-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 14px;
+      border-radius: 999px;
+      text-decoration: none;
+      border: 1px solid rgba(255,255,255,0.1);
+      background: rgba(255,255,255,0.03);
+      color: rgba(240,237,232,0.78);
+      font-size: 0.88rem;
+      font-weight: 600;
+      transition: 0.2s ease;
+    }
+
+    .demo-step-link:hover {
+      border-color: rgba(255,255,255,0.24);
+      background: rgba(255,255,255,0.07);
+      color: #fff;
+    }
+
+    .demo-step-link.is-active {
+      background: rgba(255,122,0,0.14);
+      border-color: rgba(255,122,0,0.35);
+      color: #FFB166;
+    }
+
     @media (max-width: 1100px) {
       .resource-grid {
         grid-template-columns: 1fr;
@@ -185,12 +294,12 @@
     }
 
     @media (max-width: 900px) {
-      .embed-frame-demo {
-        height: 680px;
-      }
-
       .embed-frame-calculator {
         height: 820px;
+      }
+
+      .demo-iframe {
+        height: 760px;
       }
     }
 
@@ -207,12 +316,16 @@
         align-items: flex-start;
       }
 
-      .embed-frame-demo {
-        height: 560px;
+      .demo-stage {
+        padding: 20px;
       }
 
       .embed-frame-calculator {
         height: 720px;
+      }
+
+      .demo-iframe {
+        height: 620px;
       }
     }
   </style>
@@ -247,7 +360,7 @@
     </div>
   </nav>
 
-  <!-- BRAIN ICON SVG DEFS for coloured bullets -->
+  <!-- BRAIN ICON SVG DEFS -->
   <svg width="0" height="0" style="position:absolute;" xmlns="http://www.w3.org/2000/svg">
     <defs>
       <linearGradient id="brainOrange" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -562,31 +675,53 @@
   <section class="addon-section" id="demos">
     <div class="container">
       <div class="section-label">Interactive Demo</div>
-      <h2 class="section-title">Make the <span class="accent">screenflow visible</span> in the room.</h2>
+      <h2 class="section-title">Walk through the <span class="accent">onboarding flow</span> live.</h2>
       <p class="section-intro addon-intro">
-        This section is designed to show the product journey live on the page. Users can click through the wireframes directly inside the site rather than opening separate tabs.
+        This keeps the real wireframe screens exactly as they are, but presents one guided demo journey directly on the page with Back and Next controls.
       </p>
 
       <div class="inline-links-row">
-        <a href="wireframes/index.html" class="btn-primary" target="_blank" rel="noopener">Open demo full screen</a>
+        <a href="wireframes/flow-overview.html#flow-commissioner" class="btn-primary" target="_blank" rel="noopener">Open full flow map</a>
         <a href="partner-brief.html" class="btn-ghost">Partner brief</a>
         <a href="nhs-brief.html" class="btn-ghost">NHS brief</a>
       </div>
 
-      <div class="embed-panel">
-        <div class="embed-topbar">
-          <div class="embed-topbar-left">
-            <div class="embed-label">Embedded Clickable Journey</div>
-            <div class="embed-title">OTOS Screenflow Demo</div>
+      <div class="demo-stage glass-card">
+        <div class="demo-stage-top">
+          <div>
+            <div class="embed-label">Embedded clickable journey</div>
+            <div class="embed-title">Participant onboarding demo</div>
           </div>
-          <a href="wireframes/index.html" class="btn-secondary-inline" target="_blank" rel="noopener">Launch full page</a>
+
+          <div class="demo-nav-controls">
+            <button class="demo-nav-btn" id="demoPrevBtn" type="button">← Back</button>
+            <div class="demo-counter" id="demoCounter">1 / 6</div>
+            <button class="demo-nav-btn demo-nav-btn--primary" id="demoNextBtn" type="button">Next →</button>
+          </div>
         </div>
-        <iframe
-          src="wireframes/index.html"
-          title="OTOS clickable screenflow demo"
-          class="embed-frame embed-frame-demo"
-          loading="lazy">
-        </iframe>
+
+        <div class="demo-viewport">
+          <iframe
+            id="demoFrame"
+            src="wireframes/mobile-onboarding-welcome.html"
+            title="OTOS onboarding demo"
+            class="demo-iframe"
+            loading="lazy">
+          </iframe>
+        </div>
+
+        <div class="demo-step-links">
+          <a href="wireframes/mobile-onboarding-welcome.html" class="demo-step-link is-active" data-demo-index="0" target="demoFrame">Welcome</a>
+          <a href="wireframes/mobile-onboarding-consent.html" class="demo-step-link" data-demo-index="1" target="demoFrame">Consent</a>
+          <a href="wireframes/mobile-onboarding-id.html" class="demo-step-link" data-demo-index="2" target="demoFrame">Anonymous ID</a>
+          <a href="wireframes/mobile-onboarding-checkin.html" class="demo-step-link" data-demo-index="3" target="demoFrame">Check-in</a>
+          <a href="wireframes/mobile-onboarding-nextstep.html" class="demo-step-link" data-demo-index="4" target="demoFrame">Next step</a>
+          <a href="wireframes/mobile-onboarding-done.html" class="demo-step-link" data-demo-index="5" target="demoFrame">Done</a>
+        </div>
+
+        <div class="calculator-note" style="margin-top:20px;">
+          These are the original screens, unchanged. The page wrapper, controls and layout are new so you can present the flow more cleanly in meetings.
+        </div>
       </div>
     </div>
   </section>
@@ -807,5 +942,61 @@
   </footer>
 
   <script src="js/main.js"></script>
+  <script>
+    (function () {
+      const demoPages = [
+        { title: "Welcome", url: "wireframes/mobile-onboarding-welcome.html" },
+        { title: "Consent", url: "wireframes/mobile-onboarding-consent.html" },
+        { title: "Anonymous ID", url: "wireframes/mobile-onboarding-id.html" },
+        { title: "Check-in", url: "wireframes/mobile-onboarding-checkin.html" },
+        { title: "Next step", url: "wireframes/mobile-onboarding-nextstep.html" },
+        { title: "Done", url: "wireframes/mobile-onboarding-done.html" }
+      ];
+
+      const frame = document.getElementById("demoFrame");
+      const prevBtn = document.getElementById("demoPrevBtn");
+      const nextBtn = document.getElementById("demoNextBtn");
+      const counter = document.getElementById("demoCounter");
+      const stepLinks = Array.from(document.querySelectorAll(".demo-step-link"));
+
+      let currentIndex = 0;
+
+      function renderDemo() {
+        frame.src = demoPages[currentIndex].url;
+        counter.textContent = (currentIndex + 1) + " / " + demoPages.length;
+
+        prevBtn.disabled = currentIndex === 0;
+        nextBtn.disabled = currentIndex === demoPages.length - 1;
+
+        stepLinks.forEach((link, index) => {
+          link.classList.toggle("is-active", index === currentIndex);
+        });
+      }
+
+      prevBtn.addEventListener("click", function () {
+        if (currentIndex > 0) {
+          currentIndex--;
+          renderDemo();
+        }
+      });
+
+      nextBtn.addEventListener("click", function () {
+        if (currentIndex < demoPages.length - 1) {
+          currentIndex++;
+          renderDemo();
+        }
+      });
+
+      stepLinks.forEach((link, index) => {
+        link.addEventListener("click", function (e) {
+          e.preventDefault();
+          currentIndex = index;
+          renderDemo();
+        });
+      });
+
+      renderDemo();
+    })();
+  </script>
 </body>
 </html>
