@@ -9,15 +9,25 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Sora:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
   <style>
+    .nav-logo .nav-logo-img {
+      height: 64px;
+      width: auto;
+    }
+
+    .footer-logo-img {
+      height: 42px;
+      width: auto;
+    }
+
     .addon-section {
-      padding: 88px 0;
+      padding: 82px 0;
       position: relative;
       overflow: hidden;
     }
 
     .addon-intro {
-      max-width: 860px;
-      margin-bottom: 28px;
+      max-width: 900px;
+      margin-bottom: 26px;
     }
 
     .resource-grid {
@@ -158,28 +168,30 @@
     .demo-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 22px;
+      gap: 26px;
       margin-top: 28px;
+      align-items: start;
     }
 
     .demo-stage {
-      padding: 22px;
+      padding: 22px 20px 18px;
       display: flex;
       flex-direction: column;
       gap: 16px;
+      min-height: 100%;
     }
 
     .demo-copy h3 {
-      font-size: 1.18rem;
+      font-size: 1.12rem;
       margin: 4px 0 8px;
-      line-height: 1.3;
+      line-height: 1.32;
     }
 
     .demo-copy p {
       margin: 0;
       color: rgba(240,237,232,0.72);
-      line-height: 1.72;
-      font-size: 0.95rem;
+      line-height: 1.7;
+      font-size: 0.94rem;
     }
 
     .demo-stage-top {
@@ -240,23 +252,27 @@
     }
 
     .demo-viewport {
-      border-radius: 20px;
-      overflow: hidden;
-      border: 1px solid rgba(255,255,255,0.08);
-      background: rgba(255,255,255,0.03);
-      box-shadow: 0 20px 55px rgba(0,0,0,0.22);
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      background: transparent;
+      border: 0;
+      box-shadow: none;
+      overflow: visible;
+      min-height: 40px;
     }
 
     .demo-iframe {
       width: 100%;
-      height: 700px;
+      height: 860px;
       border: 0;
       display: block;
-      background: #fff;
+      background: transparent;
+      overflow: hidden;
     }
 
     .demo-footer-note {
-      margin-top: 22px;
+      margin-top: 20px;
       padding: 16px 18px;
       border-radius: 16px;
       border: 1px solid rgba(255,255,255,0.08);
@@ -282,13 +298,17 @@
       }
 
       .demo-iframe {
-        height: 620px;
+        height: 760px;
+      }
+
+      .nav-logo .nav-logo-img {
+        height: 56px;
       }
     }
 
     @media (max-width: 700px) {
       .addon-section {
-        padding: 72px 0;
+        padding: 70px 0;
       }
 
       .resource-card {
@@ -308,7 +328,11 @@
       }
 
       .demo-iframe {
-        height: 540px;
+        height: 640px;
+      }
+
+      .nav-logo .nav-logo-img {
+        height: 50px;
       }
     }
   </style>
@@ -660,12 +684,8 @@
       <div class="section-label">Interactive Demos</div>
       <h2 class="section-title">Two <span class="accent">guided product journeys</span> on the page.</h2>
       <p class="section-intro addon-intro">
-        These keep the original screens intact, but present them in a cleaner on-page wrapper for meetings. On the left is participant onboarding. On the right is the CPFT Alcohol Liaison / Nurse bedside handoff at Addenbrooke’s, including the ADHD referral route.
+        These keep the original screens intact, but present them in a cleaner on-page wrapper for meetings. On the left is participant onboarding. On the right is the CPFT Alcohol Liaison / Addenbrooke’s bedside handoff, including the ADHD referral route.
       </p>
-
-      <div class="inline-links-row">
-        <a href="wireframes/flow-overview.html" class="btn-primary" target="_blank" rel="noopener">Open full flow map</a>
-      </div>
 
       <div class="demo-grid">
         <div class="demo-stage glass-card">
@@ -703,7 +723,7 @@
           <div class="demo-copy">
             <div class="section-label">Demo 2</div>
             <h3>Bedside handoff & ADHD referral</h3>
-            <p>CPFT Alcohol Liaison / Nurse at Addenbrooke’s bedside: scan or find the participant, record the touchpoint, raise the ADHD flag, confirm the route and generate the receipt.</p>
+            <p>CPFT Alcohol Liaison / Addenbrooke’s bedside: find the participant, record the touchpoint, raise the ADHD route and generate the receipt.</p>
           </div>
 
           <div class="demo-stage-top">
@@ -732,7 +752,7 @@
       </div>
 
       <div class="demo-footer-note">
-        The phone screens themselves stay as they are. This wrapper simply makes them easier to present live, with fewer controls on screen and a cleaner narrative.
+        The phone screens themselves stay unchanged. This wrapper removes the extra wireframe page chrome, makes the phones sit directly on your site background, and keeps navigation simple.
       </div>
     </div>
   </section>
@@ -955,6 +975,96 @@
   <script src="js/main.js"></script>
   <script>
     (function () {
+      const legacyHrefMap = {
+        "mobile-helen-scan.html": "mobile-scan.html",
+        "mobile-helen-participant.html": "mobile-participant.html",
+        "mobile-helen-record.html": "mobile-record.html",
+        "mobile-helen-adhd-route.html": "mobile-adhd-route.html",
+        "mobile-helen-receipt.html": "mobile-receipt.html"
+      };
+
+      function prepareEmbeddedWireframe(frame) {
+        try {
+          const doc = frame.contentDocument || frame.contentWindow.document;
+          if (!doc) return;
+
+          if (!doc.getElementById("otos-embedded-style")) {
+            const style = doc.createElement("style");
+            style.id = "otos-embedded-style";
+            style.textContent = `
+              html, body {
+                margin: 0 !important;
+                padding: 0 !important;
+                overflow: hidden !important;
+                background: transparent !important;
+                min-height: auto !important;
+              }
+
+              body {
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
+                justify-content: flex-start !important;
+              }
+
+              body.wf-page,
+              body.wf-page--desktop {
+                padding: 0 !important;
+                background: transparent !important;
+                min-height: auto !important;
+              }
+
+              .wf-toolbar,
+              .wf-desktop-bar {
+                display: none !important;
+              }
+            `;
+            doc.head.appendChild(style);
+          }
+
+          doc.querySelectorAll("a[href]").forEach((link) => {
+            const href = link.getAttribute("href");
+            if (legacyHrefMap[href]) {
+              link.setAttribute("href", legacyHrefMap[href]);
+            }
+          });
+
+          doc.querySelectorAll(".role").forEach((el) => {
+            const txt = (el.textContent || "").toLowerCase();
+            if (txt.includes("helen")) {
+              el.textContent = "CPFT alcohol liaison · Addenbrooke’s";
+            }
+          });
+
+          function resizeFrame() {
+            const target =
+              doc.querySelector(".device-frame") ||
+              doc.querySelector(".desktop-frame") ||
+              doc.querySelector(".desktop-shell") ||
+              doc.body.firstElementChild;
+
+            let height = 0;
+            if (target) {
+              height = Math.ceil(target.getBoundingClientRect().height) + 6;
+            }
+
+            if (!height) {
+              height = Math.max(
+                doc.body.scrollHeight,
+                doc.documentElement.scrollHeight
+              );
+            }
+
+            frame.style.height = height + "px";
+          }
+
+          resizeFrame();
+          setTimeout(resizeFrame, 80);
+          setTimeout(resizeFrame, 300);
+          setTimeout(resizeFrame, 700);
+        } catch (e) {}
+      }
+
       function setupDemo(options) {
         const pages = options.pages;
         const frame = document.getElementById(options.frameId);
@@ -970,6 +1080,10 @@
           prevBtn.disabled = currentIndex === 0;
           nextBtn.disabled = currentIndex === pages.length - 1;
         }
+
+        frame.addEventListener("load", function () {
+          prepareEmbeddedWireframe(frame);
+        });
 
         prevBtn.addEventListener("click", function () {
           if (currentIndex > 0) {
