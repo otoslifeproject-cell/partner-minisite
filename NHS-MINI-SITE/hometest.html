@@ -179,17 +179,6 @@
 
 <body>
 
-<!-- ============================================================
-     MAIN ACCESS GATE — redirects to public.html if no session
-     ============================================================ -->
-<script>
-  (function() {
-    if (sessionStorage.getItem('otos_access') !== '1') {
-      window.location.replace('public.html');
-    }
-  })();
-</script>
-
 
 <!-- ============================================================
      QUOTE OVERLAY
