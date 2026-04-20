@@ -179,7 +179,7 @@
       font-size: clamp(1.05rem, 1.65vw, 1.34rem);
       line-height: 1.7;
       color: rgba(247,239,228,0.76);
-      max-width: 820px;
+      max-width: 920px;
     }
 
     .hero-lead-small {
@@ -441,6 +441,7 @@
       margin-bottom: 8px;
     }
 
+    .grid-2,
     .grid-3,
     .grid-4,
     .route-grid,
@@ -448,6 +449,10 @@
       display: grid;
       gap: 18px;
       margin-top: 32px;
+    }
+
+    .grid-2 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
     .grid-3 {
@@ -463,7 +468,7 @@
     }
 
     .flow-grid {
-      grid-template-columns: repeat(5, minmax(0, 1fr));
+      grid-template-columns: repeat(4, minmax(0, 1fr));
     }
 
     .card {
@@ -472,6 +477,13 @@
       background: white;
       border: 1px solid var(--border-dark);
       box-shadow: 0 16px 42px rgba(31,41,55,0.055);
+    }
+
+    .card-dark {
+      background: rgba(255,255,255,0.045);
+      border: 1px solid var(--border);
+      color: var(--text);
+      box-shadow: none;
     }
 
     .card-stat {
@@ -490,22 +502,78 @@
       margin-bottom: 10px;
     }
 
+    .card-dark .card-title {
+      color: var(--text);
+    }
+
     .card-body {
       color: var(--muted-dark);
       font-size: 0.94rem;
       line-height: 1.58;
     }
 
+    .card-dark .card-body {
+      color: rgba(247,239,228,0.68);
+    }
+
+    .check-list {
+      display: grid;
+      gap: 11px;
+      margin-top: 14px;
+    }
+
+    .check-row,
+    .cross-row {
+      display: grid;
+      grid-template-columns: 24px 1fr;
+      gap: 10px;
+      align-items: start;
+      color: var(--muted-dark);
+      font-size: 0.95rem;
+      line-height: 1.45;
+      padding-bottom: 9px;
+      border-bottom: 1px solid rgba(31,41,55,0.07);
+    }
+
+    .check-row::before {
+      content: "✓";
+      width: 18px;
+      height: 18px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(34,197,94,0.14);
+      color: #15803d;
+      font-size: 0.78rem;
+      font-weight: 900;
+    }
+
+    .cross-row::before {
+      content: "×";
+      width: 18px;
+      height: 18px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(239,68,68,0.14);
+      color: #dc2626;
+      font-size: 0.78rem;
+      font-weight: 900;
+    }
+
     .flow-card {
-      padding: 20px;
-      border-radius: 22px;
+      padding: 24px;
+      border-radius: 24px;
       background: white;
       border: 1px solid var(--border-dark);
+      box-shadow: 0 16px 42px rgba(31,41,55,0.055);
     }
 
     .flow-num {
-      width: 36px;
-      height: 36px;
+      width: 42px;
+      height: 42px;
       border-radius: 999px;
       background: var(--amber);
       color: white;
@@ -514,7 +582,7 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      margin-bottom: 14px;
+      margin-bottom: 16px;
     }
 
     .pathway-box {
@@ -570,6 +638,28 @@
       font-size: 0.86rem;
     }
 
+    .quote-strip {
+      border-radius: 26px;
+      padding: 26px 30px;
+      background: rgba(232,119,0,0.08);
+      border: 1px solid rgba(232,119,0,0.18);
+      margin-top: 34px;
+    }
+
+    .quote-strip p {
+      font-size: 1.1rem;
+      line-height: 1.65;
+      color: var(--text-dark);
+      font-weight: 750;
+      margin-bottom: 10px;
+    }
+
+    .quote-source {
+      color: var(--muted-dark);
+      font-size: 0.85rem;
+      font-style: italic;
+    }
+
     .cta-block {
       text-align: center;
       max-width: 950px;
@@ -615,6 +705,7 @@
 
     @media (max-width: 1050px) {
       .hero-inner,
+      .grid-2,
       .grid-4,
       .route-grid,
       .flow-grid {
@@ -632,6 +723,7 @@
       }
 
       .hero-inner,
+      .grid-2,
       .grid-4,
       .route-grid,
       .flow-grid,
@@ -663,6 +755,7 @@
     <ul class="nav-links">
       <li><a href="#problem">Problem</a></li>
       <li><a href="#solution">Solution</a></li>
+      <li><a href="#how-it-works">How It Works</a></li>
       <li><a href="#pilot">Pilot</a></li>
       <li><a href="#partners">Partners</a></li>
       <li><a href="local-authority-public-health.html">Local Authority</a></li>
@@ -765,40 +858,10 @@
   </div>
 </div>
 
-<section class="section section-light" id="what-this-is">
-  <div class="section-inner">
-    <div class="chapter-header">
-      <span class="chapter-num">01</span>
-      <div class="section-label">The Simple Explanation</div>
-    </div>
-
-    <h2 class="display-2">
-      OTOS does not replace services.<br />
-      <span class="accent">It holds the thread between them.</span>
-    </h2>
-
-    <p class="lead">
-      The care already exists. The buildings exist. The teams exist. The problem is the space between them: referrals that are not receipted, discharges that go quiet, waiting-list support that is not connected, and people who disappear from view until they reappear in crisis.
-    </p>
-
-    <div class="def-box">
-      <div class="def-icon">
-        <img src="images/brain-icon.png" alt="" />
-      </div>
-      <div>
-        <h3>OTOS Continuity™ is a non-clinical continuity infrastructure layer.</h3>
-        <p>
-          It logs touchpoints, creates transition receipts, surfaces drift signals and maintains a timestamped continuity trail. It does not diagnose, prescribe, replace clinical judgement, or become another clinical record. Partner teams make the decisions. Always.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
 <section class="section section-light section-alt" id="problem">
   <div class="section-inner">
     <div class="chapter-header">
-      <span class="chapter-num">02</span>
+      <span class="chapter-num">01</span>
       <div class="section-label">The Problem</div>
     </div>
 
@@ -837,39 +900,235 @@
         <div class="card-body">START study evidence provides a strong comparator for the pre-pilot: what happens when the underlying ADHD driver is properly addressed?</div>
       </div>
     </div>
+
+    <div class="quote-strip">
+      <p>
+        “Treating ADHD in patients with co-occurring substance use disorder produces benefit — not only for ADHD symptoms, but for substance use outcomes too.”
+      </p>
+      <div class="quote-source">Royal College of Psychiatrists, ADHD with Substance Use: A Clinical Dilemma</div>
+    </div>
   </div>
 </section>
 
-<section class="section section-light" id="solution">
+<section class="section section-light" id="system-question">
   <div class="section-inner">
     <div class="chapter-header">
-      <span class="chapter-num">03</span>
-      <div class="section-label">The Solution</div>
+      <span class="chapter-num">02</span>
+      <div class="section-label">The Question Underneath</div>
     </div>
 
     <h2 class="display-2">
-      The missing layer is not another service.<br />
-      <span class="accent">It is continuity.</span>
+      The system often sees the addiction first.<br />
+      <span class="accent">But what if ADHD is the driver?</span>
     </h2>
 
     <p class="lead">
-      OTOS sits around existing services and makes follow-through visible. It shows whether the handoff happened, whether the next step was receipted, whether someone has drifted, and whether a human reviewer needs to look again.
+      Addiction is often the visible crisis. For some people, that is the primary condition. But for a significant and identifiable group of adults, the drinking or drug use may be what arrives in view while unsupported ADHD remains underneath.
+    </p>
+
+    <p class="lead">
+      That matters because self-medication can appear to work — until it does not. Alcohol or substances can briefly do what an untreated ADHD brain has been trying to do all along: supply motivation, sustain attention, create focus, cut the noise. The trouble starts when that coping strategy becomes dependency, relapse risk and crisis.
     </p>
 
     <div class="grid-3">
       <div class="card">
-        <div class="card-title">It logs touchpoints</div>
-        <div class="card-body">Every important contact, referral, discharge, support step or handoff can become part of a visible continuity thread.</div>
+        <div class="card-title">The visible problem gets treated</div>
+        <div class="card-body">
+          Services quite reasonably respond to the addiction, crisis, discharge, relapse risk or missed appointment that appears in front of them.
+        </div>
       </div>
 
       <div class="card">
-        <div class="card-title">It creates receipts</div>
-        <div class="card-body">The system can see whether the next step happened, stalled, or disappeared into silence.</div>
+        <div class="card-title">The underlying driver can stay untouched</div>
+        <div class="card-body">
+          If ADHD remains unsupported, the work may not hold. Motivation, planning, recall, sequencing and follow-through are exactly where the person may already be struggling.
+        </div>
       </div>
 
       <div class="card">
-        <div class="card-title">It keeps humans in control</div>
-        <div class="card-body">OTOS surfaces signals. Partner teams review and decide. It does not diagnose, prescribe or automate clinical decisions.</div>
+        <div class="card-title">Waiting-list support becomes critical</div>
+        <div class="card-body">
+          This is where RCE-style courses, ADHD-informed content, micro check-ins and community support can help hold the person while the clinical pathway moves.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-light section-alt" id="solution">
+  <div class="section-inner">
+    <div class="chapter-header">
+      <span class="chapter-num">03</span>
+      <div class="section-label">What OTOS Is</div>
+    </div>
+
+    <h2 class="display-2">
+      There is no joined-up pathway.<br />
+      <span class="accent">So we are building the continuity layer.</span>
+    </h2>
+
+    <p class="lead">
+      OTOS Continuity™ creates a connecting layer that links care, support and recovery services around one person’s real journey — so handoffs become visible, follow-through is receipted, and disengagement can be spotted before it becomes crisis.
+    </p>
+
+    <p class="lead">
+      Services exist. Buildings exist. Staff exist. Pathways exist on paper. But the actual connection layer was never built. The thing that carries signal, continuity, context, momentum and accountability between points is missing.
+    </p>
+
+    <p class="lead">
+      The pre-pilot is designed to test whether a simple, receipted continuity thread can help a defined group of people reach the next meaningful step more reliably — without replacing services, merging records, or adding clinical decision-making burden.
+    </p>
+
+    <div class="def-box">
+      <div class="def-icon">
+        <img src="images/brain-icon.png" alt="" />
+      </div>
+      <div>
+        <h3>OTOS Continuity™ is a non-clinical continuity infrastructure layer.</h3>
+        <p>
+          It does not diagnose. It does not make treatment decisions. It does not replace clinical systems. It does not store clinical records. It strengthens the thread between services — logging handoffs, generating transition receipts, surfacing early drift signals, and maintaining a timestamped continuity trail. The partner teams make the decisions. Always.
+        </p>
+      </div>
+    </div>
+
+    <div class="grid-3">
+      <div class="card">
+        <div class="card-title">What we are doing</div>
+        <div class="card-body">
+          We are preparing a bounded 12-week pre-pilot with up to 50 people to test whether continuity infrastructure can reduce silent disengagement, missed handoffs, duplicated effort and repeated crisis.
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">What we need from partners</div>
+        <div class="card-body">
+          We need practical input now: help us pressure-test the route, confirm what would be realistic, identify the right people, and provide a short support note where appropriate.
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">Why your time matters</div>
+        <div class="card-body">
+          We know your time matters. We are asking for input now so the future system reduces burden later — helping services deliver better support with less drift, less duplication and clearer follow-through.
+        </div>
+      </div>
+    </div>
+
+    <div class="grid-2" style="margin-top:42px;">
+      <div class="card">
+        <div class="section-label" style="margin-bottom:18px;">What OTOS is</div>
+
+        <div class="check-list">
+          <div class="check-row">Non-clinical continuity infrastructure</div>
+          <div class="check-row">Logs touchpoints and handoffs</div>
+          <div class="check-row">Creates transition receipts</div>
+          <div class="check-row">Surfaces drift signals for human review</div>
+          <div class="check-row">Maintains a timestamped continuity trail</div>
+          <div class="check-row">Tokenised by default — no NHS number required by default</div>
+          <div class="check-row">Human-in-control at every step</div>
+          <div class="check-row">Audit trail you can defend</div>
+          <div class="check-row">A layer around existing services</div>
+          <div class="check-row">A way to see follow-through without merging records</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="section-label" style="margin-bottom:18px;">What OTOS is not</div>
+
+        <div class="check-list">
+          <div class="cross-row">Not an EPR or clinical record</div>
+          <div class="cross-row">Does not diagnose or prescribe</div>
+          <div class="cross-row">Does not replace any service</div>
+          <div class="cross-row">Does not require system integration to prove the model</div>
+          <div class="cross-row">Does not add clinical decision-making burden</div>
+          <div class="cross-row">Not a wearable or monitoring app</div>
+          <div class="cross-row">Not surveillance</div>
+          <div class="cross-row">Not another silo</div>
+          <div class="cross-row">Does not merge partner records</div>
+          <div class="cross-row">Does not automate clinical action</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-dark" id="continuity-layer">
+  <div class="section-inner">
+    <div class="chapter-header">
+      <span class="chapter-num">04</span>
+      <div class="section-label">The Continuity Layer</div>
+    </div>
+
+    <h2 class="display-2">
+      The Continuity Layer.<br />
+      <span class="accent">One thread through every service.</span>
+    </h2>
+
+    <p class="lead">
+      OTOS links care, support and recovery services around one person’s real journey — so nothing falls through the gaps simply because the next service, team or support route could not see what happened before.
+    </p>
+
+    <div class="flow-grid">
+      <div class="card card-dark">
+        <span class="card-stat">01</span>
+        <div class="card-title">Identify</div>
+        <div class="card-body">
+          Screen and identify people in addiction, recovery and crisis services who may show signs of unsupported ADHD or continuity risk, using an agreed pathway.
+        </div>
+      </div>
+
+      <div class="card card-dark">
+        <span class="card-stat">02</span>
+        <div class="card-title">Connect</div>
+        <div class="card-body">
+          Warm-transfer people to the appropriate next step — NHS, Right to Choose, ADHD assessment, GP, mental health, recovery or community support — with the handoff receipted.
+        </div>
+      </div>
+
+      <div class="card card-dark">
+        <span class="card-stat">03</span>
+        <div class="card-title">Coordinate</div>
+        <div class="card-body">
+          Maintain a continuity thread across services so each partner knows where the person is in their journey, reducing gaps, duplication and crisis.
+        </div>
+      </div>
+
+      <div class="card card-dark">
+        <span class="card-stat">04</span>
+        <div class="card-title">Sustain</div>
+        <div class="card-body">
+          Support ongoing recovery, re-engagement and appropriate follow-through — building evidence for a permanent joined-up model.
+        </div>
+      </div>
+    </div>
+
+    <div class="grid-4" style="margin-top:38px;">
+      <div class="card card-dark">
+        <div class="card-title">ADHD-first approach</div>
+        <div class="card-body">
+          Treating the underlying neurodevelopmental driver can reduce substance use, crisis behaviour and revolving-door presentations.
+        </div>
+      </div>
+
+      <div class="card card-dark">
+        <div class="card-title">Partner-connected delivery</div>
+        <div class="card-body">
+          OTOS does not replace existing services. It connects NHS, VCSE, community and private partners already working around the person.
+        </div>
+      </div>
+
+      <div class="card card-dark">
+        <div class="card-title">Data-led and measurable</div>
+        <div class="card-body">
+          Each pre-pilot journey is tracked through a continuity thread. Outcomes are measured, evidenced and ready for commissioner review.
+        </div>
+      </div>
+
+      <div class="card card-dark">
+        <div class="card-title">Redirecting existing spend</div>
+        <div class="card-body">
+          The model is designed to redirect money already being spent on reactive crisis care into earlier, joined-up intervention.
+        </div>
       </div>
     </div>
   </div>
@@ -878,44 +1137,81 @@
 <section class="section section-light section-alt" id="how-it-works">
   <div class="section-inner">
     <div class="chapter-header">
-      <span class="chapter-num">04</span>
-      <div class="section-label">How It Works</div>
+      <span class="chapter-num">05</span>
+      <div class="section-label">How OTOS Works</div>
     </div>
 
     <h2 class="display-2">
-      Five steps.<br />
-      <span class="accent">Clear enough for any partner to follow.</span>
+      One touchpoint becomes a thread.<br />
+      <span class="accent">One thread makes the journey visible.</span>
     </h2>
+
+    <p class="lead">
+      OTOS sits lightly around the services that already exist. When a person is seen at the bedside, in recovery, by a GP, by a support worker, or while waiting for ADHD care, that moment can be logged as a simple continuity touchpoint.
+    </p>
+
+    <p class="lead">
+      The person can remain tokenised. The records stay separate. OTOS does not expose clinical notes, merge systems, diagnose, prescribe, or decide care. It simply shows whether the next step happened, whether the handoff landed, and whether silence is becoming risk.
+    </p>
+
+    <p class="lead">
+      That gives each partner a clearer view of the part they already play — and gives the whole pathway a way to see follow-through before someone disappears from view.
+    </p>
 
     <div class="flow-grid">
       <div class="flow-card">
         <div class="flow-num">1</div>
-        <div class="card-title">A touchpoint happens</div>
-        <div class="card-body">A person is seen, referred, discharged, signposted, checked in, or handed over.</div>
+        <div class="card-title">A touchpoint is logged</div>
+        <div class="card-body">
+          At the bedside, in the hub, in recovery, in primary care or in community support, a worker records that contact happened. It takes seconds and does not create a new clinical record.
+        </div>
       </div>
 
       <div class="flow-card">
         <div class="flow-num">2</div>
-        <div class="card-title">The thread is held</div>
-        <div class="card-body">The touchpoint is logged against a tokenised continuity journey, not a new clinical record.</div>
+        <div class="card-title">The next step is named</div>
+        <div class="card-body">
+          The handoff, referral, support offer or follow-up is linked to the same tokenised journey. The system now knows what should happen next.
+        </div>
       </div>
 
       <div class="flow-card">
         <div class="flow-num">3</div>
-        <div class="card-title">The handoff is receipted</div>
-        <div class="card-body">The next step is acknowledged, unresolved, or waiting for review. Silence becomes visible.</div>
+        <div class="card-title">Follow-through is receipted</div>
+        <div class="card-body">
+          OTOS shows whether the next step was acknowledged, completed, unresolved or still waiting. It answers the question most systems cannot: did the handoff actually land?
+        </div>
       </div>
 
       <div class="flow-card">
         <div class="flow-num">4</div>
-        <div class="card-title">Drift is surfaced early</div>
-        <div class="card-body">Missed follow-through becomes a drift signal before it turns into crisis or relapse.</div>
+        <div class="card-title">Drift becomes visible</div>
+        <div class="card-body">
+          If the journey goes quiet, the signal is surfaced for human review. OTOS does not act clinically. It gives the right partner team a chance to decide what happens next.
+        </div>
+      </div>
+    </div>
+
+    <div class="grid-3" style="margin-top:36px;">
+      <div class="card">
+        <div class="card-title">For frontline staff</div>
+        <div class="card-body">
+          One tap to log a touchpoint. One glance to see whether the next step happened. No new clinical record, no EPR write-back, no extra paperwork by default.
+        </div>
       </div>
 
-      <div class="flow-card">
-        <div class="flow-num">5</div>
-        <div class="card-title">A human decides</div>
-        <div class="card-body">OTOS surfaces the signal. Partner teams decide what happens next. Every time.</div>
+      <div class="card">
+        <div class="card-title">For service partners</div>
+        <div class="card-body">
+          A clearer view of the journey across CGL, CRS, CPFT, RCE, Addenbrooke’s, GPs, RTC, QbTest, Mind, WorkWell and therapy support — without forcing everyone into one shared record.
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">For commissioners and funders</div>
+        <div class="card-body">
+          A measurable continuity trail: handoffs, receipts, drift signals, partner burden and outcome movement. Evidence that can be reviewed, challenged and improved.
+        </div>
       </div>
     </div>
   </div>
@@ -924,7 +1220,7 @@
 <section class="section section-light" id="pilot">
   <div class="section-inner">
     <div class="chapter-header">
-      <span class="chapter-num">05</span>
+      <span class="chapter-num">06</span>
       <div class="section-label">The Pre-Pilot</div>
     </div>
 
@@ -962,7 +1258,7 @@
 <section class="section section-light section-alt" id="partners">
   <div class="section-inner">
     <div class="chapter-header">
-      <span class="chapter-num">06</span>
+      <span class="chapter-num">07</span>
       <div class="section-label">Service Providers &amp; Key Partners</div>
     </div>
 
@@ -973,6 +1269,10 @@
 
     <p class="lead">
       The next step is not to overwhelm every partner with the whole system. It is to show each organisation exactly where it fits, what is needed now, and how a small amount of input can help unlock a safer, funded pathway.
+    </p>
+
+    <p class="lead">
+      We know your time matters. We are asking for input now so the future system reduces burden later. Each tailored partner page gives proper thought to the time, effort and expertise being asked of that organisation — and how that input can help reduce avoidable drift, repeated crisis, duplicated work and missed follow-through.
     </p>
 
     <div class="pathway-box">
@@ -1043,7 +1343,7 @@
 <section class="section section-light" id="community-layer">
   <div class="section-inner">
     <div class="chapter-header">
-      <span class="chapter-num">07</span>
+      <span class="chapter-num">08</span>
       <div class="section-label">Why This Matters Beyond One Service</div>
     </div>
 
@@ -1078,7 +1378,7 @@
 <section class="section section-light section-alt" id="proof">
   <div class="section-inner">
     <div class="chapter-header">
-      <span class="chapter-num">08</span>
+      <span class="chapter-num">09</span>
       <div class="section-label">Evidence, Costs &amp; Next Step</div>
     </div>
 
