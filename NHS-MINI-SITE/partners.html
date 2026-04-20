@@ -23,6 +23,7 @@
       --amber:#e87700;
       --amber2:#ff9d1b;
       --green:#42d77d;
+      --red:#fb7185;
       --border:rgba(255,255,255,.12);
       --borderDark:rgba(31,41,55,.13);
       --max:1180px;
@@ -30,6 +31,7 @@
     }
 
     * { box-sizing:border-box; }
+
     html { scroll-behavior:smooth; }
 
     body {
@@ -76,6 +78,7 @@
 
     .nav-logo img {
       height:38px;
+      width:auto;
       background:#fff;
       border-radius:8px;
       padding:5px;
@@ -155,7 +158,7 @@
       font-size:clamp(1.05rem,1.55vw,1.28rem);
       line-height:1.72;
       color:var(--muted);
-      max-width:920px;
+      max-width:940px;
     }
 
     .section { padding:90px 24px; }
@@ -205,7 +208,9 @@
     .section-light .lead,
     .section-light p { color:var(--body); }
 
-    .grid-2,.grid-3,.grid-4 {
+    .grid-2,
+    .grid-3,
+    .grid-4 {
       display:grid;
       gap:18px;
       margin-top:32px;
@@ -395,6 +400,8 @@
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="pilot-cohort.html">Cohort</a></li>
+      <li><a href="#shared-model">Shared Model</a></li>
+      <li><a href="#cohort-ask">Cohort Ask</a></li>
       <li><a href="#routes">Routes</a></li>
       <li><a href="evidence-sources.html">Evidence</a></li>
       <li><a href="#support" class="nav-cta">Support</a></li>
@@ -442,20 +449,30 @@
       OTOS is not proposing a new clinical service. It is a layer that sits around the services that already exist — making the pathway between them visible and accountable.
     </p>
 
+    <p class="lead">
+      The first demonstrator is deliberately tactical: a surgical intervention into a costly, stuck cohort where unresolved ADHD may be keeping addiction, relapse, disengagement and crisis alive.
+    </p>
+
     <div class="grid-3">
       <div class="card">
         <div class="card-title">One person</div>
-        <div class="card-body">The person may be touching addiction, ADHD, hospital, GP, charity, recovery, employment and therapy support at different points.</div>
+        <div class="card-body">
+          The person may be touching addiction, ADHD, hospital, GP, charity, recovery, employment and therapy support at different points.
+        </div>
       </div>
 
       <div class="card">
         <div class="card-title">One continuity thread</div>
-        <div class="card-body">OTOS holds the continuity signal across those touchpoints without requiring merged records or shared clinical notes.</div>
+        <div class="card-body">
+          OTOS holds the continuity signal across those touchpoints without requiring merged records or shared clinical notes.
+        </div>
       </div>
 
       <div class="card">
         <div class="card-title">One human-review model</div>
-        <div class="card-body">OTOS surfaces signals. Partner teams make the decisions. Clinical responsibility stays with the relevant service.</div>
+        <div class="card-body">
+          OTOS surfaces signals. Partner teams make the decisions. Clinical responsibility stays with the relevant service.
+        </div>
       </div>
     </div>
 
@@ -535,16 +552,20 @@
     </div>
 
     <h2 class="display-2">
-      The cohort is not selected by OTOS alone.<br />
-      <span class="accent">It must be shaped with partners.</span>
+      A surgical intervention first.<br />
+      <span class="accent">A frontline entry point later.</span>
     </h2>
 
     <p class="lead">
-      The first step is a short joint scoping conversation with the relevant services — likely including CGL / CRS and the CPFT ADHD Team — to agree what a safe, practical, high-value pre-pilot cohort would look like.
+      The first demonstrator is deliberately tactical. We are not trying to redesign the whole system at once. We are asking partners to help identify a costly, stuck cohort already cycling through addiction, crisis, hospital, recovery or mental-health touchpoints where unresolved ADHD may be keeping the pattern alive.
     </p>
 
     <p class="lead">
-      The purpose is not to create new clinical responsibility or ask one service to take ownership of another service’s pathway. The purpose is to identify a small group of people already touching the system, where improved continuity could be tested safely and meaningfully.
+      The cohort is not selected by OTOS alone. It should be agreed through a short joint scoping conversation between the services closest to the risk — initially CGL / CRS and the CPFT ADHD Team, with other partners added where the route requires them.
+    </p>
+
+    <p class="lead">
+      The aim is to move people faster toward the ADHD-related step that may unlock the rest of the pathway: assessment, diagnosis, medication review, titration, treatment access, shared care or holding support while waiting.
     </p>
 
     <div class="grid-2">
@@ -564,7 +585,15 @@
     </div>
 
     <div class="quote-strip">
-      <p>We are not asking partners to solve the whole pathway in one meeting. We are asking them to help define the safest first cohort, the practical boundaries, and the human-review process for a bounded 50-person demonstrator.</p>
+      <p>
+        We are not asking partners to solve the whole pathway in one meeting. We are asking them to help define the safest first cohort, the practical boundaries, and the human-review process for a bounded demonstrator.
+      </p>
+    </div>
+
+    <div class="quote-strip">
+      <p>
+        OTOS does not press the RTC, QbTest, diagnostic or medication button. OTOS makes the need, handoff and follow-through visible. The authorised clinical or service partner presses the button under agreed governance.
+      </p>
     </div>
 
     <div class="btn-row">
@@ -589,25 +618,37 @@
       We are not asking partners to host, fund, procure or change clinical practice at this stage. We are asking for practical input, a named contact, and honest feedback on what would work safely.
     </p>
 
+    <p class="lead">
+      This is a test. We are asking partners to carve out a little time for each other now, so the future system can reduce burden later.
+    </p>
+
     <div class="grid-3">
       <div class="card">
         <div class="card-title">Named contact</div>
-        <div class="card-body">One named contact per participating organisation. Answers quick workflow questions, confirms local red lines and helps route the right people into the conversation.</div>
+        <div class="card-body">
+          One named contact per participating organisation. Answers quick workflow questions, confirms local red lines and helps route the right people into the conversation.
+        </div>
       </div>
 
       <div class="card">
         <div class="card-title">Human reviewer</div>
-        <div class="card-body">Reviews drift or escalation items if surfaced in the pilot, records a decision, and closes the item. Burden is measured and treated as a success criterion.</div>
+        <div class="card-body">
+          Reviews drift or escalation items if surfaced in the pilot, records a decision, and closes the item. Burden is measured and treated as a success criterion.
+        </div>
       </div>
 
       <div class="card">
         <div class="card-title">Support note</div>
-        <div class="card-body">Where appropriate, a short non-committal written note of support or willingness to continue scoping the route.</div>
+        <div class="card-body">
+          Where appropriate, a short non-committal written note of support or willingness to continue scoping the route.
+        </div>
       </div>
     </div>
 
     <div class="quote-strip">
-      <p>If this fits the gap your service already sees, the immediate ask is simple: help us pressure-test the route, confirm what would be practical, and provide a short note of support where appropriate.</p>
+      <p>
+        If this fits the gap your service already sees, the immediate ask is simple: help us pressure-test the route, confirm what would be practical, and provide a short note of support where appropriate.
+      </p>
     </div>
   </div>
 </section>
@@ -632,42 +673,54 @@
       <a href="partners-cgl-crs.html" class="card route-card">
         <div class="route-kicker">Partner Route</div>
         <div class="card-title">CGL &amp; CRS</div>
-        <div class="card-body route-copy">Addiction, recovery, relapse risk, re-engagement, cohort identification and continuity between services.</div>
+        <div class="card-body route-copy">
+          Addiction, recovery, relapse risk, re-engagement, cohort identification and continuity between services.
+        </div>
         <div class="route-link">Open page →</div>
       </a>
 
       <a href="partners-cpft-adhd-team.html" class="card route-card">
         <div class="route-kicker">Partner Route</div>
         <div class="card-title">CPFT ADHD Team</div>
-        <div class="card-body route-copy">ADHD pathway pressure, waiting-list support, medication-review gaps and appropriate clinical boundaries.</div>
+        <div class="card-body route-copy">
+          ADHD pathway pressure, waiting-list support, medication-review gaps and appropriate clinical boundaries.
+        </div>
         <div class="route-link">Open page →</div>
       </a>
 
       <a href="partners-rce-wellbeing.html" class="card route-card">
         <div class="route-kicker">Partner Route</div>
         <div class="card-title">RCE Wellbeing Hub</div>
-        <div class="card-body route-copy">Courses, holding support, ADHD-informed micro-content and waiting-list support.</div>
+        <div class="card-body route-copy">
+          Courses, holding support, ADHD-informed micro-content and waiting-list support.
+        </div>
         <div class="route-link">Open page →</div>
       </a>
 
       <a href="partners-addenbrookes.html" class="card route-card">
         <div class="route-kicker">Partner Route</div>
         <div class="card-title">Addenbrooke’s / Alcohol Care Team</div>
-        <div class="card-body route-copy">Bedside handoff, discharge risk, liaison psychiatry, post-detox continuity and hospital-to-community follow-through.</div>
+        <div class="card-body route-copy">
+          Bedside handoff, discharge risk, liaison psychiatry, post-detox continuity and hospital-to-community follow-through.
+        </div>
         <div class="route-link">Open page →</div>
       </a>
 
       <a href="partners-gp-rtc-qbtech.html" class="card route-card">
         <div class="route-kicker">Partner Route</div>
         <div class="card-title">GP / RTC / QbTech / Shared Care</div>
-        <div class="card-body route-copy">The hardest route: assessment, Right to Choose, QbTest, GP ownership and shared-care realities.</div>
+        <div class="card-body route-copy">
+          The hardest route: assessment, Right to Choose, QbTest, GP ownership and shared-care realities.
+        </div>
         <div class="route-link">Open page →</div>
       </a>
 
       <a href="partners-mind-workwell-jo-fenton.html" class="card route-card">
         <div class="route-kicker">Partner Route</div>
         <div class="card-title">Mind, WorkWell &amp; Jo Fenton Therapy</div>
-        <div class="card-body route-copy">The wider support ecosystem: charity, employment, therapy and community help while statutory care moves.</div>
+        <div class="card-body route-copy">
+          The wider support ecosystem: charity, employment, therapy and community help while statutory care moves.
+        </div>
         <div class="route-link">Open page →</div>
       </a>
     </div>
@@ -688,6 +741,10 @@
 
     <p class="lead">
       We need practical feedback, introductions, pathway reality-checks, and where appropriate, a short note of support confirming that this is a gap worth exploring.
+    </p>
+
+    <p class="lead">
+      This is a tactical test first. If it works, the same model can later become a frontline entry point for the services repeatedly seeing people before the system has properly joined the dots.
     </p>
 
     <div class="btn-row">
