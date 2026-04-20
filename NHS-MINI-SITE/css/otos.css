@@ -529,3 +529,187 @@ a {
     grid-template-columns: 1fr;
   }
 }
+
+/* ============================================================
+   Premium light-section pass — Marker 8
+   Makes cream/white sections feel intentional, raised and part of
+   the same visual system as the dark protected hub.
+   ============================================================ */
+
+.otos-section-light {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 8% 12%, rgba(232,111,19,.095), transparent 30%),
+    radial-gradient(circle at 92% 20%, rgba(255,255,255,.9), transparent 28%),
+    linear-gradient(135deg, rgba(255,255,255,.64), rgba(232,224,211,.72)),
+    var(--otos-cream);
+}
+
+.otos-section-light::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background-image:
+    linear-gradient(rgba(33,28,24,.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(33,28,24,.035) 1px, transparent 1px);
+  background-size: 54px 54px;
+  mask-image: linear-gradient(to bottom, rgba(0,0,0,.72), rgba(0,0,0,.18));
+  pointer-events: none;
+}
+
+.otos-section-light::after {
+  content: "";
+  position: absolute;
+  right: clamp(-150px, -8vw, -70px);
+  top: clamp(42px, 8vw, 110px);
+  width: clamp(260px, 38vw, 520px);
+  aspect-ratio: 1.45 / 1;
+  z-index: -1;
+  background-image: url("../images/brain-icon.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  opacity: .055;
+  filter: saturate(.55) contrast(.85);
+  transform: rotate(-7deg);
+  pointer-events: none;
+}
+
+.otos-section-light .otos-wrap {
+  position: relative;
+  z-index: 1;
+}
+
+.otos-section-light .otos-kicker {
+  background: rgba(255,255,255,.46);
+  border-color: rgba(232,111,19,.34);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.78),
+    0 12px 32px rgba(69,45,24,.06);
+}
+
+.otos-section-light .otos-card,
+.otos-section-light .otos-visual-card {
+  position: relative;
+  overflow: hidden;
+  background:
+    linear-gradient(145deg, rgba(255,255,255,.74), rgba(255,255,255,.42));
+  border: 1px solid rgba(255,255,255,.76);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.92),
+    0 22px 60px rgba(45,33,23,.105),
+    0 1px 0 rgba(33,28,24,.06);
+  backdrop-filter: blur(18px) saturate(1.08);
+  -webkit-backdrop-filter: blur(18px) saturate(1.08);
+}
+
+.otos-section-light .otos-card::before,
+.otos-section-light .otos-visual-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  background:
+    radial-gradient(circle at 0% 0%, rgba(232,111,19,.11), transparent 36%),
+    linear-gradient(135deg, rgba(255,255,255,.38), transparent 40%);
+  opacity: .72;
+}
+
+.otos-section-light .otos-card > *,
+.otos-section-light .otos-visual-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.otos-section-light .otos-card-link:hover {
+  border-color: rgba(232,111,19,.44);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.96),
+    0 26px 72px rgba(92,52,18,.14),
+    0 0 0 1px rgba(232,111,19,.08);
+}
+
+.otos-section-light .otos-flow {
+  position: relative;
+  overflow: hidden;
+  padding: 14px 24px;
+  border-radius: 30px;
+  background: rgba(255,255,255,.38);
+  border: 1px solid rgba(255,255,255,.62);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.75),
+    0 22px 58px rgba(45,33,23,.08);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.otos-section-light .otos-flow::after {
+  content: "";
+  position: absolute;
+  right: -72px;
+  bottom: -84px;
+  width: 240px;
+  aspect-ratio: 1.45 / 1;
+  background-image: url("../images/brain-icon.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: .045;
+  transform: rotate(9deg);
+  pointer-events: none;
+}
+
+.otos-section-light .otos-flow-row {
+  position: relative;
+  z-index: 1;
+  border-bottom-color: rgba(33,28,24,.11);
+}
+
+.otos-section-light .otos-flow-row:last-child {
+  border-bottom: 0;
+}
+
+.otos-section-light .otos-flow-num {
+  background: rgba(255,255,255,.58);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.82),
+    0 10px 28px rgba(232,111,19,.10);
+}
+
+.otos-section-light .otos-quote {
+  background:
+    linear-gradient(135deg, rgba(255,255,255,.72), rgba(232,111,19,.075));
+  border: 1px solid rgba(255,255,255,.68);
+  border-left: 4px solid var(--otos-orange);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.82),
+    0 18px 50px rgba(45,33,23,.08);
+}
+
+.otos-section-light .otos-rule {
+  border-top: 1px solid rgba(33,28,24,.12);
+  box-shadow: 0 1px 0 rgba(255,255,255,.55);
+}
+
+.otos-section-light .otos-pill {
+  background: rgba(255,255,255,.54);
+  border-color: rgba(232,111,19,.28);
+  color: #b84d08;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.76);
+}
+
+@media (max-width: 980px) {
+  .otos-section-light::after {
+    right: -140px;
+    top: 44px;
+    opacity: .04;
+  }
+
+  .otos-section-light .otos-flow {
+    padding: 8px 18px;
+    border-radius: 24px;
+  }
+}
