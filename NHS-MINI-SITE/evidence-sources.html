@@ -1,1 +1,1525 @@
-<!DOCTYPE html><html lang="en-GB"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>OTOS Continuity™ — Evidence, Sources &amp; References</title><meta name="description" content="OTOS Continuity protected hub"/><meta name="robots" content="noindex, nofollow"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet"/><link rel="stylesheet" href="css/otos-hub.css"/></head><body><script>(function(){if(sessionStorage.getItem('otos_access')!=='1'){window.location.replace('public.html')}})();</script><nav class="site-nav"><div class="nav-inner"><a href="index.html" class="nav-logo"><img src="images/brain-icon.png" alt="OTOS Continuity" onerror="this.style.display='none'"/><span>OTOS Continuity™</span></a><button class="nav-toggle" data-nav-toggle aria-expanded="false">Menu</button><ul class="nav-links" data-nav-links><li><a href="index.html#problem">Problem</a></li><li><a href="index.html#solution">Solution</a></li><li><a href="index.html#pilot">Pilot</a></li><li><a href="index.html#partners">Partners</a></li><li><a href="local-authority-public-health.html">Local Authority</a></li><li><a href="funding-costs.html">Funding</a></li><li><a href="evidence-sources.html">Evidence</a></li><li><a href="index.html#get-involved" class="nav-cta">Get Involved</a></li></ul></div></nav><section class="page-hero"><div class="page-hero-inner"><div class="reveal"><div class="badge">Evidence Route</div><h1 class="display-1">Evidence, Sources & References</h1><p class="lead">A defensive claims register separating published sources, local figures, OTOS modelling estimates and placeholders requiring validation.</p></div><div class="panel reveal"><div class="dash-header"><span>Page status</span><span class="dash-live">draft</span></div><div class="dash-body"><div class="alert-box"><div class="alert-title">Important</div><p style="margin:0;color:rgba(247,239,228,.75)">Use this page as a structured baseline. Replace placeholders with final source material before external circulation.</p></div></div></div></div></section><section class="section section-light"><div class="section-inner reveal"><div class="chapter-header"><span class="chapter-num">01</span><div class="section-label">Core content</div></div><div class="grid-3"><div class="card"><div class="card-title">Purpose</div><div class="card-body">Explain the route clearly without overclaiming.</div></div><div class="card"><div class="card-title">What to add next</div><div class="card-body">Insert the best approved sections from the Content Master and master docs.</div></div><div class="card"><div class="card-title">Validation</div><div class="card-body">Any figures or claims must be labelled and source-checked.</div></div></div></div></section><footer class="footer"><div class="footer-inner"><div><strong>OTOS Continuity™</strong><p>Non-clinical continuity infrastructure for targeted pathways where people are visible to services but not properly held between them.</p></div><div>© OTOS Digital Ltd · Company No. 17084455<br/>Phone: +44 7466 334143 · Email: <a href="mailto:info@otos.life">info@otos.life</a></div></div></footer><script src="js/otos-hub.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OTOS Continuity™ — Evidence, Sources & Claims Register</title>
+  <meta name="robots" content="noindex, nofollow" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg: #070b12;
+      --panel: #111722;
+      --panel-2: #151c28;
+      --cream: #f5efe5;
+      --cream-2: #efe4d2;
+      --text: #f7efe4;
+      --muted: rgba(247,239,228,0.68);
+      --muted-2: rgba(247,239,228,0.48);
+      --text-dark: #1e232b;
+      --muted-dark: #5d6470;
+      --amber: #e87700;
+      --amber-2: #ff9d1b;
+      --green: #4ade80;
+      --blue: #93c5fd;
+      --red: #fb7185;
+      --teal: #2dd4bf;
+      --border: rgba(255,255,255,0.11);
+      --border-dark: rgba(31,41,55,0.12);
+      --shadow: 0 28px 80px rgba(0,0,0,0.28);
+      --max: 1120px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px),
+        radial-gradient(circle at 72% 14%, rgba(232,119,0,0.14), transparent 34%),
+        #070b12;
+      background-size: 54px 54px, 54px 54px, auto, auto;
+    }
+
+    a { color: inherit; }
+
+    .site-nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(18px);
+      background: rgba(7,11,18,0.82);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 16px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      font-weight: 900;
+      letter-spacing: -0.02em;
+    }
+
+    .nav-logo img {
+      height: 38px;
+      width: auto;
+      border-radius: 8px;
+      background: white;
+      padding: 5px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      font-size: 0.84rem;
+      font-weight: 750;
+    }
+
+    .nav-links a {
+      color: rgba(247,239,228,0.75);
+      text-decoration: none;
+    }
+
+    .nav-links a:hover { color: white; }
+
+    .nav-cta {
+      padding: 10px 18px;
+      border-radius: 999px;
+      background: var(--amber);
+      color: white !important;
+      box-shadow: 0 12px 30px rgba(232,119,0,0.25);
+    }
+
+    .hero {
+      padding: 112px 24px 78px;
+    }
+
+    .hero-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+    }
+
+    .crumb {
+      font-size: 0.76rem;
+      color: var(--muted-2);
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+
+    .badge {
+      display: inline-flex;
+      width: fit-content;
+      padding: 8px 13px;
+      border-radius: 999px;
+      color: #ffb55f;
+      background: rgba(232,119,0,0.12);
+      border: 1px solid rgba(232,119,0,0.28);
+      font-size: 0.76rem;
+      font-weight: 850;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+
+    h1, h2, h3, p { margin-top: 0; }
+
+    .display-1 {
+      font-size: clamp(3.1rem, 7.3vw, 6.6rem);
+      line-height: 0.92;
+      letter-spacing: -0.075em;
+      margin-bottom: 28px;
+      font-weight: 950;
+      max-width: 980px;
+    }
+
+    .display-2 {
+      font-size: clamp(2.1rem, 4.7vw, 4.5rem);
+      line-height: 0.98;
+      letter-spacing: -0.06em;
+      margin-bottom: 24px;
+      font-weight: 930;
+    }
+
+    .accent { color: var(--amber); }
+
+    .lead {
+      font-size: clamp(1.05rem, 1.55vw, 1.28rem);
+      line-height: 1.72;
+      color: var(--muted);
+      max-width: 930px;
+    }
+
+    .hero-panel {
+      margin-top: 34px;
+      border: 1px solid rgba(232,119,0,0.22);
+      background: linear-gradient(180deg, rgba(255,255,255,0.075), rgba(255,255,255,0.035));
+      border-radius: 30px;
+      padding: 30px;
+      box-shadow: var(--shadow);
+      max-width: 1000px;
+    }
+
+    .hero-panel strong { color: white; }
+
+    .section {
+      padding: 84px 24px;
+    }
+
+    .section-dark {
+      background: #070b12;
+      color: var(--text);
+    }
+
+    .section-light {
+      background: var(--cream);
+      color: var(--text-dark);
+    }
+
+    .section-alt {
+      background: var(--cream-2);
+    }
+
+    .section-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+    }
+
+    .chapter-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 24px;
+    }
+
+    .chapter-num {
+      font-family: "JetBrains Mono", monospace;
+      font-weight: 900;
+      color: var(--amber);
+      border: 1px solid rgba(232,119,0,0.3);
+      border-radius: 999px;
+      padding: 7px 10px;
+      font-size: 0.8rem;
+    }
+
+    .section-label {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-weight: 950;
+      color: var(--amber);
+    }
+
+    .section-light .lead,
+    .section-light p {
+      color: var(--muted-dark);
+    }
+
+    .grid-2,
+    .grid-3,
+    .grid-4 {
+      display: grid;
+      gap: 18px;
+      margin-top: 32px;
+    }
+
+    .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .grid-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+
+    .card {
+      padding: 24px;
+      border-radius: 24px;
+      background: white;
+      border: 1px solid var(--border-dark);
+      box-shadow: 0 16px 42px rgba(31,41,55,0.055);
+    }
+
+    .card-dark {
+      background: rgba(255,255,255,0.045);
+      border: 1px solid var(--border);
+      color: var(--text);
+      box-shadow: none;
+    }
+
+    .card-title {
+      color: var(--text-dark);
+      font-weight: 900;
+      font-size: 1.05rem;
+      margin-bottom: 10px;
+    }
+
+    .card-dark .card-title { color: var(--text); }
+
+    .card-body {
+      color: var(--muted-dark);
+      font-size: 0.94rem;
+      line-height: 1.6;
+    }
+
+    .card-dark .card-body { color: var(--muted); }
+
+    .source-card {
+      padding: 26px;
+      border-radius: 24px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--border);
+    }
+
+    .source-card h3 {
+      margin-bottom: 8px;
+      font-size: 1.12rem;
+      letter-spacing: -0.02em;
+    }
+
+    .source-card p {
+      color: var(--muted);
+      line-height: 1.62;
+      font-size: 0.95rem;
+    }
+
+    .source-meta {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin: 14px 0 16px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      width: fit-content;
+      padding: 6px 9px;
+      border-radius: 999px;
+      font-family: "JetBrains Mono", monospace;
+      font-size: 0.68rem;
+      font-weight: 900;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      background: rgba(232,119,0,0.14);
+      border: 1px solid rgba(232,119,0,0.24);
+      color: #ffb55f;
+    }
+
+    .pill.green {
+      background: rgba(34,197,94,0.12);
+      border-color: rgba(34,197,94,0.24);
+      color: #86efac;
+    }
+
+    .pill.blue {
+      background: rgba(59,130,246,0.12);
+      border-color: rgba(59,130,246,0.25);
+      color: #93c5fd;
+    }
+
+    .pill.red {
+      background: rgba(244,63,94,0.12);
+      border-color: rgba(244,63,94,0.25);
+      color: #fda4af;
+    }
+
+    .pill.teal {
+      background: rgba(45,212,191,0.11);
+      border-color: rgba(45,212,191,0.24);
+      color: #5eead4;
+    }
+
+    .source-link {
+      display: inline-flex;
+      margin-top: 10px;
+      color: var(--amber-2);
+      text-decoration: none;
+      font-weight: 850;
+      font-size: 0.9rem;
+    }
+
+    .source-link:hover { text-decoration: underline; }
+
+    .evidence-table-wrap {
+      overflow-x: auto;
+      border-radius: 24px;
+      border: 1px solid rgba(255,255,255,0.1);
+      margin-top: 30px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 860px;
+      background: rgba(255,255,255,0.035);
+    }
+
+    th, td {
+      text-align: left;
+      vertical-align: top;
+      padding: 16px;
+      border-bottom: 1px solid rgba(255,255,255,0.09);
+      font-size: 0.9rem;
+      line-height: 1.55;
+      color: var(--muted);
+    }
+
+    th {
+      color: rgba(247,239,228,0.88);
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-weight: 950;
+      background: rgba(255,255,255,0.045);
+    }
+
+    td strong {
+      color: var(--text);
+    }
+
+    td a {
+      color: var(--amber-2);
+      text-decoration: none;
+      font-weight: 750;
+    }
+
+    td a:hover { text-decoration: underline; }
+
+    .quote-block {
+      margin-top: 34px;
+      padding: 28px;
+      border-radius: 26px;
+      background: rgba(232,119,0,0.08);
+      border: 1px solid rgba(232,119,0,0.22);
+    }
+
+    .quote-block p {
+      color: var(--text);
+      font-size: 1.08rem;
+      line-height: 1.72;
+      font-weight: 700;
+    }
+
+    .quote-block .small {
+      color: var(--muted-2);
+      font-size: 0.86rem;
+      font-weight: 600;
+      margin-bottom: 0;
+    }
+
+    .section-light .quote-block {
+      background: rgba(232,119,0,0.08);
+      border-color: rgba(232,119,0,0.18);
+    }
+
+    .section-light .quote-block p {
+      color: var(--text-dark);
+    }
+
+    .warning-box {
+      margin-top: 30px;
+      padding: 24px;
+      border-radius: 24px;
+      background: rgba(244,63,94,0.08);
+      border: 1px solid rgba(244,63,94,0.22);
+    }
+
+    .warning-box h3 {
+      color: #fecdd3;
+      margin-bottom: 10px;
+    }
+
+    .warning-box p,
+    .warning-box li {
+      color: rgba(247,239,228,0.72);
+      line-height: 1.65;
+    }
+
+    .check-list {
+      display: grid;
+      gap: 11px;
+      margin-top: 16px;
+    }
+
+    .check-row {
+      display: grid;
+      grid-template-columns: 24px 1fr;
+      gap: 10px;
+      align-items: start;
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.45;
+    }
+
+    .check-row::before {
+      content: "✓";
+      width: 18px;
+      height: 18px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(34,197,94,0.14);
+      color: #86efac;
+      font-size: 0.78rem;
+      font-weight: 900;
+    }
+
+    .cta {
+      text-align: center;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .cta h2 {
+      font-size: clamp(2.5rem, 6vw, 5.4rem);
+      line-height: 0.95;
+      letter-spacing: -0.07em;
+      margin-bottom: 24px;
+    }
+
+    .cta p {
+      color: var(--muted);
+      font-size: 1.1rem;
+      line-height: 1.7;
+      max-width: 760px;
+      margin: 0 auto 28px;
+    }
+
+    .btn-row {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 30px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 50px;
+      padding: 0 22px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 850;
+      font-size: 0.92rem;
+      border: 1px solid var(--border);
+    }
+
+    .btn-primary {
+      background: var(--amber);
+      border-color: transparent;
+      color: white;
+      box-shadow: 0 16px 34px rgba(232,119,0,0.24);
+    }
+
+    .btn-secondary {
+      background: rgba(255,255,255,0.04);
+      color: var(--text);
+    }
+
+    .footer {
+      border-top: 1px solid var(--border);
+      padding: 34px 24px;
+      background: #070b12;
+      color: rgba(247,239,228,0.62);
+      font-size: 0.85rem;
+    }
+
+    .footer-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .footer a { color: var(--amber-2); }
+
+    @media (max-width: 960px) {
+      .grid-2, .grid-3, .grid-4 {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-links { display: none; }
+
+      .display-1 {
+        font-size: 3.3rem;
+      }
+
+      .section {
+        padding: 70px 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="images/brain-icon.png" alt="OTOS Continuity" />
+      <span>OTOS Continuity™</span>
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#policy">Policy</a></li>
+      <li><a href="#adhd-addiction">ADHD + Addiction</a></li>
+      <li><a href="#continuity">Continuity</a></li>
+      <li><a href="#costs">Costs</a></li>
+      <li><a href="#claims">Claims Register</a></li>
+      <li><a href="mailto:info@otos.life" class="nav-cta">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="crumb">OTOS Continuity™ · Evidence & Sources</div>
+    <div class="badge">Evidence, Sources &amp; Claims Register</div>
+
+    <h1 class="display-1">
+      Not ahead of the evidence.<br />
+      <span class="accent">Precisely within it.</span>
+    </h1>
+
+    <p class="lead">
+      This page holds the evidence base, policy anchors, source links, caveats and claim discipline behind the OTOS Continuity™ hub.
+    </p>
+
+    <div class="hero-panel">
+      <p class="lead" style="margin-bottom:0;">
+        <strong>Every claim is sourced. Every figure is labelled. Every modelling estimate is caveated.</strong>
+        OTOS does not make clinical claims. The site separates published evidence, local source material, OTOS modelling estimates and placeholders requiring validation.
+      </p>
+    </div>
+  </div>
+</header>
+
+<section class="section section-dark" id="discipline">
+  <div class="section-inner">
+    <div class="chapter-header">
+      <span class="chapter-num">01</span>
+      <div class="section-label">Claims Discipline</div>
+    </div>
+
+    <h2 class="display-2">
+      The rule is simple.<br />
+      <span class="accent">Label everything.</span>
+    </h2>
+
+    <div class="grid-4">
+      <div class="card card-dark">
+        <div class="card-title">Published source</div>
+        <div class="card-body">
+          Official guidance, peer-reviewed research, government publication, NICE guidance, NHS publication, or recognised institutional source.
+        </div>
+      </div>
+
+      <div class="card card-dark">
+        <div class="card-title">Local source</div>
+        <div class="card-body">
+          CPFT, local authority, CGL, CRS, partner or local service data supplied or validated by the relevant organisation.
+        </div>
+      </div>
+
+      <div class="card card-dark">
+        <div class="card-title">OTOS modelling estimate</div>
+        <div class="card-body">
+          Planning estimate produced by OTOS using published assumptions or local proxy data. Not presented as reported NHS data.
+        </div>
+      </div>
+
+      <div class="card card-dark">
+        <div class="card-title">TBC / validate</div>
+        <div class="card-body">
+          Useful claim, quote, image, figure or interpretation that must be sourced or confirmed before being used as a live claim.
+        </div>
+      </div>
+    </div>
+
+    <div class="quote-block">
+      <p>
+        OTOS surfaces signals. The partner team makes the decision.
+      </p>
+      <p class="small">
+        Standing governance line: OTOS is non-clinical infrastructure. It does not diagnose, prescribe, replace clinical judgement, merge records or make autonomous clinical decisions.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="section section-light" id="proposition">
+  <div class="section-inner">
+    <div class="chapter-header">
+      <span class="chapter-num">02</span>
+      <div class="section-label">The Core Proposition Being Evidenced</div>
+    </div>
+
+    <h2 class="display-2">
+      The system often sees addiction first.<br />
+      <span class="accent">But ADHD may be the driver.</span>
+    </h2>
+
+    <p class="lead">
+      The system usually treats addiction as the primary condition. For some people, that is right. For a significant and identifiable group of adults, it is not. <strong>The primary condition is ADHD. The drinking or drug use is what arrives in view.</strong>
+    </p>
+
+    <p class="lead">
+      That matters because self-medication can work — until it does not. Alcohol or substances can briefly do what an untreated ADHD brain has been trying to do all along: supply motivation, sustain attention, create focus, cut the noise. The trouble starts when that coping strategy turns into dependency and crisis.
+    </p>
+
+    <p class="lead">
+      At that point, services quite reasonably respond to the addiction. But if the ADHD remains untouched, the work may not hold.
+    </p>
+
+    <div class="warning-box" style="background:rgba(232,119,0,0.08);border-color:rgba(232,119,0,0.22);">
+      <h3 style="color:#9a4b00;">TBC claim to evidence carefully</h3>
+      <p style="color:#5d6470;">
+        “CBT is delivered to a brain that cannot sequence or retain it. Motivation strategies meet an executive function that was never the problem.”
+        This is strong wording but should be backed by a specific ADHD/executive-function/CBT adherence source before being used as a formal evidence claim.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="section section-dark" id="policy">
+  <div class="section-inner">
+    <div class="chapter-header">
+      <span class="chapter-num">03</span>
+      <div class="section-label">Core Policy and Guidance</div>
+    </div>
+
+    <h2 class="display-2">
+      Current policy already points here.<br />
+      <span class="accent">Hospital to Community. Analogue to Digital. Sickness to Prevention.</span>
+    </h2>
+
+    <p class="lead">
+      OTOS Continuity™ is designed to operate inside current policy direction: joined-up working, integrated care, better data, visible pathways, community-based support, and prevention before crisis.
+    </p>
+
+    <div class="grid-2">
+      <article class="source-card">
+        <h3>NHS England — Independent ADHD Taskforce</h3>
+        <p>
+          Core anchor for ADHD as a national public-health and system priority. Part 1 and Part 2 frame unsupported ADHD as linked to education failure, unemployment, crime, substance misuse, suicide, mental and physical illness, with avoidable economic cost.
+        </p>
+        <div class="source-meta">
+          <span class="pill green">Published source</span>
+          <span class="pill blue">Policy</span>
+          <span class="pill">ADHD</span>
+        </div>
+        <a class="source-link" href="https://www.england.nhs.uk/publication/report-of-the-independent-adhd-taskforce/" target="_blank" rel="noopener">Open NHS ADHD Taskforce report →</a>
+      </article>
+
+      <article class="source-card">
+        <h3>DHSC / NHS England — Co-occurring mental health and substance use delivery framework</h3>
+        <p>
+          Core anchor for integrated work across drug, alcohol and mental health services. Useful for the “shared responsibility, clearer pathways, better continuity” case.
+        </p>
+        <div class="source-meta">
+          <span class="pill green">Published source</span>
+          <span class="pill blue">Policy</span>
+          <span class="pill">Co-occurring need</span>
+        </div>
+        <a class="source-link" href="https://www.gov.uk/government/publications/co-occurring-mental-health-and-substance-use-delivery-framework/co-occurring-mental-health-and-substance-use-delivery-framework" target="_blank" rel="noopener">Open delivery framework →</a>
+      </article>
+
+      <article class="source-card">
+        <h3>GOV.UK — NHS 10 Year Health Plan</h3>
+        <p>
+          Core anchor for the three major shifts: hospital to community, analogue to digital, and sickness to prevention. OTOS is framed as continuity infrastructure that supports those shifts without replacing services.
+        </p>
+        <div class="source-meta">
+          <span class="pill green">Published source</span>
+          <span class="pill blue">Policy</span>
+          <span class="pill">10 Year Plan</span>
+        </div>
+        <a class="source-link" href="https://www.gov.uk/government/publications/10-year-health-plan-for-england-fit-for-the-future" target="_blank" rel="noopener">Open 10 Year Health Plan →</a>
+      </article>
+
+      <article class="source-card">
+        <h3>NICE NG87 — ADHD diagnosis and management</h3>
+        <p>
+          Core clinical guidance source for ADHD recognition, diagnosis and management. Useful because NICE explicitly recognises ADHD in adults and coexisting substance misuse as part of the clinical context.
+        </p>
+        <div class="source-meta">
+          <span class="pill green">Published source</span>
+          <span class="pill blue">NICE</span>
+          <span class="pill">ADHD guidance</span>
+        </div>
+        <a class="source-link" href="https://www.nice.org.uk/guidance/ng87" target="_blank" rel="noopener">Open NICE NG87 →</a>
+      </article>
+
+      <article class="source-card">
+        <h3>Royal College of Psychiatrists — CR235 ADHD in adults</h3>
+        <p>
+          Good-practice guidance for adult ADHD. Useful for adult service design, substance misuse considerations, and the need for joint working where substance misuse is significant.
+        </p>
+        <div class="source-meta">
+          <span class="pill green">Published source</span>
+          <span class="pill blue">RCPsych</span>
+          <span class="pill">Adult ADHD</span>
+        </div>
+        <a class="source-link" href="https://www.rcpsych.ac.uk/improving-care/campaigning-for-better-mental-health-policy/college-reports/2023-college-reports/cr235" target="_blank" rel="noopener">Open RCPsych CR235 →</a>
+      </article>
+
+      <article class="source-card">
+        <h3>AI and Digital Regulations Service — piloting digital technologies</h3>
+        <p>
+          Practical adoption guidance for local pilots, including defined scope, data-collection plan, success/failure criteria, roles, responsibilities and monitoring.
+        </p>
+        <div class="source-meta">
+          <span class="pill green">Published source</span>
+          <span class="pill blue">Digital pilot</span>
+          <span class="pill">Evaluation</span>
+        </div>
+        <a class="source-link" href="https://digitalregulations.innovation.nhs.uk/regulations-and-guidance-for-adopters/all-adopters-guidance/piloting-digital-technologies-in-a-health-or-care-service/" target="_blank" rel="noopener">Open AIDRS pilot guidance →</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section section-dark" id="adhd-addiction">
+  <div class="section-inner">
+    <div class="chapter-header">
+      <span class="chapter-num">04</span>
+      <div class="section-label">ADHD + Addiction Evidence</div>
+    </div>
+
+    <h2 class="display-2">
+      This is not a new idea.<br />
+      <span class="accent">It is an underused one.</span>
+    </h2>
+
+    <div class="grid-2">
+      <article class="source-card">
+        <h3>START Study — addictive disorder outcomes after ADHD diagnosis</h3>
+        <p>
+          Six-month follow-up of patients with ADHD-addiction comorbidity. Reported improvement in addictive disorders in 61.3% of patients. Important comparator, but should be described as observational and requiring confirmation in prospective research.
+        </p>
+        <div class="source-meta">
+          <span class="pill green">Published source</span>
+          <span class="pill teal">Research</span>
+          <span class="pill">Comparator</span>
+        </div>
+        <a class="source-link" href="https://pubmed.ncbi.nlm.nih.gov/41218347/" target="_blank" rel="noopener">Open PubMed START study →</a>
+        <br />
+        <a class="source-link" href="https://www.sciencedirect.com/science/article/pii/S0306460325003260" target="_blank" rel="noopener">Open ScienceDirect article →</a>
+      </article>
+
+      <article class="source-card">
+        <h3>Nature Reviews Disease Primers — ADHD overview</h3>
+        <p>
+          High-level ADHD review source. This is the PubMed link supplied as PMID 38388701. Use as a general ADHD reference, not as the START study source.
+        </p>
+        <div class="source-meta">
+          <span class="pill green">Published source</span>
+          <span class="pill teal">Research review</span>
+          <span class="pill">ADHD overview</span>
+        </div>
+        <a class="source-link" href="https://pubmed.ncbi.nlm.nih.gov/38388701/" target="_blank" rel="noopener">Open PubMed PMID 38388701 →</a>
+      </article>
+
+      <article class="source-card">
+        <h3>Meta-analysis — ADHD prevalence among SUD populations</h3>
+        <p>
+          Meta-analysis estimating ADHD prevalence among substance use disorder populations. Useful for supporting the existence of a significant ADHD/SUD overlap, with careful wording around exact percentages.
+        </p>
+        <div class="source-meta">
+          <span class="pill green">Published source</span>
+          <span class="pill teal">Meta-analysis</span>
+          <span class="pill">ADHD + SUD</span>
+        </div>
+        <a class="source-link" href="https://pubmed.ncbi.nlm.nih.gov/36674031/" target="_blank" rel="noopener">Open PubMed meta-analysis →</a>
+      </article>
+
+      <article class="source-card">
+        <h3>International consensus — ADHD and SUD screening / diagnosis / treatment</h3>
+        <p>
+          Consensus statement on screening, diagnosis and treatment of adults with comorbid ADHD and SUD. Useful for showing this is a recognised clinical intersection requiring structured pathways.
+        </p>
+        <div class="source-meta">
+          <span class="pill green">Published source</span>
+          <span class="pill teal">Consensus</span>
+          <span class="pill">Clinical pathway</span>
+        </div>
+        <a class="source-link" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5986068/" target="_blank" rel="noopener">Open consensus statement →</a>
+      </article>
+
+      <article class="source-card">
+        <h3>Expert consensus statement — identification and treatment of ADHD with SUD</h3>
+        <p>
+          Expert consensus source for the treatment and identification problem. Useful for careful partner-page wording around clinical leadership and avoiding OTOS making clinical decisions.
+        </p>
+        <div class="source-meta">
+          <span class="pill green">Published source</span>
+          <span class="pill teal">Expert consensus</span>
+          <span class="pill">Treatment caution</span>
+        </div>
+        <a class="source-link" href="https://pubmed.ncbi.nlm.nih.gov/37033892/" target="_blank" rel="noopener">Open PubMed expert consensus →</a>
+      </article>
+
+      <article class="source-card">
+        <h3>NCBI Bookshelf / VA Evidence Synthesis — ADHD and SUDs in adults</h3>
+        <p>
+          Adult ADHD and substance-use-disorder synthesis. Useful as a broad evidence review, especially for treatment caution, misuse/diversion considerations and adult ADHD/SUD overlap.
+        </p>
+        <div class="source-meta">
+          <span class="pill green">Published source</span>
+          <span class="pill teal">Evidence synthesis</span>
+          <span class="pill">Adults</span>
+        </div>
+        <a class="source-link" href="https://pubmed.ncbi.nlm.nih.gov/40705909/" target="_blank" rel="noopener">Open PubMed / Bookshelf entry →</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section section-dark" id="continuity">
+  <div class="section-inner">
+    <div class="chapter-header">
+      <span class="chapter-num">05</span>
+      <div class="section-label">Continuity, Recovery and Post-Discharge Risk</div>
+    </div>
+
+    <h2 class="display-2">
+      ADHD and addiction do not fail in one service.<br />
+      <span class="accent">They fail between them.</span>
+    </h2>
+
+    <div class="grid-2">
+      <article class="source-card">
+        <h3>GOV.UK — recovery support and lived experience initiatives</h3>
+        <p>
+          Useful source for recovery support, peer support, lived experience, and the vulnerability of the period immediately after treatment/discharge.
+        </p>
+        <div class="source-meta">
+          <span class="pill green">Published source</span>
+          <span class="pill blue">Recovery</span>
+          <span class="pill">Lived experience</span>
+        </div>
+        <a class="source-link" href="https://www.gov.uk/government/publications/recovery-support-services-and-lived-experience-initiatives/part-1-introducing-recovery-peer-support-and-lived-experience-initiatives" target="_blank" rel="noopener">Open recovery support source →</a>
+      </article>
+
+      <article class="source-card">
+        <h3>GOV.UK — continuity of care from custody to community</h3>
+        <p>
+          Useful source for continuity logic around high-risk transitions, handoffs, community connection and re-entry from custody.
+        </p>
+        <div class="source-meta">
+          <span class="pill green">Published source</span>
+          <span class="pill blue">Continuity</span>
+          <span class="pill">Custody to community</span>
+        </div>
+        <a class="source-link" href="https://www.gov.uk/government/publications/continuity-of-care-for-prisoners-who-need-substance-misuse-treatment/guidance-for-improving-continuity-of-care-between-prison-and-the-community" target="_blank" rel="noopener">Open custody-to-community source →</a>
+      </article>
+
+      <article class="source-card">
+        <h3>Dennis &amp; Scott — managing addiction as a chronic condition</h3>
+        <p>
+          Research source for addiction as a chronic, cycling condition and the need for ongoing support rather than one-off treatment episodes.
+        </p>
+        <div class="source-meta">
+          <span class="pill green">Published source</span>
+          <span class="pill teal">Research</span>
+          <span class="pill">Continuing care</span>
+        </div>
+        <a class="source-link" href="https://pubmed.ncbi.nlm.nih.gov/18292710/" target="_blank" rel="noopener">Open PubMed source →</a>
+      </article>
+
+      <article class="source-card">
+        <h3>Scott, Foss &amp; Dennis — relapse-treatment-recovery cycle</h3>
+        <p>
+          Research source for relapse and re-entry cycles over time. Useful for explaining why continuity is needed beyond single episodes of treatment.
+        </p>
+        <div class="source-meta">
+          <span class="pill green">Published source</span>
+          <span class="pill teal">Research</span>
+          <span class="pill">Relapse cycle</span>
+        </div>
+        <a class="source-link" href="https://pubmed.ncbi.nlm.nih.gov/15797640/" target="_blank" rel="noopener">Open PubMed source →</a>
+      </article>
+
+      <article class="source-card">
+        <h3>Observations of treatment engagement after residential discharge</h3>
+        <p>
+          Useful source for immediate post-discharge re-entry and engagement windows after residential substance-use treatment.
+        </p>
+        <div class="source-meta">
+          <span class="pill green">Published source</span>
+          <span class="pill teal">Research</span>
+          <span class="pill">Post-discharge</span>
+        </div>
+        <a class="source-link" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12314836/" target="_blank" rel="noopener">Open PMC source →</a>
+      </article>
+
+      <article class="source-card">
+        <h3>NICE NG58 — coexisting severe mental illness and substance misuse</h3>
+        <p>
+          Useful for wider continuity-method roadmap, especially for high-cost cohorts already known to services and touching multiple teams.
+        </p>
+        <div class="source-meta">
+          <span class="pill green">Published source</span>
+          <span class="pill blue">NICE</span>
+          <span class="pill">Coexisting conditions</span>
+        </div>
+        <a class="source-link" href="https://www.nice.org.uk/guidance/ng58" target="_blank" rel="noopener">Open NICE NG58 →</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section section-dark" id="costs">
+  <div class="section-inner">
+    <div class="chapter-header">
+      <span class="chapter-num">06</span>
+      <div class="section-label">Costs, System Pressure and Public-Sector Demand</div>
+    </div>
+
+    <h2 class="display-2">
+      The cost of drift is spread everywhere.<br />
+      <span class="accent">So the saving case must be system-wide.</span>
+    </h2>
+
+    <div class="grid-2">
+      <article class="source-card">
+        <h3>King’s Fund — key NHS facts and figures</h3>
+        <p>
+          Broad NHS system context: spending, workforce, A&amp;E, ambulance, GP, community and hospital cost context.
+        </p>
+        <div class="source-meta">
+          <span class="pill green">Published source</span>
+          <span class="pill blue">NHS system</span>
+          <span class="pill">Cost context</span>
+        </div>
+        <a class="source-link" href="https://www.kingsfund.org.uk/insight-and-analysis/data-and-charts/key-facts-figures-nhs" target="_blank" rel="noopener">Open King’s Fund source →</a>
+      </article>
+
+      <article class="source-card">
+        <h3>GOV.UK — addiction healthcare goals</h3>
+        <p>
+          Government life-sciences / healthcare-goals source for addiction, innovation and system-level opportunity.
+        </p>
+        <div class="source-meta">
+          <span class="pill green">Published source</span>
+          <span class="pill blue">Government</span>
+          <span class="pill">Addiction goals</span>
+        </div>
+        <a class="source-link" href="https://www.gov.uk/government/publications/life-sciences-healthcare-goals/addiction-healthcare-goals" target="_blank" rel="noopener">Open addiction healthcare goals →</a>
+      </article>
+
+      <article class="source-card">
+        <h3>Independent review of drugs — Professor Dame Carol Black</h3>
+        <p>
+          Core national source on drug-related harms, public-sector cost, treatment system pressure and the wider economic/social burden.
+        </p>
+        <div class="source-meta">
+          <span class="pill green">Published source</span>
+          <span class="pill blue">Government review</span>
+          <span class="pill">Drug harm</span>
+        </div>
+        <a class="source-link" href="https://www.gov.uk/government/collections/independent-review-of-drugs-by-professor-dame-carol-black" target="_blank" rel="noopener">Open Carol Black review collection →</a>
+      </article>
+
+      <article class="source-card">
+        <h3>National Audit Office — reducing harm from illegal drugs</h3>
+        <p>
+          Independent public-spending and delivery source for illegal-drug harm, public-sector response and implementation pressures.
+        </p>
+        <div class="source-meta">
+          <span class="pill green">Published source</span>
+          <span class="pill blue">NAO</span>
+          <span class="pill">Public spending</span>
+        </div>
+        <a class="source-link" href="https://www.nao.org.uk/reports/reducing-the-harm-from-illegal-drugs/" target="_blank" rel="noopener">Open NAO report →</a>
+      </article>
+    </div>
+
+    <div class="warning-box">
+      <h3>Local cost modelling discipline</h3>
+      <p>
+        Any local figures such as cohort size, avoidable demand, annual burden, or “cost per avoided crisis” must be labelled as either:
+      </p>
+      <div class="check-list">
+        <div class="check-row">Published source</div>
+        <div class="check-row">Local source supplied by partner</div>
+        <div class="check-row">OTOS modelling estimate</div>
+        <div class="check-row">Placeholder requiring validation</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-dark" id="assurance">
+  <div class="section-inner">
+    <div class="chapter-header">
+      <span class="chapter-num">07</span>
+      <div class="section-label">Assurance, Safety and Digital Adoption</div>
+    </div>
+
+    <h2 class="display-2">
+      The product must be safe enough to test.<br />
+      <span class="accent">And honest enough to stop.</span>
+    </h2>
+
+    <div class="grid-2">
+      <article class="source-card">
+        <h3>Digital healthcare technologies in the NHS — Innovation Service</h3>
+        <p>
+          Useful for DTAC, digital healthcare technology adoption, medical-device boundary considerations, clinical safety, data protection, interoperability, usability and accessibility.
+        </p>
+        <div class="source-meta">
+          <span class="pill green">Published source</span>
+          <span class="pill blue">DTAC</span>
+          <span class="pill">Digital adoption</span>
+        </div>
+        <a class="source-link" href="https://innovation.nhs.uk/innovation-guides/regulation/digital-product-or-service/" target="_blank" rel="noopener">Open Innovation Service source →</a>
+      </article>
+
+      <article class="source-card">
+        <h3>NHS England — measurement for improvement</h3>
+        <p>
+          Useful for choosing measures that are safe, realistic and useful in a pilot rather than overclaiming outcomes before the evidence exists.
+        </p>
+        <div class="source-meta">
+          <span class="pill green">Published source</span>
+          <span class="pill blue">Measurement</span>
+          <span class="pill">Pilot evaluation</span>
+        </div>
+        <a class="source-link" href="https://www.england.nhs.uk/commissioning/wp-content/uploads/sites/44/2017/11/How-to-Guide-for-Measurement-for-Improvement.pdf" target="_blank" rel="noopener">Open measurement guide PDF →</a>
+      </article>
+
+      <article class="source-card">
+        <h3>NICE — AI and Digital Regulations Service</h3>
+        <p>
+          Multi-agency source for navigating digital health regulation and adoption. Useful as a broad assurance anchor.
+        </p>
+        <div class="source-meta">
+          <span class="pill green">Published source</span>
+          <span class="pill blue">Regulation</span>
+          <span class="pill">NICE / MHRA / CQC / HRA</span>
+        </div>
+        <a class="source-link" href="https://www.nice.org.uk/about/what-we-do/digital-health/multi-agency-advisory-service-for-ai-and-data-driven-technologies" target="_blank" rel="noopener">Open NICE AIDRS page →</a>
+      </article>
+
+      <article class="source-card">
+        <h3>NHS England — NHS IMPACT improvement guide</h3>
+        <p>
+          Useful for framing the pre-pilot as structured improvement work: aim, content theory, execution theory, measurement and learning.
+        </p>
+        <div class="source-meta">
+          <span class="pill green">Published source</span>
+          <span class="pill blue">Improvement</span>
+          <span class="pill">NHS IMPACT</span>
+        </div>
+        <a class="source-link" href="https://www.england.nhs.uk/publication/nhs-impact-improvement-guide/" target="_blank" rel="noopener">Open NHS IMPACT guide →</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section section-dark" id="claims">
+  <div class="section-inner">
+    <div class="chapter-header">
+      <span class="chapter-num">08</span>
+      <div class="section-label">Working Claims Register</div>
+    </div>
+
+    <h2 class="display-2">
+      Claims we can use.<br />
+      <span class="accent">Claims we still need to validate.</span>
+    </h2>
+
+    <div class="evidence-table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Claim / Page Use</th>
+            <th>Status</th>
+            <th>Source / Evidence</th>
+            <th>Use Safely As</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Unsupported ADHD is associated with substance misuse and wider economic/social harms.</strong></td>
+            <td><span class="pill green">Published</span></td>
+            <td><a href="https://www.england.nhs.uk/publication/report-of-the-independent-adhd-taskforce/" target="_blank" rel="noopener">NHS ADHD Taskforce</a></td>
+            <td>Policy-aligned rationale, not OTOS clinical outcome claim.</td>
+          </tr>
+
+          <tr>
+            <td><strong>ADHD and substance-use disorders are frequently co-occurring.</strong></td>
+            <td><span class="pill green">Published</span></td>
+            <td><a href="https://pubmed.ncbi.nlm.nih.gov/36674031/" target="_blank" rel="noopener">Meta-analysis</a>; <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5986068/" target="_blank" rel="noopener">international consensus</a></td>
+            <td>Evidence of significant overlap. Exact percentage must match cited source.</td>
+          </tr>
+
+          <tr>
+            <td><strong>61.3% improvement in addictive disorders after ADHD diagnosis in START.</strong></td>
+            <td><span class="pill green">Published</span></td>
+            <td><a href="https://pubmed.ncbi.nlm.nih.gov/41218347/" target="_blank" rel="noopener">START PubMed</a>; <a href="https://www.sciencedirect.com/science/article/pii/S0306460325003260" target="_blank" rel="noopener">ScienceDirect</a></td>
+            <td>Comparator / directional evidence. Mark as observational and not guaranteed.</td>
+          </tr>
+
+          <tr>
+            <td><strong>Drug, alcohol and mental health problems are often co-occurring and services need more integrated working.</strong></td>
+            <td><span class="pill green">Published</span></td>
+            <td><a href="https://www.gov.uk/government/publications/co-occurring-mental-health-and-substance-use-delivery-framework/co-occurring-mental-health-and-substance-use-delivery-framework" target="_blank" rel="noopener">DHSC / NHS England framework</a></td>
+            <td>Policy rationale for joined-up continuity, data and local service model design.</td>
+          </tr>
+
+          <tr>
+            <td><strong>NHS 10 Year Plan shifts: hospital to community, analogue to digital, sickness to prevention.</strong></td>
+            <td><span class="pill green">Published</span></td>
+            <td><a href="https://www.gov.uk/government/publications/10-year-health-plan-for-england-fit-for-the-future" target="_blank" rel="noopener">GOV.UK 10 Year Health Plan</a></td>
+            <td>Policy alignment line for homepage and local authority page.</td>
+          </tr>
+
+          <tr>
+            <td><strong>OTOS is non-clinical continuity infrastructure.</strong></td>
+            <td><span class="pill teal">OTOS position</span></td>
+            <td>Internal product definition + governance wording.</td>
+            <td>Safe product positioning. Must remain consistent everywhere.</td>
+          </tr>
+
+          <tr>
+            <td><strong>OTOS does not diagnose, prescribe, replace clinical judgement, merge records or write back to EPR by default.</strong></td>
+            <td><span class="pill teal">OTOS guardrail</span></td>
+            <td>Internal governance / safety boundary.</td>
+            <td>Repeat across home, partner, funding and technical pages.</td>
+          </tr>
+
+          <tr>
+            <td><strong>877 local cohort estimate.</strong></td>
+            <td><span class="pill">OTOS model</span></td>
+            <td>OTOS modelling estimate — needs source assumptions and local validation.</td>
+            <td>Planning estimate only. Never present as NHS-reported figure.</td>
+          </tr>
+
+          <tr>
+            <td><strong>£18m avoidable annual demand / local burden estimate.</strong></td>
+            <td><span class="pill">OTOS model</span></td>
+            <td>OTOS modelling estimate — needs calculator assumptions and source chain.</td>
+            <td>Directional modelling only. Must be caveated.</td>
+          </tr>
+
+          <tr>
+            <td><strong>CBT / executive function / retention wording.</strong></td>
+            <td><span class="pill red">TBC</span></td>
+            <td>Needs specific source before formal use.</td>
+            <td>Can stay in draft as “proof TBC”. Do not use as hard claim yet.</td>
+          </tr>
+
+          <tr>
+            <td><strong>Adult ADHD service restrictions / trusts pausing adult access.</strong></td>
+            <td><span class="pill red">TBC</span></td>
+            <td>Needs exact named trust/source/date before live use.</td>
+            <td>Use only as “service pressure is increasing” until specific source is attached.</td>
+          </tr>
+
+          <tr>
+            <td><strong>Prison / reoffending / relapse parallel.</strong></td>
+            <td><span class="pill red">TBC</span></td>
+            <td>Needs prison ADHD prevalence and continuity/reoffending source pack.</td>
+            <td>Roadmap / future relevance only until evidenced.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="section section-dark" id="source-register">
+  <div class="section-inner">
+    <div class="chapter-header">
+      <span class="chapter-num">09</span>
+      <div class="section-label">Full Source Register</div>
+    </div>
+
+    <h2 class="display-2">
+      Source links.<br />
+      <span class="accent">Kept visible, not hidden.</span>
+    </h2>
+
+    <div class="evidence-table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Category</th>
+            <th>Source</th>
+            <th>Link</th>
+            <th>Use In Site</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>ADHD policy</td>
+            <td>NHS England — ADHD Taskforce</td>
+            <td><a href="https://www.england.nhs.uk/mental-health/adhd/" target="_blank" rel="noopener">Open source</a></td>
+            <td>ADHD Taskforce quote, policy alignment, service pressure.</td>
+          </tr>
+
+          <tr>
+            <td>ADHD policy</td>
+            <td>NHS England — Report of the independent ADHD Taskforce</td>
+            <td><a href="https://www.england.nhs.uk/publication/report-of-the-independent-adhd-taskforce/" target="_blank" rel="noopener">Open source</a></td>
+            <td>Main ADHD Taskforce anchor.</td>
+          </tr>
+
+          <tr>
+            <td>ADHD policy</td>
+            <td>Taskforce Part 1</td>
+            <td><a href="https://www.england.nhs.uk/long-read/report-of-the-independent-adhd-taskforce-part-1/" target="_blank" rel="noopener">Open source</a></td>
+            <td>Economic cost, public-sector impact, three-shift alignment.</td>
+          </tr>
+
+          <tr>
+            <td>ADHD policy</td>
+            <td>Taskforce Part 2</td>
+            <td><a href="https://www.england.nhs.uk/long-read/report-of-the-independent-adhd-taskforce-part-2/" target="_blank" rel="noopener">Open source</a></td>
+            <td>Implementation, waiting times, wider sectors, updated evidence summary.</td>
+          </tr>
+
+          <tr>
+            <td>Co-occurring need</td>
+            <td>DHSC / NHS England — Co-occurring mental health and substance use delivery framework</td>
+            <td><a href="https://www.gov.uk/government/publications/co-occurring-mental-health-and-substance-use-delivery-framework/co-occurring-mental-health-and-substance-use-delivery-framework" target="_blank" rel="noopener">Open source</a></td>
+            <td>Integrated care, local service design, data, commissioning and workforce.</td>
+          </tr>
+
+          <tr>
+            <td>NHS policy</td>
+            <td>10 Year Health Plan for England</td>
+            <td><a href="https://www.gov.uk/government/publications/10-year-health-plan-for-england-fit-for-the-future" target="_blank" rel="noopener">Open source</a></td>
+            <td>Hospital to community, analogue to digital, sickness to prevention.</td>
+          </tr>
+
+          <tr>
+            <td>NICE guidance</td>
+            <td>NICE NG87 — ADHD diagnosis and management</td>
+            <td><a href="https://www.nice.org.uk/guidance/ng87" target="_blank" rel="noopener">Open source</a></td>
+            <td>ADHD clinical context, coexisting substance misuse, adults.</td>
+          </tr>
+
+          <tr>
+            <td>NICE guidance</td>
+            <td>NICE NG58 — coexisting severe mental illness and substance misuse</td>
+            <td><a href="https://www.nice.org.uk/guidance/ng58" target="_blank" rel="noopener">Open source</a></td>
+            <td>Future roadmap / wider high-cost cohorts.</td>
+          </tr>
+
+          <tr>
+            <td>RCPsych</td>
+            <td>CR235 — ADHD in adults: good practice guidance</td>
+            <td><a href="https://www.rcpsych.ac.uk/improving-care/campaigning-for-better-mental-health-policy/college-reports/2023-college-reports/cr235" target="_blank" rel="noopener">Open source</a></td>
+            <td>Adult ADHD, substance misuse considerations, joint working.</td>
+          </tr>
+
+          <tr>
+            <td>ADHD research</td>
+            <td>Faraone et al. — ADHD overview, Nature Reviews Disease Primers, PMID 38388701</td>
+            <td><a href="https://pubmed.ncbi.nlm.nih.gov/38388701/" target="_blank" rel="noopener">Open source</a></td>
+            <td>General ADHD overview source.</td>
+          </tr>
+
+          <tr>
+            <td>ADHD + addiction</td>
+            <td>START study — clinical outcomes six months after ADHD diagnosis, PMID 41218347</td>
+            <td><a href="https://pubmed.ncbi.nlm.nih.gov/41218347/" target="_blank" rel="noopener">Open source</a></td>
+            <td>61.3% comparator, carefully caveated.</td>
+          </tr>
+
+          <tr>
+            <td>ADHD + SUD</td>
+            <td>ADHD prevalence among SUD populations meta-analysis, PMID 36674031</td>
+            <td><a href="https://pubmed.ncbi.nlm.nih.gov/36674031/" target="_blank" rel="noopener">Open source</a></td>
+            <td>ADHD/SUD prevalence evidence.</td>
+          </tr>
+
+          <tr>
+            <td>ADHD + SUD</td>
+            <td>International consensus statement on ADHD and SUD</td>
+            <td><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5986068/" target="_blank" rel="noopener">Open source</a></td>
+            <td>Screening, diagnosis, treatment and integrated care context.</td>
+          </tr>
+
+          <tr>
+            <td>ADHD + SUD</td>
+            <td>Expert consensus statement, PMID 37033892</td>
+            <td><a href="https://pubmed.ncbi.nlm.nih.gov/37033892/" target="_blank" rel="noopener">Open source</a></td>
+            <td>Clinical caution and expert consensus.</td>
+          </tr>
+
+          <tr>
+            <td>ADHD + SUD</td>
+            <td>ADHD and Substance Use Disorders in Adults, PMID 40705909</td>
+            <td><a href="https://pubmed.ncbi.nlm.nih.gov/40705909/" target="_blank" rel="noopener">Open source</a></td>
+            <td>Adult evidence synthesis.</td>
+          </tr>
+
+          <tr>
+            <td>Recovery</td>
+            <td>GOV.UK — recovery support services and lived experience initiatives</td>
+            <td><a href="https://www.gov.uk/government/publications/recovery-support-services-and-lived-experience-initiatives/part-1-introducing-recovery-peer-support-and-lived-experience-initiatives" target="_blank" rel="noopener">Open source</a></td>
+            <td>Recovery support, peer support, post-treatment vulnerability.</td>
+          </tr>
+
+          <tr>
+            <td>Continuity</td>
+            <td>GOV.UK — continuity of care between prison and community</td>
+            <td><a href="https://www.gov.uk/government/publications/continuity-of-care-for-prisoners-who-need-substance-misuse-treatment/guidance-for-improving-continuity-of-care-between-prison-and-the-community" target="_blank" rel="noopener">Open source</a></td>
+            <td>Continuity logic, re-entry, transition risk.</td>
+          </tr>
+
+          <tr>
+            <td>Costs</td>
+            <td>King’s Fund — NHS key facts and figures</td>
+            <td><a href="https://www.kingsfund.org.uk/insight-and-analysis/data-and-charts/key-facts-figures-nhs" target="_blank" rel="noopener">Open source</a></td>
+            <td>NHS system cost context.</td>
+          </tr>
+
+          <tr>
+            <td>Costs</td>
+            <td>GOV.UK — addiction healthcare goals</td>
+            <td><a href="https://www.gov.uk/government/publications/life-sciences-healthcare-goals/addiction-healthcare-goals" target="_blank" rel="noopener">Open source</a></td>
+            <td>Addiction innovation / healthcare goal context.</td>
+          </tr>
+
+          <tr>
+            <td>Costs</td>
+            <td>Independent review of drugs by Professor Dame Carol Black</td>
+            <td><a href="https://www.gov.uk/government/collections/independent-review-of-drugs-by-professor-dame-carol-black" target="_blank" rel="noopener">Open source</a></td>
+            <td>National drug harm and economic burden.</td>
+          </tr>
+
+          <tr>
+            <td>Costs</td>
+            <td>NAO — reducing the harm from illegal drugs</td>
+            <td><a href="https://www.nao.org.uk/reports/reducing-the-harm-from-illegal-drugs/" target="_blank" rel="noopener">Open source</a></td>
+            <td>Public-spending / delivery evidence.</td>
+          </tr>
+
+          <tr>
+            <td>Digital adoption</td>
+            <td>AIDRS — piloting digital technologies in health or care services</td>
+            <td><a href="https://digitalregulations.innovation.nhs.uk/regulations-and-guidance-for-adopters/all-adopters-guidance/piloting-digital-technologies-in-a-health-or-care-service/" target="_blank" rel="noopener">Open source</a></td>
+            <td>Pre-pilot design, metrics, success criteria.</td>
+          </tr>
+
+          <tr>
+            <td>Digital adoption</td>
+            <td>Innovation Service — digital healthcare technologies in the NHS</td>
+            <td><a href="https://innovation.nhs.uk/innovation-guides/regulation/digital-product-or-service/" target="_blank" rel="noopener">Open source</a></td>
+            <td>DTAC and digital product governance.</td>
+          </tr>
+
+          <tr>
+            <td>Measurement</td>
+            <td>NHS England — measurement for improvement guide</td>
+            <td><a href="https://www.england.nhs.uk/commissioning/wp-content/uploads/sites/44/2017/11/How-to-Guide-for-Measurement-for-Improvement.pdf" target="_blank" rel="noopener">Open PDF</a></td>
+            <td>KPI design and pilot evaluation.</td>
+          </tr>
+
+          <tr>
+            <td>Improvement</td>
+            <td>NHS IMPACT improvement guide</td>
+            <td><a href="https://www.england.nhs.uk/publication/nhs-impact-improvement-guide/" target="_blank" rel="noopener">Open source</a></td>
+            <td>Improvement-method discipline.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="section section-dark" id="placeholders">
+  <div class="section-inner">
+    <div class="chapter-header">
+      <span class="chapter-num">10</span>
+      <div class="section-label">Evidence Still Needed</div>
+    </div>
+
+    <h2 class="display-2">
+      Do not overclaim.<br />
+      <span class="accent">Mark the gaps clearly.</span>
+    </h2>
+
+    <div class="warning-box">
+      <h3>Claims needing source confirmation before live use</h3>
+      <ul>
+        <li>Exact CPFT adult ADHD backlog, medication review and referral figures — attach source document or local confirmation.</li>
+        <li>Exact source for “23–45%” ADHD prevalence range in addiction treatment if used instead of the 21% meta-analysis or 23.1% consensus figure.</li>
+        <li>Exact adult ADHD service restriction / adult-access pause source, if using the “pressure is building” / adult access argument.</li>
+        <li>CBT / executive-function / retention claim source.</li>
+        <li>Turning Point / LSE £4.07 ROI source link and citation chain.</li>
+        <li>Any prison ADHD prevalence / reoffending / relapse comparison.</li>
+        <li>Any “NHS Community Hubs 250” figure — attach the exact source page before making it a hard number.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section section-dark">
+  <div class="section-inner">
+    <div class="cta">
+      <h2>
+        Evidence is not decoration.<br />
+        <span class="accent">It is the spine.</span>
+      </h2>
+
+      <p>
+        If a claim cannot be sourced, it stays as a draft note. If a figure is modelled, it is labelled as modelled. If a partner provides wording, it is recorded here so the site remains consistent and defensible.
+      </p>
+
+      <div class="btn-row">
+        <a href="index.html" class="btn btn-secondary">Back to hub</a>
+        <a href="mailto:info@otos.life?subject=OTOS%20Evidence%20Source%20Update" class="btn btn-primary">Send source update</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <strong>OTOS Continuity™</strong>
+      <p>Evidence, sources and claims register. No clinical claims. No unsourced figures. No hidden assumptions.</p>
+    </div>
+
+    <div>
+      © OTOS Digital Ltd · Company No. 17084455<br />
+      Phone: +44 7466 334143 · Email: <a href="mailto:info@otos.life">info@otos.life</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
