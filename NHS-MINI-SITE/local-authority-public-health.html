@@ -1,1 +1,304 @@
-<!DOCTYPE html><html lang="en-GB"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>OTOS Continuity™ — Local Authority &amp; Public Health</title><meta name="description" content="OTOS Continuity protected hub"/><meta name="robots" content="noindex, nofollow"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet"/><link rel="stylesheet" href="css/otos-hub.css"/></head><body><script>(function(){if(sessionStorage.getItem('otos_access')!=='1'){window.location.replace('public.html')}})();</script><nav class="site-nav"><div class="nav-inner"><a href="index.html" class="nav-logo"><img src="images/brain-icon.png" alt="OTOS Continuity" onerror="this.style.display='none'"/><span>OTOS Continuity™</span></a><button class="nav-toggle" data-nav-toggle aria-expanded="false">Menu</button><ul class="nav-links" data-nav-links><li><a href="index.html#problem">Problem</a></li><li><a href="index.html#solution">Solution</a></li><li><a href="index.html#pilot">Pilot</a></li><li><a href="index.html#partners">Partners</a></li><li><a href="local-authority-public-health.html">Local Authority</a></li><li><a href="funding-costs.html">Funding</a></li><li><a href="evidence-sources.html">Evidence</a></li><li><a href="index.html#get-involved" class="nav-cta">Get Involved</a></li></ul></div></nav><section class="page-hero"><div class="page-hero-inner"><div class="reveal"><div class="badge">System Route</div><h1 class="display-1">Local Authority & Public Health</h1><p class="lead">This page is reusable for any local authority. Replace local stats and provider names for future places such as Manchester.</p></div><div class="panel reveal"><div class="dash-header"><span>Page status</span><span class="dash-live">draft</span></div><div class="dash-body"><div class="alert-box"><div class="alert-title">Important</div><p style="margin:0;color:rgba(247,239,228,.75)">Use this page as a structured baseline. Replace placeholders with final source material before external circulation.</p></div></div></div></div></section><section class="section section-light"><div class="section-inner reveal"><div class="chapter-header"><span class="chapter-num">01</span><div class="section-label">Core content</div></div><div class="grid-3"><div class="card"><div class="card-title">Purpose</div><div class="card-body">Explain the route clearly without overclaiming.</div></div><div class="card"><div class="card-title">What to add next</div><div class="card-body">Insert the best approved sections from the Content Master and master docs.</div></div><div class="card"><div class="card-title">Validation</div><div class="card-body">Any figures or claims must be labelled and source-checked.</div></div></div></div></section><footer class="footer"><div class="footer-inner"><div><strong>OTOS Continuity™</strong><p>Non-clinical continuity infrastructure for targeted pathways where people are visible to services but not properly held between them.</p></div><div>© OTOS Digital Ltd · Company No. 17084455<br/>Phone: +44 7466 334143 · Email: <a href="mailto:info@otos.life">info@otos.life</a></div></div></footer><script src="js/otos-hub.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OTOS Continuity™ — Local Authority & Public Health Briefing</title>
+  <meta name="description" content="Public Health and Local Authority briefing for OTOS Continuity™." />
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/otos.css" />
+  <style>
+    body { margin:0; background:#080b12; color:#f7f3ea; font-family:Inter,system-ui,sans-serif; }
+    .wrap { max-width:1120px; margin:0 auto; padding:0 24px; }
+    .nav { height:72px; border-bottom:1px solid rgba(255,255,255,.08); background:rgba(8,11,18,.75); backdrop-filter:blur(16px); position:sticky; top:0; z-index:20; }
+    .nav .wrap { height:72px; display:flex; align-items:center; justify-content:space-between; }
+    .logo { display:flex; gap:10px; align-items:center; text-decoration:none; font-weight:900; color:white; }
+    .logo img { height:30px; }
+    .links { display:flex; gap:18px; font-size:.84rem; font-weight:800; color:rgba(255,255,255,.72); }
+    .links a { color:inherit; text-decoration:none; }
+    section { padding:88px 0; }
+    .dark { background:radial-gradient(circle at 80% 0%, rgba(226,106,18,.14), transparent 35%), #080b12; color:#f7f3ea; }
+    .light { background:#f1ede4; color:#211c18; }
+    .kicker { display:inline-flex; padding:8px 14px; border:1px solid rgba(226,106,18,.55); border-radius:999px; color:#ff8a1d; text-transform:uppercase; letter-spacing:.16em; font-size:.72rem; font-weight:900; margin-bottom:24px; }
+    h1,h2 { margin:0 0 22px; letter-spacing:-.05em; line-height:1; font-weight:900; }
+    h1 { font-size:clamp(3rem,6vw,5.8rem); max-width:980px; }
+    h2 { font-size:clamp(2.1rem,4.6vw,4.4rem); max-width:980px; }
+    .accent { color:#e26a12; }
+    .lead { color:#aeb4c0; font-size:clamp(1.05rem,1.5vw,1.3rem); line-height:1.75; max-width:880px; }
+    .light .lead { color:#5f5a52; }
+    .grid-2,.grid-3,.grid-4 { display:grid; gap:18px; }
+    .grid-2 { grid-template-columns:repeat(2,minmax(0,1fr)); }
+    .grid-3 { grid-template-columns:repeat(3,minmax(0,1fr)); }
+    .grid-4 { grid-template-columns:repeat(4,minmax(0,1fr)); }
+    .card { border:1px solid rgba(255,255,255,.13); background:#111620; border-radius:24px; padding:28px; }
+    .light .card { background:rgba(255,255,255,.45); border-color:rgba(0,0,0,.15); }
+    .card-title { font-weight:900; font-size:1.08rem; margin-bottom:10px; }
+    .card-body { color:#aeb4c0; line-height:1.65; }
+    .light .card-body { color:#5f5a52; }
+    .stat { color:#ff8a1d; font-size:clamp(2.4rem,4vw,4.2rem); font-weight:900; letter-spacing:-.05em; margin-bottom:10px; }
+    .quote { border-left:4px solid #e26a12; background:rgba(226,106,18,.08); padding:22px 26px; border-radius:0 18px 18px 0; line-height:1.75; font-style:italic; margin:30px 0; }
+    .rule { border:0; border-top:1px solid rgba(255,255,255,.11); margin:44px 0; }
+    .light .rule { border-top-color:rgba(0,0,0,.13); }
+    .btnrow { display:flex; gap:14px; flex-wrap:wrap; margin-top:28px; }
+    .btn { min-height:48px; padding:0 22px; border-radius:999px; display:inline-flex; align-items:center; justify-content:center; text-decoration:none; font-weight:900; border:1px solid rgba(255,255,255,.16); color:white; }
+    .btn.primary { background:#e26a12; border-color:#e26a12; }
+    .light .btn.secondary { color:#211c18; border-color:rgba(0,0,0,.22); }
+    table { width:100%; border-collapse:collapse; border:1px solid rgba(255,255,255,.12); border-radius:18px; overflow:hidden; }
+    th,td { padding:15px; border-bottom:1px solid rgba(255,255,255,.1); text-align:left; vertical-align:top; line-height:1.55; }
+    th { color:#ff8a1d; text-transform:uppercase; letter-spacing:.1em; font-size:.72rem; }
+    .light table { border-color:rgba(0,0,0,.15); }
+    .light th,.light td { border-bottom-color:rgba(0,0,0,.12); }
+    @media(max-width:900px){.grid-2,.grid-3,.grid-4{grid-template-columns:1fr}.links{display:none}section{padding:68px 0}}
+  </style>
+</head>
+
+<body>
+  <script>
+    if (sessionStorage.getItem('otos_access') !== '1') window.location.replace('public.html');
+  </script>
+
+  <nav class="nav">
+    <div class="wrap">
+      <a class="logo" href="index.html"><img src="images/brain-icon.png" alt="" onerror="this.style.display='none'">OTOS Continuity™</a>
+      <div class="links">
+        <a href="index.html">Home</a>
+        <a href="partners.html">Partners</a>
+        <a href="numbers-calculator.html">Numbers</a>
+        <a href="evidence-sources.html">Evidence</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="dark">
+    <div class="wrap">
+      <div class="kicker">Public Health briefing</div>
+      <h1>A cost-redirection opportunity<br><span class="accent">hiding in current drug & alcohol spend.</span></h1>
+      <p class="lead">
+        OTOS Continuity™ is a bounded pre-pilot demonstrator targeting adults cycling through addiction, crisis and fragmented support where unresolved ADHD may be driving repeat demand.
+      </p>
+      <p class="lead">
+        It connects NHS, Local Authority and partner organisations into one visible continuity pathway — without replacing services, merging records, or adding clinical burden.
+      </p>
+      <div class="grid-4">
+        <div class="card"><div class="stat">800–900</div><div class="card-title">Estimated local risk cohort</div><div class="card-body">OTOS planning estimate, subject to validation with local partners.</div></div>
+        <div class="card"><div class="stat">50</div><div class="card-title">Pre-pilot target</div><div class="card-body">A bounded demonstrator, not a full rollout.</div></div>
+        <div class="card"><div class="stat">12</div><div class="card-title">Weeks</div><div class="card-body">Active delivery after setup and cohort selection.</div></div>
+        <div class="card"><div class="stat">£91,520</div><div class="card-title">Evidence budget</div><div class="card-body">Designed to generate decision-grade local evidence.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="light">
+    <div class="wrap">
+      <div class="kicker">The Public Health angle</div>
+      <h2>This is not a new cost.<br><span class="accent">It is a smarter use of what the system already spends.</span></h2>
+      <p class="lead">
+        Drug and alcohol commissioning budgets are already under pressure. But a significant portion of current spend is reactive — managing crisis presentations, repeat engagement, revolving-door hospitalisation, housing pressure, custody contact and people who never address the root cause of their addiction.
+      </p>
+      <p class="lead">
+        OTOS proposes a different model: identify and treat the underlying driver earlier, hold the person through the transition, and make continuity visible enough to test whether reactive demand reduces. Not through cuts. Through better-connected, earlier, smarter intervention.
+      </p>
+
+      <div class="grid-2">
+        <div class="card">
+          <div class="card-title">Current spend pattern</div>
+          <div class="card-body">
+            Reactive and fragmented. A&E presentations, crisis mental health, repeat addiction treatment episodes, police and custody involvement, housing and homelessness support. Each service sees only its piece — and bills accordingly.
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-title">With OTOS Continuity</div>
+          <div class="card-body">
+            Connected and preventive. One identification. One coordinated pathway. ADHD assessment where appropriate, medication route where clinically indicated, supported recovery, fewer crisis episodes, and visible follow-through across budget lines.
+          </div>
+        </div>
+      </div>
+
+      <div class="quote">
+        The system is already paying. The question is whether it is paying early enough, visibly enough, and in the right place.
+      </div>
+    </div>
+  </section>
+
+  <section class="dark">
+    <div class="wrap">
+      <div class="kicker">Discharge risk</div>
+      <h2>Closed is not always safe.<br><span class="accent">Sometimes the risk has just moved out of view.</span></h2>
+      <p class="lead">
+        A system can appear to succeed when a person is discharged, closed, referred on, or marked as having completed an episode. But if nobody can see whether the next step actually happened, the risk has not disappeared — it has simply moved out of view.
+      </p>
+      <p class="lead">
+        OTOS helps distinguish genuine progress from invisible drift by making handoffs receipted, follow-through visible, and silence reviewable before it becomes another crisis presentation.
+      </p>
+      <div class="grid-3">
+        <div class="card">
+          <div class="card-title">Episode closed</div>
+          <div class="card-body">Current systems can record closure without confirming whether the next service actually received the person.</div>
+        </div>
+        <div class="card">
+          <div class="card-title">Handoff receipted</div>
+          <div class="card-body">OTOS records whether the expected next step was acknowledged, landed, stalled or went quiet.</div>
+        </div>
+        <div class="card">
+          <div class="card-title">Risk visible</div>
+          <div class="card-body">Silence becomes a reviewable signal, not a hidden re-presentation waiting to happen.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="light">
+    <div class="wrap">
+      <div class="kicker">A forwardable briefing</div>
+      <h2>Built for the upward conversation.<br><span class="accent">Not just the first meeting.</span></h2>
+      <p class="lead">
+        This page is designed so a Public Health or Local Authority lead can forward the proposition to ICB, commissioning, NHS, VCSE and drug/alcohol leadership without needing to re-explain the concept from scratch.
+      </p>
+      <div class="grid-3">
+        <div class="card">
+          <div class="card-title">What it helps unlock</div>
+          <div class="card-body">A clear explanation for senior system conversations and a bounded pre-pilot proposition.</div>
+        </div>
+        <div class="card">
+          <div class="card-title">What it does not ask for</div>
+          <div class="card-body">No full rollout commitment. No forced procurement route. No claim that the system must scale before evidence.</div>
+        </div>
+        <div class="card">
+          <div class="card-title">What it tests</div>
+          <div class="card-body">Whether visible, receipted continuity changes follow-through for a high-cost, underserved cohort.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="dark">
+    <div class="wrap">
+      <div class="kicker">The model</div>
+      <h2>Continuity infrastructure<br><span class="accent">with message-delivery and micro-check-in capability.</span></h2>
+      <p class="lead">
+        Partners can approve short, familiar messages for their own touchpoints — for example a CGL welcome message, an RCE course nudge while someone waits, or a discharge follow-through confirmation. OTOS provides the infrastructure; the partner decides the wording, timing and responsibility.
+      </p>
+      <p class="lead">
+        The micro-check-in layer is deliberately simple: one low-friction question, repeated at agreed points, giving a basic continuity signal without requiring a keyworker to pick up the phone every time. It is not clinical monitoring and it does not replace human care.
+      </p>
+      <div class="quote">
+        The point is not to watch people. The point is to keep the pathway warm enough that people do not disappear unnoticed.
+      </div>
+    </div>
+  </section>
+
+  <section class="light">
+    <div class="wrap">
+      <div class="kicker">The pre-pilot</div>
+      <h2>50 people.<br><span class="accent">A proof point that changes the commissioning conversation.</span></h2>
+      <p class="lead">
+        The pre-pilot selects 50 high-priority individuals from a locally validated target cohort. It is designed to produce an outcomes-based evidence report suitable for ICB and Public Health commissioning consideration.
+      </p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Item</th>
+            <th>Position</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Cohort</td>
+            <td>50 adults with co-occurring ADHD and substance misuse risk, selected with local partners.</td>
+          </tr>
+          <tr>
+            <td>Duration</td>
+            <td>12 weeks active delivery following setup, recruitment, consent and partner workflow agreement.</td>
+          </tr>
+          <tr>
+            <td>Cost</td>
+            <td>£91,520 one-off pre-pilot evidence budget.</td>
+          </tr>
+          <tr>
+            <td>Outcome</td>
+            <td>Decision-grade local evidence on follow-through visibility, receipt completion, drift detection, partner burden and participant engagement.</td>
+          </tr>
+          <tr>
+            <td>Decision gate</td>
+            <td>Proceed, adjust, pause or stop based on evidence generated by the pre-pilot.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="btnrow">
+        <a class="btn primary" href="numbers-calculator.html">Open numbers & calculator</a>
+        <a class="btn secondary" href="evidence-sources.html">Open evidence page</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="dark">
+    <div class="wrap">
+      <div class="kicker">Public value test</div>
+      <h2>Not technology theatre.<br><span class="accent">Continuity infrastructure.</span></h2>
+      <div class="quote">
+        “Is this just an opportunity for tech firms to make money out of the taxpayer?”
+      </div>
+      <p class="lead">
+        It is a legitimate question. The honest answer is: only if OTOS is framed as technology theatre rather than continuity infrastructure.
+      </p>
+      <p class="lead">
+        OTOS is not individual-level behavioural monitoring. It is cross-agency continuity infrastructure — designed to change whether the handoff happens, whether services can see what happened next, and whether silent drift becomes visible before crisis.
+      </p>
+
+      <div class="grid-2">
+        <div class="card">
+          <div class="card-title">The public value test</div>
+          <div class="card-body">
+            Does it change whether people reach the next service after a handoff?<br><br>
+            Does it make silent disengagement visible earlier?<br><br>
+            Does it reduce avoidable re-presentation and crisis cost?<br><br>
+            Can it be governed, tested and improved with the data it generates?
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-title">Why a pre-pilot matters</div>
+          <div class="card-body">
+            If yes, it is worth the investment. If no, the pre-pilot shows that clearly — at £91,520 rather than millions. The point is to test before scale, not commit before evidence.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="light">
+    <div class="wrap">
+      <div class="kicker">Policy alignment</div>
+      <h2>Hospital to community.<br><span class="accent">Reactive to preventative.</span></h2>
+      <p class="lead">
+        OTOS aligns with the NHS 10 Year Health Plan direction of travel: hospital to community, analogue to digital, sickness to prevention. It is designed to sit beside emerging community infrastructure, including NHS Community Hubs, by making follow-through visible across services.
+      </p>
+      <div class="grid-3">
+        <div class="card"><div class="card-title">NHS 10 Year Health Plan</div><div class="card-body">Supports the shift from hospital to community and reactive to preventative care.</div></div>
+        <div class="card"><div class="card-title">NHS ADHD Taskforce</div><div class="card-body">Responds to ADHD as a major underaddressed public-health issue.</div></div>
+        <div class="card"><div class="card-title">Community Hubs</div><div class="card-body">Fits the direction of neighbourhood-based, joined-up support by holding the thread between services.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="dark">
+    <div class="wrap">
+      <div class="card" style="text-align:center;">
+        <div class="kicker">Forward this briefing</div>
+        <h2>Worth five minutes.<br><span class="accent">Then decide who needs the next conversation.</span></h2>
+        <p class="lead" style="margin-left:auto;margin-right:auto;">
+          The immediate request is not a purchase decision. It is a conversation about whether this bounded, evidence-generating demonstrator fits local public-health and commissioning priorities.
+        </p>
+        <div class="btnrow" style="justify-content:center;">
+          <a class="btn primary" href="mailto:info@otos.life?subject=OTOS%20Continuity%20-%20Public%20Health%20briefing">Contact OTOS</a>
+          <a class="btn secondary" href="partners.html">Partner briefing</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
