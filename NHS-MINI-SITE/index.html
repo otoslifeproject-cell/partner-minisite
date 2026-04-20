@@ -1,923 +1,514 @@
 <!DOCTYPE html>
 <html lang="en-GB">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>OTOS Continuity™ — Saving Money, Saving Lives</title>
-  <meta name="description" content="OTOS Continuity™ is non-clinical continuity infrastructure with governed message-delivery and micro-check-in capability for NHS and partner pathways." />
-  <meta name="robots" content="noindex, nofollow" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/otos.css" />
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OTOS Continuity™ — Protected Hub</title>
+  <meta name="description" content="OTOS Continuity™ is non-clinical continuity infrastructure for holding people safely between services, handoffs, waiting lists, discharge points and recovery support.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/otos.css">
   <style>
-    :root {
-      --m7-dark: #080b12;
-      --m7-panel: #111620;
-      --m7-panel-2: #171c26;
-      --m7-cream: #f1ede4;
-      --m7-cream-2: #e8e1d5;
-      --m7-text: #f7f3ea;
-      --m7-muted: #aeb4c0;
-      --m7-ink: #211c18;
-      --m7-ink-muted: #5f5a52;
-      --m7-orange: #e26a12;
-      --m7-orange-2: #ff8a1d;
-      --m7-green: #3ecf6b;
-      --m7-red: #ff5c5c;
-      --m7-border: rgba(255,255,255,.12);
-      --m7-border-dark: rgba(0,0,0,.15);
-      --m7-radius: 24px;
-    }
-
-    body {
-      background: var(--m7-dark);
-      color: var(--m7-text);
-    }
-
-    .m7-section {
-      padding: 96px 24px;
-    }
-
-    .m7-inner {
-      max-width: 1120px;
-      margin: 0 auto;
-    }
-
-    .m7-dark {
-      background: radial-gradient(circle at 80% 0%, rgba(226,106,18,.14), transparent 34%), var(--m7-dark);
-      color: var(--m7-text);
-    }
-
-    .m7-light {
-      background: var(--m7-cream);
-      color: var(--m7-ink);
-    }
-
-    .m7-kicker {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 8px 14px;
-      border: 1px solid rgba(226,106,18,.55);
-      border-radius: 999px;
-      color: var(--m7-orange-2);
-      text-transform: uppercase;
-      letter-spacing: .16em;
-      font-size: .72rem;
-      font-weight: 800;
-      margin-bottom: 24px;
-    }
-
-    .m7-title {
-      font-size: clamp(2.7rem, 6vw, 5.8rem);
-      line-height: .95;
-      letter-spacing: -.055em;
-      font-weight: 900;
-      max-width: 900px;
-      margin: 0 0 24px;
-    }
-
-    .m7-title .accent,
-    .m7-heading .accent {
-      color: var(--m7-orange);
-    }
-
-    .m7-heading {
-      font-size: clamp(2rem, 4.2vw, 4.4rem);
-      line-height: 1;
-      letter-spacing: -.045em;
-      font-weight: 900;
-      margin: 0 0 22px;
-    }
-
-    .m7-lead {
-      font-size: clamp(1.05rem, 1.55vw, 1.35rem);
-      line-height: 1.75;
-      color: var(--m7-muted);
-      max-width: 850px;
-      margin: 0 0 28px;
-    }
-
-    .m7-light .m7-lead {
-      color: var(--m7-ink-muted);
-    }
-
-    .m7-grid-2,
-    .m7-grid-3,
-    .m7-grid-4 {
-      display: grid;
-      gap: 18px;
-    }
-
-    .m7-grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    .m7-grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-    .m7-grid-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
-
-    .m7-card {
-      background: var(--m7-panel);
-      border: 1px solid var(--m7-border);
-      border-radius: var(--m7-radius);
-      padding: 28px;
-      box-shadow: 0 24px 80px rgba(0,0,0,.18);
-    }
-
-    .m7-light .m7-card {
-      background: rgba(255,255,255,.45);
-      border-color: var(--m7-border-dark);
-      box-shadow: none;
-    }
-
-    .m7-card strong {
-      color: inherit;
-    }
-
-    .m7-stat {
-      color: var(--m7-orange-2);
-      font-size: clamp(2.2rem, 4vw, 4rem);
-      font-weight: 900;
-      letter-spacing: -.05em;
-      line-height: 1;
-      margin-bottom: 12px;
-    }
-
-    .m7-card-title {
-      font-weight: 850;
-      font-size: 1.02rem;
-      margin-bottom: 10px;
-    }
-
-    .m7-card-body {
-      color: var(--m7-muted);
-      line-height: 1.65;
-      font-size: .98rem;
-    }
-
-    .m7-light .m7-card-body {
-      color: var(--m7-ink-muted);
-    }
-
-    .m7-rule {
-      border: 0;
-      border-top: 1px solid rgba(255,255,255,.11);
-      margin: 44px 0;
-    }
-
-    .m7-light .m7-rule {
-      border-top-color: rgba(0,0,0,.14);
-    }
-
-    .m7-pill-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 22px;
-    }
-
-    .m7-pill {
-      border: 1px solid rgba(226,106,18,.32);
-      background: rgba(226,106,18,.08);
-      color: var(--m7-orange-2);
-      border-radius: 999px;
-      padding: 8px 12px;
-      font-size: .82rem;
-      font-weight: 750;
-    }
-
-    .m7-btn-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      margin-top: 30px;
-    }
-
-    .m7-btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 48px;
-      padding: 0 22px;
-      border-radius: 999px;
-      font-weight: 850;
-      text-decoration: none;
-      border: 1px solid rgba(255,255,255,.16);
-      color: var(--m7-text);
-    }
-
-    .m7-btn.primary {
-      background: var(--m7-orange);
-      border-color: var(--m7-orange);
-      color: white;
-    }
-
-    .m7-btn.secondary {
-      background: transparent;
-    }
-
-    .m7-light .m7-btn.secondary {
-      color: var(--m7-ink);
-      border-color: rgba(0,0,0,.2);
-    }
-
-    .m7-quote {
-      border-left: 4px solid var(--m7-orange);
-      background: rgba(226,106,18,.08);
-      padding: 22px 26px;
-      border-radius: 0 18px 18px 0;
-      font-size: 1.08rem;
-      line-height: 1.7;
-      font-style: italic;
-      margin: 30px 0;
-    }
-
-    .m7-flow {
-      display: grid;
-      gap: 16px;
-      margin-top: 32px;
-    }
-
-    .m7-flow-row {
-      display: grid;
-      grid-template-columns: 70px 1fr;
-      gap: 18px;
-      align-items: start;
-      padding: 22px 0;
-      border-bottom: 1px solid rgba(255,255,255,.1);
-    }
-
-    .m7-light .m7-flow-row {
-      border-bottom-color: rgba(0,0,0,.13);
-    }
-
-    .m7-flow-num {
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      display: grid;
-      place-items: center;
-      border: 1px solid rgba(226,106,18,.45);
-      color: var(--m7-orange);
-      font-weight: 900;
-    }
-
-    .m7-flow-title {
-      font-weight: 900;
-      font-size: 1.2rem;
-      margin-bottom: 8px;
-    }
-
-    .m7-flow-copy {
-      line-height: 1.7;
-      color: var(--m7-muted);
-    }
-
-    .m7-light .m7-flow-copy {
-      color: var(--m7-ink-muted);
-    }
-
-    .m7-table {
-      width: 100%;
-      border-collapse: collapse;
-      overflow: hidden;
-      border-radius: 18px;
-      border: 1px solid rgba(255,255,255,.13);
-      font-size: .95rem;
-    }
-
-    .m7-table th,
-    .m7-table td {
-      padding: 16px;
-      border-bottom: 1px solid rgba(255,255,255,.1);
-      text-align: left;
-      vertical-align: top;
-      line-height: 1.55;
-    }
-
-    .m7-light .m7-table {
-      border-color: rgba(0,0,0,.15);
-    }
-
-    .m7-light .m7-table th,
-    .m7-light .m7-table td {
-      border-bottom-color: rgba(0,0,0,.12);
-    }
-
-    .m7-table th {
-      color: var(--m7-orange-2);
-      text-transform: uppercase;
-      letter-spacing: .1em;
-      font-size: .72rem;
-    }
-
-    .m7-nav-lite {
-      position: fixed;
-      inset: 0 0 auto;
-      height: 72px;
-      z-index: 50;
-      background: rgba(8,11,18,.72);
-      backdrop-filter: blur(18px);
-      border-bottom: 1px solid rgba(255,255,255,.08);
-    }
-
-    .m7-nav-inner {
-      max-width: 1120px;
-      height: 72px;
-      margin: 0 auto;
-      padding: 0 24px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .m7-logo {
-      color: white;
-      text-decoration: none;
-      font-weight: 900;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .m7-logo img {
-      height: 30px;
-      width: auto;
-    }
-
-    .m7-nav-links {
-      display: flex;
-      align-items: center;
-      gap: 18px;
-      font-size: .84rem;
-      font-weight: 750;
-    }
-
-    .m7-nav-links a {
-      color: rgba(255,255,255,.74);
-      text-decoration: none;
-    }
-
-    .m7-nav-links a:hover {
-      color: white;
-    }
-
-    .m7-hero {
-      min-height: 100vh;
-      display: grid;
-      place-items: center;
-      padding-top: 96px;
-    }
-
-    .m7-hero-grid {
-      display: grid;
-      grid-template-columns: 1.05fr .95fr;
-      gap: 46px;
-      align-items: center;
-    }
-
-    .m7-visual-card {
-      border-radius: 28px;
-      border: 1px solid rgba(255,255,255,.13);
-      background: linear-gradient(145deg, rgba(255,255,255,.07), rgba(255,255,255,.02));
-      padding: 24px;
-      box-shadow: 0 28px 100px rgba(0,0,0,.38);
-    }
-
-    .m7-brain-diagram {
-      width: 100%;
-      display: block;
-      border-radius: 20px;
-      background: white;
-    }
-
     .quote-overlay {
       position: fixed;
       inset: 0;
-      z-index: 999;
+      z-index: 9999;
       display: grid;
       place-items: center;
-      background: rgba(0,0,0,.74);
-      backdrop-filter: blur(12px);
-      transition: opacity .4s ease, visibility .4s ease;
+      padding: 24px;
+      background: rgba(5, 8, 13, .84);
+      backdrop-filter: blur(14px);
+      transition: opacity .35s ease, visibility .35s ease;
     }
-
     .quote-overlay.is-hidden {
       opacity: 0;
       visibility: hidden;
       pointer-events: none;
     }
-
     .quote-card {
-      width: min(720px, calc(100vw - 36px));
+      width: min(620px, 100%);
+      border: 1px solid rgba(232,111,19,.35);
       border-radius: 24px;
-      border: 1px solid rgba(226,106,18,.35);
-      background: #0d1119;
-      box-shadow: 0 30px 100px rgba(0,0,0,.55);
+      background: rgba(18, 23, 34, .96);
+      box-shadow: 0 30px 110px rgba(0,0,0,.45);
       padding: 34px;
+      color: var(--otos-white);
       position: relative;
       overflow: hidden;
     }
-
     .quote-timer-bar {
       position: absolute;
       left: 0;
       top: 0;
-      height: 3px;
-      width: 100%;
-      background: rgba(255,255,255,.12);
+      right: 0;
+      height: 4px;
+      background: rgba(255,255,255,.08);
     }
-
     .quote-timer-fill {
       height: 100%;
       width: 100%;
-      background: var(--m7-orange);
-      animation: quoteShrink 4.2s linear forwards;
+      background: var(--otos-orange);
+      transform-origin: left center;
+      animation: quoteTimer 7s linear forwards;
     }
-
-    @keyframes quoteShrink {
-      from { width: 100%; }
-      to { width: 0%; }
-    }
-
+    @keyframes quoteTimer { to { transform: scaleX(0); } }
     .quote-text {
-      color: white;
-      font-size: clamp(1.05rem, 2vw, 1.55rem);
-      line-height: 1.55;
-      font-weight: 750;
-      margin: 0 0 18px;
+      margin: 0;
+      font-size: clamp(1.05rem, 2vw, 1.35rem);
+      line-height: 1.58;
+      font-weight: 800;
+      letter-spacing: -.025em;
     }
-
-    .quote-text em {
-      color: var(--m7-orange-2);
+    .quote-text em,
+    .quote-text strong {
+      color: var(--otos-orange-2);
       font-style: normal;
     }
-
     .quote-attribution {
-      color: var(--m7-muted);
-      margin: 0;
+      margin: 18px 0 0;
+      color: var(--otos-muted);
+      font-size: .9rem;
       font-weight: 700;
     }
-
-    @media (max-width: 900px) {
-      .m7-hero-grid,
-      .m7-grid-2,
-      .m7-grid-3,
-      .m7-grid-4 {
-        grid-template-columns: 1fr;
-      }
-
-      .m7-nav-links {
-        display: none;
-      }
-
-      .m7-section {
-        padding: 72px 20px;
-      }
-
-      .m7-flow-row {
-        grid-template-columns: 1fr;
-      }
+    .quote-skip {
+      margin-top: 22px;
+      background: transparent;
+      color: var(--otos-white);
+      border: 1px solid rgba(255,255,255,.16);
+      border-radius: 999px;
+      padding: 10px 16px;
+      font-weight: 800;
+      cursor: pointer;
+    }
+    .hero-note {
+      margin-top: 26px;
+      color: var(--otos-muted-2);
+      font-family: var(--otos-mono);
+      font-size: .78rem;
+      letter-spacing: .04em;
+    }
+    .mini-monitor {
+      background: rgba(18,23,34,.92);
+      border: 1px solid var(--otos-line);
+      border-radius: 28px;
+      padding: 22px;
+      box-shadow: 0 28px 90px rgba(0,0,0,.34);
+    }
+    .monitor-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 20px;
+      color: var(--otos-orange-2);
+      font-family: var(--otos-mono);
+      font-weight: 800;
+      font-size: .76rem;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .monitor-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap: 12px;
+    }
+    .monitor-cell {
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(255,255,255,.09);
+      border-radius: 18px;
+      padding: 18px;
+    }
+    .monitor-num {
+      color: var(--otos-orange-2);
+      font-size: 2rem;
+      font-weight: 900;
+      letter-spacing: -.05em;
+      line-height: 1;
+    }
+    .monitor-label {
+      color: var(--otos-muted);
+      font-size: .78rem;
+      line-height: 1.35;
+      margin-top: 8px;
+      font-weight: 700;
+    }
+    .definition-box {
+      border: 1px solid rgba(232,111,19,.38);
+      border-radius: 28px;
+      padding: 34px;
+      background: linear-gradient(135deg, rgba(232,111,19,.13), rgba(255,255,255,.035));
+      margin-top: 34px;
+    }
+    .definition-box strong { color: var(--otos-white); }
+    .compare-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap: 18px;
+      margin-top: 24px;
+    }
+    .plain-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: .94rem;
+      line-height: 1.55;
+    }
+    .plain-table th,
+    .plain-table td {
+      border-bottom: 1px solid rgba(255,255,255,.1);
+      padding: 14px 12px;
+      text-align: left;
+      vertical-align: top;
+    }
+    .plain-table th {
+      color: var(--otos-orange-2);
+      font-family: var(--otos-mono);
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      font-size: .72rem;
+    }
+    .otos-section-light .plain-table th,
+    .otos-section-light .plain-table td {
+      border-bottom-color: rgba(0,0,0,.13);
+    }
+    .partner-logo-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 18px;
+      margin-top: 28px;
+    }
+    .partner-logo-grid .otos-card {
+      min-height: 220px;
+    }
+    .section-image {
+      border-radius: 28px;
+      overflow: hidden;
+      border: 1px solid var(--otos-line);
+      background: rgba(255,255,255,.04);
+    }
+    .section-image img {
+      width: 100%;
+      display: block;
+    }
+    @media (max-width: 980px) {
+      .compare-grid,
+      .partner-logo-grid,
+      .monitor-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
-
 <body>
-  <script>
-    (function() {
-      if (sessionStorage.getItem('otos_access') !== '1') {
-        window.location.replace('public.html');
-      }
-    })();
-  </script>
 
-  <div id="quote-overlay" class="quote-overlay" role="dialog" aria-modal="true" aria-label="Welcome">
-    <div class="quote-card">
-      <div class="quote-timer-bar"><div class="quote-timer-fill"></div></div>
-      <p class="quote-text">
-        "<em>ADHD, when unsupported, is a potent route into</em> educational failure, long-term unemployment, crime, substance misuse, suicide, mental and physical illness. Economic costs to individuals and the government of <em>at least £17 billion are avoidable</em> as, when appropriately supported, people with ADHD can thrive and fully engage in a working life."
-      </p>
-      <p class="quote-attribution">— NHS ADHD Taskforce 2024</p>
-    </div>
+<script>
+  (function() {
+    if (sessionStorage.getItem('otos_access') !== '1') {
+      window.location.replace('public.html');
+    }
+  })();
+</script>
+
+<div id="quote-overlay" class="quote-overlay" role="dialog" aria-modal="true" aria-label="Welcome quote">
+  <div class="quote-card">
+    <div class="quote-timer-bar"><div class="quote-timer-fill"></div></div>
+    <p class="quote-text">
+      “<em>ADHD, when unsupported, is a potent route into</em> educational failure, long-term unemployment, crime, substance misuse, suicide, mental and physical illness. Economic costs to individuals and the government of <em>at least £17 billion are avoidable</em> as, when appropriately supported, people with ADHD can thrive and fully engage in a working life.”
+    </p>
+    <p class="quote-attribution">— NHS ADHD Taskforce, 2024</p>
+    <button class="quote-skip" type="button" id="quote-skip">Continue</button>
   </div>
+</div>
 
-  <nav class="m7-nav-lite" aria-label="Main navigation">
-    <div class="m7-nav-inner">
-      <a class="m7-logo" href="index.html">
-        <img src="images/brain-icon.png" alt="" onerror="this.style.display='none'" />
+<div class="otos-page">
+  <nav class="otos-nav" aria-label="Main navigation">
+    <div class="otos-nav-inner">
+      <a href="index.html" class="otos-brand" aria-label="OTOS Continuity home">
+        <img src="images/brain-icon.png" alt="" onerror="this.style.display='none'">
         <span>OTOS Continuity™</span>
       </a>
-      <div class="m7-nav-links">
+      <div class="otos-nav-links">
         <a href="#what-it-is">What it is</a>
         <a href="#problem">Problem</a>
-        <a href="#how">How it works</a>
+        <a href="#how-it-works">How it works</a>
         <a href="partners.html">Partners</a>
         <a href="local-authority-public-health.html">Local Authority</a>
-        <a href="numbers-calculator.html">Numbers</a>
+        <a href="numbers.html">Numbers</a>
         <a href="evidence-sources.html">Evidence</a>
       </div>
     </div>
   </nav>
 
+  <header class="otos-hero otos-section-dark">
+    <div class="otos-wrap otos-hero-grid">
+      <div>
+        <div class="otos-kicker">Continuity™ · Protected Hub</div>
+        <h1 class="otos-title">One joined-up pathway.<br><span class="otos-accent">Before crisis becomes consequence.</span></h1>
+        <p class="otos-lead">OTOS Continuity™ helps NHS, local authority and partner organisations hold people safely between appointments, referrals, discharge, waiting lists and recovery support — so silence, drift and broken handoffs become visible before they become crisis.</p>
+        <div class="otos-btn-row">
+          <a class="otos-btn otos-btn-primary" href="#what-it-is">Understand OTOS</a>
+          <a class="otos-btn otos-btn-secondary" href="partners.html">Partner routes</a>
+        </div>
+        <p class="hero-note">Non-clinical · tokenised by default · no EPR merge · human decisions only</p>
+      </div>
+      <div class="mini-monitor" aria-label="Illustrative continuity monitor">
+        <div class="monitor-head">
+          <span>Continuity Monitor</span>
+          <span id="dash-clock">--:--:--</span>
+        </div>
+        <div class="monitor-grid">
+          <div class="monitor-cell"><div class="monitor-num">50</div><div class="monitor-label">pre-pilot participants</div></div>
+          <div class="monitor-cell"><div class="monitor-num">12</div><div class="monitor-label">weeks active delivery</div></div>
+          <div class="monitor-cell"><div class="monitor-num">800–900</div><div class="monitor-label">estimated local cohort range</div></div>
+          <div class="monitor-cell"><div class="monitor-num">1</div><div class="monitor-label">thread across services</div></div>
+        </div>
+      </div>
+    </div>
+  </header>
+
   <main>
-    <section class="m7-section m7-dark m7-hero" id="home">
-      <div class="m7-inner">
-        <div class="m7-hero-grid">
-          <div>
-            <div class="m7-kicker">Continuity™ · protected hub</div>
-            <h1 class="m7-title">
-              One joined-up pathway.<br>
-              <span class="accent">Before crisis becomes consequence.</span>
-            </h1>
-            <p class="m7-lead">
-              OTOS Continuity™ helps NHS, local authority and partner organisations hold people safely between appointments, referrals, discharge, waiting lists and recovery support — so silence, drift and broken handoffs become visible before they become crisis.
-            </p>
-            <div class="m7-btn-row">
-              <a class="m7-btn primary" href="#what-it-is">Understand OTOS</a>
-              <a class="m7-btn secondary" href="partners.html">See partner routes</a>
-            </div>
+    <section class="otos-section otos-section-dark" id="what-it-is">
+      <div class="otos-wrap">
+        <div class="otos-kicker">What OTOS is</div>
+        <h2 class="otos-heading">The continuity layer.<br><span class="otos-accent">One safe signal through every service.</span></h2>
+        <p class="otos-lead">OTOS is non-clinical continuity infrastructure. It creates an encrypted, tokenised thread around a person’s journey, so separate services can see whether a handoff landed, whether the next step happened, and whether someone has gone quiet.</p>
+        <div class="definition-box">
+          <p class="otos-lead" style="margin-bottom:0;">It does not merge records. It does not share clinical notes. It does not diagnose, prescribe, triage clinically or replace existing systems. It sits around them — surfacing continuity signals so partner teams can make better, faster, human decisions.</p>
+        </div>
+        <div class="compare-grid">
+          <div class="otos-card">
+            <h3 class="otos-card-title">What it does</h3>
+            <ul class="otos-brain-list">
+              <li>Logs touchpoints and handoffs against an anonymised journey token.</li>
+              <li>Creates timestamped transition receipts when a next step is made, acknowledged or stalled.</li>
+              <li>Surfaces early drift signals for human review before silence becomes crisis.</li>
+              <li>Supports governed message delivery and micro-check-ins where partners agree the content and route.</li>
+              <li>Maintains a continuity audit trail that can be reviewed, measured and improved.</li>
+            </ul>
           </div>
-
-          <div class="m7-visual-card">
-            <img class="m7-brain-diagram" src="images/partner-pathway-brain.png" alt="OTOS Continuity partner pathway diagram" onerror="this.src='images/brain-pathway.png'; this.onerror=null;" />
+          <div class="otos-card">
+            <h3 class="otos-card-title">What it is not</h3>
+            <ul class="otos-brain-list">
+              <li>Not an EPR, clinical record or diagnostic platform.</li>
+              <li>Not a prescribing, treatment or clinical decision-support system.</li>
+              <li>Not surveillance, and not full record-sharing by default.</li>
+              <li>Not another service asking frontline teams to start again.</li>
+              <li>Not a replacement for safeguarding, crisis or existing partner protocols.</li>
+            </ul>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="m7-section m7-light" id="what-it-is">
-      <div class="m7-inner">
-        <div class="m7-kicker">What OTOS is</div>
-        <h2 class="m7-heading">
-          Continuity infrastructure.<br>
-          <span class="accent">With message-delivery and micro-check-in capability.</span>
-        </h2>
-
-        <p class="m7-lead">
-          OTOS does not replace services. It sits around them. It creates a tokenised continuity thread that helps authorised partners see whether a touchpoint happened, whether a handoff landed, whether a person is still engaging, and whether silence is becoming drift.
-        </p>
-
-        <p class="m7-lead">
-          Partners can approve short, familiar messages for their own touchpoints — for example a CGL welcome message, an RCE course nudge while someone waits, or a discharge follow-through confirmation. OTOS provides the infrastructure; the partner decides the wording, timing and responsibility.
-        </p>
-
-        <div class="m7-quote">
-          OTOS does not deliver care directly to patients. It gives partner teams the tools to hold the pathway, receipt handoffs, send agreed messages, and see when continuity is starting to break.
+    <section class="otos-section otos-section-dark" id="problem">
+      <div class="otos-wrap">
+        <div class="otos-kicker">The problem</div>
+        <h2 class="otos-heading">Hidden in plain sight.<br><span class="otos-accent">ADHD is driving addiction.</span></h2>
+        <p class="otos-lead">The system usually treats addiction as the primary condition. For some people, that is right. For a significant and identifiable group of adults, it is not. The primary condition is ADHD. The drinking or drug use is what arrives in view.</p>
+        <p class="otos-copy">That matters because self-medication can work — until it does not. Alcohol or substances can briefly do what an untreated ADHD brain has been trying to do all along: supply motivation, sustain attention, create focus and cut the noise. The trouble starts when that coping strategy turns into dependency and crisis.</p>
+        <div class="otos-grid-4" style="margin-top:34px;">
+          <div class="otos-card"><div class="otos-stat">23–45%</div><h3 class="otos-card-title">ADHD in addiction treatment</h3><p class="otos-card-body">Royal College of Psychiatrists range. ADHD is repeatedly overrepresented and often missed at point of entry.</p></div>
+          <div class="otos-card"><div class="otos-stat">£1.3bn</div><h3 class="otos-card-title">Annual NHS addiction spend</h3><p class="otos-card-body">Reactive cost continues when the underlying driver is never systematically identified.</p></div>
+          <div class="otos-card"><div class="otos-stat">800–900</div><h3 class="otos-card-title">Estimated local cohort</h3><p class="otos-card-body">OTOS planning estimate for adults in the local footprint with co-occurring ADHD and substance misuse. To be validated with partners.</p></div>
+          <div class="otos-card"><div class="otos-stat">61.3%</div><h3 class="otos-card-title">START comparator</h3><p class="otos-card-body">Improvement in addictive disorders after ADHD diagnosis at six months. Comparator only, not a guaranteed pilot outcome.</p></div>
         </div>
+        <div class="otos-quote">“Treating ADHD in patients with co-occurring substance use disorder produces benefit — not only for ADHD symptoms, but for substance use outcomes too.”</div>
+      </div>
+    </section>
 
-        <div class="m7-grid-2">
-          <div class="m7-card">
-            <div class="m7-card-title">What OTOS is</div>
-            <div class="m7-card-body">
-              Non-clinical continuity infrastructure · tokenised journey thread · handoff receipts · drift signals · partner-written messages · micro-check-ins · audit trail · human-in-control.
-            </div>
+    <section class="otos-section otos-section-light" id="how-it-works">
+      <div class="otos-wrap">
+        <div class="otos-kicker">How it works</div>
+        <h2 class="otos-heading">Four steps.<br><span class="otos-accent">One connected pathway.</span></h2>
+        <p class="otos-lead">OTOS does not replace existing services. It connects them and maintains the person’s thread through every organisation they touch. The person can remain anonymous. The clinical notes stay where they are. The continuity signal travels.</p>
+        <div class="otos-flow">
+          <div class="otos-flow-row">
+            <div class="otos-flow-num">1</div>
+            <div><h3 class="otos-flow-title">Identify</h3><p class="otos-flow-copy">Screen and identify people in addiction, recovery, crisis or waiting-list pathways who show indicators of co-occurring ADHD and substance misuse. OTOS does not diagnose — it surfaces the signal.</p></div>
           </div>
-          <div class="m7-card">
-            <div class="m7-card-title">What OTOS is not</div>
-            <div class="m7-card-body">
-              Not an EPR · not a diagnostic platform · not a prescribing system · not surveillance · not clinical monitoring · not another silo · not a replacement for existing services.
-            </div>
+          <div class="otos-flow-row">
+            <div class="otos-flow-num">2</div>
+            <div><h3 class="otos-flow-title">Connect</h3><p class="otos-flow-copy">Warm-transfer people to appropriate NHS and partner routes — ADHD assessment, Right to Choose, CPFT, GP, mental health support or recovery support. The receipt is logged. The handoff becomes visible.</p></div>
+          </div>
+          <div class="otos-flow-row">
+            <div class="otos-flow-num">3</div>
+            <div><h3 class="otos-flow-title">Co-ordinate</h3><p class="otos-flow-copy">Maintain a tokenised continuity thread across services so each partner can see where the person is in the journey — reducing gaps, duplication and silent disengagement before it becomes crisis.</p></div>
+          </div>
+          <div class="otos-flow-row">
+            <div class="otos-flow-num">4</div>
+            <div><h3 class="otos-flow-title">Sustain</h3><p class="otos-flow-copy">Support follow-through, recovery and safe re-engagement. Micro-check-ins can create simple “signal of life” touchpoints and habit-stacked repetitions while partners keep control of messaging, escalation and decisions.</p></div>
           </div>
         </div>
+        <div class="otos-quote">OTOS surfaces signals. The partner team makes the decision.</div>
+      </div>
+    </section>
 
-        <hr class="m7-rule">
-
-        <div class="m7-grid-3">
-          <div class="m7-card">
-            <div class="m7-card-title">Tokenised by default</div>
-            <div class="m7-card-body">
-              Records stay separate. OTOS does not merge EPRs or expose partner clinical notes. It carries continuity status around a governed journey token.
-            </div>
-          </div>
-          <div class="m7-card">
-            <div class="m7-card-title">Signals, not decisions</div>
-            <div class="m7-card-body">
-              OTOS surfaces signals. Partner teams make the decisions. Every drift signal has a human-review loop before any action.
-            </div>
-          </div>
-          <div class="m7-card">
-            <div class="m7-card-title">Micro-check-ins</div>
-            <div class="m7-card-body">
-              One low-friction question, repeated at agreed points, can provide a basic continuity signal between human contacts — without replacing care or asking frontline teams to call every time.
-            </div>
-          </div>
+    <section class="otos-section otos-section-dark" id="pilot">
+      <div class="otos-wrap">
+        <div class="otos-kicker">The pre-pilot</div>
+        <h2 class="otos-heading">50 people.<br><span class="otos-accent">A proof point that changes the commissioning conversation.</span></h2>
+        <p class="otos-lead">The pre-pilot is a bounded, tactical intervention: select a high-priority cohort, hold the continuity thread across existing services, and test whether visible, receipted handoffs reduce drift and improve follow-through.</p>
+        <p class="otos-copy"><strong>Pilot ambition:</strong> for a defined cohort of up to 50, help people progress through assessment and, where clinically indicated, onto treatment including medication — using existing routes under clinical leadership. OTOS connects them to existing support, holds the pathway visible, and surfaces when continuity breaks.</p>
+        <div class="otos-grid-3" style="margin-top:34px;">
+          <div class="otos-card"><div class="otos-stat">50</div><h3 class="otos-card-title">Participants</h3><p class="otos-card-body">Adults with co-occurring ADHD and substance misuse, selected with partner input. Diagnosed, suspected, waiting or stuck between steps can all be considered.</p></div>
+          <div class="otos-card"><div class="otos-stat">12</div><h3 class="otos-card-title">Weeks active delivery</h3><p class="otos-card-body">Following a 3–4 week setup/recruitment period. Weekly learning rhythm. Evaluation pack on completion.</p></div>
+          <div class="otos-card"><div class="otos-stat">£91,520</div><h3 class="otos-card-title">Evidence budget</h3><p class="otos-card-body">Not a full rollout ask. A bounded test of whether continuity made visible can produce decision-grade evidence.</p></div>
+        </div>
+        <hr class="otos-rule">
+        <h3 class="otos-heading-sm">What we ask from partners</h3>
+        <div class="otos-grid-3">
+          <div class="otos-card"><h4 class="otos-card-title">Named contact</h4><p class="otos-card-body">One named contact per participating organisation to answer quick workflow questions, confirm red lines and help shape a route that will work in real life.</p></div>
+          <div class="otos-card"><h4 class="otos-card-title">Human reviewer</h4><p class="otos-card-body">Reviews drift or escalation items when surfaced, records a decision and closes the item. Burden is measured and treated as a pre-pilot success criterion.</p></div>
+          <div class="otos-card"><h4 class="otos-card-title">Scoping conversation</h4><p class="otos-card-body">A small amount of time now so the future system reduces burden later. The point is to make the pathway easier, not heavier.</p></div>
         </div>
       </div>
     </section>
 
-    <section class="m7-section m7-dark" id="problem">
-      <div class="m7-inner">
-        <div class="m7-kicker">The problem</div>
-        <h2 class="m7-heading">
-          ADHD and addiction do not fail in one service.<br>
-          <span class="accent">They fail between them.</span>
-        </h2>
-
-        <p class="m7-lead">
-          The system usually treats addiction as the primary condition. For some people, that is right. For a significant and identifiable group of adults, it is not. The primary condition is ADHD. The drinking or drug use is what arrives in view.
-        </p>
-
-        <p class="m7-lead">
-          Services then respond to the addiction. But if the ADHD remains untouched, the work often does not hold. Motivation strategies meet an executive function problem. Recovery planning meets a brain that struggles with sequencing, memory, time, shame and follow-through.
-        </p>
-
-        <div class="m7-grid-3">
-          <div class="m7-card">
-            <div class="m7-stat">23–45%</div>
-            <div class="m7-card-title">ADHD in addiction treatment</div>
-            <div class="m7-card-body">
-              Published research shows ADHD is significantly overrepresented in substance-use populations. The exact figure varies by setting and definition.
-            </div>
-          </div>
-          <div class="m7-card">
-            <div class="m7-stat">£1.3bn</div>
-            <div class="m7-card-title">Annual NHS addiction service spend</div>
-            <div class="m7-card-body">
-              Much of the cost is reactive. The public-health question is whether some of this spend can be redirected earlier, before repeat crisis.
-            </div>
-          </div>
-          <div class="m7-card">
-            <div class="m7-stat">800–900</div>
-            <div class="m7-card-title">Estimated local risk cohort</div>
-            <div class="m7-card-body">
-              OTOS modelling estimates between 800 and 900 adults in the Cambridgeshire and Peterborough footprint may sit within the target ADHD-and-addiction risk profile. This is a planning estimate, not a CPFT-reported figure.
-            </div>
-          </div>
+    <section class="otos-section otos-section-dark" id="partners">
+      <div class="otos-wrap">
+        <div class="otos-kicker">Partners</div>
+        <h2 class="otos-heading">All the support already exists.<br><span class="otos-accent">It has never been connected like this.</span></h2>
+        <p class="otos-lead">OTOS is built on real relationships, not just referral lists. This shared briefing gives every partner the same starting point. The individual pages then explain each organisation’s role, time ask and practical next steps.</p>
+        <div class="otos-visual-card" style="margin:34px 0;">
+          <img class="otos-pathway-image" src="images/partner-pathway-brain.png" alt="OTOS Continuity partner pathway diagram" onerror="this.src='images/partner-pathway.png'; this.onerror=function(){this.closest('.otos-visual-card').style.display='none'};">
         </div>
-
-        <div class="m7-quote">
-          A system can appear to succeed when a person is discharged, closed, referred on, or marked as having completed an episode. But if nobody can see whether the next step actually happened, the risk has not disappeared — it has simply moved out of view.
-        </div>
-      </div>
-    </section>
-
-    <section class="m7-section m7-light" id="how">
-      <div class="m7-inner">
-        <div class="m7-kicker">How it works</div>
-        <h2 class="m7-heading">
-          Existing services. Existing routes.<br>
-          <span class="accent">One continuity layer.</span>
-        </h2>
-
-        <p class="m7-lead">
-          OTOS sits lightly around existing workflows. No merged records. No clinical decision-making. No new clinical burden. The system creates a continuity thread, records touchpoints, receipts handoffs, and surfaces drift for human review.
-        </p>
-
-        <div class="m7-flow">
-          <div class="m7-flow-row">
-            <div class="m7-flow-num">1</div>
-            <div>
-              <div class="m7-flow-title">Identify</div>
-              <div class="m7-flow-copy">
-                A partner identifies someone already touching addiction, mental health, hospital, recovery, GP or community support where ADHD may be driving repeat crisis or disengagement.
-              </div>
-            </div>
-          </div>
-          <div class="m7-flow-row">
-            <div class="m7-flow-num">2</div>
-            <div>
-              <div class="m7-flow-title">Connect</div>
-              <div class="m7-flow-copy">
-                The person is connected to the next appropriate route — ADHD assessment, medication review, RCE support, CGL/CRS follow-through, GP/RTC/QbTest route or community support — under partner governance.
-              </div>
-            </div>
-          </div>
-          <div class="m7-flow-row">
-            <div class="m7-flow-num">3</div>
-            <div>
-              <div class="m7-flow-title">Hold the thread</div>
-              <div class="m7-flow-copy">
-                A tokenised journey thread records the touchpoint and expected next step. Clinical records stay where they are. OTOS holds continuity status, not full clinical notes.
-              </div>
-            </div>
-          </div>
-          <div class="m7-flow-row">
-            <div class="m7-flow-num">4</div>
-            <div>
-              <div class="m7-flow-title">Surface drift</div>
-              <div class="m7-flow-copy">
-                If the handoff is not receipted, the check-in goes quiet, or the pathway starts to break, OTOS surfaces a drift signal for the named human reviewer.
-              </div>
-            </div>
-          </div>
-          <div class="m7-flow-row">
-            <div class="m7-flow-num">5</div>
-            <div>
-              <div class="m7-flow-title">Partner team decides</div>
-              <div class="m7-flow-copy">
-                OTOS does not diagnose, prescribe, triage clinically, or decide care. The partner team decides what happens next. OTOS makes the continuity picture visible.
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <hr class="m7-rule">
-
-        <div class="m7-grid-4">
-          <div class="m7-card">
-            <div class="m7-card-title">No EPR write-back</div>
-            <div class="m7-card-body">Records stay separate. OTOS does not push clinical notes into partner systems.</div>
-          </div>
-          <div class="m7-card">
-            <div class="m7-card-title">No full record sharing</div>
-            <div class="m7-card-body">Useful for NHS/charity/VCSE contexts where full patient record access is not practical or appropriate.</div>
-          </div>
-          <div class="m7-card">
-            <div class="m7-card-title">No extra clinical burden</div>
-            <div class="m7-card-body">The pre-pilot measures partner time and treats burden as a success criterion.</div>
-          </div>
-          <div class="m7-card">
-            <div class="m7-card-title">No silent discharge risk</div>
-            <div class="m7-card-body">Closed episodes can be distinguished from genuine follow-through.</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="m7-section m7-dark" id="pilot">
-      <div class="m7-inner">
-        <div class="m7-kicker">The pre-pilot</div>
-        <h2 class="m7-heading">
-          50 people.<br>
-          <span class="accent">A proof point that changes the commissioning conversation.</span>
-        </h2>
-
-        <p class="m7-lead">
-          The pre-pilot is a tactical, surgical intervention first. It targets a bounded, high-cost cohort already touching multiple services, then tests whether visible, receipted continuity changes what happens next.
-        </p>
-
-        <p class="m7-lead">
-          This is not a request to fund a full rollout. It is a request to fund a clear question: does a receipted continuity thread, applied to this cohort, measurably reduce silent disengagement and increase the likelihood that people reach the next meaningful step?
-        </p>
-
-        <div class="m7-grid-4">
-          <div class="m7-card">
-            <div class="m7-stat">50</div>
-            <div class="m7-card-title">Participants</div>
-            <div class="m7-card-body">Adults with co-occurring ADHD and substance misuse risk, selected with partners.</div>
-          </div>
-          <div class="m7-card">
-            <div class="m7-stat">12</div>
-            <div class="m7-card-title">Weeks active delivery</div>
-            <div class="m7-card-body">After setup, cohort selection, partner workflow and consent pathway agreement.</div>
-          </div>
-          <div class="m7-card">
-            <div class="m7-stat">£91,520</div>
-            <div class="m7-card-title">Pre-pilot ask</div>
-            <div class="m7-card-body">Evidence budget, not therapy budget. Designed to generate decision-grade local evidence.</div>
-          </div>
-          <div class="m7-card">
-            <div class="m7-stat">3</div>
-            <div class="m7-card-title">KPI families</div>
-            <div class="m7-card-body">Continuity, burden/safety, and participant engagement.</div>
-          </div>
-        </div>
-
-        <div class="m7-btn-row">
-          <a class="m7-btn primary" href="partners.html">Partner briefing</a>
-          <a class="m7-btn secondary" href="numbers-calculator.html">Numbers & calculator</a>
-          <a class="m7-btn secondary" href="evidence-sources.html">Evidence & sources</a>
-        </div>
-      </div>
-    </section>
-
-    <section class="m7-section m7-light" id="partners">
-      <div class="m7-inner">
-        <div class="m7-kicker">Partners</div>
-        <h2 class="m7-heading">
-          All the support already exists.<br>
-          <span class="accent">It has never been connected like this.</span>
-        </h2>
-
-        <p class="m7-lead">
-          We know your time matters. We are asking for input now so the future system reduces burden later. Each tailored partner page gives proper thought to the time, effort and expertise being asked of that organisation — and how that input can help reduce avoidable drift, repeated crisis, duplicated work and missed follow-through.
-        </p>
-
-        <div class="m7-grid-3">
-          <a class="m7-card" href="partners-cgl-crs.html" style="text-decoration:none;color:inherit;">
-            <div class="m7-card-title">CGL & CRS</div>
-            <div class="m7-card-body">Cohort insight, recovery touchpoints, relapse risk, re-engagement after silence.</div>
+        <div class="partner-logo-grid">
+          <a class="otos-card otos-card-link" href="partners-cgl-crs.html">
+            <div class="otos-logo-strip"><img src="images/logos/cgl.png" alt="Change Grow Live" onerror="this.style.display='none'"><img src="images/logos/crs.png" alt="Cambridge Recovery Service" onerror="this.style.display='none'"></div>
+            <h3 class="otos-card-title">CGL &amp; CRS</h3><p class="otos-card-body">Addiction, recovery, relapse risk, post-rehab vulnerability and safe re-engagement after silence.</p>
           </a>
-          <a class="m7-card" href="partners-cpft-adhd-team.html" style="text-decoration:none;color:inherit;">
-            <div class="m7-card-title">CPFT ADHD Team</div>
-            <div class="m7-card-body">Waiting list, medication review, ADHD pathway pressure, cohort selection.</div>
+          <a class="otos-card otos-card-link" href="partners-cpft-adhd-team.html">
+            <div class="otos-logo-strip"><img src="images/logos/nhs-cpft.png" alt="CPFT" onerror="this.style.display='none'"></div>
+            <h3 class="otos-card-title">CPFT ADHD Team</h3><p class="otos-card-body">ADHD pathway pressure, waiting-list support, medication-review gaps and fast, clean continuity evidence.</p>
           </a>
-          <a class="m7-card" href="partners-rce-wellbeing.html" style="text-decoration:none;color:inherit;">
-            <div class="m7-card-title">RCE Wellbeing Hub</div>
-            <div class="m7-card-body">Holding support, courses, micro-check-in content, waiting-list support.</div>
+          <a class="otos-card otos-card-link" href="partners-addenbrookes.html">
+            <div class="otos-logo-strip"><img src="images/logos/addenbrookes.png" alt="Addenbrooke's" onerror="this.style.display='none'"></div>
+            <h3 class="otos-card-title">Addenbrooke’s / Alcohol Care</h3><p class="otos-card-body">Hospital to Community. Bedside handoff before discharge, no EPR write-back, rapid touchpoint logging.</p>
           </a>
-          <a class="m7-card" href="partners-addenbrookes.html" style="text-decoration:none;color:inherit;">
-            <div class="m7-card-title">Addenbrooke’s / Alcohol Care</div>
-            <div class="m7-card-body">Hospital to community handoff, discharge risk, bedside thread creation.</div>
+          <a class="otos-card otos-card-link" href="partners-rce-wellbeing.html">
+            <div class="otos-logo-strip"><img src="images/logos/rce.png" alt="RCE Wellbeing Hub" onerror="this.style.display='none'"></div>
+            <h3 class="otos-card-title">RCE Wellbeing Hub</h3><p class="otos-card-body">Courses, holding support and co-created micro-check-in content while people wait.</p>
           </a>
-          <a class="m7-card" href="partners-gp-rtc-qbtech.html" style="text-decoration:none;color:inherit;">
-            <div class="m7-card-title">GP / RTC / QbTest</div>
-            <div class="m7-card-body">Governed faster ADHD routing, shared-care realities, clinical responsibility boundaries.</div>
+          <a class="otos-card otos-card-link" href="partners-gp-rtc-qbtech.html">
+            <div class="otos-logo-strip"><img src="images/logos/nhs-gp.png" alt="NHS GP" onerror="this.style.display='none'"><img src="images/logos/qbtech.png" alt="QbTech" onerror="this.style.display='none'"><img src="images/logos/nhs-right-to-choose.png" alt="NHS Right to Choose" onerror="this.style.display='none'"></div>
+            <h3 class="otos-card-title">GP / RTC / QbTech</h3><p class="otos-card-body">Fast-track ADHD assessment route, shared-care questions and clinical leadership boundaries.</p>
           </a>
-          <a class="m7-card" href="partners-mind-workwell-jo-fenton.html" style="text-decoration:none;color:inherit;">
-            <div class="m7-card-title">Mind / WorkWell / Jo Fenton</div>
-            <div class="m7-card-body">Community, therapy, employment and charity support without needing full NHS record access.</div>
+          <a class="otos-card otos-card-link" href="partners-mind-workwell-jo-fenton.html">
+            <div class="otos-logo-strip"><img src="images/logos/mind.png" alt="Mind" onerror="this.style.display='none'"><img src="images/logos/workwell.png" alt="WorkWell" onerror="this.style.display='none'"><img src="images/logos/jo-fenton.png" alt="Jo Fenton" onerror="this.style.display='none'"></div>
+            <h3 class="otos-card-title">MIND / WorkWell / Jo Fenton</h3><p class="otos-card-body">Community, employment, therapy and VCSE support without needing full NHS record access.</p>
           </a>
         </div>
+      </div>
+    </section>
 
-        <div class="m7-btn-row">
-          <a class="m7-btn primary" href="partners.html">Read shared partner briefing</a>
-          <a class="m7-btn secondary" href="mailto:info@otos.life?subject=OTOS%20Continuity%20-%20partner%20conversation">Request a conversation</a>
+    <section class="otos-section otos-section-light" id="community-hubs">
+      <div class="otos-wrap otos-grid-2">
+        <div>
+          <div class="otos-kicker">Hospital to Community</div>
+          <h2 class="otos-heading">250 new NHS Community Hubs.<br><span class="otos-accent">Where the front door meets follow-through.</span></h2>
+          <p class="otos-lead">The infrastructure already exists. OTOS is designed to sit alongside neighbourhood, community and hub-based delivery — making follow-through visible when a person moves between hospital, addiction services, mental health support, VCSE and primary care.</p>
+          <p class="otos-copy">This is not about replacing local services. It is about helping them see whether the handoffs are actually landing.</p>
+        </div>
+        <div class="section-image">
+          <img src="images/nhs-community-hub.jpg" alt="NHS Community Hub with OTOS Continuity dashboard" onerror="this.closest('.section-image').style.display='none'">
         </div>
       </div>
     </section>
 
-    <section class="m7-section m7-dark" id="authority">
-      <div class="m7-inner">
-        <div class="m7-kicker">Local Authority / Public Health</div>
-        <h2 class="m7-heading">
-          The system is already paying.<br>
-          <span class="accent">The question is whether it is paying early enough.</span>
-        </h2>
-
-        <p class="m7-lead">
-          OTOS is a cost-redirection opportunity hiding in current drug and alcohol spend. It does not ask the system to commit to scale before evidence. It asks whether a bounded continuity demonstrator can show avoidable demand earlier, cleaner and cheaper than waiting for crisis.
-        </p>
-
-        <div class="m7-grid-2">
-          <div class="m7-card">
-            <div class="m7-card-title">Current spend pattern</div>
-            <div class="m7-card-body">
-              Reactive and fragmented: A&E presentations, crisis mental health, repeat addiction episodes, housing, custody and homelessness support. Each service sees only its piece.
-            </div>
-          </div>
-          <div class="m7-card">
-            <div class="m7-card-title">With OTOS Continuity</div>
-            <div class="m7-card-body">
-              Connected and preventive: one continuity thread, visible handoffs, earlier drift signals, clearer evidence, and a bounded way to test whether spend can move upstream.
-            </div>
-          </div>
+    <section class="otos-section otos-section-dark" id="numbers">
+      <div class="otos-wrap">
+        <div class="otos-kicker">Numbers</div>
+        <h2 class="otos-heading">The question is not whether the system is paying.<br><span class="otos-accent">It is whether it is paying early enough.</span></h2>
+        <p class="otos-lead">A conservative savings model for the Cambridge footprint suggests up to £18 million per year in potential avoidable demand if continuity improves outcomes for this cohort. This is a modelled estimate, not a guaranteed saving — the pre-pilot exists to generate local evidence to test it.</p>
+        <div class="otos-grid-4" style="margin-top:34px;">
+          <div class="otos-card"><div class="otos-stat">£4.07</div><h3 class="otos-card-title">ROI comparator</h3><p class="otos-card-body">Published LSE / Turning Point evidence base for better addiction continuity.</p></div>
+          <div class="otos-card"><div class="otos-stat">~£18m</div><h3 class="otos-card-title">Potential demand</h3><p class="otos-card-body">Modelled annual avoidable demand in the Cambridge footprint, subject to validation.</p></div>
+          <div class="otos-card"><div class="otos-stat">£91,520</div><h3 class="otos-card-title">Pre-pilot cost</h3><p class="otos-card-body">A bounded evidence budget, not a full rollout request.</p></div>
+          <div class="otos-card"><div class="otos-stat">20</div><h3 class="otos-card-title">Break-even events</h3><p class="otos-card-body">Illustrative avoided crisis events. To be validated with local cost assumptions.</p></div>
         </div>
-
-        <div class="m7-btn-row">
-          <a class="m7-btn primary" href="local-authority-public-health.html">Open Public Health briefing</a>
-          <a class="m7-btn secondary" href="numbers-calculator.html">Open numbers page</a>
+        <div class="otos-btn-row">
+          <a class="otos-btn otos-btn-primary" href="numbers.html">Open numbers page</a>
+          <a class="otos-btn otos-btn-secondary" href="cpft_calculator.html">Open calculator</a>
         </div>
       </div>
     </section>
 
-    <section class="m7-section m7-light" id="founder">
-      <div class="m7-inner">
-        <div class="m7-kicker">Founder story</div>
-        <h2 class="m7-heading">
-          Built from the gap.<br>
-          <span class="accent">Not a story project — infrastructure.</span>
-        </h2>
-
-        <p class="m7-lead">
-          OTOS was built by someone who moved through private detox hospitals, DayHabs, rehab, A&E, CGL, CPFT and probation while ADHD remained unresolved and untreated. It was built because nothing held the thread between services.
-        </p>
-
-        <div class="m7-quote">
-          “Untreated ADHD was the underlying driver in my case.”
+    <section class="otos-section otos-section-dark" id="evidence">
+      <div class="otos-wrap">
+        <div class="otos-kicker">Evidence</div>
+        <h2 class="otos-heading">Every claim is sourced.<br><span class="otos-accent">Every estimate is labelled.</span></h2>
+        <p class="otos-lead">OTOS is designed to operate within current policy direction, not ahead of it. Published evidence, local figures, modelling estimates and placeholders requiring validation are kept separate.</p>
+        <div class="otos-grid-3" style="margin-top:34px;">
+          <div class="otos-card"><h3 class="otos-card-title">Policy anchors</h3><p class="otos-card-body">NHS ADHD Taskforce, NHS 10 Year Health Plan, co-occurring mental health and substance use framework, NICE guidance and DTAC posture.</p></div>
+          <div class="otos-card"><h3 class="otos-card-title">Clinical evidence</h3><p class="otos-card-body">RCPsych ADHD + substance misuse evidence, START comparator, post-discharge relapse risk and continuity literature.</p></div>
+          <div class="otos-card"><h3 class="otos-card-title">Claims discipline</h3><p class="otos-card-body">No modelling estimate is presented as observed fact. Partner validation is part of the pre-pilot design.</p></div>
         </div>
+        <div class="otos-btn-row"><a class="otos-btn otos-btn-primary" href="evidence-sources.html">Evidence &amp; sources</a></div>
+      </div>
+    </section>
 
-        <p class="m7-lead">
-          The lived story explains why the infrastructure matters. The pre-pilot tests whether that infrastructure can produce the evidence commissioners need.
-        </p>
-
-        <div class="m7-btn-row">
-          <a class="m7-btn primary" href="founder-story.html">Read founder story</a>
-          <a class="m7-btn secondary" href="evidence-sources.html">Evidence & references</a>
+    <section class="otos-section otos-section-light" id="founder">
+      <div class="otos-wrap otos-grid-2">
+        <div>
+          <div class="otos-kicker">The lived arc</div>
+          <h2 class="otos-heading">Behind OTOS Continuity™.<br><span class="otos-accent">Not a theory. A lived reality.</span></h2>
+          <p class="otos-lead">OTOS was built by someone who moved through the full system: private hospitals, DayHab, rehab, A&amp;E, CGL, CPFT, probation and back again. The thread kept breaking.</p>
+          <p class="otos-copy">Only after private ADHD care, updated diagnosis and the correct medication did the underlying driver become visible. That lived experience does not replace evidence — it explains why the gap was impossible to ignore.</p>
+          <div class="otos-quote">“Untreated ADHD was the underlying driver in my case.”</div>
+          <div class="otos-btn-row">
+            <a class="otos-btn otos-btn-primary" href="founder-story.html">Read founder story</a>
+            <a class="otos-btn otos-btn-secondary" href="evidence-sources.html">Evidence &amp; references</a>
+          </div>
+        </div>
+        <div class="section-image">
+          <img src="images/otos-therapy-checkin.jpg" alt="OTOS Continuity check-in mockup" onerror="this.closest('.section-image').style.display='none'">
         </div>
       </div>
     </section>
 
-    <section class="m7-section m7-dark" id="contact">
-      <div class="m7-inner">
-        <div class="m7-card" style="text-align:center;max-width:860px;margin:0 auto;">
-          <div class="m7-kicker">Next step</div>
-          <h2 class="m7-heading" style="font-size:clamp(2rem,4vw,3.6rem);">
-            We are not asking the system to change.<br>
-            <span class="accent">Only to connect.</span>
-          </h2>
-          <p class="m7-lead" style="margin-left:auto;margin-right:auto;">
-            If this fits the gap your service already sees, the immediate ask is simple: help us pressure-test the route, confirm what would be practical, and provide a short note of support where appropriate.
-          </p>
-          <div class="m7-btn-row" style="justify-content:center;">
-            <a class="m7-btn primary" href="mailto:info@otos.life?subject=OTOS%20Continuity%20-%20conversation">Get in touch — info@otos.life</a>
-            <a class="m7-btn secondary" href="evidence-sources.html">Evidence & references</a>
+    <section class="otos-section otos-section-dark" id="cta">
+      <div class="otos-wrap">
+        <div class="otos-card otos-footer-card">
+          <div class="otos-kicker">The next step</div>
+          <h2 class="otos-heading-sm">We are not asking the system to change.<br><span class="otos-accent">Only to connect.</span></h2>
+          <p class="otos-lead" style="margin-left:auto;margin-right:auto;">OTOS runs between what already exists. The clinical services stay as they are. The records stay separate. The only thing that changes is what the system can see — and whether the handoffs actually land.</p>
+          <div class="otos-btn-row" style="justify-content:center;">
+            <a class="otos-btn otos-btn-primary" href="mailto:info@otos.life?subject=OTOS%20Continuity%20pre-pilot%20conversation">Get in touch — info@otos.life</a>
+            <a class="otos-btn otos-btn-secondary" href="partners.html">Read partner briefing</a>
+            <a class="otos-btn otos-btn-secondary" href="local-authority-public-health.html">Local Authority briefing</a>
           </div>
-          <p class="m7-card-body" style="margin-top:26px;">
-            Dean Butler · info@otos.life · +44 7466 334143 · OTOS Digital Ltd · Company No. 17084455
-          </p>
+          <p class="hero-note">Dean Butler · info@otos.life · +44 7466 334143 · OTOS Digital Ltd · Co. No. 17084455</p>
         </div>
       </div>
     </section>
   </main>
+</div>
 
-  <script src="js/otos.js"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const overlay = document.getElementById('quote-overlay');
+<script>
+  (function() {
+    const overlay = document.getElementById('quote-overlay');
+    const skip = document.getElementById('quote-skip');
+    const hide = () => {
       if (!overlay) return;
-      setTimeout(() => overlay.classList.add('is-hidden'), 4300);
-      overlay.addEventListener('click', () => overlay.classList.add('is-hidden'));
-    });
-  </script>
+      overlay.classList.add('is-hidden');
+      sessionStorage.setItem('otos_quote_seen', '1');
+    };
+    if (sessionStorage.getItem('otos_quote_seen') === '1') {
+      hide();
+    } else {
+      setTimeout(hide, 7200);
+    }
+    if (skip) skip.addEventListener('click', hide);
+  })();
+
+  (function initClock() {
+    const el = document.getElementById('dash-clock');
+    if (!el) return;
+    function tick() {
+      const now = new Date();
+      el.textContent = now.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+    }
+    tick();
+    setInterval(tick, 1000);
+  })();
+</script>
 </body>
 </html>
