@@ -3,771 +3,272 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>OTOS Continuity™ — Partner Landing</title>
+  <title>OTOS Continuity™ — Partner Briefing</title>
+  <meta name="description" content="Shared partner briefing for OTOS Continuity™ pre-pilot." />
   <meta name="robots" content="noindex, nofollow" />
-
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet" />
-
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/otos.css" />
   <style>
-    :root {
-      --bg:#070b12;
-      --cream:#f5efe5;
-      --cream2:#efe4d2;
-      --text:#f7efe4;
-      --muted:rgba(247,239,228,.70);
-      --muted2:rgba(247,239,228,.52);
-      --dark:#1f211f;
-      --body:#4c4740;
-      --amber:#e87700;
-      --amber2:#ff9d1b;
-      --green:#42d77d;
-      --red:#fb7185;
-      --border:rgba(255,255,255,.12);
-      --borderDark:rgba(31,41,55,.13);
-      --max:1180px;
-      --shadow:0 28px 80px rgba(0,0,0,.28);
-    }
-
-    * { box-sizing:border-box; }
-
-    html { scroll-behavior:smooth; }
-
-    body {
-      margin:0;
-      font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-      color:var(--text);
-      background:
-        linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px),
-        radial-gradient(circle at 70% 10%, rgba(232,119,0,.12), transparent 35%),
-        var(--bg);
-      background-size:54px 54px,54px 54px,auto,auto;
-    }
-
+    body { margin:0; background:#080b12; color:#f7f3ea; font-family:Inter,system-ui,sans-serif; }
     a { color:inherit; }
-
-    .site-nav {
-      position:sticky;
-      top:0;
-      z-index:30;
-      backdrop-filter:blur(18px);
-      background:rgba(7,11,18,.82);
-      border-bottom:1px solid var(--border);
-    }
-
-    .nav-inner {
-      max-width:var(--max);
-      margin:0 auto;
-      padding:16px 24px;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:24px;
-    }
-
-    .nav-logo {
-      display:flex;
-      align-items:center;
-      gap:12px;
-      text-decoration:none;
-      font-weight:900;
-      letter-spacing:-.02em;
-    }
-
-    .nav-logo img {
-      height:38px;
-      width:auto;
-      background:#fff;
-      border-radius:8px;
-      padding:5px;
-    }
-
-    .nav-links {
-      list-style:none;
-      display:flex;
-      gap:20px;
-      margin:0;
-      padding:0;
-      font-size:.85rem;
-      font-weight:750;
-    }
-
-    .nav-links a {
-      color:rgba(247,239,228,.76);
-      text-decoration:none;
-    }
-
-    .nav-links a:hover { color:#fff; }
-
-    .nav-cta {
-      background:var(--amber);
-      color:#fff!important;
-      padding:10px 17px;
-      border-radius:999px;
-      box-shadow:0 14px 34px rgba(232,119,0,.25);
-    }
-
-    .hero {
-      padding:110px 24px 80px;
-    }
-
-    .hero-inner {
-      max-width:var(--max);
-      margin:0 auto;
-    }
-
-    .badge {
-      display:inline-flex;
-      width:fit-content;
-      padding:8px 13px;
-      border-radius:999px;
-      color:#ffb55f;
-      background:rgba(232,119,0,.12);
-      border:1px solid rgba(232,119,0,.28);
-      font-size:.77rem;
-      font-weight:850;
-      text-transform:uppercase;
-      letter-spacing:.08em;
-      margin-bottom:22px;
-    }
-
-    h1,h2,h3,p { margin-top:0; }
-
-    .display-1 {
-      font-size:clamp(3.2rem,8vw,6.8rem);
-      line-height:.92;
-      letter-spacing:-.075em;
-      margin-bottom:28px;
-      font-weight:950;
-      max-width:1050px;
-    }
-
-    .display-2 {
-      font-size:clamp(2.25rem,5vw,4.8rem);
-      line-height:.98;
-      letter-spacing:-.06em;
-      margin-bottom:24px;
-      font-weight:930;
-    }
-
-    .accent { color:var(--amber); }
-
-    .lead {
-      font-size:clamp(1.05rem,1.55vw,1.28rem);
-      line-height:1.72;
-      color:var(--muted);
-      max-width:940px;
-    }
-
-    .section { padding:90px 24px; }
-
-    .section-dark {
-      background:#070b12;
-      color:var(--text);
-    }
-
-    .section-light {
-      background:var(--cream);
-      color:var(--dark);
-    }
-
-    .section-alt { background:var(--cream2); }
-
-    .section-inner {
-      max-width:var(--max);
-      margin:0 auto;
-    }
-
-    .chapter-header {
-      display:flex;
-      align-items:center;
-      gap:14px;
-      margin-bottom:24px;
-    }
-
-    .chapter-num {
-      font-family:"JetBrains Mono",monospace;
-      font-weight:900;
-      color:var(--amber);
-      border:1px solid rgba(232,119,0,.32);
-      border-radius:999px;
-      padding:7px 10px;
-      font-size:.78rem;
-    }
-
-    .section-label {
-      color:var(--amber);
-      text-transform:uppercase;
-      letter-spacing:.12em;
-      font-size:.78rem;
-      font-weight:950;
-    }
-
-    .section-light .lead,
-    .section-light p { color:var(--body); }
-
-    .grid-2,
-    .grid-3,
-    .grid-4 {
-      display:grid;
-      gap:18px;
-      margin-top:32px;
-    }
-
+    .wrap { max-width:1120px; margin:0 auto; padding:0 24px; }
+    .nav { height:72px; border-bottom:1px solid rgba(255,255,255,.08); background:rgba(8,11,18,.75); backdrop-filter:blur(16px); position:sticky; top:0; z-index:20; }
+    .nav .wrap { height:72px; display:flex; align-items:center; justify-content:space-between; }
+    .logo { display:flex; gap:10px; align-items:center; text-decoration:none; font-weight:900; }
+    .logo img { height:30px; }
+    .links { display:flex; gap:18px; font-size:.84rem; font-weight:800; color:rgba(255,255,255,.72); }
+    .links a { text-decoration:none; }
+    section { padding:88px 0; }
+    .light { background:#f1ede4; color:#211c18; }
+    .dark { background:radial-gradient(circle at 80% 0%, rgba(226,106,18,.14), transparent 35%), #080b12; color:#f7f3ea; }
+    .kicker { display:inline-flex; padding:8px 14px; border:1px solid rgba(226,106,18,.55); border-radius:999px; color:#ff8a1d; text-transform:uppercase; letter-spacing:.16em; font-size:.72rem; font-weight:900; margin-bottom:24px; }
+    h1,h2 { margin:0 0 22px; letter-spacing:-.05em; line-height:1; font-weight:900; }
+    h1 { font-size:clamp(3rem,6vw,5.7rem); max-width:920px; }
+    h2 { font-size:clamp(2.2rem,4.5vw,4.2rem); max-width:900px; }
+    .accent { color:#e26a12; }
+    .lead { color:#aeb4c0; font-size:clamp(1.05rem,1.5vw,1.3rem); line-height:1.75; max-width:850px; }
+    .light .lead { color:#5f5a52; }
+    .grid-2,.grid-3 { display:grid; gap:18px; }
     .grid-2 { grid-template-columns:repeat(2,minmax(0,1fr)); }
     .grid-3 { grid-template-columns:repeat(3,minmax(0,1fr)); }
-    .grid-4 { grid-template-columns:repeat(4,minmax(0,1fr)); }
-
-    .card {
-      padding:24px;
-      border-radius:24px;
-      background:#fff;
-      border:1px solid var(--borderDark);
-      box-shadow:0 16px 42px rgba(31,41,55,.055);
-    }
-
-    .card-dark {
-      background:rgba(255,255,255,.045);
-      border:1px solid var(--border);
-      box-shadow:none;
-    }
-
-    .card-title {
-      color:var(--dark);
-      font-weight:900;
-      font-size:1.1rem;
-      margin-bottom:10px;
-    }
-
-    .card-dark .card-title { color:var(--text); }
-
-    .card-body {
-      color:var(--body);
-      font-size:.95rem;
-      line-height:1.6;
-    }
-
-    .card-dark .card-body { color:var(--muted); }
-
-    .route-card {
-      text-decoration:none;
-      color:inherit;
-      min-height:230px;
-      display:flex;
-      flex-direction:column;
-      transition:transform .2s ease, box-shadow .2s ease;
-    }
-
-    .route-card:hover {
-      transform:translateY(-4px);
-      box-shadow:0 24px 60px rgba(31,41,55,.11);
-    }
-
-    .route-kicker {
-      color:var(--amber);
-      text-transform:uppercase;
-      letter-spacing:.1em;
-      font-size:.72rem;
-      font-weight:950;
-      margin-bottom:10px;
-    }
-
-    .route-copy { flex:1; }
-
-    .route-link {
-      margin-top:18px;
-      color:var(--amber);
-      font-weight:900;
-      font-size:.88rem;
-    }
-
-    .quote-strip {
-      margin-top:34px;
-      padding:26px 30px;
-      border-radius:26px;
-      background:rgba(232,119,0,.08);
-      border:1px solid rgba(232,119,0,.2);
-    }
-
-    .quote-strip p {
-      margin:0;
-      font-size:1.08rem;
-      line-height:1.65;
-      font-weight:750;
-    }
-
-    .section-dark .quote-strip p { color:var(--text); }
-    .section-light .quote-strip p { color:var(--dark); }
-
-    .pathway-box {
-      margin-top:36px;
-      background:#fff;
-      border:1px solid var(--borderDark);
-      border-radius:30px;
-      padding:28px;
-      text-align:center;
-      box-shadow:0 18px 48px rgba(31,41,55,.06);
-    }
-
-    .pathway-box img {
-      display:block;
-      width:92%;
-      max-width:1050px;
-      height:auto;
-      margin:0 auto;
-      border-radius:18px;
-    }
-
-    .btn-row {
-      display:flex;
-      flex-wrap:wrap;
-      gap:14px;
-      margin-top:30px;
-    }
-
-    .btn {
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      min-height:50px;
-      padding:0 22px;
-      border-radius:999px;
-      text-decoration:none;
-      font-weight:850;
-      border:1px solid var(--border);
-      font-size:.93rem;
-    }
-
-    .btn-primary {
-      background:var(--amber);
-      border-color:transparent;
-      color:#fff;
-      box-shadow:0 16px 34px rgba(232,119,0,.25);
-    }
-
-    .btn-secondary {
-      background:rgba(255,255,255,.045);
-      color:var(--text);
-    }
-
-    .footer {
-      background:#070b12;
-      border-top:1px solid var(--border);
-      color:rgba(247,239,228,.62);
-      padding:34px 24px;
-      font-size:.85rem;
-    }
-
-    .footer-inner {
-      max-width:var(--max);
-      margin:0 auto;
-      display:flex;
-      justify-content:space-between;
-      gap:24px;
-      flex-wrap:wrap;
-    }
-
-    .footer a { color:var(--amber2); }
-
-    @media (max-width:960px) {
-      .nav-links { display:none; }
-      .grid-2,.grid-3,.grid-4 { grid-template-columns:1fr; }
-      .display-1 { font-size:3.35rem; }
-      .section { padding:72px 20px; }
-    }
+    .card { border:1px solid rgba(255,255,255,.13); background:#111620; border-radius:24px; padding:28px; }
+    .light .card { background:rgba(255,255,255,.45); border-color:rgba(0,0,0,.15); }
+    .card-title { font-weight:900; font-size:1.08rem; margin-bottom:10px; }
+    .card-body { color:#aeb4c0; line-height:1.65; }
+    .light .card-body { color:#5f5a52; }
+    .stat { color:#ff8a1d; font-size:3rem; font-weight:900; letter-spacing:-.05em; margin-bottom:10px; }
+    .quote { border-left:4px solid #e26a12; background:rgba(226,106,18,.08); padding:22px 26px; border-radius:0 18px 18px 0; line-height:1.75; font-style:italic; margin:30px 0; }
+    .rule { border:0; border-top:1px solid rgba(255,255,255,.11); margin:44px 0; }
+    .light .rule { border-top-color:rgba(0,0,0,.13); }
+    .btnrow { display:flex; gap:14px; flex-wrap:wrap; margin-top:28px; }
+    .btn { min-height:48px; padding:0 22px; border-radius:999px; display:inline-flex; align-items:center; justify-content:center; text-decoration:none; font-weight:900; border:1px solid rgba(255,255,255,.16); }
+    .btn.primary { background:#e26a12; border-color:#e26a12; color:#fff; }
+    .light .btn.secondary { border-color:rgba(0,0,0,.22); }
+    table { width:100%; border-collapse:collapse; border:1px solid rgba(255,255,255,.12); border-radius:18px; overflow:hidden; }
+    th,td { padding:15px; border-bottom:1px solid rgba(255,255,255,.1); text-align:left; vertical-align:top; line-height:1.55; }
+    th { color:#ff8a1d; text-transform:uppercase; letter-spacing:.1em; font-size:.72rem; }
+    .light table { border-color:rgba(0,0,0,.15); }
+    .light th,.light td { border-bottom-color:rgba(0,0,0,.12); }
+    @media(max-width:900px){.grid-2,.grid-3{grid-template-columns:1fr}.links{display:none}section{padding:68px 0}}
   </style>
 </head>
-
 <body>
+  <script>
+    if (sessionStorage.getItem('otos_access') !== '1') window.location.replace('public.html');
+  </script>
 
-<script>
-  (function () {
-    if (sessionStorage.getItem("otos_access") !== "1") {
-      window.location.replace("public.html");
-    }
-  })();
-</script>
-
-<nav class="site-nav">
-  <div class="nav-inner">
-    <a href="index.html" class="nav-logo">
-      <img src="images/brain-icon.png" alt="OTOS Continuity" onerror="this.style.display='none'" />
-      <span>OTOS Continuity™</span>
-    </a>
-
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="pilot-cohort.html">Cohort</a></li>
-      <li><a href="#shared-model">Shared Model</a></li>
-      <li><a href="#cohort-ask">Cohort Ask</a></li>
-      <li><a href="#routes">Routes</a></li>
-      <li><a href="evidence-sources.html">Evidence</a></li>
-      <li><a href="#support" class="nav-cta">Support</a></li>
-    </ul>
-  </div>
-</nav>
-
-<header class="hero">
-  <div class="hero-inner">
-    <div class="badge">Service Providers &amp; Key Partners</div>
-
-    <h1 class="display-1">
-      Read the shared model first.<br />
-      <span class="accent">Then choose your route.</span>
-    </h1>
-
-    <p class="lead">
-      Before any organisation is asked for a decision, we want each partner to see the whole shared model — then their own specific role inside it.
-    </p>
-
-    <p class="lead">
-      Everyone needs to understand the same person, the same cohort, the same continuity thread and the same safety boundaries. After that, each partner’s role becomes specific.
-    </p>
-
-    <div class="btn-row">
-      <a href="pilot-cohort.html" class="btn btn-primary">Read the cohort model</a>
-      <a href="#routes" class="btn btn-secondary">Choose your partner route</a>
-    </div>
-  </div>
-</header>
-
-<section class="section section-light" id="shared-model">
-  <div class="section-inner">
-    <div class="chapter-header">
-      <span class="chapter-num">01</span>
-      <div class="section-label">The Shared Model</div>
-    </div>
-
-    <h2 class="display-2">
-      Existing services. Existing routes.<br />
-      <span class="accent">One continuity layer.</span>
-    </h2>
-
-    <p class="lead">
-      OTOS is not proposing a new clinical service. It is a layer that sits around the services that already exist — making the pathway between them visible and accountable.
-    </p>
-
-    <p class="lead">
-      The first demonstrator is deliberately tactical: a surgical intervention into a costly, stuck cohort where unresolved ADHD may be keeping addiction, relapse, disengagement and crisis alive.
-    </p>
-
-    <div class="grid-3">
-      <div class="card">
-        <div class="card-title">One person</div>
-        <div class="card-body">
-          The person may be touching addiction, ADHD, hospital, GP, charity, recovery, employment and therapy support at different points.
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-title">One continuity thread</div>
-        <div class="card-body">
-          OTOS holds the continuity signal across those touchpoints without requiring merged records or shared clinical notes.
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-title">One human-review model</div>
-        <div class="card-body">
-          OTOS surfaces signals. Partner teams make the decisions. Clinical responsibility stays with the relevant service.
-        </div>
+  <nav class="nav">
+    <div class="wrap">
+      <a class="logo" href="index.html"><img src="images/brain-icon.png" alt="" onerror="this.style.display='none'">OTOS Continuity™</a>
+      <div class="links">
+        <a href="index.html">Home</a>
+        <a href="local-authority-public-health.html">Local Authority</a>
+        <a href="numbers-calculator.html">Numbers</a>
+        <a href="evidence-sources.html">Evidence</a>
       </div>
     </div>
+  </nav>
 
-    <div class="quote-strip">
-      <p>We know your time matters. We are asking for input now so the future system reduces burden later.</p>
-    </div>
-  </div>
-</section>
-
-<section class="section section-dark" id="partner-ecosystem">
-  <div class="section-inner">
-    <div class="chapter-header">
-      <span class="chapter-num">02</span>
-      <div class="section-label">Infrastructure Partners</div>
-    </div>
-
-    <h2 class="display-2">
-      The support already exists.<br />
-      <span class="accent">OTOS connects it.</span>
-    </h2>
-
-    <p class="lead">
-      The first demonstrator is built around real services, real relationships and real route questions. The purpose of the partner pages is to show each organisation what is being asked, what is not being asked, and how its input helps.
-    </p>
-
-    <div class="grid-2">
-      <div class="card card-dark">
-        <div class="card-title">CPFT ADHD Team</div>
-        <div class="card-body">
-          ADHD pathway insight, clinical boundaries, waiting-list reality, medication-review context, and appropriate framing for ADHD-related route design.
-        </div>
-      </div>
-
-      <div class="card card-dark">
-        <div class="card-title">CGL / Change Grow Live</div>
-        <div class="card-body">
-          Substance-misuse keyworker service. Touchpoints at the point of contact, recovery-route visibility, relapse risk, and drift signals for human review.
-        </div>
-      </div>
-
-      <div class="card card-dark">
-        <div class="card-title">CRS / Cambridge Recovery Service</div>
-        <div class="card-body">
-          VCSE community re-engagement, aftercare and relapse-prevention support. Warmth in the continuity layer, not extra clinical record burden.
-        </div>
-      </div>
-
-      <div class="card card-dark">
-        <div class="card-title">SUN Network</div>
-        <div class="card-body">
-          Lived-experience design, participant language, co-production, check-in tone, escalation framing and credibility with service-user voice.
-        </div>
-      </div>
-
-      <div class="card card-dark">
-        <div class="card-title">QbTest + NHS Right to Choose</div>
-        <div class="card-body">
-          Objective ADHD fast-track assessment route where clinically indicated and governed by partners — not an OTOS decision.
-        </div>
-      </div>
-
-      <div class="card card-dark">
-        <div class="card-title">RCE Wellbeing Hub</div>
-        <div class="card-body">
-          ADHD courses and holding support while people wait for assessment or medication review. Receipted follow-through without needing a clinical record.
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section section-light section-alt" id="cohort-ask">
-  <div class="section-inner">
-    <div class="chapter-header">
-      <span class="chapter-num">03</span>
-      <div class="section-label">The Cohort Conversation</div>
-    </div>
-
-    <h2 class="display-2">
-      A surgical intervention first.<br />
-      <span class="accent">A frontline entry point later.</span>
-    </h2>
-
-    <p class="lead">
-      The first demonstrator is deliberately tactical. We are not trying to redesign the whole system at once. We are asking partners to help identify a costly, stuck cohort already cycling through addiction, crisis, hospital, recovery or mental-health touchpoints where unresolved ADHD may be keeping the pattern alive.
-    </p>
-
-    <p class="lead">
-      The cohort is not selected by OTOS alone. It should be agreed through a short joint scoping conversation between the services closest to the risk — initially CGL / CRS and the CPFT ADHD Team, with other partners added where the route requires them.
-    </p>
-
-    <p class="lead">
-      The aim is to move people faster toward the ADHD-related step that may unlock the rest of the pathway: assessment, diagnosis, medication review, titration, treatment access, shared care or holding support while waiting.
-    </p>
-
-    <div class="grid-2">
-      <div class="card">
-        <div class="card-title">For CGL / CRS</div>
-        <div class="card-body">
-          This means helping identify people already visible in addiction or recovery services who may be repeatedly drifting, relapsing, disengaging, or presenting with indicators of ADHD-related pathway need.
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-title">For the CPFT ADHD Team</div>
-        <div class="card-body">
-          This means helping define what is clinically appropriate, what is out of scope, and how any ADHD-related route should be framed without adding unsafe or unrealistic burden to the service.
-        </div>
-      </div>
-    </div>
-
-    <div class="quote-strip">
-      <p>
-        We are not asking partners to solve the whole pathway in one meeting. We are asking them to help define the safest first cohort, the practical boundaries, and the human-review process for a bounded demonstrator.
+  <section class="dark">
+    <div class="wrap">
+      <div class="kicker">Shared partner briefing</div>
+      <h1>The 12-week Cambridge pre-pilot.<br><span class="accent">What it asks of you.</span></h1>
+      <p class="lead">
+        OTOS Continuity™ is non-clinical continuity infrastructure with governed message-delivery and micro-check-in capability. It sits around existing services so the person’s journey can be held between handoffs, waiting lists, discharge points, recovery support and crisis risk.
       </p>
-    </div>
-
-    <div class="quote-strip">
-      <p>
-        OTOS does not press the RTC, QbTest, diagnostic or medication button. OTOS makes the need, handoff and follow-through visible. The authorised clinical or service partner presses the button under agreed governance.
+      <p class="lead">
+        This page is the shared read-first briefing for partners. Your individual page then explains your specific role, the time being asked, what you do not need to do, and where your input can reduce burden later.
       </p>
-    </div>
-
-    <div class="btn-row">
-      <a href="pilot-cohort.html" class="btn btn-primary">Read full cohort model</a>
-    </div>
-  </div>
-</section>
-
-<section class="section section-light" id="shared-ask">
-  <div class="section-inner">
-    <div class="chapter-header">
-      <span class="chapter-num">04</span>
-      <div class="section-label">What We Ask From Partners</div>
-    </div>
-
-    <h2 class="display-2">
-      Minimal ask.<br />
-      <span class="accent">Maximum visibility.</span>
-    </h2>
-
-    <p class="lead">
-      We are not asking partners to host, fund, procure or change clinical practice at this stage. We are asking for practical input, a named contact, and honest feedback on what would work safely.
-    </p>
-
-    <p class="lead">
-      This is a test. We are asking partners to carve out a little time for each other now, so the future system can reduce burden later.
-    </p>
-
-    <div class="grid-3">
-      <div class="card">
-        <div class="card-title">Named contact</div>
-        <div class="card-body">
-          One named contact per participating organisation. Answers quick workflow questions, confirms local red lines and helps route the right people into the conversation.
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-title">Human reviewer</div>
-        <div class="card-body">
-          Reviews drift or escalation items if surfaced in the pilot, records a decision, and closes the item. Burden is measured and treated as a success criterion.
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-title">Support note</div>
-        <div class="card-body">
-          Where appropriate, a short non-committal written note of support or willingness to continue scoping the route.
-        </div>
+      <div class="btnrow">
+        <a class="btn primary" href="#ask">What we ask</a>
+        <a class="btn secondary" href="#routes">Partner routes</a>
       </div>
     </div>
+  </section>
 
-    <div class="quote-strip">
-      <p>
-        If this fits the gap your service already sees, the immediate ask is simple: help us pressure-test the route, confirm what would be practical, and provide a short note of support where appropriate.
+  <section class="light" id="definition">
+    <div class="wrap">
+      <div class="kicker">Plain English</div>
+      <h2>Two services. One person.<br><span class="accent">One continuity thread.</span></h2>
+      <p class="lead">
+        CGL, CRS, CPFT, Addenbrooke’s, RCE, GPs, RTC/QbTest, Mind, WorkWell and therapy partners all touch different parts of the same person’s journey. OTOS does not merge their records. It creates a governed tokenised thread so the handoff itself becomes visible.
       </p>
-    </div>
-  </div>
-</section>
-
-<section class="section section-light section-alt" id="routes">
-  <div class="section-inner">
-    <div class="chapter-header">
-      <span class="chapter-num">05</span>
-      <div class="section-label">Choose Your Route</div>
-    </div>
-
-    <h2 class="display-2">
-      Each partner has a different role.<br />
-      <span class="accent">Each page is tailored.</span>
-    </h2>
-
-    <p class="lead">
-      These pages are not generic. Each one explains what OTOS means for that organisation, what is being asked, what is not being asked, and what questions still need to be resolved.
-    </p>
-
-    <div class="grid-3">
-      <a href="partners-cgl-crs.html" class="card route-card">
-        <div class="route-kicker">Partner Route</div>
-        <div class="card-title">CGL &amp; CRS</div>
-        <div class="card-body route-copy">
-          Addiction, recovery, relapse risk, re-engagement, cohort identification and continuity between services.
+      <div class="grid-2">
+        <div class="card">
+          <div class="card-title">What partners can see</div>
+          <div class="card-body">
+            Continuity status, touchpoints, handoff receipts, agreed next steps, drift signals and whether micro-check-ins are still being answered.
+          </div>
         </div>
-        <div class="route-link">Open page →</div>
-      </a>
-
-      <a href="partners-cpft-adhd-team.html" class="card route-card">
-        <div class="route-kicker">Partner Route</div>
-        <div class="card-title">CPFT ADHD Team</div>
-        <div class="card-body route-copy">
-          ADHD pathway pressure, waiting-list support, medication-review gaps and appropriate clinical boundaries.
+        <div class="card">
+          <div class="card-title">What partners do not see</div>
+          <div class="card-body">
+            Another service’s full clinical notes, complete patient record, private therapy content or clinical decision-making. Records stay separate.
+          </div>
         </div>
-        <div class="route-link">Open page →</div>
-      </a>
+      </div>
+      <div class="quote">
+        OTOS surfaces signals. The partner teams make the decisions.
+      </div>
+    </div>
+  </section>
 
-      <a href="partners-rce-wellbeing.html" class="card route-card">
-        <div class="route-kicker">Partner Route</div>
-        <div class="card-title">RCE Wellbeing Hub</div>
-        <div class="card-body route-copy">
-          Courses, holding support, ADHD-informed micro-content and waiting-list support.
+  <section class="dark" id="cohort">
+    <div class="wrap">
+      <div class="kicker">Cohort</div>
+      <h2>Surgical first.<br><span class="accent">Frontline later if proven.</span></h2>
+      <p class="lead">
+        The pre-pilot is not a general public rollout. It is a tactical, bounded test focused on a costly cohort already touching multiple services and repeatedly falling between them.
+      </p>
+      <p class="lead">
+        OTOS modelling estimates that <strong>between 800 and 900 adults</strong> in the Cambridgeshire and Peterborough footprint may sit within the target ADHD-and-addiction risk profile. This is a planning estimate based on published addiction-treatment denominators, ADHD prevalence assumptions and increased addiction-risk modelling — not a CPFT-reported figure.
+      </p>
+      <div class="grid-3">
+        <div class="card">
+          <div class="stat">50</div>
+          <div class="card-title">Pre-pilot participants</div>
+          <div class="card-body">Selected with partner input across CGL, CRS, CPFT and other appropriate routes.</div>
         </div>
-        <div class="route-link">Open page →</div>
-      </a>
-
-      <a href="partners-addenbrookes.html" class="card route-card">
-        <div class="route-kicker">Partner Route</div>
-        <div class="card-title">Addenbrooke’s / Alcohol Care Team</div>
-        <div class="card-body route-copy">
-          Bedside handoff, discharge risk, liaison psychiatry, post-detox continuity and hospital-to-community follow-through.
+        <div class="card">
+          <div class="stat">12</div>
+          <div class="card-title">Weeks active delivery</div>
+          <div class="card-body">Designed to answer whether continuity visibility changes follow-through.</div>
         </div>
-        <div class="route-link">Open page →</div>
-      </a>
-
-      <a href="partners-gp-rtc-qbtech.html" class="card route-card">
-        <div class="route-kicker">Partner Route</div>
-        <div class="card-title">GP / RTC / QbTech / Shared Care</div>
-        <div class="card-body route-copy">
-          The hardest route: assessment, Right to Choose, QbTest, GP ownership and shared-care realities.
+        <div class="card">
+          <div class="stat">800–900</div>
+          <div class="card-title">Estimated local risk cohort</div>
+          <div class="card-body">Planning estimate, subject to validation with local partners before commissioning decisions.</div>
         </div>
-        <div class="route-link">Open page →</div>
-      </a>
+      </div>
+    </div>
+  </section>
 
-      <a href="partners-mind-workwell-jo-fenton.html" class="card route-card">
-        <div class="route-kicker">Partner Route</div>
-        <div class="card-title">Mind, WorkWell &amp; Jo Fenton Therapy</div>
-        <div class="card-body route-copy">
-          The wider support ecosystem: charity, employment, therapy and community help while statutory care moves.
+  <section class="light" id="ask">
+    <div class="wrap">
+      <div class="kicker">What we ask</div>
+      <h2>Minimal ask.<br><span class="accent">Maximum visibility.</span></h2>
+      <p class="lead">
+        We know your time matters. We are asking for input now so the future system reduces burden later. The immediate ask is not procurement, public endorsement or clinical redesign. It is to help pressure-test the route.
+      </p>
+      <div class="grid-3">
+        <div class="card">
+          <div class="card-title">Named contact</div>
+          <div class="card-body">
+            One named contact per participating organisation. Answers quick workflow questions, confirms local red lines and helps shape the pre-pilot route.
+          </div>
         </div>
-        <div class="route-link">Open page →</div>
-      </a>
+        <div class="card">
+          <div class="card-title">Human reviewer</div>
+          <div class="card-body">
+            Reviews drift or escalation items when surfaced, records a decision, and closes the item. Burden is measured and treated as a pre-pilot success criterion.
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-title">Support statement</div>
+          <div class="card-body">
+            Where appropriate, a short non-committal note confirming that the gap is real, the concept is worth testing, or the partner is willing to join a scoping conversation.
+          </div>
+        </div>
+      </div>
+
+      <hr class="rule">
+
+      <h3>What OTOS provides</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Partner need</th>
+            <th>OTOS provides</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Light-touch route design</td>
+            <td>Plain-English workflow, pilot rhythm, consent framing, and partner-specific page.</td>
+          </tr>
+          <tr>
+            <td>Governance confidence</td>
+            <td>Tokenised model, non-clinical boundaries, human-review loop, audit trail and evidence register.</td>
+          </tr>
+          <tr>
+            <td>Low-burden participation</td>
+            <td>Mobile-first touchpoints, short check-ins, no EPR write-back, no clinical record replacement.</td>
+          </tr>
+          <tr>
+            <td>Evidence generation</td>
+            <td>Weekly snapshot, monthly reporting and final evaluation pack for commissioning conversations.</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="section section-dark" id="support">
-  <div class="section-inner">
-    <div class="chapter-header">
-      <span class="chapter-num">06</span>
-      <div class="section-label">Support / Feedback / Conversation</div>
+  <section class="dark" id="micro">
+    <div class="wrap">
+      <div class="kicker">Micro-check-ins</div>
+      <h2>A signal between human contacts.<br><span class="accent">Not a replacement for care.</span></h2>
+      <p class="lead">
+        The micro-check-in layer is deliberately simple: one low-friction question, repeated at agreed points, giving a basic continuity signal without requiring a keyworker to pick up the phone every time. It is not clinical monitoring and it does not replace human care.
+      </p>
+      <p class="lead">
+        That matters because frontline teams are already stretched. If a keyworker can only call once every two weeks, a lightweight check-in can still provide a small but useful signal between human contacts. Repetition, habit-stacking and familiar partner-written messages can support engagement without turning OTOS into a behavioural-monitoring app.
+      </p>
+      <div class="quote">
+        The point is not to watch people. The point is to keep the pathway warm enough that people do not disappear unnoticed.
+      </div>
     </div>
+  </section>
 
-    <h2 class="display-2">
-      The ask is simple.<br />
-      <span class="accent">Help us make the route safe and real.</span>
-    </h2>
+  <section class="light" id="routes">
+    <div class="wrap">
+      <div class="kicker">Partner routes</div>
+      <h2>Every partner can see themselves.<br><span class="accent">Every role is different.</span></h2>
 
-    <p class="lead">
-      We need practical feedback, introductions, pathway reality-checks, and where appropriate, a short note of support confirming that this is a gap worth exploring.
-    </p>
-
-    <p class="lead">
-      This is a tactical test first. If it works, the same model can later become a frontline entry point for the services repeatedly seeing people before the system has properly joined the dots.
-    </p>
-
-    <div class="btn-row">
-      <a href="mailto:info@otos.life?subject=OTOS%20Continuity%20-%20Partner%20support%20and%20feedback" class="btn btn-primary">Email OTOS — info@otos.life</a>
-      <a href="pilot-cohort.html" class="btn btn-secondary">Read cohort model</a>
-      <a href="evidence-sources.html" class="btn btn-secondary">Review evidence</a>
+      <div class="grid-3">
+        <a class="card" href="partners-cgl-crs.html" style="text-decoration:none;color:inherit;">
+          <div class="card-title">CGL & CRS</div>
+          <div class="card-body">Cohort identification, relapse/post-rehab risk, recovery touchpoints and re-engagement after silence.</div>
+        </a>
+        <a class="card" href="partners-cpft-adhd-team.html" style="text-decoration:none;color:inherit;">
+          <div class="card-title">CPFT ADHD Team</div>
+          <div class="card-body">ADHD pathway pressure, waiting-list support, medication review gap and cohort-selection conversation.</div>
+        </a>
+        <a class="card" href="partners-rce-wellbeing.html" style="text-decoration:none;color:inherit;">
+          <div class="card-title">RCE Wellbeing Hub</div>
+          <div class="card-body">Courses, holding support, micro-check-in content and support while people wait.</div>
+        </a>
+        <a class="card" href="partners-addenbrookes.html" style="text-decoration:none;color:inherit;">
+          <div class="card-title">Addenbrooke’s / Alcohol Care</div>
+          <div class="card-body">Hospital to community discharge handoff, bedside touchpoint, continuity before the person leaves the ward.</div>
+        </a>
+        <a class="card" href="partners-gp-rtc-qbtech.html" style="text-decoration:none;color:inherit;">
+          <div class="card-title">GP / RTC / QbTest</div>
+          <div class="card-body">Designed-in fast route requiring governance: who presses the button, when, and under whose clinical responsibility.</div>
+        </a>
+        <a class="card" href="partners-mind-workwell-jo-fenton.html" style="text-decoration:none;color:inherit;">
+          <div class="card-title">Mind / WorkWell / Jo Fenton</div>
+          <div class="card-body">Community, therapy, employment and VCSE support without requiring full NHS patient record access.</div>
+        </a>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<footer class="footer">
-  <div class="footer-inner">
-    <div>
-      <strong>OTOS Continuity™</strong>
-      <p>Partner landing page. Shared model first, tailored routes next.</p>
+  <section class="dark">
+    <div class="wrap">
+      <div class="card" style="text-align:center;">
+        <div class="kicker">Next step</div>
+        <h2>Help us pressure-test the route.<br><span class="accent">Then decide if it deserves scale.</span></h2>
+        <p class="lead" style="margin-left:auto;margin-right:auto;">
+          If this fits the gap your service already sees, the immediate ask is simple: help us confirm what would be practical, where responsibility sits, and what a safe pre-pilot route would need.
+        </p>
+        <div class="btnrow" style="justify-content:center;">
+          <a class="btn primary" href="mailto:info@otos.life?subject=OTOS%20Continuity%20-%20partner%20conversation">Start a conversation</a>
+          <a class="btn secondary" href="evidence-sources.html">Evidence & sources</a>
+        </div>
+      </div>
     </div>
-
-    <div>
-      © OTOS Digital Ltd · Company No. 17084455<br />
-      Phone: +44 7466 334143 · Email: <a href="mailto:info@otos.life">info@otos.life</a>
-    </div>
-  </div>
-</footer>
-
+  </section>
 </body>
 </html>
