@@ -854,3 +854,191 @@ a {
   .otos-benefit-list li { padding-left: 36px; }
   .otos-quote-card { padding: 26px; }
 }
+
+/* =========================================================
+   MARKER 9A — IMAGE / LOGO SIZE CORRECTION
+   Prevent partner logos, brain icons and pathway images
+   from escaping their cards.
+   ========================================================= */
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+/* General image safety */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Header logo */
+.site-header .brand img,
+.brand img {
+  width: auto;
+  height: 34px;
+  max-width: 180px;
+  object-fit: contain;
+}
+
+/* Partner route card logo row */
+.logo-strip {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-height: 54px;
+  margin-bottom: 22px;
+  flex-wrap: wrap;
+}
+
+.logo-strip img {
+  display: block;
+  width: auto !important;
+  height: auto !important;
+  max-height: 42px !important;
+  max-width: 150px !important;
+  object-fit: contain;
+}
+
+/* Slightly larger allowance for wide logos */
+.logo-strip img[src*="MIND"],
+.logo-strip img[src*="WorkWell"],
+.logo-strip img[src*="qbtech"],
+.logo-strip img[src*="ADHD_Team"],
+.logo-strip img[src*="Addenbrookes"] {
+  max-width: 180px !important;
+  max-height: 48px !important;
+}
+
+/* Brain icons used as bullets / card icons */
+.card-icon,
+.brain-icon,
+img.card-icon,
+img.brain-icon {
+  width: 26px !important;
+  height: 26px !important;
+  max-width: 26px !important;
+  max-height: 26px !important;
+  object-fit: contain;
+  display: inline-block;
+}
+
+/* Brain bullet list */
+.brain-list {
+  list-style: none;
+  padding-left: 0;
+  margin-left: 0;
+}
+
+.brain-list li {
+  position: relative;
+  padding-left: 34px;
+  margin: 0 0 14px;
+}
+
+.brain-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.15em;
+  width: 18px;
+  height: 18px;
+  background-image: url("../images/otos-brain-icon.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  opacity: 0.82;
+}
+
+/* Big watermark brains should be CSS backgrounds only, never layout images */
+.watermark-brain {
+  position: absolute;
+  inset: auto auto 5% -4%;
+  width: 360px;
+  height: 260px;
+  background-image: url("../images/brain.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  opacity: 0.045;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.watermark-right {
+  left: auto;
+  right: -5%;
+}
+
+/* Keep section content above watermark */
+.light-section,
+.dark-section,
+.premium-light {
+  position: relative;
+  overflow: hidden;
+}
+
+.light-section > .container,
+.dark-section > .container,
+.premium-light > .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* Partner cards */
+.partner-card {
+  overflow: hidden;
+}
+
+.partner-card img {
+  max-width: 100%;
+}
+
+/* Large pathway / hero images */
+.hero-media img,
+.image-panel img,
+.wide-image img,
+.image-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 560px;
+  object-fit: contain;
+}
+
+/* Wide images should not blow out the layout */
+.wide-image,
+.image-panel,
+.hero-media,
+.image-card {
+  overflow: hidden;
+}
+
+/* Partner pathway image can be generous but controlled */
+.wide-image img[src*="partner-pathway"],
+.hero-media img[src*="partner-pathway"] {
+  max-height: 620px;
+  object-fit: contain;
+}
+
+/* Mobile tightening */
+@media (max-width: 760px) {
+  .logo-strip img {
+    max-height: 34px !important;
+    max-width: 130px !important;
+  }
+
+  .card-icon,
+  .brain-icon,
+  img.card-icon,
+  img.brain-icon {
+    width: 22px !important;
+    height: 22px !important;
+  }
+
+  .watermark-brain {
+    width: 240px;
+    height: 180px;
+    opacity: 0.035;
+  }
+}
