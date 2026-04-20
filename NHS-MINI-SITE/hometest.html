@@ -28,13 +28,9 @@
       --max: 1180px;
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
-    html {
-      scroll-behavior: smooth;
-    }
+    html { scroll-behavior: smooth; }
 
     body {
       margin: 0;
@@ -48,9 +44,7 @@
       background-size: 54px 54px, 54px 54px, auto, auto;
     }
 
-    a {
-      color: inherit;
-    }
+    a { color: inherit; }
 
     .site-nav {
       position: sticky;
@@ -104,9 +98,7 @@
       text-decoration: none;
     }
 
-    .nav-links a:hover {
-      color: white;
-    }
+    .nav-links a:hover { color: white; }
 
     .nav-cta {
       padding: 10px 18px;
@@ -148,12 +140,7 @@
       margin-bottom: 22px;
     }
 
-    h1,
-    h2,
-    h3,
-    p {
-      margin-top: 0;
-    }
+    h1, h2, h3, p { margin-top: 0; }
 
     .display-1 {
       font-size: clamp(3.2rem, 8vw, 6.8rem);
@@ -171,9 +158,7 @@
       font-weight: 930;
     }
 
-    .accent {
-      color: var(--amber);
-    }
+    .accent { color: var(--amber); }
 
     .lead {
       font-size: clamp(1.05rem, 1.65vw, 1.34rem);
@@ -248,9 +233,7 @@
       font-size: 0.8rem;
     }
 
-    .dash-body {
-      padding: 18px 16px 16px;
-    }
+    .dash-body { padding: 18px 16px 16px; }
 
     .kpi-row {
       display: grid;
@@ -273,13 +256,8 @@
       margin-bottom: 4px;
     }
 
-    .kpi-val.green {
-      color: var(--green);
-    }
-
-    .kpi-val.red {
-      color: var(--red);
-    }
+    .kpi-val.green { color: var(--green); }
+    .kpi-val.red { color: var(--red); }
 
     .kpi-label {
       color: rgba(247,239,228,0.62);
@@ -364,18 +342,14 @@
       padding: 7px 10px;
     }
 
-    .section {
-      padding: 94px 24px;
-    }
+    .section { padding: 94px 24px; }
 
     .section-light {
       background: var(--cream);
       color: var(--text-dark);
     }
 
-    .section-alt {
-      background: var(--cream-2);
-    }
+    .section-alt { background: var(--cream-2); }
 
     .section-dark {
       background: #070b12;
@@ -451,25 +425,11 @@
       margin-top: 32px;
     }
 
-    .grid-2 {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .grid-3 {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-
-    .grid-4 {
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-    }
-
-    .route-grid {
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-    }
-
-    .flow-grid {
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-    }
+    .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .grid-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .route-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .flow-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 
     .card {
       padding: 24px;
@@ -502,9 +462,7 @@
       margin-bottom: 10px;
     }
 
-    .card-dark .card-title {
-      color: var(--text);
-    }
+    .card-dark .card-title { color: var(--text); }
 
     .card-body {
       color: var(--muted-dark);
@@ -627,9 +585,7 @@
       margin-bottom: 10px;
     }
 
-    .route-copy {
-      flex: 1;
-    }
+    .route-copy { flex: 1; }
 
     .route-link {
       margin-top: 18px;
@@ -646,6 +602,11 @@
       margin-top: 34px;
     }
 
+    .section-dark .quote-strip {
+      background: rgba(232,119,0,0.08);
+      border: 1px solid rgba(232,119,0,0.26);
+    }
+
     .quote-strip p {
       font-size: 1.1rem;
       line-height: 1.65;
@@ -654,10 +615,41 @@
       margin-bottom: 10px;
     }
 
+    .section-dark .quote-strip p {
+      color: var(--text);
+    }
+
     .quote-source {
       color: var(--muted-dark);
       font-size: 0.85rem;
       font-style: italic;
+    }
+
+    .section-dark .quote-source {
+      color: rgba(247,239,228,0.55);
+    }
+
+    .mini-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 28px;
+      font-size: 0.93rem;
+    }
+
+    .mini-table th,
+    .mini-table td {
+      text-align: left;
+      padding: 14px 12px;
+      border-bottom: 1px solid rgba(31,41,55,0.1);
+      color: var(--muted-dark);
+      vertical-align: top;
+    }
+
+    .mini-table th {
+      color: var(--text-dark);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
     }
 
     .cta-block {
@@ -699,9 +691,7 @@
       flex-wrap: wrap;
     }
 
-    .footer a {
-      color: var(--amber-2);
-    }
+    .footer a { color: var(--amber-2); }
 
     @media (max-width: 1050px) {
       .hero-inner,
@@ -712,15 +702,11 @@
         grid-template-columns: 1fr 1fr;
       }
 
-      .grid-3 {
-        grid-template-columns: 1fr;
-      }
+      .grid-3 { grid-template-columns: 1fr; }
     }
 
     @media (max-width: 760px) {
-      .nav-links {
-        display: none;
-      }
+      .nav-links { display: none; }
 
       .hero-inner,
       .grid-2,
@@ -732,13 +718,9 @@
         grid-template-columns: 1fr;
       }
 
-      .display-1 {
-        font-size: 3.3rem;
-      }
+      .display-1 { font-size: 3.3rem; }
 
-      .section {
-        padding: 70px 20px;
-      }
+      .section { padding: 70px 20px; }
     }
   </style>
 </head>
@@ -755,9 +737,8 @@
     <ul class="nav-links">
       <li><a href="#what-otos-is">What It Is</a></li>
       <li><a href="#solution">What We’re Building</a></li>
-      <li><a href="#frontline">Frontline</a></li>
+      <li><a href="#how-in-practice">How It Works</a></li>
       <li><a href="#problem">Problem</a></li>
-      <li><a href="#how-it-works">How It Works</a></li>
       <li><a href="#pilot">Pilot</a></li>
       <li><a href="#partners">Partners</a></li>
       <li><a href="funding-costs.html">Funding</a></li>
@@ -997,65 +978,93 @@
   </div>
 </section>
 
-<section class="section section-dark" id="frontline">
+<section class="section section-dark" id="how-in-practice">
   <div class="section-inner">
     <div class="chapter-header">
       <span class="chapter-num">03</span>
-      <div class="section-label">Built for frontline staff</div>
+      <div class="section-label">How It Works In Practice</div>
     </div>
 
     <h2 class="display-2">
-      It sits alongside your existing work.<br />
-      <span class="accent">Not on top of it.</span>
+      Existing services. Existing routes.<br />
+      <span class="accent">One continuity layer.</span>
     </h2>
 
     <p class="lead">
-      This is not another admin system. One tap can log a touchpoint. One glance can show whether the next step happened. No new clinical record behaviour. No EPR write-back. No extra paperwork by default.
+      OTOS does not ask partners to create a new service. It sits around the services already involved, creating a secure continuity thread before, during and after handoffs.
     </p>
 
-    <div class="grid-3">
+    <p class="lead">
+      A worker logs a touchpoint. The next step is named. The handoff is receipted. If the person goes quiet, drift becomes visible for human review.
+    </p>
+
+    <p class="lead">
+      No merged records. No clinical notes shared. No automated decisions. Just enough continuity for the right team to see what happened and decide what should happen next.
+    </p>
+
+    <div class="quote-strip">
+      <p>OTOS does not add to your caseload. It prepares it.</p>
+    </div>
+
+    <div class="grid-2" style="margin-top:36px;">
       <div class="card card-dark">
-        <div class="card-title">Under 10 seconds</div>
+        <div class="route-kicker">Route A</div>
+        <div class="card-title">Addenbrooke’s discharge</div>
         <div class="card-body">
-          Log a touchpoint from the bedside, recovery hub, GP route, support service or community setting.
+          A bedside alcohol liaison touchpoint is logged before discharge. A handoff receipt is issued to CGL. If the next step does not land, drift becomes visible for human review.
         </div>
       </div>
 
       <div class="card card-dark">
-        <div class="card-title">Receipt the handoff</div>
+        <div class="route-kicker">Route B</div>
+        <div class="card-title">CPFT ADHD pathway</div>
         <div class="card-body">
-          Show whether a referral, discharge, support offer or next step actually landed.
+          A participant in addiction services is identified as potentially needing ADHD pathway support. The continuity thread holds the journey from identification to referral, assessment and follow-through.
         </div>
       </div>
 
       <div class="card card-dark">
-        <div class="card-title">See drift early</div>
+        <div class="route-kicker">Route C</div>
+        <div class="card-title">Re-engagement after silence</div>
         <div class="card-body">
-          Silence becomes visible before it becomes relapse, crisis, re-presentation or another lost transition.
+          When someone stops attending, silence becomes a drift signal rather than an invisible disappearance. The person is not chased by a machine — they are held in a governed human-review route.
+        </div>
+      </div>
+
+      <div class="card card-dark">
+        <div class="route-kicker">Route D</div>
+        <div class="card-title">Community and VCSE holding layer</div>
+        <div class="card-body">
+          RCE, SUN Network, Mind, WorkWell and therapy support can help hold the person while statutory pathways move — without needing access to a full NHS record.
         </div>
       </div>
     </div>
 
-    <div class="grid-4" style="margin-top:32px;">
+    <div class="grid-3" style="margin-top:36px;">
       <div class="card card-dark">
-        <div class="card-title">Log a touchpoint</div>
-        <div class="card-body">One small action records that the person was seen, supported, referred, discharged or handed over.</div>
+        <div class="card-title">For frontline staff</div>
+        <div class="card-body">
+          One tap to log a touchpoint. One glance to see whether the next step happened. No new clinical record, no EPR write-back, no extra paperwork by default.
+        </div>
       </div>
 
       <div class="card card-dark">
-        <div class="card-title">Receipt a handoff</div>
-        <div class="card-body">A receiving service can acknowledge the next step without needing full access to another record.</div>
+        <div class="card-title">For service partners</div>
+        <div class="card-body">
+          A clearer view of the journey across CGL, CRS, CPFT, RCE, Addenbrooke’s, GPs, RTC, QbTest, Mind, WorkWell and therapy support — without forcing everyone into one shared record.
+        </div>
       </div>
 
       <div class="card card-dark">
-        <div class="card-title">Raise a flag</div>
-        <div class="card-body">Where eligibility criteria suggest it, a fast-track ADHD / QbTest routing flag can be marked for review.</div>
+        <div class="card-title">For commissioners and funders</div>
+        <div class="card-body">
+          A measurable continuity trail: handoffs, receipts, drift signals, partner burden and outcome movement. Evidence that can be reviewed, challenged and improved.
+        </div>
       </div>
+    </div>
 
-      <div class="card card-dark">
-        <div class="card-title">Review drift</div>
-        <div class="card-body">A human team sees when the thread starts to break and decides what happens next.</div>
-      </div>
+    <div class="quote-strip">
+      <p>OTOS surfaces signals. The partner teams make the decisions.</p>
     </div>
   </div>
 </section>
@@ -1157,10 +1166,46 @@
   </div>
 </section>
 
-<section class="section section-dark" id="continuity-layer">
+<section class="section section-light section-alt" id="spend-model">
   <div class="section-inner">
     <div class="chapter-header">
       <span class="chapter-num">06</span>
+      <div class="section-label">The Current Cost Model</div>
+    </div>
+
+    <h2 class="display-2">
+      Where the money currently goes.<br />
+      <span class="accent">And where continuity can change the pattern.</span>
+    </h2>
+
+    <p class="lead">
+      The same individuals can cycle through multiple budget lines — often year after year, without resolution. The cost is spread across crisis mental health, A&amp;E, addiction treatment, police and custody, homelessness support and repeat recovery episodes.
+    </p>
+
+    <div class="grid-2">
+      <div class="card">
+        <div class="section-label" style="margin-bottom:14px;">Current spend pattern</div>
+        <div class="card-title">Reactive and fragmented</div>
+        <div class="card-body">
+          A&amp;E presentations. Crisis mental health. Repeat addiction treatment episodes. Police and custody involvement. Housing and homelessness support. Each service sees only its piece — and bills accordingly.
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="section-label" style="margin-bottom:14px;">With OTOS Continuity</div>
+        <div class="card-title">Connected and preventive</div>
+        <div class="card-body">
+          One identification. One coordinated pathway. ADHD assessment where appropriate. Medication support where clinically indicated. Fewer crisis episodes, less revolving-door demand, and reduced spend across multiple budget lines.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-dark" id="continuity-layer">
+  <div class="section-inner">
+    <div class="chapter-header">
+      <span class="chapter-num">07</span>
       <div class="section-label">The Continuity Layer</div>
     </div>
 
@@ -1238,89 +1283,6 @@
   </div>
 </section>
 
-<section class="section section-light section-alt" id="how-it-works">
-  <div class="section-inner">
-    <div class="chapter-header">
-      <span class="chapter-num">07</span>
-      <div class="section-label">How OTOS Works</div>
-    </div>
-
-    <h2 class="display-2">
-      One touchpoint becomes a thread.<br />
-      <span class="accent">One thread makes the journey visible.</span>
-    </h2>
-
-    <p class="lead">
-      OTOS sits lightly around the services that already exist. When a person is seen at the bedside, in recovery, by a GP, by a support worker, or while waiting for ADHD care, that moment can be logged as a simple continuity touchpoint.
-    </p>
-
-    <p class="lead">
-      The person can remain tokenised. The records stay separate. OTOS does not expose clinical notes, merge systems, diagnose, prescribe, or decide care. It simply shows whether the next step happened, whether the handoff landed, and whether silence is becoming risk.
-    </p>
-
-    <p class="lead">
-      That gives each partner a clearer view of the part they already play — and gives the whole pathway a way to see follow-through before someone disappears from view.
-    </p>
-
-    <div class="flow-grid">
-      <div class="flow-card">
-        <div class="flow-num">1</div>
-        <div class="card-title">A touchpoint is logged</div>
-        <div class="card-body">
-          At the bedside, in the hub, in recovery, in primary care or in community support, a worker records that contact happened. It takes seconds and does not create a new clinical record.
-        </div>
-      </div>
-
-      <div class="flow-card">
-        <div class="flow-num">2</div>
-        <div class="card-title">The next step is named</div>
-        <div class="card-body">
-          The handoff, referral, support offer or follow-up is linked to the same tokenised journey. The system now knows what should happen next.
-        </div>
-      </div>
-
-      <div class="flow-card">
-        <div class="flow-num">3</div>
-        <div class="card-title">Follow-through is receipted</div>
-        <div class="card-body">
-          OTOS shows whether the next step was acknowledged, completed, unresolved or still waiting. It answers the question most systems cannot: did the handoff actually land?
-        </div>
-      </div>
-
-      <div class="flow-card">
-        <div class="flow-num">4</div>
-        <div class="card-title">Drift becomes visible</div>
-        <div class="card-body">
-          If the journey goes quiet, the signal is surfaced for human review. OTOS does not act clinically. It gives the right partner team a chance to decide what happens next.
-        </div>
-      </div>
-    </div>
-
-    <div class="grid-3" style="margin-top:36px;">
-      <div class="card">
-        <div class="card-title">For frontline staff</div>
-        <div class="card-body">
-          One tap to log a touchpoint. One glance to see whether the next step happened. No new clinical record, no EPR write-back, no extra paperwork by default.
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-title">For service partners</div>
-        <div class="card-body">
-          A clearer view of the journey across CGL, CRS, CPFT, RCE, Addenbrooke’s, GPs, RTC, QbTest, Mind, WorkWell and therapy support — without forcing everyone into one shared record.
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-title">For commissioners and funders</div>
-        <div class="card-body">
-          A measurable continuity trail: handoffs, receipts, drift signals, partner burden and outcome movement. Evidence that can be reviewed, challenged and improved.
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <section class="section section-light" id="pilot">
   <div class="section-inner">
     <div class="chapter-header">
@@ -1329,12 +1291,12 @@
     </div>
 
     <h2 class="display-2">
-      12 weeks. 50 people.<br />
-      <span class="accent">One clear question.</span>
+      50 people.<br />
+      <span class="accent">A proof point that changes everything.</span>
     </h2>
 
     <p class="lead">
-      Does a receipted continuity thread, applied to this targeted cohort, reduce silent disengagement and increase the likelihood that people reach the next meaningful step?
+      The pre-pilot demonstrator targets up to 50 high-priority people from an already identified local cohort. The aim is not to prove everything at once. It is to prove whether a receipted continuity thread can reduce silent disengagement, improve handoffs, and create evidence strong enough for commissioning, funding and wider adoption.
     </p>
 
     <div class="grid-3">
@@ -1356,6 +1318,29 @@
         <div class="card-body">One-off demonstrator cost covering infrastructure, co-ordination, evaluation and evidence generation.</div>
       </div>
     </div>
+
+    <div class="grid-3" style="margin-top:36px;">
+      <div class="card">
+        <div class="card-title">Continuity KPIs</div>
+        <div class="card-body">
+          Follow-through visibility, receipt completion rate, drift-detection lead time, and silent disengagement made visible earlier.
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">Burden &amp; safety</div>
+        <div class="card-body">
+          Partner time spent per week, human-review loop performance, and safe escalation discipline.
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">Participant engagement</div>
+        <div class="card-body">
+          Whether people reach the next step, whether the pathway holds for longer, and whether services can see more of what happened.
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -1367,8 +1352,8 @@
     </div>
 
     <h2 class="display-2">
-      Built on real relationships.<br />
-      <span class="accent">Not just referral lists.</span>
+      All the support already exists.<br />
+      <span class="accent">It has never been connected like this.</span>
     </h2>
 
     <p class="lead">
