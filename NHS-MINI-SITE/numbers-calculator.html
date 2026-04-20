@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OTOS Continuity™ — Numbers & Calculator</title>
+  <meta name="description" content="OTOS Continuity™ numbers, assumptions, modelling and calculator briefing." />
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/otos.css" />
+  <style>
+    body { margin:0; background:#080b12; color:#f7f3ea; font-family:Inter,system-ui,sans-serif; }
+    .wrap { max-width:1120px; margin:0 auto; padding:0 24px; }
+    .nav { height:72px; border-bottom:1px solid rgba(255,255,255,.08); background:rgba(8,11,18,.75); backdrop-filter:blur(16px); position:sticky; top:0; z-index:20; }
+    .nav .wrap { height:72px; display:flex; align-items:center; justify-content:space-between; }
+    .logo { display:flex; gap:10px; align-items:center; text-decoration:none; font-weight:900; color:white; }
+    .logo img { height:30px; }
+    .links { display:flex; gap:18px; font-size:.84rem; font-weight:800; color:rgba(255,255,255,.72); }
+    .links a { color:inherit; text-decoration:none; }
+    section { padding:88px 0; }
+    .dark { background:radial-gradient(circle at 80% 0%, rgba(226,106,18,.14), transparent 35%), #080b12; color:#f7f3ea; }
+    .light { background:#f1ede4; color:#211c18; }
+    .kicker { display:inline-flex; padding:8px 14px; border:1px solid rgba(226,106,18,.55); border-radius:999px; color:#ff8a1d; text-transform:uppercase; letter-spacing:.16em; font-size:.72rem; font-weight:900; margin-bottom:24px; }
+    h1,h2 { margin:0 0 22px; letter-spacing:-.05em; line-height:1; font-weight:900; }
+    h1 { font-size:clamp(3rem,6vw,5.8rem); max-width:980px; }
+    h2 { font-size:clamp(2.1rem,4.6vw,4.4rem); max-width:980px; }
+    .accent { color:#e26a12; }
+    .lead { color:#aeb4c0; font-size:clamp(1.05rem,1.5vw,1.3rem); line-height:1.75; max-width:900px; }
+    .light .lead { color:#5f5a52; }
+    .grid-2,.grid-3,.grid-4 { display:grid; gap:18px; }
+    .grid-2 { grid-template-columns:repeat(2,minmax(0,1fr)); }
+    .grid-3 { grid-template-columns:repeat(3,minmax(0,1fr)); }
+    .grid-4 { grid-template-columns:repeat(4,minmax(0,1fr)); }
+    .card { border:1px solid rgba(255,255,255,.13); background:#111620; border-radius:24px; padding:28px; }
+    .light .card { background:rgba(255,255,255,.45); border-color:rgba(0,0,0,.15); }
+    .card-title { font-weight:900; font-size:1.08rem; margin-bottom:10px; }
+    .card-body { color:#aeb4c0; line-height:1.65; }
+    .light .card-body { color:#5f5a52; }
+    .stat { color:#ff8a1d; font-size:clamp(2.4rem,4vw,4.2rem); font-weight:900; letter-spacing:-.05em; margin-bottom:10px; }
+    .quote { border-left:4px solid #e26a12; background:rgba(226,106,18,.08); padding:22px 26px; border-radius:0 18px 18px 0; line-height:1.75; font-style:italic; margin:30px 0; }
+    .rule { border:0; border-top:1px solid rgba(255,255,255,.11); margin:44px 0; }
+    .light .rule { border-top-color:rgba(0,0,0,.13); }
+    .btnrow { display:flex; gap:14px; flex-wrap:wrap; margin-top:28px; }
+    .btn { min-height:48px; padding:0 22px; border-radius:999px; display:inline-flex; align-items:center; justify-content:center; text-decoration:none; font-weight:900; border:1px solid rgba(255,255,255,.16); color:white; }
+    .btn.primary { background:#e26a12; border-color:#e26a12; }
+    .light .btn.secondary { color:#211c18; border-color:rgba(0,0,0,.22); }
+    table { width:100%; border-collapse:collapse; border:1px solid rgba(255,255,255,.12); border-radius:18px; overflow:hidden; font-size:.94rem; }
+    th,td { padding:15px; border-bottom:1px solid rgba(255,255,255,.1); text-align:left; vertical-align:top; line-height:1.55; }
+    th { color:#ff8a1d; text-transform:uppercase; letter-spacing:.1em; font-size:.72rem; }
+    .light table { border-color:rgba(0,0,0,.15); }
+    .light th,.light td { border-bottom-color:rgba(0,0,0,.12); }
+    .calc-box { background:#0d3131; border:1px solid rgba(87,255,214,.18); border-radius:24px; padding:28px; margin-top:24px; }
+    input[type=range] { width:100%; }
+    .input { width:100%; box-sizing:border-box; min-height:48px; padding:0 14px; border-radius:12px; border:1px solid rgba(255,255,255,.18); background:#061f20; color:white; font-weight:800; }
+    label { display:block; font-size:.8rem; text-transform:uppercase; letter-spacing:.1em; color:#ffb15b; font-weight:900; margin-bottom:8px; }
+    @media(max-width:900px){.grid-2,.grid-3,.grid-4{grid-template-columns:1fr}.links{display:none}section{padding:68px 0}}
+  </style>
+</head>
+
+<body>
+  <script>
+    if (sessionStorage.getItem('otos_access') !== '1') window.location.replace('public.html');
+  </script>
+
+  <nav class="nav">
+    <div class="wrap">
+      <a class="logo" href="index.html"><img src="images/brain-icon.png" alt="" onerror="this.style.display='none'">OTOS Continuity™</a>
+      <div class="links">
+        <a href="index.html">Home</a>
+        <a href="partners.html">Partners</a>
+        <a href="local-authority-public-health.html">Local Authority</a>
+        <a href="evidence-sources.html">Evidence</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="dark">
+    <div class="wrap">
+      <div class="kicker">Numbers & calculator</div>
+      <h1>The numbers do not make the claim.<br><span class="accent">They show what must be tested.</span></h1>
+      <p class="lead">
+        This page separates published data, local service figures, OTOS modelling estimates and assumptions. The pre-pilot exists to replace modelling with locally validated evidence.
+      </p>
+      <div class="grid-4">
+        <div class="card"><div class="stat">800–900</div><div class="card-title">Estimated local risk cohort</div><div class="card-body">OTOS planning estimate, subject to local validation.</div></div>
+        <div class="card"><div class="stat">50</div><div class="card-title">Pre-pilot target</div><div class="card-body">Bounded cohort for 12-week demonstrator.</div></div>
+        <div class="card"><div class="stat">£91,520</div><div class="card-title">Pre-pilot ask</div><div class="card-body">Evidence budget, not therapy budget.</div></div>
+        <div class="card"><div class="stat">£18m</div><div class="card-title">Modelled opportunity</div><div class="card-body">Potential avoidable annual demand, not a guaranteed saving.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="light">
+    <div class="wrap">
+      <div class="kicker">Model discipline</div>
+      <h2>Observed, modelled, proxy, assumption.<br><span class="accent">Never mixed quietly.</span></h2>
+      <p class="lead">
+        The current best position is honest: adult addiction treatment data are stronger than adult ADHD service data. The geography also does not map perfectly. Addiction data is often Local Authority based, while ADHD service data is NHS provider or national-proxy based.
+      </p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Label</th>
+            <th>Meaning</th>
+            <th>How it is used</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Published source</td>
+            <td>A figure from a published research paper, government source, NHS source or official dataset.</td>
+            <td>Used as evidence or comparator, with source retained in the evidence register.</td>
+          </tr>
+          <tr>
+            <td>Local source</td>
+            <td>A local service figure or partner-confirmed number.</td>
+            <td>Used only where the local source is recorded and can be validated.</td>
+          </tr>
+          <tr>
+            <td>OTOS modelling estimate</td>
+            <td>A calculated planning figure based on published denominators and assumptions.</td>
+            <td>Used to size the opportunity, not as an observed fact.</td>
+          </tr>
+          <tr>
+            <td>Assumption</td>
+            <td>A scenario value used to test sensitivity.</td>
+            <td>Must remain visible until replaced by local evidence.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="dark">
+    <div class="wrap">
+      <div class="kicker">Live scenario model</div>
+      <h2>CPFT ADHD + Addiction<br><span class="accent">planning calculator.</span></h2>
+      <p class="lead">
+        This is a simple planning model. It is not person-level linked data. It uses editable assumptions to show the scale of the opportunity and the evidence the pre-pilot is designed to validate.
+      </p>
+
+      <div class="calc-box">
+        <div class="grid-2">
+          <div>
+            <label for="denominator">Treatment denominator</label>
+            <input class="input" id="denominator" type="number" value="4175" min="1" step="1" />
+          </div>
+          <div>
+            <label for="annualCost">Annual burden / cost per person (£)</label>
+            <input class="input" id="annualCost" type="number" value="40070" min="0" step="10" />
+          </div>
+        </div>
+
+        <div style="margin-top:24px;">
+          <label for="adhdRate">ADHD prevalence scenario: <span id="adhdRateLabel">25</span>%</label>
+          <input id="adhdRate" type="range" min="5" max="65" value="25" step="1" />
+        </div>
+
+        <div style="margin-top:24px;">
+          <label for="effectRate">Improvement / effect scenario: <span id="effectRateLabel">25</span>%</label>
+          <input id="effectRate" type="range" min="1" max="65" value="25" step="1" />
+        </div>
+
+        <div class="grid-4" style="margin-top:26px;">
+          <div class="card"><div class="stat" id="chosenDenominator">4,175</div><div class="card-title">Chosen denominator</div></div>
+          <div class="card"><div class="stat" id="overlap">1,044</div><div class="card-title">Modelled ADHD + addiction overlap</div></div>
+          <div class="card"><div class="stat" id="improved">261</div><div class="card-title">Illustrative improved cases</div></div>
+          <div class="card"><div class="stat" id="saving">£10.5m</div><div class="card-title">Gross annual saving at current settings</div></div>
+        </div>
+
+        <p class="lead" style="font-size:1rem;margin-top:24px;">
+          Live formula: <span id="formula">4,175 × 25.0% × 25.0% × £40,070 = £10,455,766</span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="light">
+    <div class="wrap">
+      <div class="kicker">Working numbers</div>
+      <h2>The local model.<br><span class="accent">Planning estimate only.</span></h2>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Metric</th>
+            <th>Figure</th>
+            <th>Label</th>
+            <th>Note</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Adults in treatment, Cambridgeshire + Peterborough</td>
+            <td>4,175</td>
+            <td>Published / extracted denominator</td>
+            <td>Used as the current planning denominator for the calculator.</td>
+          </tr>
+          <tr>
+            <td>Estimated ADHD + addiction local risk cohort</td>
+            <td>800–900</td>
+            <td>OTOS modelling estimate</td>
+            <td>Based on published addiction-treatment denominators, ADHD prevalence assumptions and increased addiction-risk modelling. Subject to local validation.</td>
+          </tr>
+          <tr>
+            <td>Pre-pilot cohort</td>
+            <td>50</td>
+            <td>Pre-pilot design</td>
+            <td>Selected with CGL, CRS, CPFT and relevant partners.</td>
+          </tr>
+          <tr>
+            <td>Pre-pilot cost</td>
+            <td>£91,520</td>
+            <td>Budget estimate</td>
+            <td>Includes infrastructure, partner coordination, co-production, evaluation and evidence pack.</td>
+          </tr>
+          <tr>
+            <td>Modelled avoidable annual demand</td>
+            <td>≈£18m</td>
+            <td>OTOS modelling estimate</td>
+            <td>Not a guaranteed saving. The pre-pilot exists to test the local evidence.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="quote">
+        The 800–900 figure is not being presented as a CPFT-reported number. It is a planning estimate that the pre-pilot is designed to validate.
+      </div>
+    </div>
+  </section>
+
+  <section class="dark">
+    <div class="wrap">
+      <div class="kicker">Scenario evidence</div>
+      <h2>Why 25% is a scenario.<br><span class="accent">Not a hidden claim.</span></h2>
+      <p class="lead">
+        Research on ADHD prevalence in substance-use populations varies widely by country, setting, substance type and diagnostic method. A 25% mid-case is defensible as a modelling scenario because it aligns with alcohol-subgroup pooled findings and sits close to multiple comparator studies. It remains an assumption until local data validates or replaces it.
+      </p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Scenario</th>
+            <th>Value</th>
+            <th>Support</th>
+            <th>Strength</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Low</td>
+            <td>5%</td>
+            <td>Low-end study prevalence around 5.22% in extracted research table.</td>
+            <td>Weak but directly supported.</td>
+          </tr>
+          <tr>
+            <td>Mid</td>
+            <td>25%</td>
+            <td>Matches pooled alcohol subgroup and sits near several study rows around 25%.</td>
+            <td>Moderate as a modelling scenario.</td>
+          </tr>
+          <tr>
+            <td>High</td>
+            <td>65%</td>
+            <td>Supported by a small clinic sample showing 65.5% persistent adult ADHD in multiple substance addiction.</td>
+            <td>Weak / setting-specific.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="light">
+    <div class="wrap">
+      <div class="kicker">What gets measured</div>
+      <h2>What the pre-pilot replaces.<br><span class="accent">Modelling with evidence.</span></h2>
+      <div class="grid-3">
+        <div class="card">
+          <div class="card-title">Continuity KPIs</div>
+          <div class="card-body">Follow-through visibility · receipt completion rate · drift-detection lead time · silent disengagement made visible earlier · median time between touchpoints.</div>
+        </div>
+        <div class="card">
+          <div class="card-title">Burden & safety KPIs</div>
+          <div class="card-body">Partner time spent per week · human-review loop performance · safe escalation discipline · no new clinical burden introduced.</div>
+        </div>
+        <div class="card">
+          <div class="card-title">Participant engagement KPIs</div>
+          <div class="card-body">Likelihood of reaching next step · pathway hold time · whether services can see more of what happened · six-month comparator against START study.</div>
+        </div>
+      </div>
+
+      <div class="btnrow">
+        <a class="btn primary" href="evidence-sources.html">Open evidence register</a>
+        <a class="btn secondary" href="local-authority-public-health.html">Open Public Health briefing</a>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    function fmt(n) {
+      return Math.round(n).toLocaleString('en-GB');
+    }
+
+    function money(n) {
+      if (n >= 1000000) return '£' + (n / 1000000).toFixed(1) + 'm';
+      return '£' + fmt(n);
+    }
+
+    function recalc() {
+      const denominator = Number(document.getElementById('denominator').value || 0);
+      const annualCost = Number(document.getElementById('annualCost').value || 0);
+      const adhdRate = Number(document.getElementById('adhdRate').value || 0);
+      const effectRate = Number(document.getElementById('effectRate').value || 0);
+
+      const overlap = denominator * (adhdRate / 100);
+      const improved = overlap * (effectRate / 100);
+      const saving = improved * annualCost;
+
+      document.getElementById('adhdRateLabel').textContent = adhdRate;
+      document.getElementById('effectRateLabel').textContent = effectRate;
+      document.getElementById('chosenDenominator').textContent = fmt(denominator);
+      document.getElementById('overlap').textContent = fmt(overlap);
+      document.getElementById('improved').textContent = fmt(improved);
+      document.getElementById('saving').textContent = money(saving);
+      document.getElementById('formula').textContent =
+        `${fmt(denominator)} × ${adhdRate.toFixed(1)}% × ${effectRate.toFixed(1)}% × £${fmt(annualCost)} = £${fmt(saving)}`;
+    }
+
+    ['denominator','annualCost','adhdRate','effectRate'].forEach(id => {
+      document.addEventListener('DOMContentLoaded', () => {
+        const el = document.getElementById(id);
+        if (el) el.addEventListener('input', recalc);
+      });
+    });
+
+    document.addEventListener('DOMContentLoaded', recalc);
+  </script>
+</body>
+</html>
