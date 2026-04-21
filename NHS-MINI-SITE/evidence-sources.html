@@ -1,363 +1,72 @@
-<!DOCTYPE html>
-<html lang="en-GB">
+<!doctype html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>OTOS Continuity™ — Evidence & Sources</title>
-  <meta name="description" content="Evidence, sources, caveats and claims discipline for OTOS Continuity™." />
-  <meta name="robots" content="noindex, nofollow" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/otos.css" />
-  <style>
-    body { margin:0; background:#080b12; color:#f7f3ea; font-family:Inter,system-ui,sans-serif; }
-    .wrap { max-width:1120px; margin:0 auto; padding:0 24px; }
-    .nav { height:72px; border-bottom:1px solid rgba(255,255,255,.08); background:rgba(8,11,18,.75); backdrop-filter:blur(16px); position:sticky; top:0; z-index:20; }
-    .nav .wrap { height:72px; display:flex; align-items:center; justify-content:space-between; }
-    .logo { display:flex; gap:10px; align-items:center; text-decoration:none; font-weight:900; color:white; }
-    .logo img { height:30px; }
-    .links { display:flex; gap:18px; font-size:.84rem; font-weight:800; color:rgba(255,255,255,.72); }
-    .links a { color:inherit; text-decoration:none; }
-    section { padding:88px 0; }
-    .dark { background:radial-gradient(circle at 80% 0%, rgba(226,106,18,.14), transparent 35%), #080b12; color:#f7f3ea; }
-    .light { background:#f1ede4; color:#211c18; }
-    .kicker { display:inline-flex; padding:8px 14px; border:1px solid rgba(226,106,18,.55); border-radius:999px; color:#ff8a1d; text-transform:uppercase; letter-spacing:.16em; font-size:.72rem; font-weight:900; margin-bottom:24px; }
-    h1,h2 { margin:0 0 22px; letter-spacing:-.05em; line-height:1; font-weight:900; }
-    h1 { font-size:clamp(3rem,6vw,5.8rem); max-width:980px; }
-    h2 { font-size:clamp(2.1rem,4.6vw,4.4rem); max-width:980px; }
-    .accent { color:#e26a12; }
-    .lead { color:#aeb4c0; font-size:clamp(1.05rem,1.5vw,1.3rem); line-height:1.75; max-width:900px; }
-    .light .lead { color:#5f5a52; }
-    .grid-2,.grid-3 { display:grid; gap:18px; }
-    .grid-2 { grid-template-columns:repeat(2,minmax(0,1fr)); }
-    .grid-3 { grid-template-columns:repeat(3,minmax(0,1fr)); }
-    .card { border:1px solid rgba(255,255,255,.13); background:#111620; border-radius:24px; padding:28px; }
-    .light .card { background:rgba(255,255,255,.45); border-color:rgba(0,0,0,.15); }
-    .card-title { font-weight:900; font-size:1.08rem; margin-bottom:10px; }
-    .card-body { color:#aeb4c0; line-height:1.65; }
-    .light .card-body { color:#5f5a52; }
-    .stat { color:#ff8a1d; font-size:clamp(2.4rem,4vw,4.2rem); font-weight:900; letter-spacing:-.05em; margin-bottom:10px; }
-    .quote { border-left:4px solid #e26a12; background:rgba(226,106,18,.08); padding:22px 26px; border-radius:0 18px 18px 0; line-height:1.75; font-style:italic; margin:30px 0; }
-    .rule { border:0; border-top:1px solid rgba(255,255,255,.11); margin:44px 0; }
-    .light .rule { border-top-color:rgba(0,0,0,.13); }
-    .btnrow { display:flex; gap:14px; flex-wrap:wrap; margin-top:28px; }
-    .btn { min-height:48px; padding:0 22px; border-radius:999px; display:inline-flex; align-items:center; justify-content:center; text-decoration:none; font-weight:900; border:1px solid rgba(255,255,255,.16); color:white; }
-    .btn.primary { background:#e26a12; border-color:#e26a12; }
-    .light .btn.secondary { color:#211c18; border-color:rgba(0,0,0,.22); }
-    table { width:100%; border-collapse:collapse; border:1px solid rgba(255,255,255,.12); border-radius:18px; overflow:hidden; font-size:.92rem; }
-    th,td { padding:15px; border-bottom:1px solid rgba(255,255,255,.1); text-align:left; vertical-align:top; line-height:1.55; }
-    th { color:#ff8a1d; text-transform:uppercase; letter-spacing:.1em; font-size:.72rem; }
-    .light table { border-color:rgba(0,0,0,.15); }
-    .light th,.light td { border-bottom-color:rgba(0,0,0,.12); }
-    .tag { display:inline-flex; padding:5px 8px; border-radius:8px; background:rgba(226,106,18,.12); color:#ff8a1d; font-size:.7rem; font-weight:900; text-transform:uppercase; letter-spacing:.08em; margin-right:8px; }
-    .source-link { color:#ff8a1d; overflow-wrap:anywhere; }
-    @media(max-width:900px){.grid-2,.grid-3{grid-template-columns:1fr}.links{display:none}section{padding:68px 0}table{font-size:.84rem}}
-  </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Evidence & Sources — OTOS Continuity™</title>
+  <link rel="stylesheet" href="css/otos.css">
 </head>
-
 <body>
-  <script>
-    if (sessionStorage.getItem('otos_access') !== '1') window.location.replace('public.html');
-  </script>
-
-  <nav class="nav">
-    <div class="wrap">
-      <a class="logo" href="index.html"><img src="images/brain-icon.png" alt="" onerror="this.style.display='none'">OTOS Continuity™</a>
-      <div class="links">
+  <header class="site-header">
+    <div class="nav-inner">
+      <a class="brand" href="index.html">OTOS Continuity™</a>
+      <nav class="site-nav" aria-label="Main navigation">
         <a href="index.html">Home</a>
         <a href="partners.html">Partners</a>
         <a href="local-authority-public-health.html">Local Authority</a>
-        <a href="numbers-calculator.html">Numbers</a>
-      </div>
+        <a href="numbers.html">Numbers</a>
+        <a href="evidence-sources.html" class="active">Evidence</a>
+        <a class="cta" href="mailto:info@otos.life?subject=OTOS%20Continuity%20conversation">Get involved</a>
+      </nav>
     </div>
-  </nav>
+  </header>
 
-  <section class="dark">
-    <div class="wrap">
-      <div class="kicker">Evidence & sources</div>
-      <h1>Every claim is sourced.<br><span class="accent">Every estimate is labelled.</span></h1>
-      <p class="lead">
-        This page separates published evidence, local service figures, OTOS modelling estimates, assumptions and placeholders requiring validation. OTOS does not turn modelling into fact.
-      </p>
-      <div class="grid-3">
-        <div class="card"><div class="stat">23–45%</div><div class="card-title">ADHD + SUD range</div><div class="card-body">Published research range used as evidence context, not a local observed figure.</div></div>
-        <div class="card"><div class="stat">61.3%</div><div class="card-title">START comparator</div><div class="card-body">Improvement in addictive disorders after ADHD diagnosis at six months.</div></div>
-        <div class="card"><div class="stat">800–900</div><div class="card-title">Local planning estimate</div><div class="card-body">OTOS modelling estimate, subject to validation with local partners.</div></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="light">
-    <div class="wrap">
-      <div class="kicker">Claims discipline</div>
-      <h2>Published. Local. Modelled. Placeholder.<br><span class="accent">The label matters.</span></h2>
-      <p class="lead">
-        Any number used in the portal must be labelled. If a source is missing, the page should say so. If a figure is modelled, it stays modelled until replaced by local validation.
-      </p>
-      <table>
-        <thead>
-          <tr>
-            <th>Claim type</th>
-            <th>Meaning</th>
-            <th>How it appears</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Published source</td>
-            <td>Research, NHS, government, OHID, NICE, RCPsych, or official dataset.</td>
-            <td>Can be used as evidence, with caveat where needed.</td>
-          </tr>
-          <tr>
-            <td>Local source</td>
-            <td>Local service figure, partner figure, or local JSNA / public-health figure.</td>
-            <td>Used only when the local source is recorded.</td>
-          </tr>
-          <tr>
-            <td>OTOS modelling estimate</td>
-            <td>Calculated planning estimate based on source figures and assumptions.</td>
-            <td>Never described as observed or identified.</td>
-          </tr>
-          <tr>
-            <td>Placeholder requiring validation</td>
-            <td>Useful claim or figure not yet source-locked.</td>
-            <td>Flagged until validated or removed.</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
-
-  <section class="dark">
-    <div class="wrap">
-      <div class="kicker">Core evidence</div>
-      <h2>ADHD and addiction.<br><span class="accent">The link is not new.</span></h2>
-      <p class="lead">
-        The current evidence base supports the direction of travel: ADHD is overrepresented in substance-use populations; treating ADHD in people with co-occurring substance use can improve ADHD and substance-use outcomes; and failure to hold continuity after discharge or referral creates avoidable risk.
-      </p>
-
-      <table>
-        <thead>
-          <tr>
-            <th>Evidence item</th>
-            <th>Figure / finding</th>
-            <th>Label</th>
-            <th>Notes</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Rohner et al. meta-analysis</td>
-            <td>21% pooled overall ADHD prevalence among SUD populations; subgroup estimates include 25% alcohol.</td>
-            <td>Published source</td>
-            <td>Used to support the scenario range, not as a local observed figure.</td>
-          </tr>
-          <tr>
-            <td>RCPsych / ADHD with substance use</td>
-            <td>23–45% range used in current working copy.</td>
-            <td>Published source</td>
-            <td>Needs exact citation line locked in final claims register.</td>
-          </tr>
-          <tr>
-            <td>START study</td>
-            <td>61.3% improvement in addictive disorders at six months after ADHD diagnosis.</td>
-            <td>Published source</td>
-            <td>Comparator only. Not identical to 12-month re-presentation reduction.</td>
-          </tr>
-          <tr>
-            <td>NICE NG87</td>
-            <td>NICE guidance covers ADHD recognition, diagnosis and management, including coexisting substance misuse context.</td>
-            <td>Published source</td>
-            <td>Useful for alignment, not a direct OTOS endorsement.</td>
-          </tr>
-          <tr>
-            <td>CGL Nottingham precedent</td>
-            <td>Trialled ADHD identification and referral pathway in Nottingham in 2024–25.</td>
-            <td>Local / partner precedent</td>
-            <td>Useful as “not from scratch” evidence, but needs final wording/source locked.</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
-
-  <section class="light">
-    <div class="wrap">
-      <div class="kicker">Local numbers</div>
-      <h2>Local scale.<br><span class="accent">Modelled carefully.</span></h2>
-
-      <table>
-        <thead>
-          <tr>
-            <th>Metric</th>
-            <th>Figure</th>
-            <th>Label</th>
-            <th>Caveat</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Adults in treatment, Cambridgeshire + Peterborough</td>
-            <td>4,175</td>
-            <td>Published / extracted denominator</td>
-            <td>Used as planning denominator. Not person-level linked data.</td>
-          </tr>
-          <tr>
-            <td>Estimated local ADHD + addiction risk cohort</td>
-            <td>800–900</td>
-            <td>OTOS modelling estimate</td>
-            <td>Planning estimate only. Validate with CPFT, CGL and local partners.</td>
-          </tr>
-          <tr>
-            <td>CPFT ADHD triage / pre-assessment screenings</td>
-            <td>6,000</td>
-            <td>Local / published CPFT service figure</td>
-            <td>Keep source line in claims register.</td>
-          </tr>
-          <tr>
-            <td>Adults waiting for ADHD assessment</td>
-            <td>380</td>
-            <td>Local / published CPFT service figure</td>
-            <td>Keep source line in claims register.</td>
-          </tr>
-          <tr>
-            <td>Awaiting medication review / titration</td>
-            <td>~1,000</td>
-            <td>Local / published CPFT service figure</td>
-            <td>Keep source line in claims register.</td>
-          </tr>
-          <tr>
-            <td>Referrals received 1 Jan 2024 → 30 Jun 2025</td>
-            <td>2,973</td>
-            <td>Local / published CPFT service figure</td>
-            <td>Keep source line in claims register.</td>
-          </tr>
-        </tbody>
-      </table>
-
-      <div class="quote">
-        Use 800–900 consistently. Do not use 827, 877, or “identified individuals” unless the source trail and wording are deliberately changed later.
-      </div>
-    </div>
-  </section>
-
-  <section class="dark">
-    <div class="wrap">
-      <div class="kicker">Co-occurring need</div>
-      <h2>Mental health and addiction are already overlapping.<br><span class="accent">The pathway is not.</span></h2>
-      <p class="lead">
-        Local and national public-health material supports the wider point that substance use and mental-health need overlap heavily. The exact SUN Network figure should be added only once the source is supplied and locked.
-      </p>
-
-      <div class="grid-3">
-        <div class="card">
-          <div class="stat">TBC</div>
-          <div class="card-title">SUN Network figure</div>
-          <div class="card-body">Placeholder. Add once source/screenshot is supplied.</div>
-        </div>
-        <div class="card">
-          <div class="stat">60%+</div>
-          <div class="card-title">Local alcohol treatment / mental health need</div>
-          <div class="card-body">Working local evidence line to validate against JSNA / local public-health source.</div>
-        </div>
-        <div class="card">
-          <div class="stat">74%</div>
-          <div class="card-title">National co-occurring need</div>
-          <div class="card-body">Working figure from national co-occurring mental health and substance-use framework. Source line to lock.</div>
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="eyebrow">Evidence & sources</div>
+        <h1>Every claim is sourced.<br><span>Every estimate is labelled.</span></h1>
+        <p class="lead">This page separates published evidence, local service figures, OTOS modelling estimates, assumptions and placeholders requiring validation. OTOS does not turn modelling into fact.</p>
+        <div class="metric-grid">
+          <div class="metric"><strong>23–45%</strong><p>ADHD + SUD range used in the briefing.</p></div>
+          <div class="metric"><strong>61.3%</strong><p>START comparator improvement after ADHD diagnosis.</p></div>
+          <div class="metric"><strong>800–900</strong><p>Local planning estimate, subject to validation.</p></div>
+          <div class="metric"><strong>£91,520</strong><p>Pre-pilot budget estimate.</p></div>
         </div>
       </div>
+    </section>
 
-      <div class="quote">
-        The evidence is not saying these are separate problems. It is saying people are already moving across both systems — but the continuity layer between those systems is missing.
+    <section class="light-section">
+      <div class="container">
+        <div class="eyebrow">Model discipline</div>
+        <h2>Observed, modelled, proxy, assumption.<br><span>Never mixed quietly.</span></h2>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Label</th><th>Meaning</th><th>How it is used</th></tr></thead>
+            <tbody>
+              <tr><td>Published source</td><td>A figure from published research, government source, NHS source or official dataset.</td><td>Used as evidence or comparator, with source retained in the evidence register.</td></tr>
+              <tr><td>Local source</td><td>A local service figure or partner-confirmed number.</td><td>Used only where the local source is recorded and can be validated.</td></tr>
+              <tr><td>OTOS modelling estimate</td><td>A calculated planning figure based on published denominators and assumptions.</td><td>Used to size the opportunity, not as an observed fact.</td></tr>
+              <tr><td>Assumption</td><td>A scenario value used to test sensitivity.</td><td>Must remain visible until replaced by local evidence.</td></tr>
+            </tbody>
+          </table>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="light">
-    <div class="wrap">
-      <div class="kicker">Policy alignment</div>
-      <h2>Within the direction of travel.<br><span class="accent">Not ahead of it.</span></h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Policy / source</th>
-            <th>Relevance</th>
-            <th>Use in OTOS</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>NHS 10 Year Health Plan</td>
-            <td>Hospital to community, analogue to digital, sickness to prevention.</td>
-            <td>OTOS makes follow-through visible across hospital, community and VCSE routes.</td>
-          </tr>
-          <tr>
-            <td>NHS ADHD Taskforce</td>
-            <td>Frames unsupported / undiagnosed ADHD as a major public-health issue.</td>
-            <td>Supports the rationale for targeted ADHD-related intervention.</td>
-          </tr>
-          <tr>
-            <td>NICE NG87</td>
-            <td>Recognises ADHD pathways and coexisting substance misuse considerations.</td>
-            <td>Evidence alignment only. OTOS does not diagnose or treat.</td>
-          </tr>
-          <tr>
-            <td>Co-occurring mental health and substance-use framework</td>
-            <td>Supports joined-up responsibility and “no wrong door” style working.</td>
-            <td>Used carefully without adopting phrases not wanted in public copy.</td>
-          </tr>
-          <tr>
-            <td>250 NHS Community Hubs</td>
-            <td>Community infrastructure direction of travel.</td>
-            <td>OTOS can sit alongside hubs by holding continuity between services.</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
-
-  <section class="dark">
-    <div class="wrap">
-      <div class="kicker">What is still missing</div>
-      <h2>Evidence gaps are not weaknesses.<br><span class="accent">They are the reason for a pre-pilot.</span></h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Missing item</th>
-            <th>Why it matters</th>
-            <th>How pre-pilot helps</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Observed ADHD + addiction overlap by local pathway</td>
-            <td>Current public datasets do not provide clean person-level overlap.</td>
-            <td>Cohort validation with partners replaces scenario estimate.</td>
-          </tr>
-          <tr>
-            <td>Medication review / titration pathway detail</td>
-            <td>Key bottleneck for the transformation claim.</td>
-            <td>Partner workflow defines how eligible people can move faster under clinical governance.</td>
-          </tr>
-          <tr>
-            <td>Repeat crisis and re-presentation cost by cohort</td>
-            <td>Needed for stronger cost model.</td>
-            <td>Pre-pilot records follow-through, drift and engagement outcomes.</td>
-          </tr>
-          <tr>
-            <td>SUN Network local figure</td>
-            <td>Useful local co-occurring evidence.</td>
-            <td>Add once source is supplied and label correctly.</td>
-          </tr>
-        </tbody>
-      </table>
-
-      <div class="btnrow">
-        <a class="btn primary" href="numbers-calculator.html">Open calculator</a>
-        <a class="btn secondary" href="mailto:info@otos.life?subject=OTOS%20Continuity%20-%20evidence%20source%20update">Send a source update</a>
+    <section class="dark-section">
+      <div class="container">
+        <div class="eyebrow">Key supporting evidence</div>
+        <div class="grid two">
+          <div class="panel"><h3>ADHD in addiction cohorts</h3><p>Research supports a significant undiagnosed ADHD cohort within substance-use populations. OTOS uses this as the clinical rationale for identifying the cohort early.</p></div>
+          <div class="panel"><h3>Continuity and follow-through</h3><p>The pre-pilot tests whether visible, receipted continuity can reduce silent disengagement and support people reaching the next meaningful step.</p></div>
+          <div class="panel"><h3>Local service pressure</h3><p>Published and locally supplied service-pressure figures are kept distinct from OTOS modelling estimates.</p></div>
+          <div class="panel"><h3>Policy alignment</h3><p>The model aligns with hospital-to-community, neighbourhood health, no-wrong-door and prevention-first direction of travel.</p></div>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
+
 </body>
 </html>
