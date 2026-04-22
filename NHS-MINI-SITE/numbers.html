@@ -6,37 +6,55 @@
   <title>Numbers — OTOS Continuity</title>
   <link rel="stylesheet" href="css/otos.css">
 </head>
-<body class="">
+<body>
 
 <header class="site-header">
-  <div class="nav-shell">
+  <nav class="nav-shell" aria-label="Primary navigation">
     <a class="brand" href="index.html">OTOS Continuity™</a>
-    <nav class="nav-links" aria-label="Main navigation">
+    <div class="nav-links">
       <a href="index.html#problem">Problem</a>
       <a href="index.html#what-it-is">What it is</a>
       <a href="index.html#how-it-works">How it works</a>
       <a href="index.html#pilot">Pilot</a>
       <a href="partners.html">Partners</a>
       <a href="local-authority-public-health.html">Local Authority</a>
-      <a href="numbers.html">Numbers</a>
+      <a href="numbers.html" class="active">Numbers</a>
       <a href="evidence-sources.html">Evidence</a>
       <a class="cta" href="mailto:info@otos.life">Get involved</a>
-    </nav>
-  </div>
+    </div>
+  </nav>
 </header>
-
 
 <main>
   <section class="hero grid-bg">
     <div class="container">
       <span class="kicker">The numbers</span>
       <h1>Every estimate can be tested.<br><span class="accent">Never mixed quietly.</span></h1>
-      <p class="lede">This page separates published data, local service figures, OTOS modelling estimates and assumptions. The pre-pilot exists to replace modelling with locally validated evidence.</p>
+      <p class="lede">
+        This page separates published data, local service figures, OTOS modelling estimates and assumptions.
+        The pre-pilot exists to replace modelling with locally validated evidence.
+      </p>
       <div class="cards four" style="margin-top:34px">
-        <article class="card stat-card"><div class="stat">800–900</div><h3>Estimated local risk cohort</h3><p>Planning estimate, subject to local validation.</p></article>
-        <article class="card stat-card"><div class="stat">50</div><h3>Pre-pilot target</h3><p>Bounded cohort for 12-week demonstrator.</p></article>
-        <article class="card stat-card"><div class="stat">£91,520</div><h3>Pre-pilot ask</h3><p>Evidence budget, not therapy budget.</p></article>
-        <article class="card stat-card"><div class="stat">≈£18m</div><h3>Modelled opportunity</h3><p>Potential avoidable annual demand, not a guaranteed saving.</p></article>
+        <article class="card stat-card">
+          <div class="stat">800–900</div>
+          <h3>Estimated local risk cohort</h3>
+          <p>OTOS planning estimate, subject to local validation.</p>
+        </article>
+        <article class="card stat-card">
+          <div class="stat">50</div>
+          <h3>Pre-pilot target</h3>
+          <p>Bounded cohort for 12-week demonstrator.</p>
+        </article>
+        <article class="card stat-card">
+          <div class="stat">£91,520</div>
+          <h3>Pre-pilot ask</h3>
+          <p>Evidence budget, not therapy budget.</p>
+        </article>
+        <article class="card stat-card">
+          <div class="stat">≈£18m</div>
+          <h3>Modelled opportunity</h3>
+          <p>Potential avoidable annual demand, not a guaranteed saving.</p>
+        </article>
       </div>
     </div>
   </section>
@@ -45,16 +63,43 @@
     <div class="container">
       <div class="section-head">
         <span class="kicker">Model discipline</span>
-        <h2>Observed, modelled, proxy, assumption.<br><span class="accent">Kept separate.</span></h2>
+        <h2>Observed, modelled, proxy, assumption.<br><span class="accent">Never mixed quietly.</span></h2>
+        <p class="lede">
+          Adult addiction treatment data are stronger than adult ADHD service data. Addiction data are often Local Authority based,
+          while ADHD service data are NHS provider or national-proxy based.
+        </p>
       </div>
+
       <div class="table-wrap">
         <table>
-          <thead><tr><th>Label</th><th>Meaning</th><th>How it is used</th></tr></thead>
+          <thead>
+            <tr>
+              <th>Label</th>
+              <th>Meaning</th>
+              <th>How it is used</th>
+            </tr>
+          </thead>
           <tbody>
-            <tr><td><strong>Published source</strong></td><td>A figure from published research paper, government source, NHS source or official dataset.</td><td>Used as evidence or comparator, with source retained in the evidence register.</td></tr>
-            <tr><td><strong>Local source</strong></td><td>A local service figure or partner-confirmed number.</td><td>Used only where the local source is recorded and can be validated.</td></tr>
-            <tr><td><strong>OTOS modelling estimate</strong></td><td>A calculated planning figure based on published denominators and assumptions.</td><td>Used to size the opportunity, not as an observed fact.</td></tr>
-            <tr><td><strong>Assumption</strong></td><td>A scenario value used to test sensitivity.</td><td>Must remain visible until replaced by local evidence.</td></tr>
+            <tr>
+              <td><strong>Published source</strong></td>
+              <td>A figure from published research, government source, NHS source or official dataset.</td>
+              <td>Used as evidence or comparator, with source retained in the evidence register.</td>
+            </tr>
+            <tr>
+              <td><strong>Local source</strong></td>
+              <td>A local service figure or partner-confirmed number.</td>
+              <td>Used only where the local source is recorded and can be validated.</td>
+            </tr>
+            <tr>
+              <td><strong>OTOS modelling estimate</strong></td>
+              <td>A calculated planning figure based on published denominators and assumptions.</td>
+              <td>Used to size the opportunity, not as an observed fact.</td>
+            </tr>
+            <tr>
+              <td><strong>Assumption</strong></td>
+              <td>A scenario value used to test sensitivity.</td>
+              <td>Must remain visible until replaced by local evidence.</td>
+            </tr>
           </tbody>
         </table>
       </div>
@@ -64,57 +109,74 @@
   <section class="dark-section">
     <div class="container">
       <div class="section-head">
-        <span class="kicker">Live planning model</span>
-        <h2>CPFT ADHD + Addiction Calculator.</h2>
-        <p class="lede">A simple scenario tool for meetings. It is not person-level linked data.</p>
+        <span class="kicker">Local model</span>
+        <h2>The local model.<br><span class="accent">Planning estimate only.</span></h2>
       </div>
-      <div class="split-panel">
-        <article class="card glass">
-          <h3>Inputs</h3>
-          <label class="label" for="denom">Denominator</label>
-          <input id="denom" type="number" value="4175">
-          <label class="label" for="prev">ADHD prevalence scenario: <span id="prevLabel">25</span>%</label>
-          <input id="prev" type="range" min="5" max="65" step="1" value="25">
-          <label class="label" for="improve">Improvement / effect scenario: <span id="improveLabel">25</span>%</label>
-          <input id="improve" type="range" min="5" max="65" step="1" value="25">
-          <label class="label" for="cost">Annual burden / cost per person (£)</label>
-          <input id="cost" type="number" value="40070">
-        </article>
-        <article class="card glass">
-          <h3>Outputs</h3>
-          <div class="cards two" style="margin-top:18px">
-            <div class="card"><div class="stat" id="overlap">1,044</div><p>Modelled ADHD + addiction overlap</p></div>
-            <div class="card"><div class="stat" id="improved">261</div><p>Illustrative improved cases</p></div>
-            <div class="card"><div class="stat" id="saving">£10.5m</div><p>Gross annual saving at current settings</p></div>
-            <div class="card"><div class="stat">50</div><p>Pre-pilot cohort</p></div>
-          </div>
-          <p id="formula" style="margin-top:18px">4,175 × 25% × 25% × £40,070 = £10,455,766</p>
-        </article>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Metric</th>
+              <th>Figure</th>
+              <th>Label</th>
+              <th>Note</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Adults in treatment, Cambridgeshire + Peterborough</strong></td>
+              <td>4,175</td>
+              <td>Published / extracted denominator</td>
+              <td>Used as the current planning denominator for the calculator.</td>
+            </tr>
+            <tr>
+              <td><strong>Estimated ADHD + addiction local risk cohort</strong></td>
+              <td>800–900</td>
+              <td>OTOS modelling estimate</td>
+              <td>Based on published addiction-treatment denominators, ADHD prevalence assumptions and increased addiction-risk modelling. Subject to local validation.</td>
+            </tr>
+            <tr>
+              <td><strong>Pre-pilot cohort</strong></td>
+              <td>50</td>
+              <td>Pre-pilot design</td>
+              <td>Selected with CGL, CRS, CPFT and relevant partners.</td>
+            </tr>
+            <tr>
+              <td><strong>Pre-pilot cost</strong></td>
+              <td>£91,520</td>
+              <td>Budget estimate</td>
+              <td>Includes infrastructure, partner coordination, co-production, evaluation and evidence pack.</td>
+            </tr>
+            <tr>
+              <td><strong>Modelled avoidable annual demand</strong></td>
+              <td>≈£18m</td>
+              <td>OTOS modelling estimate</td>
+              <td>Not a guaranteed saving. The pre-pilot exists to test the local evidence.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout" style="margin-top:34px">
+        The 800–900 figure is not being presented as a CPFT-reported number. It is a planning estimate that the pre-pilot is designed to validate.
+      </div>
+    </div>
+  </section>
+
+  <section class="dark-section">
+    <div class="container">
+      <div class="image-banner">
+        <img src="images/NIA_ADHD_Final.png" alt="Neurologically informed addiction infographic">
+        <div class="image-banner-content">
+          <span class="kicker">Evidence view</span>
+          <h2>Numbers are useful only when the label travels with them.</h2>
+          <p>Published, local, modelled and assumed figures stay visibly separate throughout the pilot.</p>
+        </div>
       </div>
     </div>
   </section>
 </main>
-<script>
-function fmt(n){return Math.round(n).toLocaleString('en-GB')}
-function money(n){ if(n>=1000000) return '£'+(n/1000000).toFixed(1)+'m'; return '£'+fmt(n); }
-function calc(){
-  const denom=+document.getElementById('denom').value||0;
-  const prev=+document.getElementById('prev').value;
-  const improve=+document.getElementById('improve').value;
-  const cost=+document.getElementById('cost').value||0;
-  const overlap=denom*prev/100;
-  const improved=overlap*improve/100;
-  const saving=improved*cost;
-  document.getElementById('prevLabel').textContent=prev;
-  document.getElementById('improveLabel').textContent=improve;
-  document.getElementById('overlap').textContent=fmt(overlap);
-  document.getElementById('improved').textContent=fmt(improved);
-  document.getElementById('saving').textContent=money(saving);
-  document.getElementById('formula').textContent=`${fmt(denom)} × ${prev}% × ${improve}% × £${fmt(cost)} = ${money(saving)}`;
-}
-['denom','prev','improve','cost'].forEach(id=>document.getElementById(id).addEventListener('input',calc));
-calc();
-</script>
 
 </body>
 </html>
