@@ -787,3 +787,131 @@ select,input[type=number]{
   .hero-metrics{grid-template-columns:1fr}
   .quote-box{padding:36px 24px}
 }
+
+
+/* ============================================================
+   Marker 12 — cream card alignment + raised slide style
+   Purpose: keep light/cream cards inline, equal height and more elevated.
+   ============================================================ */
+
+.paper-section .cards,
+.paper-section .cards.two,
+.paper-section .cards.three,
+.paper-section .cards.four{
+  align-items:stretch;
+}
+
+.paper-section .cards > .card,
+.paper-section .cards.two > .card,
+.paper-section .cards.three > .card,
+.paper-section .cards.four > .card,
+.light-card{
+  height:100%;
+}
+
+.paper-section .soft-offset,
+.cards.four .soft-offset{
+  margin-top:0 !important;
+}
+
+.paper-section .card,
+.light-card{
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-start;
+  padding:30px 28px;
+  border:1px solid rgba(70,48,34,.12);
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.82), rgba(255,255,255,.60));
+  box-shadow:
+    0 28px 56px rgba(64,42,22,.10),
+    0 8px 18px rgba(64,42,22,.06),
+    inset 0 1px 0 rgba(255,255,255,.92);
+  backdrop-filter:blur(14px);
+  -webkit-backdrop-filter:blur(14px);
+  transition:transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+}
+
+.paper-section .card::before,
+.light-card::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:inherit;
+  pointer-events:none;
+  background:
+    radial-gradient(circle at 0% 0%, rgba(255,255,255,.75), transparent 34%),
+    linear-gradient(180deg, rgba(255,255,255,.18), transparent 38%);
+  opacity:.72;
+}
+
+.paper-section .card > *,
+.light-card > *{
+  position:relative;
+  z-index:1;
+}
+
+.paper-section .card:hover,
+.light-card:hover{
+  transform:translateY(-4px);
+  border-color:rgba(242,108,13,.22);
+  box-shadow:
+    0 34px 70px rgba(64,42,22,.13),
+    0 10px 24px rgba(64,42,22,.07),
+    inset 0 1px 0 rgba(255,255,255,.96);
+}
+
+.paper-section .card h3,
+.light-card h3{
+  margin:0 0 14px;
+  line-height:.98;
+  letter-spacing:-.04em;
+}
+
+.paper-section .card p,
+.light-card p{
+  color:var(--paper-muted);
+  font-size:16px;
+  line-height:1.72;
+  text-wrap:pretty;
+}
+
+/* Specific tidy-up for the four-step slide cards on index */
+#how-it-works .cards.four{
+  gap:20px;
+}
+
+#how-it-works .cards.four > .card{
+  min-height:364px;
+}
+
+#how-it-works .cards.four .stat{
+  font-size:clamp(40px,4vw,52px);
+  margin-bottom:20px;
+}
+
+#how-it-works .cards.four h3{
+  min-height:2.15em;
+  display:flex;
+  align-items:flex-end;
+}
+
+#how-it-works .cards.four p{
+  min-height:10.4em;
+}
+
+/* Light-section grids keep a clean baseline */
+.paper-section .cards.two > .card{min-height:280px}
+.paper-section .cards.three > .card{min-height:300px}
+
+@media (max-width: 1100px){
+  #how-it-works .cards.four > .card,
+  .paper-section .cards.three > .card,
+  .paper-section .cards.two > .card{
+    min-height:unset;
+  }
+  #how-it-works .cards.four h3,
+  #how-it-works .cards.four p{
+    min-height:unset;
+  }
+}
