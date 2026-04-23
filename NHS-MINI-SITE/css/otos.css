@@ -1023,3 +1023,386 @@ select,input[type=number]{
   .story-beat{padding:22px 20px; border-radius:24px}
   .story-beat p{font-size:17px}
 }
+
+
+/* ============================================================
+   Index opening — one continuous opening arc inside otos.css
+   Pain / chaos first, then founder shift, then excitement.
+   ============================================================ */
+
+.index-hero{
+  min-height:auto;
+  padding-bottom:82px;
+}
+
+.index-hero > .container{
+  padding:clamp(28px,4vw,50px);
+}
+
+.opening-flow{
+  display:grid;
+  gap:30px;
+}
+
+.opening-photo{
+  position:relative;
+  overflow:hidden;
+  border-radius:28px;
+  min-height:640px;
+  box-shadow:0 26px 78px rgba(0,0,0,.30);
+  background:#0a0f16;
+}
+
+.opening-photo img{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+
+.opening-photo-primary img{
+  object-position:78% center;
+}
+
+.opening-photo-primary::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(90deg,
+      rgba(8,10,15,.86) 0%,
+      rgba(8,10,15,.78) 24%,
+      rgba(8,10,15,.52) 42%,
+      rgba(8,10,15,.18) 58%,
+      rgba(8,10,15,.04) 72%,
+      rgba(8,10,15,.08) 100%);
+  z-index:1;
+}
+
+.opening-photo-primary::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(circle at 18% 30%, rgba(242,108,13,.14), transparent 22rem),
+    linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,0));
+  z-index:1;
+  pointer-events:none;
+}
+
+.opening-headline{
+  position:relative;
+  z-index:2;
+  min-height:640px;
+  width:min(820px, 60%);
+  display:flex;
+  align-items:center;
+  padding:46px 54px;
+}
+
+.opening-headline h1{
+  max-width:9.8ch;
+  margin:0;
+  text-wrap:balance;
+}
+
+.opening-journey{
+  position:relative;
+  padding:38px;
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:30px;
+  background:
+    radial-gradient(circle at 100% 0%, rgba(242,108,13,.10), transparent 22rem),
+    linear-gradient(180deg, rgba(10,16,24,.90), rgba(8,12,18,.95));
+  box-shadow:0 24px 70px rgba(0,0,0,.26);
+  overflow:hidden;
+}
+
+.opening-journey::after{
+  content:"";
+  position:absolute;
+  right:22px;
+  bottom:18px;
+  width:112px;
+  height:112px;
+  background:url("../images/otos-brain-icon.png") center/contain no-repeat;
+  opacity:.08;
+  pointer-events:none;
+}
+
+.opening-journey-grid{
+  position:relative;
+  z-index:1;
+  display:grid;
+  grid-template-columns:minmax(0,1.08fr) minmax(360px,.92fr);
+  gap:34px;
+  align-items:start;
+}
+
+.opening-narrative,
+.opening-aside{
+  position:relative;
+  z-index:1;
+}
+
+.opening-narrative{
+  display:grid;
+  gap:0;
+}
+
+.opening-narrative .kicker{
+  margin-bottom:22px;
+}
+
+.opening-narrative-block{
+  margin:0 0 22px;
+  padding:0 0 22px;
+  border-bottom:1px solid rgba(255,255,255,.10);
+}
+
+.opening-narrative-block:last-child{
+  margin-bottom:0;
+  padding-bottom:0;
+  border-bottom:0;
+}
+
+.opening-narrative p{
+  margin:0;
+  max-width:40em;
+  font-size:19px;
+  line-height:1.76;
+  color:#d3d9e2;
+  text-wrap:pretty;
+}
+
+.opening-narrative .lede{
+  margin-bottom:12px;
+  font-size:22px;
+  line-height:1.62;
+  color:#edf1f7;
+}
+
+.opening-narrative strong{
+  color:#fbf7ee;
+}
+
+.opening-pain-lede,
+.opening-turn-line{
+  display:block;
+  margin:0 0 12px;
+  color:#fbf7ee;
+  font-size:clamp(28px,2.85vw,38px);
+  line-height:1.08;
+  font-weight:1000;
+  letter-spacing:-.05em;
+}
+
+.opening-aside{
+  display:grid;
+  gap:18px;
+  align-content:start;
+}
+
+.opening-aside .glass-note{
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:24px;
+  padding:24px 24px 22px;
+  background:
+    linear-gradient(180deg, rgba(17,24,33,.80), rgba(10,14,20,.66)),
+    radial-gradient(circle at 100% 0%, rgba(242,108,13,.10), transparent 16rem);
+  box-shadow:0 22px 58px rgba(0,0,0,.22);
+  backdrop-filter:blur(18px);
+  -webkit-backdrop-filter:blur(18px);
+}
+
+.opening-aside .glass-note h3{
+  margin:0 0 10px;
+  font-size:30px;
+  line-height:1.02;
+}
+
+.opening-aside .glass-note p,
+.opening-scene-caption p{
+  margin:0;
+  font-size:16px;
+  line-height:1.66;
+  color:#d3dae4;
+}
+
+.opening-aside .callout{
+  margin:0;
+  font-size:18px;
+  line-height:1.58;
+  padding:26px 28px 24px 30px;
+  background:
+    linear-gradient(180deg, rgba(77,37,14,.62), rgba(56,25,10,.58)),
+    radial-gradient(circle at 100% 0%, rgba(242,108,13,.14), transparent 16rem);
+  border:1px solid rgba(242,108,13,.18);
+  box-shadow:0 20px 50px rgba(0,0,0,.20);
+}
+
+.opening-scene{
+  position:relative;
+  overflow:hidden;
+  min-height:420px;
+  margin:0;
+  border-radius:28px;
+  border:1px solid rgba(255,255,255,.12);
+  box-shadow:0 24px 70px rgba(0,0,0,.26);
+  background:#0b1017;
+}
+
+.opening-scene img{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center center;
+}
+
+.opening-scene::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(180deg, rgba(8,10,15,.02) 0%, rgba(8,10,15,.14) 42%, rgba(8,10,15,.90) 100%);
+  z-index:1;
+}
+
+.opening-scene-caption{
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:0;
+  z-index:2;
+  padding:22px 22px 20px;
+}
+
+.opening-scene-caption .kicker{
+  margin-bottom:12px;
+}
+
+.opening-outcome-band{
+  position:relative;
+  z-index:1;
+  display:grid;
+  grid-template-columns:minmax(0,1.08fr) minmax(320px,.92fr);
+  gap:28px;
+  align-items:start;
+  margin-top:26px;
+  padding-top:26px;
+  border-top:1px solid rgba(255,255,255,.10);
+}
+
+.opening-outcome-copy h2{
+  margin:0 0 16px;
+  font-size:clamp(40px,4vw,62px);
+  line-height:.98;
+}
+
+.opening-outcome-copy .kicker{
+  margin-bottom:18px;
+}
+
+.opening-outcome-copy p{
+  margin:0 0 14px;
+  max-width:42em;
+  font-size:19px;
+  line-height:1.76;
+  color:#d4dae4;
+  text-wrap:pretty;
+}
+
+.opening-outcome-copy p:last-child{
+  margin-bottom:0;
+}
+
+.opening-outcome-proof{
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:24px;
+  padding:24px 24px 22px;
+  background:
+    linear-gradient(180deg, rgba(17,24,33,.80), rgba(10,14,20,.66)),
+    radial-gradient(circle at 100% 0%, rgba(242,108,13,.10), transparent 16rem);
+  box-shadow:0 22px 58px rgba(0,0,0,.22);
+  backdrop-filter:blur(18px);
+  -webkit-backdrop-filter:blur(18px);
+}
+
+.opening-outcome-proof-line{
+  margin:0;
+  font-size:24px;
+  line-height:1.56;
+  font-weight:900;
+  color:#fff7ef;
+  font-style:italic;
+  text-wrap:pretty;
+}
+
+.opening-outcome-proof .hero-actions{
+  margin-top:24px;
+  padding-top:0;
+  justify-content:flex-start;
+  gap:16px;
+}
+
+@media (max-width: 1100px){
+  .opening-headline{
+    width:min(880px, 68%);
+    padding:40px 40px;
+  }
+
+  .opening-journey{
+    padding:30px;
+  }
+
+  .opening-journey-grid,
+  .opening-outcome-band{
+    grid-template-columns:1fr;
+  }
+}
+
+@media (max-width: 860px){
+  .opening-photo{
+    min-height:auto;
+  }
+
+  .opening-photo img{
+    position:relative;
+    height:420px;
+  }
+
+  .opening-photo-primary img{
+    object-position:70% center;
+  }
+
+  .opening-photo-primary::before,
+  .opening-photo-primary::after{
+    display:none;
+  }
+
+  .opening-headline{
+    width:100%;
+    min-height:auto;
+    padding:28px 22px 20px;
+    background:
+      radial-gradient(circle at 100% 0%, rgba(242,108,13,.10), transparent 15rem),
+      linear-gradient(180deg, rgba(11,16,24,.94), rgba(10,14,20,.96));
+  }
+
+  .opening-headline h1{
+    max-width:none;
+  }
+
+  .opening-narrative p,
+  .opening-narrative .lede,
+  .opening-outcome-copy p{
+    font-size:18px;
+  }
+
+  .opening-scene{
+    min-height:360px;
+  }
+}
