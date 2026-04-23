@@ -86,16 +86,40 @@
     }
 
     .opening-story{
+      position:relative;
       display:grid;
-      grid-template-columns:minmax(0,1.04fr) minmax(320px,.96fr);
+      grid-template-columns:minmax(0,1.04fr) minmax(360px,.96fr);
       gap:34px;
       align-items:start;
-      padding:8px 4px 2px;
+      padding:34px;
+      border:1px solid rgba(255,255,255,.12);
+      border-radius:30px;
+      background:
+        radial-gradient(circle at 100% 0%, rgba(242,108,13,.10), transparent 22rem),
+        linear-gradient(180deg, rgba(10,16,24,.90), rgba(8,12,18,.95));
+      box-shadow:0 24px 70px rgba(0,0,0,.26);
+      overflow:hidden;
+    }
+
+    .opening-story::after{
+      content:"";
+      position:absolute;
+      right:22px;
+      bottom:18px;
+      width:112px;
+      height:112px;
+      background:url("images/otos-brain-icon.png") center/contain no-repeat;
+      opacity:.08;
+      pointer-events:none;
     }
 
     .opening-story--follow{
-      padding-top:8px;
-      margin-top:-2px;
+      margin-top:4px;
+    }
+
+    .opening-copy{
+      position:relative;
+      z-index:1;
     }
 
     .opening-copy p{
@@ -104,6 +128,7 @@
       line-height:1.76;
       color:#d3d9e2;
       text-wrap:pretty;
+      max-width:38em;
     }
 
     .opening-copy p.lede{
@@ -118,6 +143,8 @@
     }
 
     .opening-side{
+      position:relative;
+      z-index:1;
       display:grid;
       gap:18px;
       align-content:start;
@@ -128,8 +155,8 @@
       border-radius:24px;
       padding:24px 24px 22px;
       background:
-        linear-gradient(180deg, rgba(17,24,33,.74), rgba(10,14,20,.58)),
-        radial-gradient(circle at 100% 0%, rgba(242,108,13,.08), transparent 16rem);
+        linear-gradient(180deg, rgba(17,24,33,.80), rgba(10,14,20,.66)),
+        radial-gradient(circle at 100% 0%, rgba(242,108,13,.10), transparent 16rem);
       box-shadow:0 22px 58px rgba(0,0,0,.22);
       backdrop-filter:blur(18px);
       -webkit-backdrop-filter:blur(18px);
@@ -150,6 +177,20 @@
 
     .opening-side .callout{
       margin-top:0;
+      font-size:18px;
+      line-height:1.6;
+      padding:28px 28px 28px 30px;
+      background:
+        linear-gradient(180deg, rgba(77,37,14,.62), rgba(56,25,10,.58)),
+        radial-gradient(circle at 100% 0%, rgba(242,108,13,.14), transparent 16rem);
+      border:1px solid rgba(242,108,13,.18);
+      box-shadow:0 20px 50px rgba(0,0,0,.20);
+    }
+
+    .opening-side .hero-actions{
+      padding-top:8px;
+      justify-content:flex-start;
+      gap:16px;
     }
 
     .opening-photo-secondary{
@@ -175,16 +216,16 @@
 
     .opening-photo-secondary .photo-caption{
       position:absolute;
-      right:28px;
-      bottom:28px;
+      right:34px;
+      bottom:34px;
       z-index:2;
-      width:min(470px, calc(100% - 56px));
+      width:min(520px, calc(100% - 68px));
       border:1px solid rgba(255,255,255,.14);
       border-radius:24px;
-      padding:24px 24px 22px;
+      padding:28px 28px 24px;
       background:
-        linear-gradient(180deg, rgba(12,18,28,.74), rgba(10,14,20,.66)),
-        radial-gradient(circle at 100% 0%, rgba(242,108,13,.10), transparent 14rem);
+        linear-gradient(180deg, rgba(12,18,28,.76), rgba(10,14,20,.70)),
+        radial-gradient(circle at 100% 0%, rgba(242,108,13,.12), transparent 14rem);
       backdrop-filter:blur(18px);
       -webkit-backdrop-filter:blur(18px);
       box-shadow:0 20px 52px rgba(0,0,0,.26);
@@ -218,6 +259,7 @@
 
       .opening-story{
         grid-template-columns:1fr;
+        padding:26px;
       }
 
       .opening-photo-secondary .photo-caption{
@@ -318,6 +360,7 @@
 
         <div class="opening-story">
           <div class="opening-copy">
+            <span class="kicker">Private partner explainer</span>
             <p class="lede">
               This is a private briefing for NHS, local authority, addiction, recovery, mental-health and community partners in Cambridge and Peterborough.
             </p>
