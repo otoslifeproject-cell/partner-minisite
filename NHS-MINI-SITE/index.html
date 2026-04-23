@@ -1,507 +1,492 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>OTOS Continuity™ — ADHD, addiction and continuity</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OTOS Continuity — Index</title>
   <link rel="stylesheet" href="css/otos.css">
   <style>
-    .quote-modal{pointer-events:none;transition:opacity 1400ms cubic-bezier(.22,1,.36,1),visibility 0s linear 1400ms;}
-    .quote-modal.show{pointer-events:auto;transition:opacity 0ms ease,visibility 0s linear 0s;}
+    /* Index only — built on top of the locked site stylesheet used by partner pages */
+    .index-hero{
+      min-height:auto;
+      padding-bottom:78px;
+    }
 
-    .index-opening{
+    .index-hero > .container{
+      padding:clamp(30px,4.2vw,54px);
+    }
+
+    .opening-stage{
       position:relative;
-      padding:138px 0 64px;
-      background:
-        radial-gradient(circle at 14% 24%, rgba(242,108,13,.18), transparent 28rem),
-        radial-gradient(circle at 86% 18%, rgba(242,108,13,.14), transparent 34rem),
-        linear-gradient(180deg, rgba(9,12,18,.98) 0%, rgba(9,12,18,.94) 46%, rgba(9,12,18,.88) 100%);
+      min-height:720px;
+      border:1px solid rgba(255,255,255,.12);
+      border-radius:30px;
       overflow:hidden;
+      background:#0b1017;
+      box-shadow:0 28px 90px rgba(0,0,0,.34);
     }
 
-    .index-opening::before{
-      content:"";
-      position:absolute;
-      inset:0;
-      background-image:
-        linear-gradient(rgba(255,255,255,.055) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,.055) 1px, transparent 1px);
-      background-size:52px 52px;
-      opacity:.42;
-      pointer-events:none;
-    }
-
-    .index-opening .container{
-      position:relative;
-      z-index:2;
-      max-width:1400px;
-    }
-
-    .opening-hero{
-      position:relative;
-      min-height:760px;
-      border-radius:36px;
-      overflow:hidden;
-      border:1px solid rgba(255,255,255,.08);
-      box-shadow:0 34px 110px rgba(0,0,0,.34);
-      background:#0a1019;
-    }
-
-    .opening-hero img{
+    .opening-stage img{
       position:absolute;
       inset:0;
       width:100%;
       height:100%;
       object-fit:cover;
-      object-position:70% center;
-      display:block;
+      object-position:74% center;
     }
 
-    .opening-hero::before{
+    .opening-stage::before{
       content:"";
       position:absolute;
       inset:0;
       background:
         linear-gradient(90deg,
-          rgba(8,12,18,.92) 0%,
-          rgba(8,12,18,.84) 24%,
-          rgba(8,12,18,.58) 42%,
-          rgba(8,12,18,.18) 60%,
-          rgba(8,12,18,.06) 74%,
-          rgba(8,12,18,.12) 100%);
+          rgba(8,10,15,.90) 0%,
+          rgba(8,10,15,.82) 22%,
+          rgba(8,10,15,.60) 42%,
+          rgba(8,10,15,.18) 60%,
+          rgba(8,10,15,.02) 74%,
+          rgba(8,10,15,.10) 100%);
       z-index:1;
     }
 
-    .opening-hero::after{
+    .opening-stage::after{
       content:"";
       position:absolute;
       inset:0;
       background:
-        radial-gradient(circle at 22% 34%, rgba(242,108,13,.12), transparent 20rem),
+        radial-gradient(circle at 16% 28%, rgba(242,108,13,.16), transparent 24rem),
         linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,0));
       z-index:1;
       pointer-events:none;
     }
 
-    .opening-overlay{
+    .opening-copy{
       position:relative;
       z-index:2;
-      width:min(720px, 52%);
-      min-height:760px;
+      width:min(760px, 54%);
+      min-height:720px;
       display:flex;
       flex-direction:column;
       justify-content:center;
-      padding:70px 58px 62px;
+      padding:64px 56px 58px;
     }
 
-    .opening-overlay-inner{
-      padding:24px 0;
-    }
-
-    .opening-overlay .kicker{
-      margin-bottom:18px;
-    }
-
-    .opening-overlay h1{
+    .opening-copy h1{
       max-width:11ch;
-      margin:0 0 24px;
+      margin-bottom:24px;
     }
 
-    .opening-overlay .lede{
-      max-width:30ch;
-      color:#d0d7e2;
-      font-size:22px;
-      line-height:1.58;
-      margin-bottom:18px;
+    .opening-copy h1 .line{
+      display:block;
     }
 
-    .opening-overlay .opening-intro{
-      max-width:34ch;
-      color:#dce2ea;
+    .opening-copy .lede{
+      max-width:32ch;
+      font-size:21px;
+      color:#d3d9e2;
+      margin-top:0;
+      margin-bottom:16px;
+    }
+
+    .opening-copy .opening-intro{
+      max-width:35ch;
       font-size:18px;
-      line-height:1.7;
-      margin:0 0 16px;
+      line-height:1.72;
+      color:#dde3eb;
+      margin:0 0 14px;
     }
 
-    .opening-overlay .opening-intro strong{
-      color:#f4efe7;
+    .opening-copy .opening-intro strong{
+      color:#fbf7ee;
     }
 
-    .opening-overlay .hero-actions{
+    .opening-copy .hero-actions{
       margin-top:28px;
     }
 
-    .opening-founder{
-      margin-top:34px;
+    .founder-band{
+      margin-top:30px;
       display:grid;
-      grid-template-columns:minmax(360px,.88fr) minmax(0,1.12fr);
-      min-height:470px;
-      border-radius:34px;
+      grid-template-columns:minmax(360px,.9fr) minmax(0,1.1fr);
+      gap:0;
+      border:1px solid rgba(255,255,255,.12);
+      border-radius:30px;
       overflow:hidden;
-      border:1px solid rgba(255,255,255,.08);
-      box-shadow:0 28px 90px rgba(0,0,0,.28);
-      background:linear-gradient(180deg, rgba(10,16,26,.92) 0%, rgba(10,16,26,.88) 100%);
+      background:
+        linear-gradient(180deg, rgba(14,20,30,.86), rgba(11,16,24,.92));
+      box-shadow:0 26px 80px rgba(0,0,0,.28);
     }
 
-    .opening-founder-figure{
+    .founder-image{
       position:relative;
-      min-height:470px;
+      min-height:430px;
       overflow:hidden;
+      border-right:1px solid rgba(255,255,255,.08);
     }
 
-    .opening-founder-figure img{
+    .founder-image img{
       width:100%;
       height:100%;
       object-fit:cover;
       object-position:left center;
-      display:block;
     }
 
-    .opening-founder-figure::after{
+    .founder-image::after{
       content:"";
       position:absolute;
       inset:0;
-      background:linear-gradient(90deg, rgba(9,14,22,.18) 0%, rgba(9,14,22,.08) 60%, rgba(9,14,22,.34) 100%);
+      background:linear-gradient(90deg, rgba(8,10,15,.10), rgba(8,10,15,.02) 42%, rgba(8,10,15,.26));
     }
 
-    .opening-founder-copy{
-      padding:42px 42px 38px;
+    .founder-copy{
       display:flex;
       flex-direction:column;
       justify-content:center;
+      padding:40px 42px 36px;
       background:
-        radial-gradient(circle at 85% 18%, rgba(242,108,13,.12), transparent 18rem),
-        linear-gradient(180deg, rgba(12,19,30,.82) 0%, rgba(10,16,26,.9) 100%);
+        radial-gradient(circle at 100% 0%, rgba(242,108,13,.10), transparent 22rem),
+        linear-gradient(180deg, rgba(12,18,28,.84), rgba(10,14,22,.94));
     }
 
-    .opening-founder-copy h2{
+    .founder-copy h2{
       margin:0 0 16px;
-      font-size:44px;
-      line-height:1.02;
-      color:#f3efe7;
+      font-size:clamp(34px,3.4vw,50px);
+      line-height:.98;
     }
 
-    .opening-founder-copy p{
+    .founder-copy p{
       margin:0 0 16px;
+      color:#d2d8e2;
       font-size:18px;
       line-height:1.72;
-      color:#d1d8e2;
     }
 
-    .opening-founder-copy .callout{
-      margin-top:18px;
+    .founder-copy .callout{
+      margin-top:16px;
+    }
+
+    /* Heavier blur behind the quote so the site never competes with it */
+    .quote-modal{
+      background:rgba(4,6,10,.84);
+      backdrop-filter:blur(20px);
+      -webkit-backdrop-filter:blur(20px);
     }
 
     @media (max-width: 1180px){
-      .opening-overlay{
-        width:min(760px, 64%);
-        padding:58px 42px 52px;
+      .opening-copy{
+        width:min(820px, 64%);
+        padding:54px 40px 48px;
       }
 
-      .opening-founder{
+      .founder-band{
         grid-template-columns:1fr;
       }
 
-      .opening-founder-figure{
-        min-height:340px;
+      .founder-image{
+        min-height:320px;
+        border-right:0;
+        border-bottom:1px solid rgba(255,255,255,.08);
       }
     }
 
     @media (max-width: 860px){
-      .opening-hero{
+      .opening-stage{
         min-height:auto;
       }
 
-      .opening-hero img{
+      .opening-stage img{
         position:relative;
         height:420px;
-        object-position:72% center;
+        object-position:76% center;
       }
 
-      .opening-hero::before,
-      .opening-hero::after{
+      .opening-stage::before,
+      .opening-stage::after{
         display:none;
       }
 
-      .opening-overlay{
+      .opening-copy{
         width:100%;
         min-height:auto;
-        padding:34px 24px 30px;
-        background:linear-gradient(180deg, rgba(9,14,22,.92) 0%, rgba(9,14,22,.86) 100%);
+        padding:32px 24px 28px;
+        background:
+          radial-gradient(circle at 100% 0%, rgba(242,108,13,.10), transparent 18rem),
+          linear-gradient(180deg, rgba(11,16,24,.94), rgba(9,13,20,.96));
       }
 
-      .opening-overlay h1{
+      .opening-copy h1{
         max-width:none;
       }
 
-      .opening-overlay .lede,
-      .opening-overlay .opening-intro{
+      .opening-copy .lede,
+      .opening-copy .opening-intro{
         max-width:none;
       }
 
-      .opening-founder-copy{
-        padding:28px 24px 26px;
-      }
-
-      .opening-founder-copy h2{
-        font-size:34px;
+      .founder-copy{
+        padding:28px 24px 24px;
       }
     }
   </style>
 </head>
+<body>
 
-<body class="index-page">
-
-  <header class="site-header">
-    <nav class="nav-shell" aria-label="Primary navigation">
-      <a class="brand" href="index.html">OTOS Continuity™</a>
-      <div class="nav-links">
-        <a href="#problem">Problem</a>
-        <a href="#what-it-is">What it is</a>
-        <a href="#how-it-works">How it works</a>
-        <a href="#pilot">Pilot</a>
-        <a href="partners.html">Partners</a>
-        <a href="local-authority-public-health.html">Local Authority</a>
-        <a href="numbers.html">Numbers</a>
-        <a href="evidence-sources.html">Evidence</a>
-        <a class="cta" href="#contact">Get involved</a>
-      </div>
+<header class="site-header">
+  <div class="nav-shell">
+    <a class="brand" href="index.html">OTOS Continuity™</a>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="#problem">Problem</a>
+      <a href="#what-it-is">What it is</a>
+      <a href="#how-it-works">How it works</a>
+      <a href="#pilot">Pilot</a>
+      <a href="partners.html">Partners</a>
+      <a href="local-authority-public-health.html">Local Authority</a>
+      <a href="numbers.html">Numbers</a>
+      <a href="evidence-sources.html">Evidence</a>
+      <a class="cta" href="mailto:info@otos.life">Get involved</a>
     </nav>
-  </header>
-
-  <main>
-
-    <section class="index-opening" id="home">
-      <div class="container">
-
-        <div class="opening-hero">
-          <img src="images/02-chaos-tunnel.png" alt="Founder image representing the chaos and pressure when ADHD is left unresolved and addiction steps in">
-
-          <div class="opening-overlay">
-            <div class="opening-overlay-inner">
-              <div class="kicker">Private partner explainer</div>
-
-              <h1>
-                When ADHD is left waiting,<br>
-                <span class="accent">addiction steps in.</span><br>
-                <span class="accent">And it doesn’t come quietly.</span>
-              </h1>
-
-              <p class="lede">
-                This is a private briefing for NHS, local authority, addiction, recovery, mental-health and community partners in Cambridge and Peterborough.
-              </p>
-
-              <p class="opening-intro">
-                It is about a <strong>targeted ADHD + addiction continuity intervention</strong>: a 12-week, 50-person first phase for adults already visible to services, where unresolved ADHD may be driving repeated crisis, relapse, disengagement and cost.
-              </p>
-
-              <p class="opening-intro">
-                <strong>OTOS Continuity™ is not diagnosis, not prescribing, and not a new treatment service.</strong> It is a secure continuity layer around existing services — keeping referrals, appointment prompts, touchpoints, micro-check-ins, continuity signals and review flags visible while the right intervention is still in motion.
-              </p>
-
-              <div class="hero-actions">
-                <a class="btn primary" href="#problem">Start with the problem</a>
-                <a class="btn" href="partners.html">Partner routes</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="opening-founder">
-          <div class="opening-founder-figure">
-            <img src="images/Therapist reviewing OTOS app progress.png" alt="Therapist reviewing OTOS while the founder sits in the background, representing the point where the right treatment begins to hold">
-          </div>
-
-          <div class="opening-founder-copy">
-            <div class="kicker">Founder truth</div>
-            <h2>This happened to me.</h2>
-
-            <p>
-              I believe my addiction was a result of not being medicated for ADHD. For years, the underlying condition was there, but it was not properly recognised or treated. What followed was chaos, crisis, shame, addiction, court, probation and repeated contact with services that were dealing with the visible damage while the deeper cause remained unresolved.
-            </p>
-
-            <p>
-              Within hours, my whole life story made sense. The chaos, the addiction, the hospital admissions, probation, shame, survival patterns and every failed attempt to explain myself suddenly had a frame.
-            </p>
-
-            <div class="callout">
-              Looking back, it was not wasted time. It was market research — brutal, personal, expensive market research — preparing me to build Out The Other Side.
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <section class="dark-section" id="problem">
-      <div class="container flow-wide">
-        <div class="section-head">
-          <div class="kicker">The problem</div>
-          <h2>The system sees addiction first.<br><span class="accent">The driver may be ADHD.</span></h2>
-        </div>
-
-        <div>
-          <p class="lede">
-            The system usually treats addiction as the primary condition. For some people, that is right. For a significant and identifiable group of adults, it is not. <strong>The primary condition is ADHD. The drinking or drug use is what arrives in view.</strong>
-          </p>
-          <p>
-            That matters because self-medication can work — until it does not. Alcohol or substances can briefly do what an untreated ADHD brain has been trying to do all along: supply motivation, sustain attention, create focus and cut the noise. The trouble starts when that coping strategy turns into dependency and crisis.
-          </p>
-          <p>
-            At that point, services quite reasonably respond to the addiction. But if the ADHD remains untouched, the work often does not hold. Support can fail to land when untreated ADHD is still disrupting sequencing, memory, follow-through, motivation and emotional regulation.
-          </p>
-          <div class="callout">The relapse was not proof that treatment failed. It was proof that the right condition was never properly treated in the first place.</div>
-        </div>
-      </div>
-    </section>
-
-    <section class="dark-section" id="what-it-is">
-      <div class="container">
-        <div class="section-head">
-          <div class="kicker">What OTOS is</div>
-          <h2>There is no joined-up pathway.<br><span class="accent">So we are building the continuity layer.</span></h2>
-          <p class="lede">
-            Services exist. Buildings exist. Staff exist. Pathways exist on paper. But the connection layer was never built. OTOS Continuity™ helps existing services by making the pathway visible between them.
-          </p>
-        </div>
-
-        <div class="cards two">
-          <article class="card glass">
-            <h3>What it creates</h3>
-            <ul class="list brain">
-              <li>Referrals and next steps become visible and receipted instead of assumed.</li>
-              <li>Waiting-list silence becomes a continuity signal, not a blind spot.</li>
-              <li>Micro-check-ins create lightweight engagement signals without requiring a keyworker phone call.</li>
-              <li>Partners can send familiar, governed messages in their own voice where agreed.</li>
-              <li>Human review closes the loop before action is taken.</li>
-            </ul>
-          </article>
-
-          <article class="card glass">
-            <h3>What it is not</h3>
-            <ul class="list brain">
-              <li>Not an EPR, clinical record or diagnostic platform.</li>
-              <li>Not a prescribing, treatment or clinical decision-support system.</li>
-              <li>Not surveillance, and not full record-sharing by default.</li>
-              <li>Not another service asking frontline teams to start again.</li>
-              <li>Not a replacement for safeguarding, crisis or existing partner protocols.</li>
-            </ul>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="paper-section" id="how-it-works">
-      <div class="container">
-        <div class="section-head">
-          <div class="kicker">How it works</div>
-          <h2>Four steps.<br><span class="accent">One connected pathway.</span></h2>
-          <p class="lede">OTOS Continuity™ holds the continuity thread across services so each partner can see the relevant continuity status, not another service’s clinical notes.</p>
-        </div>
-
-        <div class="cards four">
-          <article class="card"><div class="stat">01</div><h3>Identify</h3><p>People already touching addiction, recovery, crisis, hospital, GP, ADHD or community support are identified where co-occurring ADHD and substance misuse may be clinically relevant.</p></article>
-          <article class="card"><div class="stat">02</div><h3>Connect</h3><p>The next appropriate route is named: ADHD assessment, Right to Choose, CPFT, GP, recovery support, mental health or community support. The referral is logged and the next step is visible.</p></article>
-          <article class="card"><div class="stat">03</div><h3>Co-ordinate</h3><p>The continuity thread shows whether the next step landed, stalled or needs human review. No extra clinical record is shared.</p></article>
-          <article class="card"><div class="stat">04</div><h3>Sustain</h3><p>Drift, silence and missed follow-through become visible early enough for partner-led review, safe re-engagement and measurable learning.</p></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="dark-section" id="pilot">
-      <div class="container story-strip">
-        <div>
-          <div class="kicker">The targeted intervention</div>
-          <h2>50 people.<br><span class="accent">A surgical proof point.</span></h2>
-          <p class="lede">The Cambridge pre-pilot is a bounded intervention for a hand-picked, high-cost cohort: adults moving through addiction, crisis, recovery and fragmented support where unresolved ADHD may be keeping the pattern alive.</p>
-          <p>I strongly believe that diagnosing, medicating and placing this cohort on OTOS Continuity™ could save the region £18 million a year — while also reducing avoidable crisis, suicide risk, repeated service use and the human cost of people being left to drift.</p>
-        </div>
-
-        <div class="cards two">
-          <article class="card glass stat-card"><div><div class="stat">50</div><h3>Participants</h3></div><p>Selected with CGL, CRS, CPFT and relevant partners.</p></article>
-          <article class="card glass stat-card"><div><div class="stat">12</div><h3>Weeks active delivery</h3></div><p>Following a short setup and recruitment period.</p></article>
-          <article class="card glass stat-card"><div><div class="stat">1</div><h3>Continuity thread</h3></div><p>Touchpoints, receipts, drift signals and partner review.</p></article>
-          <article class="card glass stat-card"><div><div class="stat">0</div><h3>Clinical record merge</h3></div><p>No merged EPR, no shared notes, no prescribing decision by OTOS.</p></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="paper-section">
-      <div class="container">
-        <div class="image-banner">
-          <img src="images/NHS nurse assists patient with OTOS tool.png" alt="NHS nurse supporting a patient with an OTOS continuity tool">
-          <div class="image-banner-content">
-            <div class="kicker">Hospital to community</div>
-            <h2>When someone is at their lowest, <span class="accent">OTOS is already there.</span></h2>
-            <p>Not as a clinical service. As the continuity thread: the referral, receipt, prompt and next-step signal that can remain visible when the person moves between services.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="dark-section">
-      <div class="container flow-wide">
-        <div class="section-head"><div class="kicker">The cost of doing nothing</div><h2>The tsunami is building.<br><span class="accent">Nobody can see it building.</span></h2></div>
-        <div>
-          <p class="lede">Adults with undiagnosed or unresolved ADHD can cycle through A&amp;E, housing, probation, detox and recovery support while the pathway keeps treating the symptom that arrives first.</p>
-          <p>If adult ADHD remains out of reach, the cost does not disappear. It moves into addiction, crisis, homelessness, repeat presentation and preventable partner workload.</p>
-          <div class="callout">OTOS surfaces signals. The partner team makes the decision.</div>
-        </div>
-      </div>
-    </section>
-
-    <section class="paper-section">
-      <div class="container">
-        <div class="section-head">
-          <div class="kicker">Evidence you can trace</div>
-          <h2>Every claim is sourced.<br><span class="accent">Every estimate is labelled.</span></h2>
-          <p class="lede">Published evidence, local service figures, OTOS modelling estimates and assumptions are kept separate. The pre-pilot exists to replace modelling with locally validated evidence.</p>
-        </div>
-
-        <div class="cards three">
-          <article class="card"><div class="stat">23–45%</div><h3>ADHD + SUD range</h3><p>Research shows ADHD is significantly over-represented in addiction cohorts.</p></article>
-          <article class="card"><div class="stat">61.3%</div><h3>START comparator</h3><p>Improvement in addictive disorders after ADHD diagnosis at six months.</p></article>
-          <article class="card"><div class="stat">800–900</div><h3>Local planning estimate</h3><p>Not a CPFT-reported figure. A planning estimate to be validated locally.</p></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="dark-section" id="contact">
-      <div class="container">
-        <div class="footer-card">
-          <div class="kicker">Choose your route</div>
-          <h2>Read the shared model.<br><span class="accent">Then go to the page written for your role.</span></h2>
-          <p>The next step is not a purchase decision. It is a partner conversation about whether this bounded, evidence-generating intervention fits the local pathway and who needs to be in the room.</p>
-          <div class="hero-actions" style="justify-content:center"><a class="btn primary" href="partners.html">Go to partner routes</a><a class="btn" href="evidence-sources.html">View evidence</a><a class="btn" href="numbers.html">View numbers</a></div>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <div class="quote-modal show" id="quoteModal" aria-hidden="false">
-    <div class="quote-box">
-      <blockquote>
-        “<span>ADHD, when unsupported, is a potent route</span> into educational failure, long-term unemployment,
-        crime, substance misuse, sui&#99;ide, mental and physical illness. Economic costs to individuals and the government
-        of <span>at least £17 billion are avoidable</span> as, when appropriately supported, people with ADHD can thrive
-        and fully engage in a working life.”
-      </blockquote>
-      <cite><strong>Independent NHS ADHD Taskforce — April 2025</strong></cite>
-    </div>
   </div>
+</header>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const modal = document.getElementById("quoteModal");
-      if (!modal) return;
-      function closeQuote() {
-        modal.classList.remove("show");
-        modal.setAttribute("aria-hidden", "true");
-      }
-      setTimeout(closeQuote, 16600);
-      modal.addEventListener("click", closeQuote);
-    });
-  </script>
+<main>
+  <section class="hero grid-bg index-hero" id="home">
+    <div class="container">
+
+      <div class="opening-stage">
+        <img src="images/02-chaos-tunnel.png" alt="Founder image representing the chaos and pressure when ADHD is left unresolved and addiction steps in">
+
+        <div class="opening-copy">
+          <span class="kicker">Private partner explainer</span>
+
+          <h1>
+            <span class="line">When ADHD is</span>
+            <span class="line">left waiting,</span>
+            <span class="line accent">addiction steps in.</span>
+            <span class="line accent">And it doesn’t</span>
+            <span class="line accent">come quietly.</span>
+          </h1>
+
+          <p class="lede">
+            This is a private briefing for NHS, local authority, addiction, recovery, mental-health and community partners in Cambridge and Peterborough.
+          </p>
+
+          <p class="opening-intro">
+            It is about a <strong>targeted ADHD + addiction continuity intervention</strong>: a 12-week, 50-person first phase for adults already visible to services, where unresolved ADHD may be driving repeated crisis, relapse, disengagement and cost.
+          </p>
+
+          <p class="opening-intro">
+            <strong>OTOS Continuity™ is not diagnosis, not prescribing, and not a new treatment service.</strong> It is a secure continuity layer around existing services — keeping referrals, appointment prompts, touchpoints, micro-check-ins, continuity signals and review flags visible while the right intervention is still in motion.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn primary" href="#problem">Start with the problem</a>
+            <a class="btn" href="partners.html">Partner routes</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="founder-band">
+        <div class="founder-image">
+          <img src="images/Therapist reviewing OTOS app progress.png" alt="Therapist reviewing OTOS while the founder sits in the background, representing the point where the right treatment begins to hold">
+        </div>
+
+        <div class="founder-copy">
+          <span class="kicker">Founder truth</span>
+          <h2>This happened to me.</h2>
+
+          <p>
+            I believe my addiction was a result of not being medicated for ADHD. For years, the underlying condition was there, but it was not properly recognised or treated. What followed was chaos, crisis, shame, addiction, court, probation and repeated contact with services that were dealing with the visible damage while the deeper cause remained unresolved.
+          </p>
+
+          <p>
+            Within hours, my whole life story made sense. The chaos, the addiction, the hospital admissions, probation, shame, survival patterns and every failed attempt to explain myself suddenly had a frame.
+          </p>
+
+          <div class="callout">
+            Looking back, it was not wasted time. It was market research — brutal, personal, expensive market research — preparing me to build Out The Other Side.
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="dark-section" id="problem">
+    <div class="container flow-wide">
+      <div class="section-head">
+        <span class="kicker">The problem</span>
+        <h2>The system sees addiction first.<br><span class="accent">The driver may be ADHD.</span></h2>
+      </div>
+
+      <div>
+        <p class="lede">
+          The system usually treats addiction as the primary condition. For some people, that is right. For a significant and identifiable group of adults, it is not. <strong>The primary condition is ADHD. The drinking or drug use is what arrives in view.</strong>
+        </p>
+        <p>
+          That matters because self-medication can work — until it does not. Alcohol or substances can briefly do what an untreated ADHD brain has been trying to do all along: supply motivation, sustain attention, create focus and cut the noise. The trouble starts when that coping strategy turns into dependency and crisis.
+        </p>
+        <p>
+          At that point, services quite reasonably respond to the addiction. But if the ADHD remains untouched, the work often does not hold. Support can fail to land when untreated ADHD is still disrupting sequencing, memory, follow-through, motivation and emotional regulation.
+        </p>
+        <div class="callout">The relapse was not proof that treatment failed. It was proof that the right condition was never properly treated in the first place.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="dark-section" id="what-it-is">
+    <div class="container">
+      <div class="section-head">
+        <span class="kicker">What OTOS is</span>
+        <h2>There is no joined-up pathway.<br><span class="accent">So we are building the continuity layer.</span></h2>
+        <p class="lede">
+          Services exist. Buildings exist. Staff exist. Pathways exist on paper. But the connection layer was never built. OTOS Continuity™ helps existing services by making the pathway visible between them.
+        </p>
+      </div>
+
+      <div class="cards two">
+        <article class="card glass">
+          <h3>What it creates</h3>
+          <ul class="list brain">
+            <li>Referrals and next steps become visible and receipted instead of assumed.</li>
+            <li>Waiting-list silence becomes a continuity signal, not a blind spot.</li>
+            <li>Micro-check-ins create lightweight engagement signals without requiring a keyworker phone call.</li>
+            <li>Partners can send familiar, governed messages in their own voice where agreed.</li>
+            <li>Human review closes the loop before action is taken.</li>
+          </ul>
+        </article>
+
+        <article class="card glass">
+          <h3>What it is not</h3>
+          <ul class="list brain">
+            <li>Not an EPR, clinical record or diagnostic platform.</li>
+            <li>Not a prescribing, treatment or clinical decision-support system.</li>
+            <li>Not surveillance, and not full record-sharing by default.</li>
+            <li>Not another service asking frontline teams to start again.</li>
+            <li>Not a replacement for safeguarding, crisis or existing partner protocols.</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="paper-section" id="how-it-works">
+    <div class="container">
+      <div class="section-head">
+        <span class="kicker">How it works</span>
+        <h2>Four steps.<br><span class="accent">One connected pathway.</span></h2>
+        <p class="lede">OTOS Continuity™ holds the continuity thread across services so each partner can see the relevant continuity status, not another service’s clinical notes.</p>
+      </div>
+
+      <div class="cards four">
+        <article class="card"><div class="stat">01</div><h3>Identify</h3><p>People already touching addiction, recovery, crisis, hospital, GP, ADHD or community support are identified where co-occurring ADHD and substance misuse may be clinically relevant.</p></article>
+        <article class="card"><div class="stat">02</div><h3>Connect</h3><p>The next appropriate route is named: ADHD assessment, Right to Choose, CPFT, GP, recovery support, mental health or community support. The referral is logged and the next step is visible.</p></article>
+        <article class="card"><div class="stat">03</div><h3>Co-ordinate</h3><p>The continuity thread shows whether the next step landed, stalled or needs human review. No extra clinical record is shared.</p></article>
+        <article class="card"><div class="stat">04</div><h3>Sustain</h3><p>Drift, silence and missed follow-through become visible early enough for partner-led review, safe re-engagement and measurable learning.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="dark-section" id="pilot">
+    <div class="container story-strip">
+      <div>
+        <span class="kicker">The targeted intervention</span>
+        <h2>50 people.<br><span class="accent">A surgical proof point.</span></h2>
+        <p class="lede">The Cambridge pre-pilot is a bounded intervention for a hand-picked, high-cost cohort: adults moving through addiction, crisis, recovery and fragmented support where unresolved ADHD may be keeping the pattern alive.</p>
+        <p>I strongly believe that diagnosing, medicating and placing this cohort on OTOS Continuity™ could save the region £18 million a year — while also reducing avoidable crisis, suicide risk, repeated service use and the human cost of people being left to drift.</p>
+      </div>
+
+      <div class="cards two">
+        <article class="card glass stat-card"><div><div class="stat">50</div><h3>Participants</h3></div><p>Selected with CGL, CRS, CPFT and relevant partners.</p></article>
+        <article class="card glass stat-card"><div><div class="stat">12</div><h3>Weeks active delivery</h3></div><p>Following a short setup and recruitment period.</p></article>
+        <article class="card glass stat-card"><div><div class="stat">1</div><h3>Continuity thread</h3></div><p>Touchpoints, receipts, drift signals and partner review.</p></article>
+        <article class="card glass stat-card"><div><div class="stat">0</div><h3>Clinical record merge</h3></div><p>No merged EPR, no shared notes, no prescribing decision by OTOS.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="paper-section">
+    <div class="container">
+      <div class="image-banner">
+        <img src="images/NHS nurse assists patient with OTOS tool.png" alt="NHS nurse supporting a patient with an OTOS continuity tool">
+        <div class="image-banner-content">
+          <span class="kicker">Hospital to community</span>
+          <h2>When someone is at their lowest, <span class="accent">OTOS is already there.</span></h2>
+          <p>Not as a clinical service. As the continuity thread: the referral, receipt, prompt and next-step signal that can remain visible when the person moves between services.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="dark-section">
+    <div class="container flow-wide">
+      <div class="section-head">
+        <span class="kicker">The cost of doing nothing</span>
+        <h2>The tsunami is building.<br><span class="accent">Nobody can see it building.</span></h2>
+      </div>
+      <div>
+        <p class="lede">Adults with undiagnosed or unresolved ADHD can cycle through A&amp;E, housing, probation, detox and recovery support while the pathway keeps treating the symptom that arrives first.</p>
+        <p>If adult ADHD remains out of reach, the cost does not disappear. It moves into addiction, crisis, homelessness, repeat presentation and preventable partner workload.</p>
+        <div class="callout">OTOS surfaces signals. The partner team makes the decision.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="paper-section">
+    <div class="container">
+      <div class="section-head">
+        <span class="kicker">Evidence you can trace</span>
+        <h2>Every claim is sourced.<br><span class="accent">Every estimate is labelled.</span></h2>
+        <p class="lede">Published evidence, local service figures, OTOS modelling estimates and assumptions are kept separate. The pre-pilot exists to replace modelling with locally validated evidence.</p>
+      </div>
+
+      <div class="cards three">
+        <article class="card"><div class="stat">23–45%</div><h3>ADHD + SUD range</h3><p>Research shows ADHD is significantly over-represented in addiction cohorts.</p></article>
+        <article class="card"><div class="stat">61.3%</div><h3>START comparator</h3><p>Improvement in addictive disorders after ADHD diagnosis at six months.</p></article>
+        <article class="card"><div class="stat">800–900</div><h3>Local planning estimate</h3><p>Not a CPFT-reported figure. A planning estimate to be validated locally.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="dark-section" id="contact">
+    <div class="container">
+      <div class="footer-card">
+        <span class="kicker">Choose your route</span>
+        <h2>Read the shared model.<br><span class="accent">Then go to the page written for your role.</span></h2>
+        <p>The next step is not a purchase decision. It is a partner conversation about whether this bounded, evidence-generating intervention fits the local pathway and who needs to be in the room.</p>
+        <div class="hero-actions" style="justify-content:center">
+          <a class="btn primary" href="partners.html">Go to partner routes</a>
+          <a class="btn" href="evidence-sources.html">View evidence</a>
+          <a class="btn" href="numbers.html">View numbers</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div class="quote-modal show" id="quoteModal" aria-hidden="false">
+  <div class="quote-box">
+    <blockquote>
+      “<span>ADHD, when unsupported, is a potent route</span> into educational failure, long-term unemployment,
+      crime, substance misuse, sui&#99;ide, mental and physical illness. Economic costs to individuals and the government
+      of <span>at least £17 billion are avoidable</span> as, when appropriately supported, people with ADHD can thrive
+      and fully engage in a working life.”
+    </blockquote>
+    <cite><strong>Independent NHS ADHD Taskforce — April 2025</strong></cite>
+  </div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const modal = document.getElementById("quoteModal");
+    if (!modal) return;
+    function closeQuote() {
+      modal.classList.remove("show");
+      modal.setAttribute("aria-hidden", "true");
+    }
+    setTimeout(closeQuote, 14600);
+    modal.addEventListener("click", closeQuote);
+  });
+</script>
 </body>
 </html>
