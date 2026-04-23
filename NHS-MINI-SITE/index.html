@@ -87,11 +87,8 @@
 
     .opening-story{
       position:relative;
-      display:grid;
-      grid-template-columns:minmax(0,1.04fr) minmax(360px,.96fr);
-      gap:34px;
-      align-items:start;
-      padding:34px;
+      display:block;
+      padding:38px;
       border:1px solid rgba(255,255,255,.12);
       border-radius:30px;
       background:
@@ -120,6 +117,7 @@
     .opening-copy{
       position:relative;
       z-index:1;
+      max-width:64rem;
     }
 
     .opening-copy p{
@@ -128,7 +126,7 @@
       line-height:1.76;
       color:#d3d9e2;
       text-wrap:pretty;
-      max-width:38em;
+      max-width:44em;
     }
 
     .opening-copy p.lede{
@@ -136,10 +134,21 @@
       line-height:1.65;
       color:#edf1f7;
       margin-bottom:16px;
+      max-width:36em;
     }
 
     .opening-copy strong{
       color:#fbf7ee;
+    }
+
+    .opening-support{
+      position:relative;
+      z-index:1;
+      display:grid;
+      grid-template-columns:minmax(0,1fr) minmax(360px, 430px);
+      gap:24px;
+      align-items:start;
+      margin-top:24px;
     }
 
     .problem-flow{
@@ -239,6 +248,7 @@
       display:grid;
       gap:18px;
       align-content:start;
+      max-width:760px;
     }
 
     .opening-side .glass-note{
@@ -546,8 +556,11 @@
       }
 
       .opening-story{
-        grid-template-columns:1fr;
         padding:26px;
+      }
+
+      .opening-support{
+        grid-template-columns:1fr;
       }
 
       .opening-photo-secondary .photo-caption{
@@ -601,6 +614,15 @@
       .opening-copy p,
       .opening-copy p.lede{
         font-size:18px;
+      }
+
+      .opening-support{
+        grid-template-columns:1fr;
+        margin-top:20px;
+      }
+
+      .opening-story{
+        padding:24px;
       }
 
       .opening-photo-secondary .photo-caption{
@@ -694,12 +716,23 @@
             </p>
           </div>
 
-          <div class="opening-side">
-            <div class="glass-note">
-              <h3>This happened to me.</h3>
-              <p>
-                OTOS Continuity™ was built from that shift — not from theory, but from lived experience and the belief that the next person should not need that much damage before the right condition is finally reached.
-              </p>
+          <div class="opening-support">
+            <div class="opening-side">
+              <div class="glass-note">
+                <h3>This happened to me.</h3>
+                <p>
+                  OTOS Continuity™ was built from that shift — not from theory, but from lived experience and the belief that the next person should not need that much damage before the right condition is finally reached.
+                </p>
+              </div>
+
+              <div class="callout">
+                Looking back, it was not wasted time. It was market research — brutal, personal, expensive market research — preparing me to build Out The Other Side.
+              </div>
+
+              <div class="hero-actions">
+                <a class="btn primary" href="#problem">Start with the problem</a>
+                <a class="btn" href="partners.html">Partner routes</a>
+              </div>
             </div>
 
             <a class="logic-card js-lightbox" href="images/partner-pathway.png" data-caption="OTOS Continuity in one simple view — a pathway logic diagram that shows how the continuity layer sits between identify, connect, co-ordinate and sustain.">
@@ -709,15 +742,6 @@
               <p>A simple logic view up front: OTOS sits in the middle, keeps the continuity thread visible, and helps the next step land.</p>
               <span class="zoom-hint">Click to expand the detail →</span>
             </a>
-
-            <div class="callout">
-              Looking back, it was not wasted time. It was market research — brutal, personal, expensive market research — preparing me to build Out The Other Side.
-            </div>
-
-            <div class="hero-actions">
-              <a class="btn primary" href="#problem">Start with the problem</a>
-              <a class="btn" href="partners.html">Partner routes</a>
-            </div>
           </div>
         </div>
 
