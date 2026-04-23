@@ -498,35 +498,46 @@
 <main>
   <section class="hero grid-bg index-hero" id="home">
     <div class="container">
-      <div class="image-banner">
-        <img src="images/02-chaos-tunnel.png" alt="Founder image representing the chaos and pressure when ADHD is left unresolved and addiction steps in">
-        <div class="image-banner-content">
-          <h1>When ADHD<br>is left waiting,<br><span class="accent">addiction steps in.</span><br><span class="accent">And it doesn’t</span><br><span class="accent">come quietly.</span></h1>
+      <div class="opening-flow">
+
+        <div class="opening-photo opening-photo-primary">
+          <img src="images/02-chaos-tunnel.png" alt="Founder image representing the chaos and pressure when ADHD is left unresolved and addiction steps in">
+          <div class="opening-headline">
+            <h1>
+              When ADHD is
+              left waiting,
+              <span class="accent">addiction steps in.</span>
+              <span class="accent">And it doesn’t
+              come quietly.</span>
+            </h1>
+          </div>
         </div>
+
       </div>
+    </div>
+  </section>
 
-      <div class="flow-wide soft-offset">
-        <div>
+  <section class="dark-section">
+    <div class="container">
+      <div class="cards two">
+        <article class="card glass">
           <span class="kicker">Private partner explainer</span>
-          <article class="card glass">
-            <p class="lede">This is a private briefing for NHS, local authority, addiction, recovery, mental-health and community partners in Cambridge and Peterborough.</p>
-            <p>It is about a <strong>targeted ADHD + addiction continuity intervention</strong>: a 12-week, 50-person first phase for adults already visible to services, where unresolved ADHD may be driving repeated crisis, relapse, disengagement and cost.</p>
-          </article>
-        </div>
+          <p class="lede">This is a private briefing for NHS, local authority, addiction, recovery, mental-health and community partners in Cambridge and Peterborough.</p>
+          <p>It is about a <strong>targeted ADHD + addiction continuity intervention</strong>: a 12-week, 50-person first phase for adults already visible to services, where unresolved ADHD may be driving repeated crisis, relapse, disengagement and cost.</p>
+        </article>
 
-        <div class="split-panel">
-          <article class="card glass">
-            <h3>This happened to me.</h3>
-            <p>OTOS Continuity™ was built from that shift — not from theory, but from lived experience and the belief that the next person should not need that much damage before the right condition is finally reached.</p>
-          </article>
+        <article class="card glass">
+          <h3>This happened to me.</h3>
+          <p>OTOS Continuity™ was built from that shift — not from theory, but from lived experience and the belief that the next person should not need that much damage before the right condition is finally reached.</p>
           <div class="callout">Looking back, it was not wasted time. It was market research — brutal, personal, expensive market research — preparing me to build Out The Other Side.</div>
-        </div>
+        </article>
       </div>
 
       <div class="cards two soft-offset">
         <article class="card glass">
           <p>I believe my addiction was a result of not being medicated for ADHD. For years, the underlying condition was there, but it was not properly recognised or treated. What followed was chaos, crisis, shame, addiction, court, probation and repeated contact with services that were dealing with the visible damage while the deeper cause remained unresolved.</p>
         </article>
+
         <article class="card glass">
           <p>Within hours, my whole life story made sense. The chaos, the addiction, the hospital admissions, probation, shame, survival patterns and every failed attempt to explain myself suddenly had a frame.</p>
         </article>
@@ -535,32 +546,40 @@
   </section>
 
   <section class="paper-section">
-    <div class="container story-strip">
-      <div class="image-banner">
-        <img src="images/Therapist reviewing OTOS app progress.png" alt="Therapist reviewing OTOS while the founder sits in the background, representing the point where the right treatment begins to hold">
-      </div>
-
-      <div>
-        <span class="kicker">Out the other side</span>
-        <div class="section-head">
-          <h2>Out The Other Side.</h2>
+    <div class="container">
+      <div class="story-strip">
+        <div class="hero-card">
+          <img src="images/Therapist reviewing OTOS app progress.png" alt="Therapist reviewing OTOS while the founder sits in the background, representing the point where the right treatment begins to hold">
         </div>
 
-        <div class="cards two">
-          <article class="card light-card">
-            <p><strong>OTOS Continuity™ is not diagnosis, not prescribing, and not a new treatment service.</strong> It is a secure continuity layer around existing services — keeping referrals, appointment prompts, touchpoints, micro-check-ins, continuity signals and review flags visible while the right intervention is still in motion.</p>
-          </article>
-          <article class="card light-card">
-            <p>The turning point was being privately prescribed the corrected ADHD medication. OTOS Continuity™ was built from that moment — to help services identify, hold and support this cohort earlier and ensure all are screened for ADHD as soon as possible.</p>
-          </article>
-        </div>
+        <div>
+          <div class="section-head">
+            <span class="kicker">Out the other side</span>
+            <h2>Out The Other Side.</h2>
+          </div>
 
-        <div class="callout soft-offset">It’s not just my experience. Some studies have reported addiction improvement rates above 60% when people are diagnosed and medicated for ADHD. Read on to learn more, review the evidence, and get involved.</div>
+          <div class="cards two">
+            <article class="card">
+              <p><strong>OTOS Continuity™ is not diagnosis, not prescribing, and not a new treatment service.</strong> It is a secure continuity layer around existing services — keeping referrals, appointment prompts, touchpoints, micro-check-ins, continuity signals and review flags visible while the right intervention is still in motion.</p>
+            </article>
+
+            <article class="card">
+              <p>The turning point was being privately prescribed the corrected ADHD medication. OTOS Continuity™ was built from that moment — to help services identify, hold and support this cohort earlier and ensure all are screened for ADHD as soon as possible.</p>
+              <p>It’s not just my experience. Some studies have reported addiction improvement rates above 60% when people are diagnosed and medicated for ADHD. Read on to learn more, review the evidence, and get involved.</p>
+            </article>
+          </div>
+
+          <div class="hero-actions">
+            <a class="btn primary" href="#problem">Start with the problem</a>
+            <a class="btn" href="partners.html">Partner routes</a>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-<section class="dark-section">
+  
+  <section class="dark-section">
     <div class="container flow-wide">
       <div class="section-head">
         <span class="kicker">Why this exists</span>
@@ -827,4 +846,3 @@
 </script>
 </body>
 </html>
-      
