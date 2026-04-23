@@ -148,7 +148,9 @@
     .inline-logo-row img{max-height:32px;max-width:120px;object-fit:contain;background:rgba(255,255,255,.92);padding:6px 8px;border-radius:10px}
     .evidence-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:34px}
 
-    .dean-opener-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(320px,420px);gap:80px;align-items:center}
+    .dean-opener-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(380px,500px);gap:48px;align-items:stretch}
+    .dean-opener-copy .kicker{display:inline-flex;background:transparent;border:0;box-shadow:none;padding:0;margin-bottom:26px;color:var(--orange);gap:12px}
+    .dean-opener-copy .kicker img{height:72px;width:auto;max-width:280px;object-fit:contain}
     .dean-opener-copy h2{font-size:clamp(44px,5vw,76px);line-height:.92;margin-bottom:24px;letter-spacing:-.065em}
     .dean-opener-copy p{font-size:18px;line-height:1.86;color:var(--paper-muted);margin:0 0 20px;font-weight:760}
     .dean-opener-copy p.lead{font-size:21px;line-height:1.72;color:var(--paper-ink);font-weight:880}
@@ -157,9 +159,9 @@
     .dean-feature::after{content:'';position:absolute;right:-22px;bottom:-30px;width:112px;height:112px;background:url('images/brain.png') center/contain no-repeat;opacity:.065}
     .dean-feature .mini-kicker{font-size:13px;font-weight:950;letter-spacing:.18em;text-transform:uppercase;color:var(--orange);margin-bottom:13px}
     .dean-feature p{font-size:18px;line-height:1.55;font-weight:900;color:var(--paper-ink);margin:0;position:relative;z-index:1}
-    .dean-photo-panel{padding:0;overflow:hidden;border-radius:30px;box-shadow:0 24px 70px rgba(64,42,22,.16)}
-    .dean-photo-panel img{width:100%;min-height:460px;object-fit:cover}
-    .dean-photo-caption{background:linear-gradient(135deg,#180f08,#3a1b0d);padding:22px 24px;border-top:1px solid rgba(242,108,13,.28)}
+    .dean-photo-panel{padding:0;overflow:hidden;border-radius:30px;box-shadow:0 24px 70px rgba(64,42,22,.16);height:100%;display:flex;flex-direction:column;align-self:stretch}
+    .dean-photo-panel img{width:100%;min-height:0;flex:1 1 auto;height:100%;object-fit:cover;object-position:center}
+    .dean-photo-caption{background:linear-gradient(135deg,#180f08,#3a1b0d);padding:22px 24px;border-top:1px solid rgba(242,108,13,.28);flex:0 0 auto}
     .dean-photo-caption p{font-size:17px;line-height:1.62;font-weight:850;font-style:italic;color:rgba(251,247,238,.82);margin:0}
     .dean-photo-caption .source{display:block;margin-top:12px;color:var(--orange-2);font-size:11px;font-weight:950;letter-spacing:.14em;text-transform:uppercase}
     .dean-actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:34px;align-items:center}
