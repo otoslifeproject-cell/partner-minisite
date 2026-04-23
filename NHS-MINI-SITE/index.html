@@ -11,13 +11,14 @@
 
     .index-opening{
       position:relative;
-      padding:138px 0 58px;
+      padding:138px 0 64px;
       background:
-        radial-gradient(circle at 16% 26%, rgba(242,108,13,.18), transparent 28rem),
-        radial-gradient(circle at 82% 18%, rgba(242,108,13,.16), transparent 32rem),
-        linear-gradient(180deg, rgba(8,10,15,.96) 0%, rgba(8,10,15,.92) 44%, rgba(8,10,15,.74) 100%);
+        radial-gradient(circle at 14% 24%, rgba(242,108,13,.18), transparent 28rem),
+        radial-gradient(circle at 86% 18%, rgba(242,108,13,.14), transparent 34rem),
+        linear-gradient(180deg, rgba(9,12,18,.98) 0%, rgba(9,12,18,.94) 46%, rgba(9,12,18,.88) 100%);
       overflow:hidden;
     }
+
     .index-opening::before{
       content:"";
       position:absolute;
@@ -26,106 +27,225 @@
         linear-gradient(rgba(255,255,255,.055) 1px, transparent 1px),
         linear-gradient(90deg, rgba(255,255,255,.055) 1px, transparent 1px);
       background-size:52px 52px;
-      opacity:.45;
+      opacity:.42;
       pointer-events:none;
     }
-    .index-opening .container{position:relative;z-index:2;max-width:1320px;}
-    .hero-story{
-      display:grid;
-      grid-template-columns:minmax(0,1.02fr) minmax(380px,.98fr);
-      gap:26px;
-      align-items:stretch;
-    }
-    .hero-copy,
-    .hero-pain,
-    .hero-success,
-    .hero-founder{
-      border-radius:34px;
-      overflow:hidden;
+
+    .index-opening .container{
       position:relative;
-      box-shadow:0 28px 90px rgba(0,0,0,.36);
+      z-index:2;
+      max-width:1400px;
+    }
+
+    .opening-hero{
+      position:relative;
+      min-height:760px;
+      border-radius:36px;
+      overflow:hidden;
       border:1px solid rgba(255,255,255,.08);
+      box-shadow:0 34px 110px rgba(0,0,0,.34);
+      background:#0a1019;
     }
-    .hero-copy{
-      min-height:640px;
-      padding:48px 46px 40px;
-      background:linear-gradient(180deg, rgba(12,20,32,.82) 0%, rgba(10,18,28,.88) 100%);
-      backdrop-filter:blur(12px);
-      -webkit-backdrop-filter:blur(12px);
+
+    .opening-hero img{
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      object-position:70% center;
+      display:block;
     }
-    .hero-copy .kicker{margin-bottom:18px;}
-    .hero-copy h1{max-width:14ch; margin-bottom:26px;}
-    .hero-copy .lede{max-width:62ch; color:#c2c8d3; font-size:21px; line-height:1.62; margin-bottom:20px;}
-    .hero-copy .opening-intro{max-width:64ch; color:#d8dde7; font-size:18px; line-height:1.72;}
-    .hero-copy .opening-intro strong{color:#f3efe7;}
-    .hero-copy .hero-actions{margin-top:28px;}
-    .hero-pain{min-height:640px;}
-    .hero-pain img,
-    .hero-success img{width:100%;height:100%;object-fit:cover;display:block;}
-    .hero-pain::after{
+
+    .opening-hero::before{
       content:"";
       position:absolute;
       inset:0;
-      background:linear-gradient(90deg, rgba(7,10,14,.18) 0%, rgba(7,10,14,.02) 38%, rgba(7,10,14,.28) 100%);
-      pointer-events:none;
-    }
-    .hero-founder-success{
-      margin-top:26px;
-      display:grid;
-      grid-template-columns:minmax(320px,.92fr) minmax(0,1.08fr);
-      gap:26px;
-      align-items:stretch;
-    }
-    .hero-founder{
-      padding:34px 32px;
-      background:linear-gradient(180deg, rgba(11,19,31,.86) 0%, rgba(9,16,26,.9) 100%);
-      backdrop-filter:blur(10px);
-      -webkit-backdrop-filter:blur(10px);
-    }
-    .hero-founder h2{font-size:40px;line-height:1.02;margin:0 0 16px;color:#f3efe7;}
-    .hero-founder p{font-size:18px;line-height:1.72;color:#d0d6e0;margin:0 0 16px;}
-    .hero-founder p:last-child{margin-bottom:0;}
-    .hero-founder .callout{margin-top:22px;}
-    .hero-success{min-height:420px;}
-    .hero-success::before{
-      content:"";
-      position:absolute;
-      inset:0;
-      background:linear-gradient(90deg, rgba(8,12,18,.68) 0%, rgba(8,12,18,.18) 36%, rgba(8,12,18,.04) 100%);
+      background:
+        linear-gradient(90deg,
+          rgba(8,12,18,.92) 0%,
+          rgba(8,12,18,.84) 24%,
+          rgba(8,12,18,.58) 42%,
+          rgba(8,12,18,.18) 60%,
+          rgba(8,12,18,.06) 74%,
+          rgba(8,12,18,.12) 100%);
       z-index:1;
     }
-    .hero-success .success-caption{
-      position:absolute;
-      left:30px;
-      bottom:28px;
-      z-index:2;
-      max-width:360px;
-      padding:22px 22px 20px;
-      border-radius:24px;
-      background:rgba(10,18,28,.62);
-      border:1px solid rgba(255,255,255,.11);
-      backdrop-filter:blur(12px);
-      -webkit-backdrop-filter:blur(12px);
-      box-shadow:0 18px 45px rgba(0,0,0,.3);
-    }
-    .hero-success .success-caption h3{margin:0 0 8px;font-size:28px;line-height:1.05;color:#f3efe7;}
-    .hero-success .success-caption p{margin:0;font-size:16px;line-height:1.6;color:#d3dae4;}
 
-    @media (max-width: 1120px){
-      .hero-story,
-      .hero-founder-success{grid-template-columns:1fr;}
-      .hero-copy,
-      .hero-pain{min-height:auto;}
-      .hero-copy h1{max-width:11ch;}
-      .hero-pain{min-height:460px;}
-      .hero-success{min-height:360px;}
+    .opening-hero::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        radial-gradient(circle at 22% 34%, rgba(242,108,13,.12), transparent 20rem),
+        linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,0));
+      z-index:1;
+      pointer-events:none;
     }
-    @media (max-width: 720px){
-      .index-opening{padding-top:120px;}
-      .hero-copy{padding:34px 24px 28px;}
-      .hero-founder{padding:26px 22px;}
-      .hero-founder h2{font-size:32px;}
-      .hero-success .success-caption{left:16px;right:16px;bottom:16px;max-width:none;}
+
+    .opening-overlay{
+      position:relative;
+      z-index:2;
+      width:min(720px, 52%);
+      min-height:760px;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      padding:70px 58px 62px;
+    }
+
+    .opening-overlay-inner{
+      padding:24px 0;
+    }
+
+    .opening-overlay .kicker{
+      margin-bottom:18px;
+    }
+
+    .opening-overlay h1{
+      max-width:11ch;
+      margin:0 0 24px;
+    }
+
+    .opening-overlay .lede{
+      max-width:30ch;
+      color:#d0d7e2;
+      font-size:22px;
+      line-height:1.58;
+      margin-bottom:18px;
+    }
+
+    .opening-overlay .opening-intro{
+      max-width:34ch;
+      color:#dce2ea;
+      font-size:18px;
+      line-height:1.7;
+      margin:0 0 16px;
+    }
+
+    .opening-overlay .opening-intro strong{
+      color:#f4efe7;
+    }
+
+    .opening-overlay .hero-actions{
+      margin-top:28px;
+    }
+
+    .opening-founder{
+      margin-top:34px;
+      display:grid;
+      grid-template-columns:minmax(360px,.88fr) minmax(0,1.12fr);
+      min-height:470px;
+      border-radius:34px;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,.08);
+      box-shadow:0 28px 90px rgba(0,0,0,.28);
+      background:linear-gradient(180deg, rgba(10,16,26,.92) 0%, rgba(10,16,26,.88) 100%);
+    }
+
+    .opening-founder-figure{
+      position:relative;
+      min-height:470px;
+      overflow:hidden;
+    }
+
+    .opening-founder-figure img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      object-position:left center;
+      display:block;
+    }
+
+    .opening-founder-figure::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(90deg, rgba(9,14,22,.18) 0%, rgba(9,14,22,.08) 60%, rgba(9,14,22,.34) 100%);
+    }
+
+    .opening-founder-copy{
+      padding:42px 42px 38px;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      background:
+        radial-gradient(circle at 85% 18%, rgba(242,108,13,.12), transparent 18rem),
+        linear-gradient(180deg, rgba(12,19,30,.82) 0%, rgba(10,16,26,.9) 100%);
+    }
+
+    .opening-founder-copy h2{
+      margin:0 0 16px;
+      font-size:44px;
+      line-height:1.02;
+      color:#f3efe7;
+    }
+
+    .opening-founder-copy p{
+      margin:0 0 16px;
+      font-size:18px;
+      line-height:1.72;
+      color:#d1d8e2;
+    }
+
+    .opening-founder-copy .callout{
+      margin-top:18px;
+    }
+
+    @media (max-width: 1180px){
+      .opening-overlay{
+        width:min(760px, 64%);
+        padding:58px 42px 52px;
+      }
+
+      .opening-founder{
+        grid-template-columns:1fr;
+      }
+
+      .opening-founder-figure{
+        min-height:340px;
+      }
+    }
+
+    @media (max-width: 860px){
+      .opening-hero{
+        min-height:auto;
+      }
+
+      .opening-hero img{
+        position:relative;
+        height:420px;
+        object-position:72% center;
+      }
+
+      .opening-hero::before,
+      .opening-hero::after{
+        display:none;
+      }
+
+      .opening-overlay{
+        width:100%;
+        min-height:auto;
+        padding:34px 24px 30px;
+        background:linear-gradient(180deg, rgba(9,14,22,.92) 0%, rgba(9,14,22,.86) 100%);
+      }
+
+      .opening-overlay h1{
+        max-width:none;
+      }
+
+      .opening-overlay .lede,
+      .opening-overlay .opening-intro{
+        max-width:none;
+      }
+
+      .opening-founder-copy{
+        padding:28px 24px 26px;
+      }
+
+      .opening-founder-copy h2{
+        font-size:34px;
+      }
     }
   </style>
 </head>
@@ -153,59 +273,63 @@
 
     <section class="index-opening" id="home">
       <div class="container">
-        <div class="hero-story">
-          <div class="hero-copy">
-            <div class="kicker">Private partner explainer</div>
-            <h1>
-              When ADHD is left waiting,<br>
-              <span class="accent">addiction steps in.</span><br>
-              <span class="accent">And it doesn’t come quietly.</span>
-            </h1>
-            <p class="lede">
-              This is a private briefing for NHS, local authority, addiction, recovery, mental-health and community partners in Cambridge and Peterborough.
-            </p>
-            <p class="opening-intro">
-              It is about a <strong>targeted ADHD + addiction continuity intervention</strong>: a 12-week, 50-person first phase for adults already visible to services, where unresolved ADHD may be driving repeated crisis, relapse, disengagement and cost.
-            </p>
-            <p class="opening-intro">
-              <strong>OTOS Continuity™ is not diagnosis, not prescribing, and not a new treatment service.</strong> It is a secure continuity layer around existing services — keeping referrals, appointment prompts, touchpoints, micro-check-ins, continuity signals and review flags visible while the right intervention is still in motion.
-            </p>
-            <div class="hero-actions">
-              <a class="btn primary" href="#problem">Start with the problem</a>
-              <a class="btn" href="partners.html">Partner routes</a>
-            </div>
-          </div>
 
-          <div class="hero-pain">
-            <img src="images/02-chaos-tunnel.png" alt="Founder image representing the chaos and pressure when ADHD is left unresolved and addiction steps in">
+        <div class="opening-hero">
+          <img src="images/02-chaos-tunnel.png" alt="Founder image representing the chaos and pressure when ADHD is left unresolved and addiction steps in">
+
+          <div class="opening-overlay">
+            <div class="opening-overlay-inner">
+              <div class="kicker">Private partner explainer</div>
+
+              <h1>
+                When ADHD is left waiting,<br>
+                <span class="accent">addiction steps in.</span><br>
+                <span class="accent">And it doesn’t come quietly.</span>
+              </h1>
+
+              <p class="lede">
+                This is a private briefing for NHS, local authority, addiction, recovery, mental-health and community partners in Cambridge and Peterborough.
+              </p>
+
+              <p class="opening-intro">
+                It is about a <strong>targeted ADHD + addiction continuity intervention</strong>: a 12-week, 50-person first phase for adults already visible to services, where unresolved ADHD may be driving repeated crisis, relapse, disengagement and cost.
+              </p>
+
+              <p class="opening-intro">
+                <strong>OTOS Continuity™ is not diagnosis, not prescribing, and not a new treatment service.</strong> It is a secure continuity layer around existing services — keeping referrals, appointment prompts, touchpoints, micro-check-ins, continuity signals and review flags visible while the right intervention is still in motion.
+              </p>
+
+              <div class="hero-actions">
+                <a class="btn primary" href="#problem">Start with the problem</a>
+                <a class="btn" href="partners.html">Partner routes</a>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div class="hero-founder-success">
-          <div class="hero-founder">
+        <div class="opening-founder">
+          <div class="opening-founder-figure">
+            <img src="images/Therapist reviewing OTOS app progress.png" alt="Therapist reviewing OTOS while the founder sits in the background, representing the point where the right treatment begins to hold">
+          </div>
+
+          <div class="opening-founder-copy">
             <div class="kicker">Founder truth</div>
             <h2>This happened to me.</h2>
+
             <p>
               I believe my addiction was a result of not being medicated for ADHD. For years, the underlying condition was there, but it was not properly recognised or treated. What followed was chaos, crisis, shame, addiction, court, probation and repeated contact with services that were dealing with the visible damage while the deeper cause remained unresolved.
             </p>
+
             <p>
               Within hours, my whole life story made sense. The chaos, the addiction, the hospital admissions, probation, shame, survival patterns and every failed attempt to explain myself suddenly had a frame.
             </p>
+
             <div class="callout">
               Looking back, it was not wasted time. It was market research — brutal, personal, expensive market research — preparing me to build Out The Other Side.
             </div>
           </div>
-
-          <div class="hero-success">
-            <img src="images/Therapist reviewing OTOS app progress.png" alt="Therapist reviewing OTOS while the founder sits in the background, representing the point where the right treatment and continuity begin to hold">
-            <div class="success-caption">
-              <h3>Out the other side.</h3>
-              <p>
-                The turning point was finally reaching the right ADHD medication. OTOS Continuity™ was built from that shift — to help services identify, hold and support this cohort earlier.
-              </p>
-            </div>
-          </div>
         </div>
+
       </div>
     </section>
 
