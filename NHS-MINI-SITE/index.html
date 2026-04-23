@@ -244,6 +244,203 @@
       color:#d4dae4;
     }
 
+
+
+    .logic-card{
+      display:block;
+      border:1px solid rgba(255,255,255,.12);
+      border-radius:24px;
+      padding:18px;
+      background:
+        linear-gradient(180deg, rgba(17,24,33,.80), rgba(10,14,20,.66)),
+        radial-gradient(circle at 100% 0%, rgba(242,108,13,.10), transparent 16rem);
+      box-shadow:0 22px 58px rgba(0,0,0,.22);
+      text-decoration:none;
+      color:inherit;
+      transition:transform .18s ease, border-color .18s ease, box-shadow .18s ease;
+    }
+
+    .logic-card:hover{
+      transform:translateY(-2px);
+      border-color:rgba(242,108,13,.28);
+      box-shadow:0 26px 60px rgba(0,0,0,.26);
+    }
+
+    .logic-card .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      margin-bottom:12px;
+      font-size:13px;
+      line-height:1;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      font-weight:800;
+      color:#f28a25;
+    }
+
+    .logic-card .eyebrow::before{
+      content:"";
+      width:16px;
+      height:16px;
+      background:url("images/otos-brain-icon.png") center/contain no-repeat;
+      opacity:.95;
+      flex:0 0 16px;
+    }
+
+    .logic-card img{
+      display:block;
+      width:100%;
+      aspect-ratio:16 / 10;
+      object-fit:cover;
+      border-radius:16px;
+      border:1px solid rgba(255,255,255,.08);
+      background:#fff;
+      box-shadow:0 16px 40px rgba(0,0,0,.18);
+      margin:0 0 14px;
+    }
+
+    .logic-card h3{
+      margin:0 0 8px;
+      font-size:28px;
+      line-height:1.02;
+    }
+
+    .logic-card p{
+      margin:0;
+      font-size:15px;
+      line-height:1.68;
+      color:#d3dae4;
+    }
+
+    .zoom-hint{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      margin-top:12px;
+      font-size:14px;
+      line-height:1;
+      color:#f7bb84;
+      font-weight:700;
+    }
+
+    .diagram-panel{
+      display:grid;
+      grid-template-columns:minmax(280px,.92fr) minmax(0,1.08fr);
+      gap:26px;
+      align-items:center;
+      margin-top:26px;
+      margin-bottom:10px;
+    }
+
+    .diagram-copy{
+      display:grid;
+      gap:14px;
+    }
+
+    .diagram-copy h3{
+      margin:0;
+      font-size:clamp(34px,3.3vw,52px);
+      line-height:.98;
+      letter-spacing:-.03em;
+    }
+
+    .diagram-copy p{
+      margin:0;
+      font-size:18px;
+      line-height:1.74;
+      color:#425168;
+    }
+
+    .diagram-figure{
+      margin:0;
+      padding:18px;
+      border-radius:28px;
+      border:1px solid rgba(14,30,61,.08);
+      background:rgba(255,255,255,.78);
+      box-shadow:0 22px 56px rgba(16,30,52,.10);
+    }
+
+    .diagram-figure a{
+      display:block;
+      text-decoration:none;
+      color:inherit;
+    }
+
+    .diagram-figure img{
+      width:100%;
+      display:block;
+      border-radius:18px;
+      background:#fff;
+      border:1px solid rgba(14,30,61,.06);
+      box-shadow:0 14px 38px rgba(16,30,52,.10);
+    }
+
+    .diagram-figure figcaption{
+      padding:12px 4px 2px;
+      font-size:14px;
+      line-height:1.55;
+      color:#5f6b80;
+    }
+
+    .image-lightbox{
+      position:fixed;
+      inset:0;
+      z-index:300;
+      display:none;
+      align-items:center;
+      justify-content:center;
+      padding:28px;
+      background:rgba(6,8,12,.88);
+      backdrop-filter:blur(16px);
+      -webkit-backdrop-filter:blur(16px);
+    }
+
+    .image-lightbox.show{
+      display:flex;
+    }
+
+    .image-lightbox-inner{
+      position:relative;
+      width:min(1280px, 100%);
+      max-height:90vh;
+      padding:20px;
+      border-radius:28px;
+      border:1px solid rgba(255,255,255,.12);
+      background:linear-gradient(180deg, rgba(14,18,24,.96), rgba(9,12,18,.98));
+      box-shadow:0 30px 80px rgba(0,0,0,.42);
+    }
+
+    .image-lightbox img{
+      display:block;
+      width:100%;
+      max-height:calc(90vh - 96px);
+      object-fit:contain;
+      border-radius:18px;
+      background:#fff;
+    }
+
+    .image-lightbox .lightbox-caption{
+      margin:12px 4px 0;
+      font-size:15px;
+      line-height:1.6;
+      color:#d8dee7;
+    }
+
+    .image-lightbox .lightbox-close{
+      position:absolute;
+      top:14px;
+      right:14px;
+      width:42px;
+      height:42px;
+      border:0;
+      border-radius:999px;
+      background:rgba(255,255,255,.10);
+      color:#fff;
+      font-size:22px;
+      cursor:pointer;
+    }
+
     /* Quote overlay: strong blur so the site drops away behind it */
     .quote-modal{
       background:rgba(4,6,10,.84);
@@ -266,6 +463,10 @@
         right:18px;
         bottom:18px;
         width:min(520px, calc(100% - 36px));
+      }
+
+      .diagram-panel{
+        grid-template-columns:1fr;
       }
     }
 
@@ -317,6 +518,22 @@
         border-right:0;
         border-bottom:0;
         box-shadow:none;
+      }
+
+      .logic-card{
+        padding:16px;
+      }
+
+      .diagram-copy h3{
+        font-size:34px;
+      }
+
+      .image-lightbox{
+        padding:16px;
+      }
+
+      .image-lightbox-inner{
+        padding:14px;
       }
     }
   </style>
@@ -389,6 +606,14 @@
                 OTOS Continuity™ was built from that shift — not from theory, but from lived experience and the belief that the next person should not need that much damage before the right condition is finally reached.
               </p>
             </div>
+
+            <a class="logic-card js-lightbox" href="images/partner-pathway.png" data-caption="OTOS Continuity in one simple view — a pathway logic diagram that shows how the continuity layer sits between identify, connect, co-ordinate and sustain.">
+              <span class="eyebrow">OTOS in one view</span>
+              <img src="images/partner-pathway.png" alt="Simple OTOS continuity pathway logic diagram showing how the continuity layer supports the route from identify to sustain">
+              <h3>From first concern to next meaningful step.</h3>
+              <p>A simple logic view up front: OTOS sits in the middle, keeps the continuity thread visible, and helps the next step land.</p>
+              <span class="zoom-hint">Click to expand the detail →</span>
+            </a>
 
             <div class="callout">
               Looking back, it was not wasted time. It was market research — brutal, personal, expensive market research — preparing me to build Out The Other Side.
@@ -504,6 +729,21 @@
         <p class="lede">OTOS Continuity™ holds the continuity thread across services so each partner can see the relevant continuity status, not another service’s clinical notes.</p>
       </div>
 
+      <div class="diagram-panel">
+        <div class="diagram-copy">
+          <span class="kicker">Continuity logic</span>
+          <h3>A shared journey view.<br><span class="accent">Not another clinical record.</span></h3>
+          <p>OTOS sits between services and keeps the continuity thread visible: the route in, the referral or next step, lightweight continuity signals, and the point where human review is needed.</p>
+          <p>Use this as the quick visual. Then expand it if you want to inspect the detail more closely.</p>
+        </div>
+        <figure class="diagram-figure">
+          <a class="js-lightbox" href="images/partner-pathway.png" data-caption="OTOS continuity pathway logic — click or tap the diagrams on the page to inspect them in full.">
+            <img src="images/partner-pathway.png" alt="OTOS continuity pathway diagram showing how identify, connect, co-ordinate and sustain fit together">
+          </a>
+          <figcaption>Quick pathway logic diagram. Click to expand.</figcaption>
+        </figure>
+      </div>
+
       <div class="cards four">
         <article class="card"><div class="stat">01</div><h3>Identify</h3><p>People already touching addiction, recovery, crisis, hospital, GP, ADHD or community support are identified where co-occurring ADHD and substance misuse may be clinically relevant.</p></article>
         <article class="card"><div class="stat">02</div><h3>Connect</h3><p>The next appropriate route is named: ADHD assessment, Right to Choose, CPFT, GP, recovery support, mental health or community support. The referral is logged and the next step is visible.</p></article>
@@ -572,6 +812,16 @@
   </section>
 </main>
 
+
+
+<div class="image-lightbox" id="imageLightbox" aria-hidden="true">
+  <div class="image-lightbox-inner">
+    <button class="lightbox-close" type="button" aria-label="Close expanded image">×</button>
+    <img id="lightboxImage" src="" alt="Expanded diagram view">
+    <p class="lightbox-caption" id="lightboxCaption"></p>
+  </div>
+</div>
+
 <div class="quote-modal show" id="quoteModal" aria-hidden="false">
   <div class="quote-box">
     <blockquote>
@@ -586,14 +836,49 @@
 
 <script>
   document.addEventListener("DOMContentLoaded", function () {
-    const modal = document.getElementById("quoteModal");
-    if (!modal) return;
-    function closeQuote() {
-      modal.classList.remove("show");
-      modal.setAttribute("aria-hidden", "true");
+    const quoteModal = document.getElementById("quoteModal");
+    if (quoteModal) {
+      function closeQuote() {
+        quoteModal.classList.remove("show");
+        quoteModal.setAttribute("aria-hidden", "true");
+      }
+      setTimeout(closeQuote, 14600);
+      quoteModal.addEventListener("click", closeQuote);
     }
-    setTimeout(closeQuote, 14600);
-    modal.addEventListener("click", closeQuote);
+
+    const lightbox = document.getElementById("imageLightbox");
+    const lightboxImage = document.getElementById("lightboxImage");
+    const lightboxCaption = document.getElementById("lightboxCaption");
+    const lightboxClose = lightbox ? lightbox.querySelector(".lightbox-close") : null;
+
+    function closeLightbox() {
+      if (!lightbox) return;
+      lightbox.classList.remove("show");
+      lightbox.setAttribute("aria-hidden", "true");
+      lightboxImage.src = "";
+      lightboxCaption.textContent = "";
+    }
+
+    document.querySelectorAll('.js-lightbox').forEach(function(link) {
+      link.addEventListener('click', function(e) {
+        if (!lightbox) return;
+        e.preventDefault();
+        lightboxImage.src = link.getAttribute('href');
+        lightboxCaption.textContent = link.dataset.caption || '';
+        lightbox.classList.add('show');
+        lightbox.setAttribute('aria-hidden', 'false');
+      });
+    });
+
+    if (lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
+    if (lightbox) {
+      lightbox.addEventListener('click', function(e) {
+        if (e.target === lightbox) closeLightbox();
+      });
+    }
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeLightbox();
+    });
   });
 </script>
 </body>
