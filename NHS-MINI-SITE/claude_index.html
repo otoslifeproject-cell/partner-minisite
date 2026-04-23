@@ -303,34 +303,61 @@ footer{background:var(--ink);padding:36px 40px}
 </section>
 
 <!-- STATS -->
-<div class="stats">
+<div class="stats" style="grid-template-columns:repeat(3,1fr)">
   <div class="stat"><span class="stat-n">23–45%</span><span class="stat-l">ADHD in addiction cohorts</span></div>
-  <div class="stat"><span class="stat-n">61.3%</span><span class="stat-l">Improvement after ADHD Dx (START)</span></div>
+  <div class="stat"><span class="stat-n">61.3%</span><span class="stat-l">Improvement after ADHD Dx (START study)</span></div>
   <div class="stat"><span class="stat-n">800–900</span><span class="stat-l">Estimated local risk cohort</span></div>
-  <div class="stat"><span class="stat-n">£91,520</span><span class="stat-l">Pre-pilot ask — evidence budget</span></div>
 </div>
 
-<!-- FOUNDER / THIS HAPPENED TO ME -->
-<section class="sec founder-sec" id="problem">
+<!-- DEAN OPENER — brutal, personal, what is it, what does it do -->
+<section class="sec founder-sec" id="problem" style="background:var(--cream-dark);padding:80px 40px">
   <div class="wrap">
-    <div class="founder-grid">
+    <div style="display:grid;grid-template-columns:1fr 420px;gap:80px;align-items:center">
+
       <div class="reveal">
-        <div class="etag"><img src="images/otos-logo.png" alt="">Out The Other Side</div>
-        <h2 class="h-display">This happened<br>to me.</h2>
-        <div class="founder-body">
-          <p>OTOS Continuity™ was built from a shift — not from theory, but from lived experience and the belief that the next person should not need that much damage before the right condition is finally reached.</p>
-          <p>I believe my addiction was a result of not being medicated for ADHD. For years, the underlying condition was there, but it was not properly recognised or treated. What followed was chaos, crisis, shame, addiction, court, probation and repeated contact with services that were dealing with the visible damage while the deeper cause remained unresolved.</p>
-          <div class="pullquote">
-            <p>"Within hours, my whole life story made sense. The chaos, the addiction, the hospital admissions, probation, shame, survival patterns and every failed attempt to explain myself suddenly had a frame."</p>
+        <div class="etag"><img src="images/otos-logo.png" alt="">Out The Other Side — Dean, founder</div>
+        <h2 class="h-display" style="font-size:clamp(2.2rem,4.5vw,3.4rem)">I was your patient.<br><span class="accent">I built the fix.</span></h2>
+
+        <p style="font-size:1.08rem;font-weight:600;color:var(--brown);line-height:1.7;margin-bottom:20px">I went through addiction services, hospital detox, ADHD assessment, recovery support and therapy — most of it in crisis, some of it blagged, all of it harder than it needed to be. Then I got diagnosed. I got medicated. Within hours, everything made sense.</p>
+
+        <p style="font-size:0.97rem;color:var(--brown-mid);line-height:1.9;margin-bottom:20px">The chaos, the addiction, the relapses, the shame — they weren't failures of willpower or treatment. They were what happens when the underlying neurological condition stays unresolved while services treat the visible damage. <strong>I believe my addiction was a direct result of not being medicated for ADHD.</strong> And I am not alone in that. A clinical study found 61.3% improvement in addictive disorders once ADHD was properly identified and treated.</p>
+
+        <p style="font-size:0.97rem;color:var(--brown-mid);line-height:1.9;margin-bottom:28px">The moment I was medicated, CBT landed. Therapy held. Recovery stuck. Not because the addiction work hadn't been good — it had. But because the brain finally had the infrastructure to use it. <strong>That is the sequence this pre-pilot is designed to test — for the next fifty people who can't wait as long as I did.</strong></p>
+
+        <!-- WHAT IS IT — 4 brutal fast answers -->
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:2px;border:1px solid var(--border);border-radius:6px;overflow:hidden;background:var(--border)">
+          <div style="background:var(--cream);padding:20px 22px">
+            <div style="font-size:0.65rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--orange);margin-bottom:8px">What is it?</div>
+            <p style="font-size:0.88rem;font-weight:700;color:var(--brown);line-height:1.45">A continuity layer that sits between your existing services — keeping the thread visible when no one else is holding it.</p>
           </div>
-          <p>I threw my communications experience into the mix and started marrying everything up — lived experience, pathway failures, timing gaps, silence, drift, recovery, ADHD and the bigger picture across the local system.</p>
-          <p>As the ideas distilled, the answer became <strong>Continuity</strong>. Not because I thought I could rebuild everything, but because I could see exactly where the system had served me wrong: the lack of communication between services, the lack of visibility between touchpoints, and the lack of anyone holding the thread while the right intervention was still unresolved.</p>
+          <div style="background:var(--cream);padding:20px 22px">
+            <div style="font-size:0.65rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--orange);margin-bottom:8px">What does it do?</div>
+            <p style="font-size:0.88rem;font-weight:700;color:var(--brown);line-height:1.45">Receipts referrals. Spots silence. Sends micro check-ins. Flags drift — then a human reviews every decision.</p>
+          </div>
+          <div style="background:var(--cream);padding:20px 22px">
+            <div style="font-size:0.65rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--orange);margin-bottom:8px">Why ADHD first?</div>
+            <p style="font-size:0.88rem;font-weight:700;color:var(--brown);line-height:1.45">Because diagnosis and medication is the thing that makes everything else land. Therapy, CBT, recovery — they all hold better once the brain has what it needs.</p>
+          </div>
+          <div style="background:var(--cream);padding:20px 22px">
+            <div style="font-size:0.65rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--orange);margin-bottom:8px">What's the evidence?</div>
+            <p style="font-size:0.88rem;font-weight:700;color:var(--brown);line-height:1.45">61.3% improvement in addictive disorders after ADHD diagnosis and treatment. START study. Plus me. I'm the proof of concept.</p>
+          </div>
+        </div>
+
+        <div style="margin-top:28px;display:flex;gap:12px;flex-wrap:wrap">
+          <a href="partners.html" class="btn btn-orange btn-pill">Go to your partner page →</a>
+          <a href="#what-it-is" class="btn btn-dark btn-pill">How it works</a>
         </div>
       </div>
-      <div class="founder-img reveal">
-        <img src="images/Therapist_reviewing_OTOS_app_progress.png" alt="Therapist reviewing OTOS progress — the point where the right treatment begins to hold">
-        <div class="img-cap">The point where the right treatment begins to hold.</div>
+
+      <div class="reveal" style="display:flex;flex-direction:column;gap:0">
+        <img src="images/Therapist_reviewing_OTOS_app_progress.png" alt="Dean with his therapist — the moment the right treatment began to hold" style="border-radius:6px 6px 0 0;box-shadow:0 16px 48px rgba(24,15,8,0.18);width:100%">
+        <div style="background:var(--brown);border-radius:0 0 6px 6px;padding:20px 24px">
+          <p style="font-family:'Playfair Display',serif;font-style:italic;font-size:0.97rem;color:rgba(255,255,255,0.75);line-height:1.65">"Once the ADHD was treated, everything else we'd worked on finally started to hold."</p>
+          <p style="font-size:0.72rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--orange-light);margin-top:10px">Dean's therapist — Jo Fenton Consultancy, OTOS partner</p>
+        </div>
       </div>
+
     </div>
   </div>
 </section>
