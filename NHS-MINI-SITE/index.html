@@ -142,6 +142,97 @@
       color:#fbf7ee;
     }
 
+    .problem-flow{
+      display:grid;
+      grid-template-columns:minmax(0,1.06fr) minmax(320px,.94fr);
+      gap:32px;
+      align-items:start;
+    }
+
+    .problem-copy{
+      display:grid;
+      gap:18px;
+    }
+
+    .problem-copy .lede{
+      margin:0;
+    }
+
+    .problem-copy p{
+      margin:0;
+    }
+
+    .problem-side{
+      display:grid;
+      gap:18px;
+      align-self:stretch;
+    }
+
+    .problem-note,
+    .problem-definition{
+      border:1px solid rgba(255,255,255,.12);
+      border-radius:24px;
+      padding:24px 24px 22px;
+      background:
+        linear-gradient(180deg, rgba(17,24,33,.80), rgba(10,14,20,.66)),
+        radial-gradient(circle at 100% 0%, rgba(242,108,13,.10), transparent 16rem);
+      box-shadow:0 22px 58px rgba(0,0,0,.22);
+      backdrop-filter:blur(18px);
+      -webkit-backdrop-filter:blur(18px);
+    }
+
+    .problem-definition{
+      background:
+        linear-gradient(180deg, rgba(77,37,14,.52), rgba(56,25,10,.48)),
+        radial-gradient(circle at 100% 0%, rgba(242,108,13,.16), transparent 16rem);
+      border-color:rgba(242,108,13,.20);
+    }
+
+    .problem-side h3{
+      margin:0 0 10px;
+      font-size:28px;
+      line-height:1.02;
+    }
+
+    .problem-side p{
+      margin:0;
+      font-size:17px;
+      line-height:1.72;
+      color:#d3dae4;
+      text-wrap:pretty;
+    }
+
+    .problem-line{
+      display:block;
+      margin-top:14px;
+      padding-top:14px;
+      border-top:1px solid rgba(255,255,255,.10);
+      font-size:15px;
+      line-height:1.65;
+      color:#f7bb84;
+      font-weight:700;
+    }
+
+    .problem-locked{
+      margin:0;
+      font-size:20px;
+      line-height:1.55;
+      font-weight:700;
+      color:#fff7ef;
+      font-style:italic;
+      text-wrap:pretty;
+    }
+
+    .problem-locked-source{
+      margin-top:12px;
+      font-size:14px;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      color:#f1b277;
+      font-weight:800;
+    }
+
+
     .opening-side{
       position:relative;
       z-index:1;
@@ -468,6 +559,10 @@
       .diagram-panel{
         grid-template-columns:1fr;
       }
+
+      .problem-flow{
+        grid-template-columns:1fr;
+      }
     }
 
     @media (max-width: 860px){
@@ -658,7 +753,7 @@
         <p>
           So this first phase is deliberately small. I am one survivor with an idea, trying to prove the simplest useful version first — diagnose, medicate and place this cohort on OTOS Continuity™, then measure what changes.
         </p>
-        <div class="callout">That is why the next section matters: the system usually responds to the addiction first, even when ADHD may be the condition driving the pattern underneath it.</div>
+        <div class="callout">That is where the realisation sharpened for me: I was not looking at addiction on its own. I was looking at a pattern I now describe as <strong>Neuro-Informed Addiction (NIA)</strong> — where unresolved ADHD may be shaping what services first see as addiction, crisis and relapse.</div>
       </div>
     </div>
   </section>
@@ -666,21 +761,46 @@
 <section class="dark-section" id="problem">
     <div class="container flow-wide">
       <div class="section-head">
-        <span class="kicker">The problem</span>
-        <h2>The system sees addiction first.<br><span class="accent">The driver may be ADHD.</span></h2>
+        <span class="kicker">NIA / The problem</span>
+        <h2>This started with a realisation.<br><span class="accent">The system saw addiction. I saw untreated ADHD.</span></h2>
       </div>
 
-      <div>
-        <p class="lede">
-          The system usually treats addiction as the primary condition. For some people, that is right. For a significant and identifiable group of adults, it is not. <strong>The primary condition is ADHD. The drinking or drug use is what arrives in view.</strong>
-        </p>
-        <p>
-          That matters because self-medication can work — until it does not. Alcohol or substances can briefly do what an untreated ADHD brain has been trying to do all along: supply motivation, sustain attention, create focus and cut the noise. The trouble starts when that coping strategy turns into dependency and crisis.
-        </p>
-        <p>
-          At that point, services quite reasonably respond to the addiction. But if the ADHD remains untouched, the work often does not hold. Support can fail to land when untreated ADHD is still disrupting sequencing, memory, follow-through, motivation and emotional regulation.
-        </p>
-        <div class="callout">The relapse was not proof that treatment failed. It was proof that the right condition was never properly treated in the first place.</div>
+      <div class="problem-flow">
+        <div class="problem-copy">
+          <p class="lede">
+            I was not looking at trauma-informed addiction alone. I was looking at what I now describe as <strong>Neuro-Informed Addiction (NIA)</strong>: addiction that may be being informed, intensified or prolonged by unresolved ADHD and the executive-function disruption that comes with it.
+          </p>
+          <p>
+            Trauma matters. Recovery work matters. But in my case, and I believe in a significant identifiable cohort, the neurological driver was still sitting underneath the visible addiction pattern. <strong>I believe my addiction was a result of not being medicated for ADHD.</strong>
+          </p>
+          <p>
+            That matters because self-medication can work — until it does not. Alcohol or substances can briefly do what an untreated ADHD brain has been trying to do all along: supply motivation, sustain attention, create focus and cut the noise. Then the coping strategy turns into dependency, crisis, chaos, shame, suicide risk, court, probation, relapse and repeated cost.
+          </p>
+          <p>
+            At that point, services quite reasonably respond to the addiction. But if the ADHD remains untouched, the work often does not hold. Support can fail to land when untreated ADHD is still disrupting sequencing, memory, follow-through, motivation and emotional regulation. The relapse was not proof that treatment failed. It was proof that the right condition was never properly treated in the first place.
+          </p>
+          <p>
+            This is the point OTOS is trying to make visible. Not every addiction story is ADHD. But for a real, high-cost, high-risk cohort, the system may be treating the visible damage while the deeper cause remains unresolved. That is the gap this briefing is built around.
+          </p>
+        </div>
+
+        <div class="problem-side">
+          <div class="problem-definition">
+            <h3>Why NIA belongs here.</h3>
+            <p>
+              The term helps describe a pattern the system can miss: addiction in the foreground, unresolved ADHD in the background, and a person moving through services without the right condition being stabilised early enough.
+            </p>
+            <span class="problem-line">Not a replacement for trauma-informed care. A sharper description of a cohort that may need both.</span>
+          </div>
+
+          <div class="problem-note">
+            <h3>The framing I want them to hold.</h3>
+            <p class="problem-locked">Trauma-informed care treats the story. Neuro-informed care stabilises the brain. Recovery needs both.</p>
+            <div class="problem-locked-source">NIA framing</div>
+          </div>
+
+          <div class="callout">I did recovery groups, therapy, meetings, detox, relapse prevention — all of it helped. But only when my ADHD was treated did any of it finally work.</div>
+        </div>
       </div>
     </div>
   </section>
