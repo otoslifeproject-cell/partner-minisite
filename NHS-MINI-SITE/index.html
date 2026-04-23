@@ -5,6 +5,476 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>OTOS Continuity — Index</title>
   <link rel="stylesheet" href="css/otos.css">
+  <style>
+    /* Index only — uses the locked partner-page stylesheet and grid stage */
+    .index-hero{
+      min-height:auto;
+      padding-bottom:82px;
+    }
+
+    .index-hero > .container{
+      padding:clamp(28px,4vw,50px);
+    }
+
+    .opening-flow{
+      display:grid;
+      gap:32px;
+    }
+
+    .opening-photo{
+      position:relative;
+      overflow:hidden;
+      border-radius:28px;
+      min-height:640px;
+      box-shadow:0 26px 78px rgba(0,0,0,.30);
+      background:#0a0f16;
+    }
+
+    .opening-photo img{
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
+
+    .opening-photo-primary img{
+      object-position:78% center;
+    }
+
+    .opening-photo-primary::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        linear-gradient(90deg,
+          rgba(8,10,15,.86) 0%,
+          rgba(8,10,15,.78) 24%,
+          rgba(8,10,15,.52) 42%,
+          rgba(8,10,15,.18) 58%,
+          rgba(8,10,15,.04) 72%,
+          rgba(8,10,15,.08) 100%);
+      z-index:1;
+    }
+
+    .opening-photo-primary::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        radial-gradient(circle at 18% 30%, rgba(242,108,13,.14), transparent 22rem),
+        linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,0));
+      z-index:1;
+      pointer-events:none;
+    }
+
+    .opening-headline{
+      position:relative;
+      z-index:2;
+      min-height:640px;
+      width:min(820px, 60%);
+      display:flex;
+      align-items:center;
+      padding:46px 54px;
+    }
+
+    .opening-headline h1{
+      max-width:9.8ch;
+      margin:0;
+      text-wrap:balance;
+    }
+
+    .opening-story{
+      position:relative;
+      padding:38px;
+      border:1px solid rgba(255,255,255,.12);
+      border-radius:30px;
+      background:
+        radial-gradient(circle at 100% 0%, rgba(242,108,13,.10), transparent 22rem),
+        linear-gradient(180deg, rgba(10,16,24,.90), rgba(8,12,18,.95));
+      box-shadow:0 24px 70px rgba(0,0,0,.26);
+      overflow:hidden;
+    }
+
+    .opening-story::after{
+      content:"";
+      position:absolute;
+      right:22px;
+      bottom:18px;
+      width:112px;
+      height:112px;
+      background:url("images/otos-brain-icon.png") center/contain no-repeat;
+      opacity:.08;
+      pointer-events:none;
+    }
+
+    .opening-story-grid{
+      position:relative;
+      z-index:1;
+      display:grid;
+      grid-template-columns:minmax(0,1.12fr) minmax(340px,.88fr);
+      gap:34px;
+      align-items:start;
+    }
+
+    .opening-copy{
+      position:relative;
+      z-index:1;
+      max-width:900px;
+    }
+
+    .opening-copy .kicker{
+      margin-bottom:22px;
+    }
+
+    .opening-copy-block{
+      margin:0 0 24px;
+      padding:0 0 24px;
+      border-bottom:1px solid rgba(255,255,255,.10);
+    }
+
+    .opening-copy-block:last-child{
+      margin-bottom:0;
+      padding-bottom:0;
+      border-bottom:0;
+    }
+
+    .opening-copy p{
+      margin:0;
+      font-size:19px;
+      line-height:1.76;
+      color:#d3d9e2;
+      text-wrap:pretty;
+      max-width:42em;
+    }
+
+    .opening-copy p.lede{
+      font-size:22px;
+      line-height:1.65;
+      color:#edf1f7;
+    }
+
+    .opening-copy strong{
+      color:#fbf7ee;
+    }
+
+    .problem-flow{
+      display:grid;
+      grid-template-columns:minmax(0,1.06fr) minmax(320px,.94fr);
+      gap:32px;
+      align-items:start;
+    }
+
+    .problem-copy{
+      display:grid;
+      gap:18px;
+    }
+
+    .problem-copy .lede{
+      margin:0;
+    }
+
+    .problem-copy p{
+      margin:0;
+    }
+
+    .problem-side{
+      display:grid;
+      gap:18px;
+      align-self:stretch;
+    }
+
+    .problem-note,
+    .problem-definition{
+      border:1px solid rgba(255,255,255,.12);
+      border-radius:24px;
+      padding:24px 24px 22px;
+      background:
+        linear-gradient(180deg, rgba(17,24,33,.80), rgba(10,14,20,.66)),
+        radial-gradient(circle at 100% 0%, rgba(242,108,13,.10), transparent 16rem);
+      box-shadow:0 22px 58px rgba(0,0,0,.22);
+      backdrop-filter:blur(18px);
+      -webkit-backdrop-filter:blur(18px);
+    }
+
+    .problem-definition{
+      background:
+        linear-gradient(180deg, rgba(77,37,14,.52), rgba(56,25,10,.48)),
+        radial-gradient(circle at 100% 0%, rgba(242,108,13,.16), transparent 16rem);
+      border-color:rgba(242,108,13,.20);
+    }
+
+    .problem-side h3{
+      margin:0 0 10px;
+      font-size:28px;
+      line-height:1.02;
+    }
+
+    .problem-side p{
+      margin:0;
+      font-size:17px;
+      line-height:1.72;
+      color:#d3dae4;
+      text-wrap:pretty;
+    }
+
+    .problem-line{
+      display:block;
+      margin-top:14px;
+      padding-top:14px;
+      border-top:1px solid rgba(255,255,255,.10);
+      font-size:15px;
+      line-height:1.65;
+      color:#f7bb84;
+      font-weight:700;
+    }
+
+    .problem-locked{
+      margin:0;
+      font-size:20px;
+      line-height:1.55;
+      font-weight:700;
+      color:#fff7ef;
+      font-style:italic;
+      text-wrap:pretty;
+    }
+
+    .problem-locked-source{
+      margin-top:12px;
+      font-size:14px;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      color:#f1b277;
+      font-weight:800;
+    }
+
+
+    .opening-side{
+      position:relative;
+      z-index:1;
+      display:grid;
+      gap:18px;
+      align-content:start;
+    }
+
+    .opening-side .glass-note{
+      border:1px solid rgba(255,255,255,.12);
+      border-radius:24px;
+      padding:24px 24px 22px;
+      background:
+        linear-gradient(180deg, rgba(17,24,33,.80), rgba(10,14,20,.66)),
+        radial-gradient(circle at 100% 0%, rgba(242,108,13,.10), transparent 16rem);
+      box-shadow:0 22px 58px rgba(0,0,0,.22);
+      backdrop-filter:blur(18px);
+      -webkit-backdrop-filter:blur(18px);
+    }
+
+    .opening-side .glass-note h3{
+      margin:0 0 10px;
+      font-size:30px;
+      line-height:1.02;
+    }
+
+    .opening-side .glass-note p{
+      margin:0;
+      font-size:16px;
+      line-height:1.66;
+      color:#d3dae4;
+    }
+
+    .opening-side .callout{
+      margin:0;
+      font-size:18px;
+      line-height:1.58;
+      padding:26px 28px 24px 30px;
+      background:
+        linear-gradient(180deg, rgba(77,37,14,.62), rgba(56,25,10,.58)),
+        radial-gradient(circle at 100% 0%, rgba(242,108,13,.14), transparent 16rem);
+      border:1px solid rgba(242,108,13,.18);
+      box-shadow:0 20px 50px rgba(0,0,0,.20);
+    }
+
+    .opening-side .hero-actions{
+      padding-top:6px;
+      justify-content:flex-start;
+      gap:16px;
+    }
+
+    .opening-photo-secondary{
+      min-height:auto;
+      border:1px solid rgba(255,255,255,.12);
+      border-radius:30px;
+      overflow:hidden;
+      background:#0b1017;
+      box-shadow:0 24px 70px rgba(0,0,0,.26);
+    }
+
+    .opening-photo-secondary img{
+      position:relative;
+      inset:auto;
+      width:100%;
+      height:auto;
+      display:block;
+      object-fit:cover;
+      object-position:center center;
+    }
+
+    .opening-photo-secondary::before{
+      display:none;
+    }
+
+    .opening-outcome{
+      position:relative;
+      padding:34px;
+      border:1px solid rgba(255,255,255,.12);
+      border-radius:30px;
+      background:
+        radial-gradient(circle at 100% 0%, rgba(242,108,13,.10), transparent 20rem),
+        linear-gradient(180deg, rgba(10,16,24,.90), rgba(8,12,18,.95));
+      box-shadow:0 24px 70px rgba(0,0,0,.26);
+      overflow:hidden;
+    }
+
+    .opening-outcome::after{
+      content:"";
+      position:absolute;
+      right:22px;
+      bottom:18px;
+      width:112px;
+      height:112px;
+      background:url("images/otos-brain-icon.png") center/contain no-repeat;
+      opacity:.08;
+      pointer-events:none;
+    }
+
+    .opening-outcome-inner{
+      position:relative;
+      z-index:1;
+      max-width:980px;
+    }
+
+    .opening-outcome .kicker{
+      margin-bottom:18px;
+    }
+
+    .opening-outcome h2{
+      margin:0 0 16px;
+      font-size:clamp(40px,4vw,62px);
+      line-height:.98;
+    }
+
+    .opening-outcome p{
+      margin:0 0 16px;
+      max-width:44em;
+      font-size:19px;
+      line-height:1.76;
+      color:#d4dae4;
+      text-wrap:pretty;
+    }
+
+    .opening-outcome p:last-child{
+      margin-bottom:0;
+    }
+
+
+    /* Quote overlay: strong blur so the site drops away behind it */
+    .quote-modal{
+      background:rgba(4,6,10,.84);
+      backdrop-filter:blur(22px);
+      -webkit-backdrop-filter:blur(22px);
+    }
+
+    @media (max-width: 1100px){
+      .opening-headline{
+        width:min(880px, 68%);
+        padding:40px 40px;
+      }
+
+      .opening-story{
+        padding:30px;
+      }
+
+      .opening-story-grid{
+        grid-template-columns:1fr;
+      }
+
+      .diagram-panel{
+        grid-template-columns:1fr;
+      }
+
+      .problem-flow{
+        grid-template-columns:1fr;
+      }
+    }
+
+    @media (max-width: 860px){
+      .opening-photo{
+        min-height:auto;
+      }
+
+      .opening-photo img{
+        position:relative;
+        height:420px;
+      }
+
+      .opening-photo-primary img{
+        object-position:70% center;
+      }
+
+      .opening-photo-primary::before,
+      .opening-photo-primary::after,
+      .opening-photo-secondary::before{
+        display:none;
+      }
+
+      .opening-headline{
+        width:100%;
+        min-height:auto;
+        padding:28px 22px 20px;
+        background:
+          radial-gradient(circle at 100% 0%, rgba(242,108,13,.10), transparent 15rem),
+          linear-gradient(180deg, rgba(11,16,24,.94), rgba(10,14,20,.96));
+      }
+
+      .opening-headline h1{
+        max-width:none;
+      }
+
+      .opening-copy p,
+      .opening-copy p.lede{
+        font-size:18px;
+      }
+
+      .opening-photo-secondary .photo-caption{
+        position:relative;
+        right:auto;
+        bottom:auto;
+        width:100%;
+        border-radius:0 0 24px 24px;
+        border-left:0;
+        border-right:0;
+        border-bottom:0;
+        box-shadow:none;
+      }
+
+      .logic-card{
+        padding:16px;
+      }
+
+      .diagram-copy h3{
+        font-size:34px;
+      }
+
+      .image-lightbox{
+        padding:16px;
+      }
+
+      .image-lightbox-inner{
+        padding:14px;
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -43,87 +513,67 @@
           </div>
         </div>
 
-        <div class="opening-journey">
-          <div class="opening-journey-grid">
-            <div class="opening-narrative">
-              <span class="kicker">Private partner explainer</span>
+      </div>
+    </div>
+  </section>
 
-              <div class="opening-narrative-block opening-intro-block">
-                <p class="lede">
-                  This is a private briefing for NHS, local authority, addiction, recovery, mental-health and community partners in Cambridge and Peterborough.
-                </p>
-                <p>
-                  It is about a <strong>targeted ADHD + addiction continuity intervention</strong>: a 12-week, 50-person first phase for adults already visible to services, where unresolved ADHD may be driving repeated crisis, relapse, disengagement and cost.
-                </p>
-              </div>
+  <section class="dark-section">
+    <div class="container">
+      <div class="cards two">
+        <article class="card glass">
+          <span class="kicker">Private partner explainer</span>
+          <p class="lede">This is a private briefing for NHS, local authority, addiction, recovery, mental-health and community partners in Cambridge and Peterborough.</p>
+          <p>It is about a <strong>targeted ADHD + addiction continuity intervention</strong>: a 12-week, 50-person first phase for adults already visible to services, where unresolved ADHD may be driving repeated crisis, relapse, disengagement and cost.</p>
+        </article>
 
-              <div class="opening-narrative-block opening-pain-block">
-                <p class="opening-pain-lede">I believe my addiction was a result of not being medicated for ADHD.</p>
-                <p>
-                  For years, the underlying condition was there, but it was not properly recognised or treated. What followed was chaos, crisis, shame, addiction, court, probation and repeated contact with services that were dealing with the visible damage while the deeper cause remained unresolved.
-                </p>
-              </div>
+        <article class="card glass">
+          <h3>This happened to me.</h3>
+          <p>OTOS Continuity™ was built from that shift — not from theory, but from lived experience and the belief that the next person should not need that much damage before the right condition is finally reached.</p>
+          <div class="callout">Looking back, it was not wasted time. It was market research — brutal, personal, expensive market research — preparing me to build Out The Other Side.</div>
+        </article>
+      </div>
 
-              <div class="opening-narrative-block opening-turn-block">
-                <p class="opening-turn-line">Within hours, my whole life story made sense.</p>
-                <p>
-                  The chaos, the addiction, the hospital admissions, probation, shame, survival patterns and every failed attempt to explain myself suddenly had a frame.
-                </p>
-              </div>
+      <div class="cards two soft-offset">
+        <article class="card glass">
+          <p>I believe my addiction was a result of not being medicated for ADHD. For years, the underlying condition was there, but it was not properly recognised or treated. What followed was chaos, crisis, shame, addiction, court, probation and repeated contact with services that were dealing with the visible damage while the deeper cause remained unresolved.</p>
+        </article>
 
-              <div class="opening-narrative-block opening-definition-block">
-                <p>
-                  <strong>OTOS Continuity™ is not diagnosis, not prescribing, and not a new treatment service.</strong> It is a secure continuity layer around existing services — keeping referrals, appointment prompts, touchpoints, micro-check-ins, continuity signals and review flags visible while the right intervention is still in motion.
-                </p>
-              </div>
-            </div>
+        <article class="card glass">
+          <p>Within hours, my whole life story made sense. The chaos, the addiction, the hospital admissions, probation, shame, survival patterns and every failed attempt to explain myself suddenly had a frame.</p>
+        </article>
+      </div>
+    </div>
+  </section>
 
-            <div class="opening-aside">
-              <div class="glass-note">
-                <h3>This happened to me.</h3>
-                <p>
-                  OTOS Continuity™ was built from that shift — not from theory, but from lived experience and the belief that the next person should not need that much damage before the right condition is finally reached.
-                </p>
-              </div>
-
-              <div class="callout">
-                Looking back, it was not wasted time. It was market research — brutal, personal, expensive market research — preparing me to build Out The Other Side.
-              </div>
-
-              <figure class="opening-scene">
-                <img src="images/Therapist reviewing OTOS app progress.png" alt="Therapist reviewing OTOS while the founder sits in the background, representing the point where the right treatment begins to hold">
-                <figcaption class="opening-scene-caption">
-                  <span class="kicker">The shift</span>
-                  <p>The moment where the right intervention finally started to hold.</p>
-                </figcaption>
-              </figure>
-            </div>
-          </div>
-
-          <div class="opening-outcome-band">
-            <div class="opening-outcome-copy">
-              <span class="kicker">Out the other side</span>
-              <h2>Out The Other Side.</h2>
-              <p>
-                The turning point was being privately prescribed the corrected ADHD medication. OTOS Continuity™ was built from that moment — to help services identify, hold and support this cohort earlier while the right intervention is still unresolved.
-              </p>
-              <p>
-                This is where the opening needs to land: not in the damage itself, but in what becomes possible once the right condition is finally reached and the continuity around it starts to hold.
-              </p>
-            </div>
-
-            <div class="opening-outcome-proof">
-              <p class="opening-outcome-proof-line">
-                The next person should not need that much damage before the right condition is finally reached.
-              </p>
-              <div class="hero-actions">
-                <a class="btn primary" href="#problem">Start with the problem</a>
-                <a class="btn" href="partners.html">Partner routes</a>
-              </div>
-            </div>
-          </div>
+  <section class="paper-section">
+    <div class="container">
+      <div class="story-strip">
+        <div class="hero-card">
+          <img src="images/Therapist reviewing OTOS app progress.png" alt="Therapist reviewing OTOS while the founder sits in the background, representing the point where the right treatment begins to hold">
         </div>
 
+        <div>
+          <div class="section-head">
+            <span class="kicker">Out the other side</span>
+            <h2>Out The Other Side.</h2>
+          </div>
+
+          <div class="cards two">
+            <article class="card">
+              <p><strong>OTOS Continuity™ is not diagnosis, not prescribing, and not a new treatment service.</strong> It is a secure continuity layer around existing services — keeping referrals, appointment prompts, touchpoints, micro-check-ins, continuity signals and review flags visible while the right intervention is still in motion.</p>
+            </article>
+
+            <article class="card">
+              <p>The turning point was being privately prescribed the corrected ADHD medication. OTOS Continuity™ was built from that moment — to help services identify, hold and support this cohort earlier and ensure all are screened for ADHD as soon as possible.</p>
+              <p>It’s not just my experience. Some studies have reported addiction improvement rates above 60% when people are diagnosed and medicated for ADHD. Read on to learn more, review the evidence, and get involved.</p>
+            </article>
+          </div>
+
+          <div class="hero-actions">
+            <a class="btn primary" href="#problem">Start with the problem</a>
+            <a class="btn" href="partners.html">Partner routes</a>
+          </div>
+        </div>
       </div>
     </div>
   </section>
