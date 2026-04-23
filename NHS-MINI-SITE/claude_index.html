@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OTOS Continuity™ — When ADHD is left waiting, addiction steps in.</title>
+<meta name="description" content="A private partner briefing for NHS, local authority, addiction, recovery and community partners in Cambridge and Peterborough.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,500&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+:root{
+  --cream:#f5f0e8;
+  --cream-dark:#ede5d4;
+  --brown:#2d1f14;
+  --brown-mid:#5c3d2a;
+  --brown-soft:#8a6550;
+  --orange:#e8640a;
+  --orange-light:#f5821f;
+  --orange-pale:#fdf0e4;
+  --white:#fff;
+  --ink:#180f08;
+  --border:rgba(61,43,31,0.13);
+}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--cream);color:var(--brown);-webkit-font-smoothing:antialiased;line-height:1.6}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-decoration:none}
+
+/* ── NAV ── */
+nav{position:sticky;top:0;z-index:300;background:var(--brown);border-bottom:1px solid rgba(255,255,255,0.07)}
+.nav-i{max-width:1200px;margin:0 auto;padding:0 32px;display:flex;align-items:center;justify-content:space-between;height:62px;gap:12px}
+.nav-logo img{height:34px;width:auto;display:block}
+.nav-links{display:flex;align-items:center;gap:2px;flex-wrap:wrap;justify-content:flex-end}
+.nav-links a{font-size:0.77rem;font-weight:600;letter-spacing:0.01em;color:rgba(255,255,255,0.55);padding:6px 10px;border-radius:4px;transition:all 0.15s;white-space:nowrap}
+.nav-links a:hover{color:#fff;background:rgba(255,255,255,0.09)}
+.nav-cta{background:var(--orange)!important;color:#fff!important;padding:7px 18px!important;border-radius:20px!important}
+.nav-cta:hover{background:var(--orange-light)!important}
+
+/* ── BUTTONS ── */
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;font-size:0.88rem;font-weight:700;border-radius:4px;cursor:pointer;transition:all 0.18s;letter-spacing:0.01em;white-space:nowrap;border:none;font-family:'Inter',sans-serif}
+.btn-orange{background:var(--orange);color:#fff}
+.btn-orange:hover{background:var(--orange-light)}
+.btn-ghost{background:transparent;color:rgba(255,255,255,0.8);border:2px solid rgba(255,255,255,0.25)}
+.btn-ghost:hover{border-color:rgba(255,255,255,0.6);color:#fff}
+.btn-dark{background:transparent;color:var(--brown);border:2px solid var(--brown)}
+.btn-dark:hover{background:var(--brown);color:#fff}
+.btn-pill{border-radius:40px!important}
+
+/* ── HERO ── */
+.hero{position:relative;min-height:94vh;display:flex;align-items:flex-end;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:url('images/02-chaos-tunnel.png') center 28%/cover no-repeat;filter:brightness(0.45) saturate(0.7)}
+.hero-vignette{position:absolute;inset:0;background:linear-gradient(to top,rgba(24,15,8,0.97) 0%,rgba(24,15,8,0.5) 45%,rgba(24,15,8,0.1) 100%)}
+.hero-inner{position:relative;z-index:2;max-width:1200px;width:100%;margin:0 auto;padding:0 40px 88px}
+.hero-tag{display:inline-flex;align-items:center;gap:8px;font-size:0.7rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--orange-light);border:1px solid rgba(232,100,10,0.4);background:rgba(232,100,10,0.1);padding:5px 14px;border-radius:2px;margin-bottom:32px}
+.hero h1{font-family:'Inter',sans-serif;font-size:clamp(2.6rem,6vw,4.4rem);font-weight:900;line-height:1.05;letter-spacing:-0.03em;color:#fff;max-width:820px;margin-bottom:10px}
+.hero h1 .italic-line{display:block;font-family:'Playfair Display',serif;font-style:italic;font-weight:400;color:var(--orange-light);font-size:clamp(2.4rem,5.5vw,4rem);letter-spacing:-0.02em}
+.hero-sub{font-size:1.05rem;color:rgba(255,255,255,0.65);max-width:620px;line-height:1.8;margin:24px 0 36px;font-weight:400}
+.hero-sub strong{color:rgba(255,255,255,0.9);font-weight:600}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap}
+
+/* ── STAT STRIP ── */
+.stats{background:var(--brown);display:grid;grid-template-columns:repeat(4,1fr)}
+.stat{padding:30px 24px;text-align:center;border-right:1px solid rgba(255,255,255,0.07)}
+.stat:last-child{border-right:none}
+.stat-n{font-family:'Inter',sans-serif;font-size:2.1rem;font-weight:900;color:var(--orange-light);line-height:1;margin-bottom:6px;display:block;letter-spacing:-0.02em}
+.stat-l{font-size:0.7rem;color:rgba(255,255,255,0.45);text-transform:uppercase;letter-spacing:0.08em;font-weight:600}
+
+/* ── SECTION SHELL ── */
+.sec{padding:100px 40px}
+.wrap{max-width:1200px;margin:0 auto}
+
+/* ── EYEBROW / TAG ── */
+.etag{display:inline-flex;align-items:center;gap:8px;font-size:0.68rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--orange);margin-bottom:20px}
+.etag img{height:16px;width:auto;object-fit:contain;opacity:0.9}
+.etag-light{color:var(--orange-light)}
+
+/* ── SECTION HEADLINES ── */
+.h-display{font-family:'Inter',sans-serif;font-size:clamp(2.2rem,4.5vw,3.6rem);font-weight:900;line-height:1.05;letter-spacing:-0.03em;color:var(--brown);margin-bottom:20px}
+.h-display em,.h-display .accent{font-style:normal;color:var(--orange)}
+.h-display-light{color:#fff}
+/* Playfair for QUOTES and subtle emotional sub-lines only */
+.h-serif-quote{font-family:'Playfair Display',serif;font-style:italic;font-weight:400;font-size:clamp(1.2rem,2.5vw,1.55rem);line-height:1.6;color:var(--brown-mid)}
+
+.lead{font-size:1rem;color:var(--brown-soft);line-height:1.85;max-width:620px;font-weight:400}
+.lead-light{color:rgba(255,255,255,0.58)}
+
+/* ── FOUNDER SECTION ── */
+.founder-sec{background:var(--cream-dark)}
+.founder-grid{display:grid;grid-template-columns:1fr 420px;gap:80px;align-items:start}
+.founder-body p{font-size:0.97rem;color:var(--brown-mid);line-height:1.9;margin-bottom:20px}
+.pullquote{border-left:3px solid var(--orange);padding:24px 30px;background:#fff;border-radius:0 6px 6px 0;margin:32px 0;box-shadow:0 2px 12px rgba(61,43,31,0.06)}
+.pullquote p{font-family:'Playfair Display',serif;font-style:italic;font-size:1.15rem;line-height:1.7;color:var(--brown);font-weight:400}
+.founder-img img{width:100%;border-radius:6px;box-shadow:0 20px 60px rgba(24,15,8,0.2)}
+.img-cap{font-size:0.75rem;color:var(--brown-soft);font-style:italic;margin-top:12px;text-align:center}
+
+/* ── FULL BLEED IMAGE BREAK ── */
+.fb{position:relative;height:75vh;min-height:500px;overflow:hidden;display:flex;align-items:flex-end}
+.fb img.fb-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.fb-grad{position:absolute;inset:0;background:linear-gradient(to top,rgba(24,15,8,0.94) 0%,rgba(24,15,8,0.3) 55%,transparent 100%)}
+.fb-content{position:relative;z-index:2;max-width:1200px;width:100%;margin:0 auto;padding:0 56px 64px}
+.fb-content .ov{font-size:0.7rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--orange-light);margin-bottom:14px}
+.fb-content h2{font-family:'Inter',sans-serif;font-size:clamp(2rem,4.5vw,3.4rem);font-weight:900;line-height:1.05;letter-spacing:-0.03em;color:#fff;max-width:720px;margin-bottom:16px}
+.fb-content p{font-size:1rem;color:rgba(255,255,255,0.68);max-width:560px;line-height:1.8}
+
+/* ── NIA SECTION ── */
+.nia-sec{background:#fff}
+.nia-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start;margin-top:56px}
+.nia-card{background:var(--cream);border:1px solid var(--border);border-radius:6px;padding:30px;margin-bottom:16px}
+.nia-card:last-child{margin-bottom:0}
+.nia-card h3{font-size:0.95rem;font-weight:700;color:var(--brown);margin-bottom:10px;letter-spacing:-0.01em}
+.nia-card p{font-size:0.87rem;color:var(--brown-mid);line-height:1.8}
+.nia-card.accent-card{background:var(--orange-pale);border-color:rgba(232,100,10,0.2)}
+.nia-card.accent-card h3{color:var(--orange)}
+.highlight-bar{background:var(--orange-pale);border-left:4px solid var(--orange);border-radius:0 6px 6px 0;padding:20px 24px;margin-top:24px}
+.highlight-bar p{font-size:0.93rem;font-weight:600;color:var(--brown);line-height:1.65}
+.italic-aside{font-family:'Playfair Display',serif;font-style:italic;font-size:1rem;color:var(--brown-soft);line-height:1.75;margin-top:24px;padding-left:4px}
+
+/* ── WHAT IT IS ── */
+.what-sec{background:var(--brown)}
+.what-cols{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:56px}
+.what-col-head{font-size:0.7rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;padding-bottom:16px;border-bottom:1px solid rgba(255,255,255,0.1);margin-bottom:0}
+.what-col-head.y{color:var(--orange-light)}
+.what-col-head.n{color:rgba(255,255,255,0.25)}
+.wlist{list-style:none}
+.wlist li{display:flex;gap:14px;align-items:flex-start;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.06);font-size:0.9rem;line-height:1.65}
+.wlist li:last-child{border-bottom:none}
+.wlist.y li{color:rgba(255,255,255,0.85)}
+.wlist.n li{color:rgba(255,255,255,0.32)}
+.wdot{width:22px;height:22px;border-radius:50%;flex-shrink:0;margin-top:1px;display:flex;align-items:center;justify-content:center;font-size:0.65rem;font-weight:800}
+.wdot.y{background:var(--orange);color:#fff}
+.wdot.n{background:rgba(255,255,255,0.08);color:rgba(255,255,255,0.25)}
+
+/* ── HOW IT WORKS ── */
+.how-sec{background:var(--cream-dark)}
+.steps-row{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin:56px 0 52px;border:1px solid var(--border);border-radius:6px;overflow:hidden}
+.step{background:var(--cream);padding:36px 28px;border-right:1px solid var(--border)}
+.step:last-child{border-right:none}
+.step-n{font-family:'Inter',sans-serif;font-size:3.5rem;font-weight:900;color:transparent;-webkit-text-stroke:2px var(--orange);line-height:1;margin-bottom:16px;display:block;letter-spacing:-0.04em}
+.step h3{font-size:1rem;font-weight:700;color:var(--brown);margin-bottom:10px;letter-spacing:-0.01em}
+.step p{font-size:0.84rem;color:var(--brown-mid);line-height:1.75}
+.pathway-fig{text-align:center}
+.pathway-fig img{max-width:800px;margin:0 auto;border-radius:8px;box-shadow:0 8px 40px rgba(61,43,31,0.14)}
+.pathway-fig figcaption{font-size:0.75rem;color:var(--brown-soft);margin-top:14px;font-style:italic}
+
+/* ── MORNING FULL BLEED ── */
+.morning{position:relative;height:82vh;min-height:540px;overflow:hidden;display:flex;align-items:stretch}
+.morning img.morning-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 40%}
+.morning-grad{position:absolute;inset:0;background:linear-gradient(105deg,rgba(24,15,8,0.9) 35%,rgba(24,15,8,0.15) 100%)}
+.morning-content{position:relative;z-index:2;max-width:1200px;width:100%;margin:0 auto;padding:0 56px;display:flex;flex-direction:column;justify-content:center}
+.morning-content .ov{font-size:0.7rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--orange-light);margin-bottom:16px}
+.morning-content h2{font-family:'Inter',sans-serif;font-size:clamp(2.6rem,5.5vw,4.2rem);font-weight:900;line-height:1.05;letter-spacing:-0.03em;color:#fff;max-width:540px;margin-bottom:18px}
+.morning-content h2 em{font-family:'Playfair Display',serif;font-style:italic;font-weight:400;color:var(--orange-light)}
+.morning-content p{font-size:1.05rem;color:rgba(255,255,255,0.65);max-width:440px;line-height:1.8}
+
+/* ── NUMBERS ── */
+.nums-sec{background:#fff}
+.num-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin:56px 0 36px;border:1px solid var(--border);border-radius:6px;overflow:hidden}
+.num-card{background:var(--cream);padding:36px 28px;border-right:1px solid var(--border);position:relative}
+.num-card:last-child{border-right:none}
+.num-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:var(--orange)}
+.num-badge{font-size:0.63rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--brown-soft);background:var(--cream-dark);border:1px solid var(--border);padding:3px 9px;border-radius:2px;display:inline-block;margin-bottom:18px}
+.num-big{font-family:'Inter',sans-serif;font-size:2.4rem;font-weight:900;color:var(--brown);line-height:1;margin-bottom:8px;letter-spacing:-0.03em}
+.num-lbl{font-size:0.88rem;font-weight:700;color:var(--brown);margin-bottom:8px}
+.num-note{font-size:0.79rem;color:var(--brown-soft);line-height:1.65}
+
+/* ── RIPPLE ── */
+.ripple-sec{background:var(--brown);padding:88px 40px}
+.rip-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:52px}
+.rip-card{border-radius:8px;overflow:hidden}
+.rip-card img{width:100%;display:block}
+.rip-cap{background:rgba(255,255,255,0.05);border-top:1px solid rgba(255,255,255,0.08);padding:16px 20px;font-size:0.8rem;color:rgba(255,255,255,0.45);font-style:italic}
+
+/* ── SPLIT LAYOUTS ── */
+.split{display:grid;grid-template-columns:1fr 1fr;min-height:540px}
+.split-img{overflow:hidden}
+.split-img img{width:100%;height:100%;object-fit:cover;display:block}
+.split-txt{display:flex;flex-direction:column;justify-content:center;padding:72px 60px}
+.split-txt.cream{background:var(--cream-dark)}
+.split-txt.dark{background:var(--brown)}
+.split-txt h2{font-family:'Inter',sans-serif;font-size:clamp(1.8rem,3vw,2.6rem);font-weight:900;line-height:1.1;letter-spacing:-0.025em;margin-bottom:20px}
+.split-txt.cream h2{color:var(--brown)}
+.split-txt.dark h2{color:#fff}
+.split-txt p{font-size:0.95rem;line-height:1.85;margin-bottom:16px}
+.split-txt.cream p{color:var(--brown-mid)}
+.split-txt.dark p{color:rgba(255,255,255,0.62)}
+.split-txt p:last-of-type{margin-bottom:32px}
+.split-txt .ov{font-size:0.68rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;margin-bottom:18px}
+.split-txt.cream .ov{color:var(--orange)}
+.split-txt.dark .ov{color:var(--orange-light)}
+
+/* ── PARTNERS ── */
+.partners-sec{background:var(--cream)}
+.pbrain{text-align:center;margin:52px 0}
+.pbrain img{max-width:800px;margin:0 auto;border-radius:8px;box-shadow:0 12px 48px rgba(61,43,31,0.14)}
+.pbrain figcaption{font-size:0.75rem;color:var(--brown-soft);margin-top:14px;font-style:italic}
+.pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--border);border-radius:6px;overflow:hidden;margin-top:36px}
+.pcard{background:#fff;padding:30px;display:flex;flex-direction:column;gap:12px;transition:background 0.15s;text-decoration:none;color:inherit;border-right:1px solid var(--border);border-bottom:1px solid var(--border)}
+.pcard:nth-child(3n){border-right:none}
+.pcard:nth-child(4),.pcard:nth-child(5),.pcard:nth-child(6){border-bottom:none}
+.pcard:hover{background:var(--orange-pale)}
+.plogo{height:40px;display:flex;align-items:center}
+.plogo img{max-height:36px;max-width:130px;object-fit:contain}
+.pcard h3{font-size:0.92rem;font-weight:700;color:var(--brown);letter-spacing:-0.01em}
+.pcard p{font-size:0.83rem;color:var(--brown-soft);line-height:1.7;flex:1}
+.plink{font-size:0.78rem;font-weight:700;color:var(--orange);letter-spacing:0.01em}
+
+/* ── EVIDENCE ── */
+.ev-sec{background:#fff}
+.ev-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:52px 0 32px}
+.ev-card{border:1px solid var(--border);border-radius:6px;padding:28px;background:var(--cream);transition:box-shadow 0.15s}
+.ev-card:hover{box-shadow:0 4px 24px rgba(61,43,31,0.09)}
+.ev-src{font-size:0.68rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--orange);margin-bottom:10px}
+.ev-card h3{font-size:0.95rem;font-weight:700;color:var(--brown);margin-bottom:10px;letter-spacing:-0.01em}
+.ev-card p{font-size:0.85rem;color:var(--brown-mid);line-height:1.75}
+.policy-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:28px}
+.pol{display:flex;gap:12px;align-items:flex-start;padding:16px 18px;background:var(--cream);border:1px solid var(--border);border-radius:6px}
+.pol-dot{width:7px;height:7px;border-radius:50%;background:var(--orange);flex-shrink:0;margin-top:6px}
+.pol p{font-size:0.83rem;color:var(--brown-mid);line-height:1.65}
+.pol strong{color:var(--brown);font-weight:700}
+
+/* ── QUOTE BAND ── */
+.qband{background:var(--orange);padding:80px 40px;text-align:center}
+.qband blockquote{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(1.15rem,2.5vw,1.5rem);font-weight:400;line-height:1.65;color:rgba(255,255,255,0.96);max-width:840px;margin:0 auto 20px}
+.qattr{font-size:0.78rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.6)}
+
+/* ── ROUTES CTA ── */
+.routes-sec{background:var(--brown);padding:100px 40px;text-align:center}
+.routes-btns{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin-top:40px}
+
+/* ── FOOTER ── */
+footer{background:var(--ink);padding:36px 40px}
+.foot-i{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px}
+.foot-logo img{height:28px}
+.foot-txt{font-size:0.77rem;color:rgba(255,255,255,0.3)}
+.foot-txt a{color:var(--orange-light)}
+
+/* ── RESPONSIVE ── */
+@media(max-width:980px){
+  .founder-grid,.nia-grid,.what-cols,.split,.rip-grid{grid-template-columns:1fr}
+  .steps-row{grid-template-columns:1fr 1fr}
+  .num-grid{grid-template-columns:1fr 1fr}
+  .pgrid{grid-template-columns:1fr 1fr}
+  .ev-grid,.policy-row{grid-template-columns:1fr}
+  .stats{grid-template-columns:1fr 1fr}
+  .stat:nth-child(2){border-right:none}
+  .split-img{min-height:380px}
+  .split-txt{padding:52px 36px}
+}
+@media(max-width:600px){
+  .nav-links{display:none}
+  .sec{padding:64px 20px}
+  .hero-inner{padding:0 24px 56px}
+  .steps-row,.num-grid,.pgrid{grid-template-columns:1fr}
+  .step{border-right:none;border-bottom:1px solid var(--border)}
+  .num-card{border-right:none;border-bottom:1px solid var(--border)}
+  .fb-content,.morning-content{padding:0 24px 48px}
+  .split-txt{padding:48px 24px}
+}
+
+/* ── SCROLL REVEAL ── */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity 0.55s ease,transform 0.55s ease}
+.reveal.in{opacity:1;transform:none}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-i">
+    <a href="index.html" class="nav-logo"><img src="images/otos-logo.png" alt="OTOS Continuity"></a>
+    <div class="nav-links">
+      <a href="#problem">Problem</a>
+      <a href="#what-it-is">What it is</a>
+      <a href="#how-it-works">How it works</a>
+      <a href="#numbers">Numbers</a>
+      <a href="partners.html">Partners</a>
+      <a href="local-authority-public-health.html">Local Authority</a>
+      <a href="evidence-sources.html">Evidence</a>
+      <a href="mailto:info@otos.life" class="nav-cta">Get involved</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-vignette"></div>
+  <div class="hero-inner reveal">
+    <div class="hero-tag">Private partner briefing — Cambridge &amp; Peterborough</div>
+    <h1>
+      When ADHD is left waiting,
+      <span class="italic-line">addiction steps in.</span>
+      And it doesn't come quietly.
+    </h1>
+    <p class="hero-sub">A private briefing for NHS, local authority, addiction, recovery, mental-health and community partners. A <strong>targeted ADHD + addiction continuity intervention</strong> — 12 weeks, 50 people, adults already visible to services, where unresolved ADHD may be the underlying cause of their addiction.</p>
+    <div class="hero-btns">
+      <a href="#problem" class="btn btn-orange btn-pill">Start with the problem</a>
+      <a href="partners.html" class="btn btn-ghost btn-pill">Partner routes →</a>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stat"><span class="stat-n">23–45%</span><span class="stat-l">ADHD in addiction cohorts</span></div>
+  <div class="stat"><span class="stat-n">61.3%</span><span class="stat-l">Improvement after ADHD Dx (START)</span></div>
+  <div class="stat"><span class="stat-n">800–900</span><span class="stat-l">Estimated local risk cohort</span></div>
+  <div class="stat"><span class="stat-n">£91,520</span><span class="stat-l">Pre-pilot ask — evidence budget</span></div>
+</div>
+
+<!-- FOUNDER / THIS HAPPENED TO ME -->
+<section class="sec founder-sec" id="problem">
+  <div class="wrap">
+    <div class="founder-grid">
+      <div class="reveal">
+        <div class="etag"><img src="images/otos-logo.png" alt="">Out The Other Side</div>
+        <h2 class="h-display">This happened<br>to me.</h2>
+        <div class="founder-body">
+          <p>OTOS Continuity™ was built from a shift — not from theory, but from lived experience and the belief that the next person should not need that much damage before the right condition is finally reached.</p>
+          <p>I believe my addiction was a result of not being medicated for ADHD. For years, the underlying condition was there, but it was not properly recognised or treated. What followed was chaos, crisis, shame, addiction, court, probation and repeated contact with services that were dealing with the visible damage while the deeper cause remained unresolved.</p>
+          <div class="pullquote">
+            <p>"Within hours, my whole life story made sense. The chaos, the addiction, the hospital admissions, probation, shame, survival patterns and every failed attempt to explain myself suddenly had a frame."</p>
+          </div>
+          <p>I threw my communications experience into the mix and started marrying everything up — lived experience, pathway failures, timing gaps, silence, drift, recovery, ADHD and the bigger picture across the local system.</p>
+          <p>As the ideas distilled, the answer became <strong>Continuity</strong>. Not because I thought I could rebuild everything, but because I could see exactly where the system had served me wrong: the lack of communication between services, the lack of visibility between touchpoints, and the lack of anyone holding the thread while the right intervention was still unresolved.</p>
+        </div>
+      </div>
+      <div class="founder-img reveal">
+        <img src="images/Therapist_reviewing_OTOS_app_progress.png" alt="Therapist reviewing OTOS progress — the point where the right treatment begins to hold">
+        <div class="img-cap">The point where the right treatment begins to hold.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FULL BLEED: WAITING CORRIDOR -->
+<div class="fb">
+  <img class="fb-img" src="images/01-hero-waiting-corridor.png" alt="Man waiting alone in NHS corridor">
+  <div class="fb-grad"></div>
+  <div class="fb-content">
+    <div class="ov">NIA — Neuro-Informed Addiction</div>
+    <h2>The system saw addiction.<br>I saw untreated ADHD.</h2>
+    <p>Services quite reasonably respond to what arrives first. But if ADHD remains untouched, the work often does not hold. The relapse was not proof that treatment failed — it was proof that the right condition was never properly treated in the first place.</p>
+  </div>
+</div>
+
+<!-- NIA DETAIL -->
+<section class="sec nia-sec">
+  <div class="wrap">
+    <div class="etag"><img src="images/otos-logo.png" alt="">Neuro-Informed Addiction</div>
+    <h2 class="h-display">Addiction in the foreground.<br><span class="accent">Untreated ADHD beneath.</span></h2>
+    <div class="nia-grid">
+      <div class="reveal">
+        <p style="font-size:.97rem;color:var(--brown-mid);line-height:1.9;margin-bottom:18px">Alcohol or substances can briefly do what an untreated ADHD brain has been trying to do all along: supply motivation, sustain attention, create focus and cut the noise. Then the coping strategy turns into dependency, crisis, shame, suicide risk, court, probation, relapse and repeated cost.</p>
+        <p style="font-size:.97rem;color:var(--brown-mid);line-height:1.9;margin-bottom:18px">At that point, services quite reasonably respond to the addiction. But if the ADHD remains untouched, the work often does not hold. Support can fail to land when untreated ADHD is still disrupting sequencing, memory, follow-through, motivation and emotional regulation.</p>
+        <p style="font-size:.97rem;color:var(--brown-mid);line-height:1.9;margin-bottom:0">This is a trial to find out whether what happened to me — and to 61.3% of a cohort in a clinical study — happens to others already visible to services here in Cambridge and Peterborough.</p>
+        <div class="highlight-bar"><p>Trauma-informed care treats the story. Neuro-informed care stabilises the brain. Recovery needs both.</p></div>
+        <p class="italic-aside">"I did recovery groups, therapy, meetings, detox, relapse prevention — all of it helped. But only when my ADHD was treated did any of it finally work."</p>
+      </div>
+      <div>
+        <div class="nia-card reveal">
+          <h3>Why NIA belongs here</h3>
+          <p>The term helps describe a pattern the system can miss: addiction in the foreground, unresolved ADHD in the background, and a person moving through services without the right condition being stabilised early enough. Not a replacement for trauma-informed care — a sharper description of a cohort that may need both.</p>
+        </div>
+        <div class="nia-card reveal">
+          <h3>What OTOS is making visible</h3>
+          <p>Not every addiction story is ADHD. But for a real, high-cost, high-risk cohort, the system may be treating the visible damage while the deeper cause remains unresolved. This first phase is deliberately small: diagnose, medicate, place this cohort on OTOS Continuity™, then measure what changes.</p>
+        </div>
+        <div class="nia-card accent-card reveal">
+          <h3>The tsunami is building.</h3>
+          <p>Adults with undiagnosed ADHD cycle through A&amp;E, housing, probation, detox and recovery while the pathway treats the symptom that arrives first. OTOS surfaces the signals. The partner team makes every decision.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT IT IS -->
+<section class="sec what-sec" id="what-it-is">
+  <div class="wrap">
+    <div class="etag etag-light">● &nbsp;What OTOS is</div>
+    <h2 class="h-display h-display-light">Not a new service.<br><span style="font-family:'Playfair Display',serif;font-style:italic;font-weight:400;font-size:0.92em">A continuity layer around the services already there.</span></h2>
+    <p class="lead lead-light">OTOS does not replace existing services. It connects them and maintains the person's thread through every organisation they touch. The person can remain anonymous. The clinical notes stay where they are. The continuity signal travels.</p>
+    <div class="what-cols">
+      <div class="reveal">
+        <div class="what-col-head y">What it creates</div>
+        <ul class="wlist y">
+          <li><span class="wdot y">✓</span><span>Referrals and next steps become visible and receipted instead of assumed.</span></li>
+          <li><span class="wdot y">✓</span><span>Waiting-list silence becomes a continuity signal, not a blind spot.</span></li>
+          <li><span class="wdot y">✓</span><span>Micro-check-ins create lightweight engagement signals without requiring a keyworker phone call.</span></li>
+          <li><span class="wdot y">✓</span><span>Partners can send familiar, governed messages in their own voice where agreed.</span></li>
+          <li><span class="wdot y">✓</span><span>Human review closes the loop before any action is taken.</span></li>
+        </ul>
+      </div>
+      <div class="reveal">
+        <div class="what-col-head n">What it is not</div>
+        <ul class="wlist n">
+          <li><span class="wdot n">×</span><span>Not an EPR, clinical record or diagnostic platform.</span></li>
+          <li><span class="wdot n">×</span><span>Not a prescribing, treatment or clinical decision-support system.</span></li>
+          <li><span class="wdot n">×</span><span>Not surveillance, and not full record-sharing by default.</span></li>
+          <li><span class="wdot n">×</span><span>Not another service asking frontline teams to start again.</span></li>
+          <li><span class="wdot n">×</span><span>Not a replacement for safeguarding, crisis or existing partner protocols.</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="sec how-sec" id="how-it-works">
+  <div class="wrap">
+    <div class="etag"><img src="images/otos-logo.png" alt="">How it works</div>
+    <h2 class="h-display">Four steps.<br><span class="accent">One connected pathway.</span></h2>
+    <p class="lead">OTOS Continuity™ holds the continuity thread across services so each partner can see the relevant continuity status — not another service's clinical notes.</p>
+    <div class="steps-row">
+      <div class="step reveal"><span class="step-n">01</span><h3>Identify</h3><p>People already touching addiction, recovery, crisis, hospital, GP, ADHD or community support are identified where co-occurring ADHD and substance misuse may be clinically relevant.</p></div>
+      <div class="step reveal"><span class="step-n">02</span><h3>Connect</h3><p>The next appropriate route is named: ADHD assessment, Right to Choose, CPFT, GP, recovery or community support. The referral is logged and the next step is visible.</p></div>
+      <div class="step reveal"><span class="step-n">03</span><h3>Co-ordinate</h3><p>The continuity thread shows whether the next step landed, stalled or needs human review. No extra clinical record is shared between services.</p></div>
+      <div class="step reveal"><span class="step-n">04</span><h3>Sustain</h3><p>Drift, silence and missed follow-through become visible early enough for partner-led review, safe re-engagement and measurable learning.</p></div>
+    </div>
+    <figure class="pathway-fig reveal">
+      <img src="images/partner-pathway.png" alt="OTOS partner pathway brain diagram — all partners connected inside one continuity layer">
+      <figcaption>All partners. One shared continuity view. The thread that was never built.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- EVERY MORNING IS A DATA POINT -->
+<div class="morning">
+  <img class="morning-img" src="images/evermorningisadatapoint.png" alt="Hand reaching for phone — every morning is a data point">
+  <div class="morning-grad"></div>
+  <div class="morning-content">
+    <div class="ov">Micro check-in</div>
+    <h2>Every morning<br>is a <em>data point.</em></h2>
+    <p>Anonymous. Encrypted. A quiet signal that someone is still on their journey — visible to the partner team, invisible to everyone else.</p>
+  </div>
+</div>
+
+<!-- NUMBERS -->
+<section class="sec nums-sec" id="numbers">
+  <div class="wrap">
+    <div class="etag"><img src="images/otos-logo.png" alt="">The numbers</div>
+    <h2 class="h-display">Every estimate is labelled.<br><span class="accent">Never mixed quietly.</span></h2>
+    <p class="lead">Published data, local figures, OTOS modelling and assumptions are kept visibly separate. The pre-pilot exists to replace modelling with locally validated evidence.</p>
+    <div class="num-grid">
+      <div class="num-card reveal"><div class="num-badge">Published source</div><div class="num-big">23–45%</div><div class="num-lbl">ADHD + SUD range</div><p class="num-note">Research showing ADHD is significantly over-represented in addiction cohorts. Defensible framing — not a local observed count.</p></div>
+      <div class="num-card reveal"><div class="num-badge">Published source</div><div class="num-big">61.3%</div><div class="num-lbl">START comparator</div><p class="num-note">Improvement in addictive disorders at six months after ADHD diagnosis and treatment. The START clinical study.</p></div>
+      <div class="num-card reveal"><div class="num-badge">OTOS modelling estimate</div><div class="num-big">800–900</div><div class="num-lbl">Local planning estimate</div><p class="num-note">Based on published denominators and prevalence assumptions. Subject to local validation. Not a CPFT-reported figure.</p></div>
+      <div class="num-card reveal"><div class="num-badge">Budget estimate</div><div class="num-big">£91,520</div><div class="num-lbl">Pre-pilot ask</div><p class="num-note">Evidence budget, not therapy budget. Infrastructure, co-production and evaluation. 50 adults. 12 weeks.</p></div>
+    </div>
+    <div style="text-align:center"><a href="numbers.html" class="btn btn-dark">View full numbers &amp; model →</a></div>
+  </div>
+</section>
+
+<!-- RIPPLE DIAGRAMS -->
+<section class="ripple-sec">
+  <div class="wrap">
+    <div class="etag etag-light">● &nbsp;The ripple cost</div>
+    <h2 class="h-display h-display-light">The tsunami is building.<br><span style="color:var(--orange-light);font-family:'Playfair Display',serif;font-style:italic;font-weight:400;font-size:0.92em">Nobody can see it building.</span></h2>
+    <p class="lead lead-light">Adults with undiagnosed ADHD cycle through A&amp;E, housing, probation, detox and recovery while the pathway keeps treating the symptom that arrives first. The cost does not disappear — it moves.</p>
+    <div class="rip-grid">
+      <div class="rip-card reveal"><img src="images/RippleEffect.png" alt="The Ripple Effect of ADHD + Addiction — one person, costs spread outward to family, services and society"><div class="rip-cap">Conservative cost to the state: £40,070 per person. With repeat cycles: £100,000+</div></div>
+      <div class="rip-card reveal"><img src="images/RippleCostFinal.png" alt="The Ripple Cost of Untreated ADHD and Addiction — system-wide cost diagram"><div class="rip-cap">Current approach: £44.44bn. OTOS approach: £91,520 for 12-week pilot, 50 people.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- COMMUNITY SPLIT -->
+<div class="split">
+  <div class="split-img"><img src="images/05-solution-community-centre.png" alt="NHS Community Hub — recovery worker showing OTOS Continuity dashboard to colleague"></div>
+  <div class="split-txt cream reveal">
+    <div class="ov">Hospital to community</div>
+    <h2>Where discharge meets follow-through.</h2>
+    <p>The 10 Year Health Plan direction is hospital to community, analogue to digital, reactive to preventive. OTOS tests that transition safely — starting at the earliest possible point of contact.</p>
+    <p>This first phase is deliberately small. One survivor with an idea, trying to prove the simplest useful version first — diagnose, medicate, place this cohort on OTOS Continuity™, then measure what changes.</p>
+    <a href="local-authority-public-health.html" class="btn btn-dark">Local Authority briefing →</a>
+  </div>
+</div>
+
+<!-- PARTNERS -->
+<section class="sec partners-sec" id="partners">
+  <div class="wrap">
+    <div class="etag"><img src="images/otos-logo.png" alt="">Partner map</div>
+    <h2 class="h-display">Existing services. Existing routes.<br><span class="accent">One continuity layer.</span></h2>
+    <p class="lead">OTOS is not proposing a new clinical service. It is a layer that sits on top of the services that already exist — making the pathway between them visible and accountable.</p>
+    <figure class="pbrain reveal">
+      <img src="images/partner-pathway.png" alt="OTOS partner brain — all services connected inside one continuity layer">
+      <figcaption>All partners. One continuity layer. The thread that was never built.</figcaption>
+    </figure>
+    <div class="pgrid">
+      <a class="pcard" href="partners-cgl-crs.html"><div class="plogo"><img src="images/CGL_Logo.png" alt="CGL"></div><h3>CGL &amp; CRS</h3><p>Addiction, recovery, relapse risk, post-rehab vulnerability and safe re-engagement after silence.</p><span class="plink">Open partner page →</span></a>
+      <a class="pcard" href="partners-cpft-adhd.html"><div class="plogo"><img src="images/ADHD_Team_Logo.png" alt="CPFT ADHD Team"></div><h3>CPFT ADHD Team</h3><p>ADHD pathway pressure, waiting-list support, medication-review gaps and continuity evidence.</p><span class="plink">Open partner page →</span></a>
+      <a class="pcard" href="partners-addenbrookes.html"><div class="plogo"><img src="images/Addenbrookes_Logo.png" alt="Addenbrooke's"></div><h3>Addenbrooke's / Alcohol Care</h3><p>Hospital to community. Bedside handoff before discharge, no EPR write-back, rapid touchpoint logging.</p><span class="plink">Open partner page →</span></a>
+      <a class="pcard" href="partners-rce.html"><div class="plogo"><img src="images/rce.png" alt="RCE Wellbeing Hub"></div><h3>RCE Wellbeing Hub</h3><p>Courses, holding support and co-created micro-check-in content while people wait.</p><span class="plink">Open partner page →</span></a>
+      <a class="pcard" href="partners-gp-rtc-qbtech.html"><div class="plogo" style="gap:10px;display:flex"><img src="images/nhs-rtc.png" alt="NHS RTC" style="max-height:30px"><img src="images/qbtech.png" alt="QbTech" style="max-height:26px"></div><h3>GP / RTC / QbTech</h3><p>Fast-track ADHD assessment route, shared-care questions and clear clinical leadership boundaries.</p><span class="plink">Open partner page →</span></a>
+      <a class="pcard" href="partners-mind-workwell-jo-fenton.html"><div class="plogo" style="gap:8px;display:flex;flex-wrap:wrap"><img src="images/MIND_Logo.png" alt="Mind" style="max-height:26px"><img src="images/WorkWell_Logo.png" alt="WorkWell" style="max-height:26px"></div><h3>Mind / WorkWell / Jo Fenton</h3><p>Community, employment, therapy and VCSE support without needing full NHS record access.</p><span class="plink">Open partner page →</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- BEDSIDE SPLIT -->
+<div class="split">
+  <div class="split-txt dark reveal" style="order:1">
+    <div class="ov">When someone is at their lowest</div>
+    <h2>OTOS is already there.</h2>
+    <p>Not as a clinical service. As the continuity thread: the referral, receipt, prompt and next-step signal that remains visible when the person moves between services.</p>
+    <p>The handoff from bedside to community. Logged. Visible. Human-reviewed before any action is taken.</p>
+    <a href="partners.html" class="btn btn-orange">See the shared partner ask →</a>
+  </div>
+  <div class="split-img" style="order:2"><img src="images/06-close-nurse-bedside.png" alt="Nurse showing OTOS Continuity on tablet to patient at bedside — OTOS logo visible on screen"></div>
+</div>
+
+<!-- EVIDENCE -->
+<section class="sec ev-sec" id="evidence">
+  <div class="wrap">
+    <div class="etag"><img src="images/otos-logo.png" alt="">Evidence you can trace</div>
+    <h2 class="h-display">Not ahead of the evidence.<br><span class="accent">Precisely within it.</span></h2>
+    <div class="ev-grid">
+      <div class="ev-card reveal"><div class="ev-src">RCPsych 2022</div><h3>ADHD with substance use</h3><p>There is more benefit than risk from treating ADHD in patients with substance use disorder — in both ADHD and substance use symptom reduction.</p></div>
+      <div class="ev-card reveal"><div class="ev-src">NICE NG87</div><h3>Coexisting substance misuse</h3><p>NICE guidance supports ADHD assessment and treatment in active substance misuse contexts. Not a barrier — a pathway.</p></div>
+      <div class="ev-card reveal"><div class="ev-src">START study</div><h3>61.3% improvement</h3><p>Improvement in addictive disorders at six months after ADHD diagnosis. The study that sits behind the pre-pilot design.</p></div>
+      <div class="ev-card reveal"><div class="ev-src">Co-occurring framework</div><h3>No wrong door, shared responsibility</h3><p>National policy direction supports clearer pathways, better continuity and shared responsibility across services.</p></div>
+    </div>
+    <div class="policy-row">
+      <div class="pol reveal"><div class="pol-dot"></div><p><strong>NHS 10 Year Health Plan</strong> — hospital to community, analogue to digital, sickness to prevention.</p></div>
+      <div class="pol reveal"><div class="pol-dot"></div><p><strong>NHS ADHD Taskforce</strong> — undiagnosed ADHD framed as a major and under-addressed public health issue.</p></div>
+      <div class="pol reveal"><div class="pol-dot"></div><p><strong>250 NHS Community Hubs</strong> — the continuity layer is designed to operate naturally in community health infrastructure.</p></div>
+      <div class="pol reveal"><div class="pol-dot"></div><p><strong>DHSC addiction healthcare goals</strong> — government investment in addiction technology addressing structural fragmentation.</p></div>
+    </div>
+    <div style="text-align:center;margin-top:36px"><a href="evidence-sources.html" class="btn btn-dark">View all evidence sources →</a></div>
+  </div>
+</section>
+
+<!-- QUOTE BAND -->
+<div class="qband">
+  <blockquote>"ADHD, when unsupported, is a potent route into educational failure, long-term unemployment, crime, substance misuse, suicide, mental and physical illness. Economic costs to individuals and the government of at least £17 billion are avoidable."</blockquote>
+  <div class="qattr">Independent NHS ADHD Taskforce — April 2025</div>
+</div>
+
+<!-- ROUTES CTA -->
+<section class="routes-sec">
+  <div class="etag etag-light" style="justify-content:center;margin-bottom:20px">● &nbsp;Choose your route</div>
+  <h2 class="h-display h-display-light" style="text-align:center;max-width:800px;margin:0 auto 16px">Read the shared model.<br><span style="font-family:'Playfair Display',serif;font-style:italic;font-weight:400;font-size:0.9em;color:var(--orange-light)">Then go to the page written for your role.</span></h2>
+  <p style="font-size:1rem;color:rgba(255,255,255,0.55);max-width:560px;margin:0 auto;line-height:1.8;text-align:center">The next step is not a purchase decision. It is a partner conversation about whether this bounded, evidence-generating intervention fits the local pathway — and who needs to be in the room.</p>
+  <div class="routes-btns">
+    <a href="partners.html" class="btn btn-orange btn-pill">Partner routes</a>
+    <a href="local-authority-public-health.html" class="btn btn-ghost btn-pill">Local Authority briefing</a>
+    <a href="evidence-sources.html" class="btn btn-ghost btn-pill">Evidence</a>
+    <a href="numbers.html" class="btn btn-ghost btn-pill">Numbers</a>
+    <a href="mailto:info@otos.life" class="btn btn-ghost btn-pill">Get involved →</a>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-i">
+    <div class="foot-logo"><img src="images/otos-logo.png" alt="OTOS Continuity"></div>
+    <div class="foot-txt">Private partner briefing — Cambridge &amp; Peterborough ICB</div>
+    <div class="foot-txt"><a href="mailto:info@otos.life">info@otos.life</a></div>
+  </div>
+</footer>
+
+<script>
+const els = document.querySelectorAll('.reveal');
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)} });
+},{threshold:0.07,rootMargin:'0px 0px -36px 0px'});
+// stagger grids
+document.querySelectorAll('.steps-row,.num-grid,.ev-grid,.pgrid,.rip-grid,.policy-row').forEach(g=>{
+  [...g.querySelectorAll('.reveal')].forEach((el,i)=>{el.style.transitionDelay=i*65+'ms'});
+});
+els.forEach(el=>io.observe(el));
+setTimeout(()=>document.querySelector('.hero .reveal')?.classList.add('in'),80);
+</script>
+</body>
+</html>
