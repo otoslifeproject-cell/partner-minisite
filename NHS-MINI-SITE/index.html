@@ -32,7 +32,7 @@
     .index-hero-banner .lede{margin:0;max-width:620px;color:rgba(251,247,238,.82)}
     .index-metrics-strip{
       display:grid;
-      grid-template-columns:repeat(4,minmax(0,1fr));
+      grid-template-columns:repeat(3,minmax(0,1fr));
       gap:14px;
     }
     .index-metric{
@@ -147,13 +147,29 @@
     .inline-logo-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
     .inline-logo-row img{max-height:32px;max-width:120px;object-fit:contain;background:rgba(255,255,255,.92);padding:6px 8px;border-radius:10px}
     .evidence-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:34px}
+
+    .dean-opener-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(320px,420px);gap:80px;align-items:center}
+    .dean-opener-copy h2{font-size:clamp(44px,5vw,76px);line-height:.92;margin-bottom:24px;letter-spacing:-.065em}
+    .dean-opener-copy p{font-size:18px;line-height:1.86;color:var(--paper-muted);margin:0 0 20px;font-weight:760}
+    .dean-opener-copy p.lead{font-size:21px;line-height:1.72;color:var(--paper-ink);font-weight:880}
+    .dean-feature-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:30px}
+    .dean-feature{padding:22px;border-radius:22px;border:1px solid rgba(60,40,24,.12);background:linear-gradient(180deg,rgba(255,255,255,.82),rgba(251,247,238,.72));box-shadow:0 18px 46px rgba(64,42,22,.08);position:relative;overflow:hidden}
+    .dean-feature::after{content:'';position:absolute;right:-24px;bottom:-28px;width:94px;height:94px;background:url('images/brain.png') center/contain no-repeat;opacity:.055}
+    .dean-feature .mini-kicker{font-size:11px;font-weight:950;letter-spacing:.18em;text-transform:uppercase;color:var(--orange);margin-bottom:10px}
+    .dean-feature p{font-size:15px;line-height:1.55;font-weight:900;color:var(--paper-ink);margin:0;position:relative;z-index:1}
+    .dean-photo-panel{padding:0;overflow:hidden;border-radius:30px;box-shadow:0 24px 70px rgba(64,42,22,.16)}
+    .dean-photo-panel img{width:100%;min-height:460px;object-fit:cover}
+    .dean-photo-caption{background:linear-gradient(135deg,#180f08,#3a1b0d);padding:22px 24px;border-top:1px solid rgba(242,108,13,.28)}
+    .dean-photo-caption p{font-size:17px;line-height:1.62;font-weight:850;font-style:italic;color:rgba(251,247,238,.82);margin:0}
+    .dean-photo-caption .source{display:block;margin-top:12px;color:var(--orange-2);font-size:11px;font-weight:950;letter-spacing:.14em;text-transform:uppercase}
+    .dean-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
     .quote-band{padding:88px 0;background:linear-gradient(135deg,var(--orange),var(--orange-2));color:#fff;text-align:center}
     .quote-band blockquote{max-width:980px;margin:0 auto 18px;font-size:clamp(24px,2.3vw,34px);line-height:1.5;font-style:italic;font-weight:760;letter-spacing:-.02em}
     .quote-band .source{font-size:13px;font-weight:950;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.72)}
     .route-actions{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin-top:32px}
     @media (max-width:1100px){
       .index-metrics-strip,.numbers-grid,.step-grid,.partner-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
-      .founder-grid,.two-col,.nia-grid,.what-grid,.ripple-grid{grid-template-columns:1fr}
+      .founder-grid,.two-col,.nia-grid,.what-grid,.ripple-grid,.dean-opener-grid{grid-template-columns:1fr}
       .community-split,.bedside-split{grid-template-columns:1fr}
       .community-copy,.bedside-copy{padding:54px 30px}
     }
@@ -163,7 +179,7 @@
       .index-hero-banner::after{background:linear-gradient(180deg,rgba(8,10,15,.78),rgba(8,10,15,.42),rgba(8,10,15,.72))}
       .index-hero-banner .image-banner-content{padding:32px 24px 34px}
       .index-hero-banner h1{max-width:100%}
-      .index-metrics-strip,.numbers-grid,.step-grid,.partner-grid,.evidence-grid{grid-template-columns:1fr}
+      .index-metrics-strip,.numbers-grid,.step-grid,.partner-grid,.evidence-grid,.dean-feature-grid{grid-template-columns:1fr}
       .story-card{padding:26px}
       .community-visual,.bedside-visual{min-height:320px}
     }
@@ -204,27 +220,55 @@
       </div>
       <div class="index-metrics-strip">
         <article class="index-metric"><strong>23–45%</strong><span>ADHD in addiction cohorts</span></article>
-        <article class="index-metric"><strong>61.3%</strong><span>Improvement after ADHD Dx (START)</span></article>
+        <article class="index-metric"><strong>61.3%</strong><span>Improvement after ADHD Dx (START study)</span></article>
         <article class="index-metric"><strong>800–900</strong><span>Estimated local risk cohort</span></article>
-        <article class="index-metric"><strong>£91,520</strong><span>Pre-pilot ask — evidence budget</span></article>
       </div>
     </div>
   </section>
 
-  <section class="paper-section" id="problem">
-    <div class="container founder-grid">
-      <div class="card light-card story-card">
-        <span class="kicker">Out The Other Side</span>
-        <h2>This happened<br><span class="accent">to me.</span></h2>
-        <p>OTOS Continuity™ was built from a shift — not from theory, but from lived experience and the belief that the next person should not need that much damage before the right condition is finally reached.</p>
-        <p>For years, the underlying condition was there, but it was not properly recognised or treated. What followed was chaos, crisis, shame, addiction, court, probation and repeated contact with services that were dealing with the visible damage while the deeper cause remained unresolved.</p>
-        <div class="founder-quote">“Within hours, my whole life story made sense. The chaos, the addiction, the hospital admissions, probation, shame, survival patterns and every failed attempt to explain myself suddenly had a frame.”</div>
-        <p>I threw my communications experience into the mix and started marrying everything up — lived experience, pathway failures, timing gaps, silence, drift, recovery, ADHD and the bigger picture across the local system.</p>
-        <p>As the ideas distilled, the answer became <strong>Continuity</strong>. Not because I thought I could rebuild everything, but because I could see exactly where the system had served me wrong: the lack of communication between services, the lack of visibility between touchpoints, and the lack of anyone holding the thread while the right intervention was still unresolved.</p>
+  <section class="paper-section founder-sec" id="problem">
+    <div class="container dean-opener-grid">
+      <div class="dean-opener-copy">
+        <span class="kicker"><img src="images/otos-logo.png" alt="">Out The Other Side — Dean, founder</span>
+        <h2>I was your patient.<br><span class="accent">I built the fix.</span></h2>
+
+        <p class="lead">I went through addiction services, hospital detox, ADHD assessment, recovery support and therapy — most of it in crisis, some of it blagged, all of it harder than it needed to be. Then I got diagnosed. I got medicated. Within hours, everything made sense.</p>
+
+        <p>The chaos, the addiction, the relapses, the shame — they weren't failures of willpower or treatment. They were what happens when the underlying neurological condition stays unresolved while services treat the visible damage. <strong>I believe my addiction was a direct result of not being medicated for ADHD.</strong> And I am not alone in that. A clinical study found 61.3% improvement in addictive disorders once ADHD was properly identified and treated.</p>
+
+        <p>The moment I was medicated, CBT landed. Therapy held. Recovery stuck. Not because the addiction work hadn't been good — it had. But because the brain finally had the infrastructure to use it. <strong>That is the sequence this pre-pilot is designed to test — for the next fifty people who can't wait as long as I did.</strong></p>
+
+        <div class="dean-feature-grid">
+          <div class="dean-feature">
+            <div class="mini-kicker">What is it?</div>
+            <p>A continuity layer that sits between your existing services — keeping the thread visible when no one else is holding it.</p>
+          </div>
+          <div class="dean-feature">
+            <div class="mini-kicker">What does it do?</div>
+            <p>Receipts referrals. Spots silence. Sends micro check-ins. Flags drift — then a human reviews every decision.</p>
+          </div>
+          <div class="dean-feature">
+            <div class="mini-kicker">Why ADHD first?</div>
+            <p>Because diagnosis and medication is the thing that makes everything else land. Therapy, CBT, recovery — they all hold better once the brain has what it needs.</p>
+          </div>
+          <div class="dean-feature">
+            <div class="mini-kicker">What's the evidence?</div>
+            <p>61.3% improvement in addictive disorders after ADHD diagnosis and treatment. START study. Plus me. I'm the proof of concept.</p>
+          </div>
+        </div>
+
+        <div class="dean-actions">
+          <a href="partners.html" class="btn primary">Go to your partner page →</a>
+          <a href="#what-it-is" class="btn">How it works</a>
+        </div>
       </div>
-      <div class="card light-card founder-photo">
-        <img src="images/Therapist%20reviewing%20OTOS%20app%20progress.png" alt="Therapist reviewing OTOS app progress with founder">
-        <div class="caption">The point where the right treatment begins to hold.</div>
+
+      <div class="card dean-photo-panel">
+        <img src="images/Therapist%20reviewing%20OTOS%20app%20progress.png" alt="Dean with his therapist — the moment the right treatment began to hold">
+        <div class="dean-photo-caption">
+          <p>“Once the ADHD was treated, everything else we'd worked on finally started to hold.”</p>
+          <span class="source">Dean's therapist — Jo Fenton Consultancy, OTOS partner</span>
+        </div>
       </div>
     </div>
   </section>
@@ -447,7 +491,7 @@
       <div class="section-head center">
         <span class="kicker">Choose your route</span>
         <h2>Read the shared model.<br><span class="accent">Then go to the page written for your role.</span></h2>
-        <p class="lede">The next step is not a purchase decision. It is a partner conversation about whether this bounded, evidence-generating intervention fits the local pathway — and who needs to be in the room.</p>
+        <p class="lede">The next step is not a committment or decision. It is a partner conversation about whether this bounded, evidence-generating intervention fits with your services and the local pathway — and who needs to be in the room.</p>
       </div>
       <div class="route-actions">
         <a class="btn primary" href="partners.html">Partner routes</a>
