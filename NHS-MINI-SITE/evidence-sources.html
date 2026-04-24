@@ -3,120 +3,484 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Evidence — OTOS Continuity</title>
+  <title>Evidence & Sources — OTOS Continuity™</title>
+  <meta name="description" content="Every claim is sourced. Every estimate is labelled. Published evidence, CPFT data, OTOS modelling and policy alignment.">
   <link rel="stylesheet" href="css/otos.css">
+  <style>
+    /* Evidence-specific styles layered on top of otos.css */
+    .ev-tabs {
+      display: flex;
+      gap: 0;
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 14px;
+      overflow: hidden;
+      margin: 36px 0 32px;
+    }
+    .ev-tab {
+      flex: 1;
+      padding: 13px 16px;
+      font-size: 13px;
+      font-weight: 900;
+      cursor: pointer;
+      color: rgba(251,247,238,.45);
+      border-right: 1px solid rgba(255,255,255,.08);
+      transition: all .18s;
+      text-align: center;
+      background: transparent;
+      border-top: none;
+      border-bottom: none;
+      border-left: none;
+      letter-spacing: .01em;
+    }
+    .ev-tab:last-child { border-right: none; }
+    .ev-tab.active { background: rgba(242,108,13,.14); color: var(--orange-2); }
+    .ev-tab:hover:not(.active) { color: rgba(251,247,238,.75); background: rgba(255,255,255,.05); }
+    .ev-panel { display: none; }
+    .ev-panel.active { display: block; }
+
+    /* Source cards */
+    .source-list { display: flex; flex-direction: column; gap: 2px; }
+    .source-card {
+      border-radius: 0;
+      border: 1px solid rgba(255,255,255,.08);
+      border-bottom: none;
+      padding: 28px 32px;
+      position: relative;
+      overflow: hidden;
+    }
+    .source-card:first-child { border-radius: 18px 18px 0 0; }
+    .source-card:last-child { border-radius: 0 0 18px 18px; border-bottom: 1px solid rgba(255,255,255,.08); }
+    .source-card:only-child { border-radius: 18px; border-bottom: 1px solid rgba(255,255,255,.08); }
+    .source-card::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 4px;
+    }
+    .source-card.published { background: rgba(53,208,127,.05); }
+    .source-card.published::before { background: var(--green); }
+    .source-card.cpft { background: rgba(100,149,237,.05); }
+    .source-card.cpft::before { background: #6495ed; }
+    .source-card.modelling { background: rgba(242,108,13,.06); }
+    .source-card.modelling::before { background: var(--orange); }
+
+    .source-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      padding: 3px 10px;
+      border-radius: 6px;
+      margin-bottom: 10px;
+    }
+    .badge-pub { background: rgba(53,208,127,.12); color: var(--green); border: 1px solid rgba(53,208,127,.2); }
+    .badge-cpft { background: rgba(100,149,237,.12); color: #6495ed; border: 1px solid rgba(100,149,237,.2); }
+    .badge-model { background: rgba(242,108,13,.12); color: var(--orange-2); border: 1px solid rgba(242,108,13,.2); }
+    .badge-policy { background: rgba(255,255,255,.06); color: var(--muted); border: 1px solid rgba(255,255,255,.1); }
+    .badge-framing { background: rgba(168,85,247,.1); color: #c084fc; border: 1px solid rgba(168,85,247,.2); }
+
+    .source-card h3 { font-size: 20px; margin-bottom: 10px; letter-spacing: -.025em; }
+    .source-card p { font-size: 16px; line-height: 1.75; margin: 0; }
+    .source-org { font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); margin-bottom: 6px; }
+    .ev-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 12px; }
+    .ev-tag {
+      font-size: 11px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
+      background: rgba(255,255,255,.05); color: var(--muted); border: 1px solid rgba(255,255,255,.08);
+      padding: 3px 9px; border-radius: 5px;
+    }
+
+    /* CPFT table */
+    .cpft-table { width: 100%; border-collapse: collapse; }
+    .cpft-table th {
+      background: rgba(100,149,237,.1); color: #6495ed;
+      font-size: 11px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase;
+      padding: 14px 18px; text-align: left; border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+    .cpft-table td {
+      padding: 14px 18px; font-size: 15px; color: var(--muted);
+      border-bottom: 1px solid rgba(255,255,255,.06); line-height: 1.5;
+    }
+    .cpft-table tr:last-child td { border-bottom: none; }
+    .cpft-table td:first-child { font-weight: 900; color: var(--ink); font-size: 1.4rem; letter-spacing: -.03em; }
+    .table-wrap { border: 1px solid rgba(255,255,255,.1); border-radius: 18px; overflow: hidden; }
+
+    /* Policy grid */
+    .policy-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 4px; }
+    .pol-card {
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: 18px; padding: 24px;
+      display: flex; gap: 14px; align-items: flex-start;
+      background: rgba(255,255,255,.03);
+    }
+    .pol-icon { font-size: 1.5rem; flex-shrink: 0; line-height: 1; margin-top: 2px; }
+    .pol-card h3 { font-size: 17px; margin-bottom: 8px; letter-spacing: -.02em; }
+    .pol-card p { font-size: 14px; line-height: 1.7; margin: 0 0 8px; }
+    .pol-link { font-size: 12px; font-weight: 800; color: var(--orange-2); }
+    .pol-tags { display: flex; gap: 5px; flex-wrap: wrap; margin-top: 6px; }
+
+    /* KPI grid */
+    .kpi-cols { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border: 1px solid rgba(255,255,255,.1); border-radius: 18px; overflow: hidden; margin-top: 32px; }
+    .kpi-col { padding: 28px 24px; border-right: 1px solid rgba(255,255,255,.08); }
+    .kpi-col:last-child { border-right: none; }
+    .kpi-col-head { font-size: 11px; font-weight: 900; text-transform: uppercase; letter-spacing: .12em; color: var(--orange-2); margin-bottom: 18px; }
+    .kpi-item { display: flex; gap: 10px; align-items: flex-start; padding: 9px 0; border-bottom: 1px solid rgba(255,255,255,.05); font-size: 14px; color: var(--muted); line-height: 1.55; }
+    .kpi-item:last-child { border-bottom: none; }
+    .kpi-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--orange); flex-shrink: 0; margin-top: 7px; }
+
+    /* Partner placeholder cards */
+    .placeholder-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 28px; }
+    .placeholder-card { border: 2px dashed rgba(255,255,255,.12); border-radius: 18px; padding: 22px; opacity: 0.65; }
+    .placeholder-card h3 { font-size: 16px; margin-bottom: 6px; }
+    .placeholder-card p { font-size: 14px; font-style: italic; margin: 0; }
+
+    @media (max-width: 900px) {
+      .policy-grid, .kpi-cols, .placeholder-grid { grid-template-columns: 1fr; }
+      .kpi-col { border-right: none; border-bottom: 1px solid rgba(255,255,255,.08); }
+      .kpi-col:last-child { border-bottom: none; }
+    }
+    @media (max-width: 600px) {
+      .ev-tabs { flex-wrap: wrap; }
+    }
+  </style>
 </head>
 <body>
 
 <header class="site-header">
-  <nav class="nav-shell" aria-label="Primary navigation">
+  <div class="nav-shell">
     <a class="brand" href="index.html">OTOS Continuity™</a>
-    <div class="nav-links">
+    <nav class="nav-links">
+      <a href="founder-story.html">The Story</a>
       <a href="index.html#problem">Problem</a>
       <a href="index.html#what-it-is">What it is</a>
-      <a href="index.html#how-it-works">How it works</a>
-      <a href="index.html#pilot">Pilot</a>
       <a href="partners.html">Partners</a>
       <a href="local-authority-public-health.html">Local Authority</a>
       <a href="numbers.html">Numbers</a>
+      <a href="how-it-works-visuals.html">Visuals</a>
       <a href="evidence-sources.html" class="active">Evidence</a>
       <a class="cta" href="mailto:info@otos.life">Get involved</a>
-    </div>
-  </nav>
+    </nav>
+  </div>
 </header>
 
 <main>
+
+  <!-- HERO -->
   <section class="hero grid-bg">
     <div class="container">
-      <span class="kicker">Evidence & sources</span>
+      <span class="kicker">Evidence &amp; Sources</span>
       <h1>Every claim is sourced.<br><span class="accent">Every estimate is labelled.</span></h1>
-      <p class="lede">
-        This page separates published evidence, local service figures, OTOS modelling estimates, assumptions and placeholders requiring validation.
-        OTOS does not turn modelling into fact.
-      </p>
-
-      <div class="cards three" style="margin-top:34px">
-        <article class="card stat-card">
-          <div class="stat">23–45%</div>
-          <h3>ADHD + SUD range</h3>
-          <p>Published evidence range used as a defensible framing, not a local observed count.</p>
-        </article>
-        <article class="card stat-card">
-          <div class="stat">61.3%</div>
-          <h3>START comparator</h3>
-          <p>Improvement in addictive disorders after ADHD diagnosis at six months.</p>
-        </article>
-        <article class="card stat-card">
-          <div class="stat">800–900</div>
-          <h3>Local planning estimate</h3>
-          <p>Subject to local validation through the pre-pilot.</p>
-        </article>
+      <p class="lede">This page separates published evidence, local service figures, OTOS modelling estimates, assumptions and placeholders requiring validation. OTOS does not turn modelling into fact.</p>
+      <div class="hero-actions">
+        <a class="btn primary" href="#published">Published sources</a>
+        <a class="btn" href="#modelling">OTOS modelling</a>
+        <a class="btn" href="#kpis">What we're proving</a>
       </div>
     </div>
   </section>
 
-  <section class="paper-section">
+  <!-- KEY FOUR CARDS -->
+  <section class="dark-section">
     <div class="container">
       <div class="section-head">
         <span class="kicker">Key supporting evidence</span>
         <h2>The research already says<br><span class="accent">what we know is true.</span></h2>
+        <p class="lede">Four studies and frameworks that directly underpin the OTOS clinical rationale. All published. All traceable.</p>
       </div>
-      <div class="cards two">
-        <article class="card">
-          <span class="label">RCPsych 2022</span>
+      <div class="cards four">
+        <article class="card glass">
+          <div class="label" style="margin-bottom:12px">RCPsych 2022</div>
           <h3>ADHD with substance use</h3>
           <p>There is more benefit than risk from treating ADHD in patients with substance use disorder — in both ADHD and substance use symptom reduction.</p>
         </article>
-        <article class="card">
-          <span class="label">NICE NG87</span>
+        <article class="card glass">
+          <div class="label" style="margin-bottom:12px">NICE NG87</div>
           <h3>Coexisting substance misuse</h3>
-          <p>NICE guidance supports ADHD assessment and treatment in active substance misuse contexts.</p>
+          <p>NICE guidance supports ADHD assessment and treatment in active substance misuse contexts. Not a barrier — a pathway indicator.</p>
         </article>
-        <article class="card">
-          <span class="label">START study</span>
+        <article class="card glass">
+          <div class="label" style="margin-bottom:12px">START Study</div>
           <h3>61.3% improvement</h3>
-          <p>Comparator study showing improvement in addictive disorders at six months after ADHD diagnosis.</p>
+          <p>Improvement in addictive disorders at six months after ADHD diagnosis and treatment. The comparator figure used in the OTOS pre-pilot measurement framework.</p>
         </article>
-        <article class="card">
-          <span class="label">Co-occurring framework</span>
+        <article class="card glass">
+          <div class="label" style="margin-bottom:12px">Co-occurring framework</div>
           <h3>No wrong door, shared responsibility</h3>
-          <p>National policy direction supports clearer pathways, better continuity and shared responsibility across services.</p>
+          <p>National policy direction supports clearer pathways, better continuity and shared responsibility across services for people with co-occurring need.</p>
         </article>
       </div>
     </div>
   </section>
 
-  <section class="dark-section">
+  <!-- TABBED EVIDENCE SECTIONS -->
+  <section class="paper-section" id="published">
     <div class="container">
       <div class="section-head">
-        <span class="kicker">Policy alignment</span>
-        <h2>Not ahead of the evidence.<br><span class="accent">Precisely within it.</span></h2>
+        <span class="kicker">Full evidence register</span>
+        <h2>Published sources.<br><span class="accent">CPFT data. OTOS modelling.</span></h2>
+        <p class="lede">Use the tabs to navigate between source types. Every figure is labelled so you always know what kind of number you are looking at.</p>
       </div>
-      <ul class="list brain">
-        <li><strong>NHS 10 Year Health Plan</strong> — hospital to community, analogue to digital, sickness to prevention.</li>
-        <li><strong>NHS ADHD Taskforce</strong> — undiagnosed ADHD framed as a major and under-addressed public health issue.</li>
-        <li><strong>250 NHS Community Hubs</strong> — the continuity layer is designed to operate naturally in community health infrastructure.</li>
-        <li><strong>DHSC addiction healthcare goals</strong> — government investment in addiction technology that addresses structural fragmentation.</li>
-      </ul>
-      <div class="callout" style="margin-top:34px">
-        “This is not a request to fund a full rollout. It is a request to fund a clear question: does a receipted continuity thread, applied to this cohort, measurably reduce silent disengagement and increase the likelihood that people reach the next meaningful step?”
+
+      <div class="ev-tabs" style="border-color:rgba(60,40,24,.15)">
+        <button class="ev-tab active" onclick="showTab('published')" style="color:var(--paper-muted);border-color:rgba(60,40,24,.1)">Published sources</button>
+        <button class="ev-tab" onclick="showTab('cpft')" style="color:var(--paper-muted);border-color:rgba(60,40,24,.1)">CPFT data</button>
+        <button class="ev-tab" onclick="showTab('modelling')" style="color:var(--paper-muted);border-color:rgba(60,40,24,.1)">OTOS modelling</button>
+        <button class="ev-tab" onclick="showTab('policy')" style="color:var(--paper-muted);border-color:rgba(60,40,24,.1)">Policy alignment</button>
+        <button class="ev-tab" onclick="showTab('quotes')" style="color:var(--paper-muted);border-color:rgba(60,40,24,.1)">Quotes &amp; claims</button>
       </div>
+
+      <!-- PUBLISHED -->
+      <div class="ev-panel active" id="panel-published">
+        <div class="source-list" style="gap:2px">
+          <div class="source-card published light-card">
+            <div class="source-org">Royal College of Psychiatrists</div>
+            <span class="source-badge badge-pub">✓ Published</span>
+            <h3 style="color:var(--paper-ink)">23–45% of people in addiction treatment have undiagnosed ADHD</h3>
+            <p>RCPsych research shows ADHD is significantly overrepresented in addiction cohorts — and consistently missed at point of entry into substance misuse services. The range reflects variation across substance types and service contexts. The direction is consistent: ADHD is a major underrecognised driver in this population.</p>
+            <div class="ev-tags"><span class="ev-tag" style="color:var(--paper-muted);background:rgba(60,40,24,.07);border-color:rgba(60,40,24,.12)">ADHD</span><span class="ev-tag" style="color:var(--paper-muted);background:rgba(60,40,24,.07);border-color:rgba(60,40,24,.12)">Addiction</span><span class="ev-tag" style="color:var(--paper-muted);background:rgba(60,40,24,.07);border-color:rgba(60,40,24,.12)">Prevalence</span></div>
+          </div>
+          <div class="source-card published light-card">
+            <div class="source-org">START Study</div>
+            <span class="source-badge badge-pub">✓ Published</span>
+            <h3 style="color:var(--paper-ink)">61.3% improvement in addictive disorders at 6 months after ADHD diagnosis</h3>
+            <p>The START study provides the strongest available directional evidence that addressing the underlying ADHD driver changes the downstream addiction picture materially. Not a marginal signal. This is the comparator figure used in the OTOS pre-pilot measurement framework.</p>
+            <div class="ev-tags"><span class="ev-tag" style="color:var(--paper-muted);background:rgba(60,40,24,.07);border-color:rgba(60,40,24,.12)">START Study</span><span class="ev-tag" style="color:var(--paper-muted);background:rgba(60,40,24,.07);border-color:rgba(60,40,24,.12)">Outcomes</span><span class="ev-tag" style="color:var(--paper-muted);background:rgba(60,40,24,.07);border-color:rgba(60,40,24,.12)">Pre-pilot baseline</span></div>
+          </div>
+          <div class="source-card published light-card">
+            <div class="source-org">NHS England</div>
+            <span class="source-badge badge-pub">✓ Published</span>
+            <h3 style="color:var(--paper-ink)">608,416 alcohol-dependent adults in England (2019/20)</h3>
+            <p>Published NHS England figure. For a substantial subset of this cohort, addiction is not the whole clinical picture. When ADHD remains unrecognised or untreated, the conditions required for behavioural change are weaker — attention, impulse control, working memory, task initiation and follow-through are all compromised.</p>
+          </div>
+          <div class="source-card published light-card">
+            <div class="source-org">Turning Point / London School of Economics</div>
+            <span class="source-badge badge-pub">✓ Published</span>
+            <h3 style="color:var(--paper-ink)">£4.07 return for every £1 invested in better addiction continuity</h3>
+            <p>Evidence from Turning Point and the LSE. OTOS is designed to generate the locally validated evidence that makes this ROI case defensible in a Cambridge commissioning context.</p>
+            <div class="ev-tags"><span class="ev-tag" style="color:var(--paper-muted);background:rgba(60,40,24,.07);border-color:rgba(60,40,24,.12)">ROI</span><span class="ev-tag" style="color:var(--paper-muted);background:rgba(60,40,24,.07);border-color:rgba(60,40,24,.12)">Commissioning</span></div>
+          </div>
+          <div class="source-card published light-card">
+            <div class="source-org">HM Government</div>
+            <span class="source-badge badge-pub">✓ Published</span>
+            <h3 style="color:var(--paper-ink)">£47bn annual economic cost of alcohol and drugs in the UK</h3>
+            <p>Published government figure. OTOS does not claim to address this in full. The pre-pilot is designed to test whether continuity infrastructure can reduce a specific, identifiable subset of avoidable demand within the CPFT footprint.</p>
+          </div>
+          <div class="source-card published light-card">
+            <div class="source-org">NHS ADHD Task Force, 2024</div>
+            <span class="source-badge badge-pub">✓ Published</span>
+            <h3 style="color:var(--paper-ink)">"One of the most important and least addressed public health issues of our lifetime"</h3>
+            <p>NHS ADHD Task Force framing — directly aligning with the OTOS pre-pilot rationale: an identifiable, high-cost, underserved cohort where continuity infrastructure can make a measurable difference.</p>
+          </div>
+          <div class="source-card published light-card">
+            <div class="source-org">NICE guideline NG87</div>
+            <span class="source-badge badge-pub">✓ Published</span>
+            <h3 style="color:var(--paper-ink)">ADHD recognition, diagnosis and management in adults — including with coexisting substance misuse</h3>
+            <p>NICE guidance supports ADHD assessment and treatment in active substance misuse contexts. Coexisting substance misuse is not a contraindication — it is a pathway indicator.</p>
+          </div>
+          <div class="source-card published light-card">
+            <div class="source-org">Royal College of Psychiatrists — CR235</div>
+            <span class="source-badge badge-pub">✓ Published</span>
+            <h3 style="color:var(--paper-ink)">Good practice guidance for adult ADHD services and pathways</h3>
+            <p>CR235 provides good practice guidance for adult ADHD services and pathways — directly relevant to the OTOS referral and continuity model, especially the pathway quality and handoff between services.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- CPFT DATA -->
+      <div class="ev-panel" id="panel-cpft">
+        <div class="callout" style="margin-bottom:28px">These are published CPFT service data figures — not OTOS modelling estimates. They are included to show the real service pressure context in which the pre-pilot sits.</div>
+        <div class="table-wrap" style="border-color:rgba(60,40,24,.15);background:#fff">
+          <table class="cpft-table">
+            <thead><tr><th>Figure</th><th>Detail</th><th>Source</th></tr></thead>
+            <tbody>
+              <tr><td>6,000</td><td>Triage and pre-assessment screenings in the pipeline</td><td><span class="source-badge badge-cpft">CPFT published</span></td></tr>
+              <tr><td>380</td><td>Waiting for assessment</td><td><span class="source-badge badge-cpft">CPFT published</span></td></tr>
+              <tr><td>~1,000</td><td>Awaiting medication review or titration</td><td><span class="source-badge badge-cpft">CPFT published</span></td></tr>
+              <tr><td>&gt;1,000</td><td>Annual reviews required</td><td><span class="source-badge badge-cpft">CPFT published</span></td></tr>
+              <tr><td>2,973</td><td>Referrals received 1 Jan 2024 → 30 Jun 2025</td><td><span class="source-badge badge-cpft">CPFT published</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p style="margin-top:16px;font-size:14px;color:var(--paper-muted)">Source: CPFT published service data. These figures represent real, current service pressure. The OTOS pre-pilot is not designed to solve the waiting list — it is designed to ensure people don't fall out of contact while they're on it.</p>
+      </div>
+
+      <!-- OTOS MODELLING -->
+      <div class="ev-panel" id="panel-modelling">
+        <div class="callout" style="margin-bottom:28px">The following figures are OTOS modelling estimates and planning figures — clearly labelled throughout all OTOS materials. They will be reviewed with local partners before the pre-pilot commences.</div>
+        <div class="source-list">
+          <div class="source-card modelling light-card">
+            <div class="source-org">OTOS planning estimate — subject to local validation</div>
+            <span class="source-badge badge-model">⚠ OTOS estimate</span>
+            <h3 style="color:var(--paper-ink)">≈877 adults in the CPFT footprint with co-occurring ADHD and substance misuse</h3>
+            <p>A planning estimate used to size the demonstrator and frame the cost case. Not a CPFT-reported number. Will be reviewed with CPFT and CGL before the pre-pilot commences.</p>
+          </div>
+          <div class="source-card modelling light-card">
+            <div class="source-org">OTOS planning estimate — subject to local validation</div>
+            <span class="source-badge badge-model">⚠ OTOS estimate</span>
+            <h3 style="color:var(--paper-ink)">≈£18m modelled avoidable annual demand if continuity improves outcomes</h3>
+            <p>Modelled avoidable downstream demand (A&amp;E, detox, inpatient, reoffending, housing, crisis intervention) if continuity infrastructure reduces silent disengagement and re-presentation rates. A directional planning estimate — not a guaranteed saving.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- POLICY ALIGNMENT -->
+      <div class="ev-panel" id="panel-policy">
+        <div class="policy-grid" style="--line:rgba(60,40,24,.12)">
+          <div class="pol-card" style="border-color:rgba(60,40,24,.12);background:#fff">
+            <div class="pol-icon">📋</div>
+            <div>
+              <h3 style="color:var(--paper-ink)">NHS 10 Year Health Plan — Fit for the Future</h3>
+              <p>Hospital to community, analogue to digital, reactive to preventive. OTOS tests that transition safely at community level without hospital or EPR integration.</p>
+              <div class="pol-tags"><span class="ev-tag" style="color:var(--paper-muted);background:rgba(60,40,24,.07);border-color:rgba(60,40,24,.12)">NHS England</span><span class="ev-tag" style="color:var(--paper-muted);background:rgba(60,40,24,.07);border-color:rgba(60,40,24,.12)">Digital</span></div>
+            </div>
+          </div>
+          <div class="pol-card" style="border-color:rgba(60,40,24,.12);background:#fff">
+            <div class="pol-icon">🧠</div>
+            <div>
+              <h3 style="color:var(--paper-ink)">NHS ADHD Task Force (Part 1 &amp; Part 2)</h3>
+              <p>Undiagnosed ADHD framed as a major underaddressed public health priority. The QbTest / Right to Choose fast-track pathway is designed into the OTOS model from Phase 1.</p>
+              <div class="pol-tags"><span class="ev-tag" style="color:var(--paper-muted);background:rgba(60,40,24,.07);border-color:rgba(60,40,24,.12)">ADHD</span><span class="ev-tag" style="color:var(--paper-muted);background:rgba(60,40,24,.07);border-color:rgba(60,40,24,.12)">Service pressure</span></div>
+            </div>
+          </div>
+          <div class="pol-card" style="border-color:rgba(60,40,24,.12);background:#fff">
+            <div class="pol-icon">🏥</div>
+            <div>
+              <h3 style="color:var(--paper-ink)">DHSC — Co-occurring mental health and substance use delivery framework</h3>
+              <p>National framing for co-occurring need and practical expectations for delivery partnerships. The "no wrong door" principle is built into the OTOS continuity model.</p>
+              <div class="pol-tags"><span class="ev-tag" style="color:var(--paper-muted);background:rgba(60,40,24,.07);border-color:rgba(60,40,24,.12)">Dual diagnosis</span><span class="ev-tag" style="color:var(--paper-muted);background:rgba(60,40,24,.07);border-color:rgba(60,40,24,.12)">No wrong door</span></div>
+            </div>
+          </div>
+          <div class="pol-card" style="border-color:rgba(60,40,24,.12);background:#fff">
+            <div class="pol-icon">💰</div>
+            <div>
+              <h3 style="color:var(--paper-ink)">£20m HM Government Addiction Healthcare Goals</h3>
+              <p>Government investment in addiction technology addressing structural fragmentation. OTOS is continuity infrastructure — directly addressing the structural co-ordination gap.</p>
+              <div class="pol-tags"><span class="ev-tag" style="color:var(--paper-muted);background:rgba(60,40,24,.07);border-color:rgba(60,40,24,.12)">Government</span><span class="ev-tag" style="color:var(--paper-muted);background:rgba(60,40,24,.07);border-color:rgba(60,40,24,.12)">Addiction technology</span></div>
+            </div>
+          </div>
+          <div class="pol-card" style="border-color:rgba(60,40,24,.12);background:#fff">
+            <div class="pol-icon">🏘️</div>
+            <div>
+              <h3 style="color:var(--paper-ink)">250 NHS Community Hubs</h3>
+              <p>The OTOS continuity layer is designed to operate naturally within community health infrastructure — holding people in the journey, not just in the building.</p>
+              <div class="pol-tags"><span class="ev-tag" style="color:var(--paper-muted);background:rgba(60,40,24,.07);border-color:rgba(60,40,24,.12)">Community health</span></div>
+            </div>
+          </div>
+          <div class="pol-card" style="border-color:rgba(60,40,24,.12);background:#fff">
+            <div class="pol-icon">🔗</div>
+            <div>
+              <h3 style="color:var(--paper-ink)">NICE guideline NG87 — ADHD</h3>
+              <p>NICE recommendations for ADHD recognition, diagnosis and management — including in adults with coexisting substance misuse. Active substance misuse is not a contraindication.</p>
+              <div class="pol-tags"><span class="ev-tag" style="color:var(--paper-muted);background:rgba(60,40,24,.07);border-color:rgba(60,40,24,.12)">NICE</span><span class="ev-tag" style="color:var(--paper-muted);background:rgba(60,40,24,.07);border-color:rgba(60,40,24,.12)">ADHD</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- QUOTES & CLAIMS -->
+      <div class="ev-panel" id="panel-quotes">
+        <div class="callout" style="margin-bottom:28px">This section exists so partners can check where a quote came from. If a quote is removed from any OTOS material, it will be removed from this list too.</div>
+        <div class="source-list">
+          <div class="source-card light-card" style="border-left:4px solid #c084fc;background:rgba(168,85,247,.04)">
+            <div class="source-org">Johann Hari</div>
+            <span class="source-badge badge-framing">Framing quote</span>
+            <h3 style="color:var(--paper-ink)">"The opposite of addiction is human connection."</h3>
+            <p>Used as a framing quote. Not a clinical claim. Not an endorsement of OTOS. Used to frame the relational and social context of recovery.</p>
+            <div class="ev-tags"><span class="ev-tag" style="color:var(--paper-muted);background:rgba(60,40,24,.07);border-color:rgba(60,40,24,.12)">Framing</span><span class="ev-tag" style="color:var(--paper-muted);background:rgba(60,40,24,.07);border-color:rgba(60,40,24,.12)">Not a clinical claim</span></div>
+          </div>
+          <div class="source-card light-card" style="border-left:4px solid var(--orange)">
+            <div class="source-org">NHS ADHD Task Force, April 2025</div>
+            <span class="source-badge badge-pub">✓ Published</span>
+            <h3 style="color:var(--paper-ink)">"ADHD, when unsupported, is a potent route into educational failure, long-term unemployment, crime, substance misuse, suicide, mental and physical illness. Economic costs of at least £17 billion are avoidable."</h3>
+            <p>Direct quotation from the NHS ADHD Task Force report, April 2025. Used as a headline framing quote across the OTOS briefing site.</p>
+            <div class="ev-tags"><span class="ev-tag" style="color:var(--paper-muted);background:rgba(60,40,24,.07);border-color:rgba(60,40,24,.12)">NHS Task Force</span><span class="ev-tag" style="color:var(--paper-muted);background:rgba(60,40,24,.07);border-color:rgba(60,40,24,.12)">Direct quotation</span></div>
+          </div>
+          <div class="source-card light-card" style="border-left:4px solid rgba(60,40,24,.3)">
+            <div class="source-org">OTOS operational language</div>
+            <span class="source-badge badge-policy">Operational</span>
+            <h3 style="color:var(--paper-ink)">Portal statements about "between-space" and "follow-through"</h3>
+            <p>These are operational continuity concepts, not medical outcome claims. They describe the gap between service touchpoints where people currently drift without a receipted thread holding the journey.</p>
+            <div class="ev-tags"><span class="ev-tag" style="color:var(--paper-muted);background:rgba(60,40,24,.07);border-color:rgba(60,40,24,.12)">Operational continuity</span><span class="ev-tag" style="color:var(--paper-muted);background:rgba(60,40,24,.07);border-color:rgba(60,40,24,.12)">Claims-safe</span></div>
+          </div>
+        </div>
+
+        <!-- Partner wording placeholders -->
+        <h3 style="color:var(--paper-ink);margin:36px 0 12px;font-size:20px">Partner support wording — added as it arrives</h3>
+        <p style="margin-bottom:0">As partners provide wording, it will be added here so it can be referenced consistently. Nothing here implies procurement commitment unless explicitly stated in writing.</p>
+        <div class="placeholder-grid">
+          <div class="placeholder-card"><h3 style="color:var(--paper-muted)">CPFT</h3><p style="color:var(--paper-muted)">Partner wording to be added when received.</p></div>
+          <div class="placeholder-card"><h3 style="color:var(--paper-muted)">CGL — Change Grow Live</h3><p style="color:var(--paper-muted)">Partner wording to be added when received.</p></div>
+          <div class="placeholder-card"><h3 style="color:var(--paper-muted)">CRS / Cambridgeshire Recovery Service</h3><p style="color:var(--paper-muted)">Partner wording to be added when received.</p></div>
+          <div class="placeholder-card"><h3 style="color:var(--paper-muted)">WorkWell / Mind / Jo Fenton</h3><p style="color:var(--paper-muted)">Partner wording to be added when received.</p></div>
+        </div>
+      </div>
+
     </div>
   </section>
 
-  <section class="dark-section">
+  <!-- KPIs -->
+  <section class="dark-section" id="kpis">
     <div class="container">
-      <div class="image-banner">
-        <img src="images/NIA_ADHD_Final.png" alt="Neurologically informed addiction infographic">
-        <div class="image-banner-content">
-          <span class="kicker">Evidence pack</span>
-          <h2>Use the infographic where a visual proof point helps.</h2>
-          <p>Keep the evidence register separate from the main briefing so the front page stays simple and the detail remains defensible.</p>
+      <div class="section-head">
+        <span class="kicker">What the pre-pilot is designed to prove</span>
+        <h2>Not a request for full rollout.<br><span class="accent">A clear question, answered with evidence.</span></h2>
+      </div>
+      <div class="callout" style="margin-bottom:0">"This is not a request to fund a full rollout. It is a request to fund a clear question: does a receipted continuity thread, applied to this cohort, measurably reduce silent disengagement and increase the likelihood that people reach the next meaningful step?"</div>
+      <div class="kpi-cols">
+        <div class="kpi-col">
+          <div class="kpi-col-head">Continuity KPIs</div>
+          <div class="kpi-item"><span class="kpi-dot"></span><span>Follow-through visibility across the pathway</span></div>
+          <div class="kpi-item"><span class="kpi-dot"></span><span>Receipt completion rate</span></div>
+          <div class="kpi-item"><span class="kpi-dot"></span><span>Drift-detection lead time</span></div>
+          <div class="kpi-item"><span class="kpi-dot"></span><span>Silent disengagement made visible earlier</span></div>
+        </div>
+        <div class="kpi-col">
+          <div class="kpi-col-head">Burden &amp; Safety KPIs</div>
+          <div class="kpi-item"><span class="kpi-dot"></span><span>Partner time spent per person per week</span></div>
+          <div class="kpi-item"><span class="kpi-dot"></span><span>Human-review loop performance</span></div>
+          <div class="kpi-item"><span class="kpi-dot"></span><span>Escalation discipline — decisions logged</span></div>
+          <div class="kpi-item"><span class="kpi-dot"></span><span>No additional clinical burden created</span></div>
+        </div>
+        <div class="kpi-col">
+          <div class="kpi-col-head">Participant Engagement KPIs</div>
+          <div class="kpi-item"><span class="kpi-dot"></span><span>Likelihood of reaching next meaningful step</span></div>
+          <div class="kpi-item"><span class="kpi-dot"></span><span>Pathway hold time vs. comparison group</span></div>
+          <div class="kpi-item"><span class="kpi-dot"></span><span>6-month comparison against START study baseline</span></div>
+          <div class="kpi-item"><span class="kpi-dot"></span><span>ICB-grade evidence pack on completion</span></div>
         </div>
       </div>
     </div>
   </section>
+
+  <!-- FOOTER CTA -->
+  <section class="dark-section">
+    <div class="container">
+      <div class="footer-card">
+        <span class="kicker">Ready to go deeper?</span>
+        <h2>Return to the full briefing.<br><span class="accent">Or go to your partner page.</span></h2>
+        <p>If you spot a quote that needs a better reference, or want to add a source, email Dean directly and it will be updated.</p>
+        <div class="hero-actions" style="justify-content:center">
+          <a class="btn primary" href="index.html">← Full briefing</a>
+          <a class="btn" href="numbers.html">Numbers &amp; model</a>
+          <a class="btn" href="partners.html">Partner routes</a>
+          <a class="btn" href="mailto:info@otos.life">Email Dean</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
 </main>
+
+<script>
+function showTab(name) {
+  document.querySelectorAll('.ev-tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.ev-panel').forEach(p => p.classList.remove('active'));
+  document.getElementById('panel-' + name).classList.add('active');
+  event.target.classList.add('active');
+}
+</script>
 
 </body>
 </html>
