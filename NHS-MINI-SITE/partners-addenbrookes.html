@@ -5,96 +5,278 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Addenbrooke's / Alcohol Care — OTOS Continuity™</title>
   <link rel="stylesheet" href="css/otos.css">
+  <style>
+    .promise-hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: flex-end;
+      overflow: hidden;
+    }
+    .promise-hero img.bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+    }
+    .promise-hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to top,
+        rgba(8,10,15,0.98) 0%,
+        rgba(8,10,15,0.75) 40%,
+        rgba(8,10,15,0.25) 70%,
+        rgba(8,10,15,0.1) 100%
+      );
+    }
+    .promise-content {
+      position: relative;
+      z-index: 2;
+      max-width: 1360px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 0 40px 72px;
+    }
+    .promise-quote {
+      font-family: 'Georgia', 'Times New Roman', serif;
+      font-size: clamp(2.8rem, 6vw, 5rem);
+      font-weight: 400;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      color: #fff;
+      max-width: 800px;
+      margin-bottom: 24px;
+    }
+    .promise-quote em {
+      font-style: italic;
+      color: var(--orange-2);
+    }
+    .promise-attr {
+      font-size: 15px;
+      font-weight: 800;
+      color: rgba(251,247,238,0.55);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 48px;
+    }
+    .promise-signals {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 2px;
+      max-width: 680px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 18px;
+      overflow: hidden;
+      backdrop-filter: blur(12px);
+      margin-bottom: 40px;
+    }
+    .signal {
+      padding: 22px 20px;
+      border-right: 1px solid rgba(255,255,255,0.06);
+    }
+    .signal:last-child { border-right: none; }
+    .signal-label {
+      font-size: 9px;
+      font-weight: 900;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 6px;
+    }
+    .signal-num {
+      font-size: 2.4rem;
+      font-weight: 900;
+      color: #fff;
+      line-height: 1;
+      letter-spacing: -0.04em;
+      margin-bottom: 4px;
+      display: block;
+    }
+    .signal-desc {
+      font-size: 10px;
+      font-weight: 800;
+      color: rgba(251,247,238,0.45);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      line-height: 1.3;
+    }
+  </style>
 </head>
 <body class="light-page">
 <header class="site-header">
   <div class="nav-shell">
     <a class="brand" href="index.html">OTOS Continuity™</a>
     <nav class="nav-links">
+      <a href="founder-story.html">The Story</a>
       <a href="index.html#problem">Problem</a>
       <a href="index.html#what-it-is">What it is</a>
       <a href="partners.html" class="active">Partners</a>
       <a href="local-authority-public-health.html">Local Authority</a>
       <a href="numbers.html">Numbers</a>
+      <a href="how-it-works-visuals.html">Visuals</a>
       <a href="evidence-sources.html">Evidence</a>
       <a class="cta" href="mailto:info@otos.life?subject=OTOS - Addenbrookes">Get involved</a>
     </nav>
   </div>
 </header>
+
 <main>
-  <section class="hero split grid-bg">
-    <div class="container">
-      <div>
-        <span class="kicker">Partner briefing — Addenbrooke's / Alcohol Care Team</span>
-        <h1>Addenbrooke's /<br>Alcohol Care Team</h1>
-        <p class="lede">You were my last detox. I blagged my way in — honestly — because I had no other route. OTOS means the next person doesn't have to blag. The handoff is logged before they leave the ward.</p>
-        <div class="partner-logo-wrap"><img src="images/Addenbrookes_Logo.png" alt="Addenbrooke's NHS Trust logo"></div>
-        <div class="hero-actions">
-          <a class="btn primary" href="mailto:info@otos.life?subject=OTOS - Addenbrookes">Start the conversation</a>
-          <a class="btn" href="partners.html">Back to routes</a>
+
+  <!-- THE PROMISE — full screen hero -->
+  <section class="promise-hero">
+    <img class="bg" src="images/06-close-nurse-bedside.png" alt="Dean at Addenbrooke's bedside — the moment of the promise">
+    <div class="promise-content">
+      <p class="promise-attr">A promise made at Addenbrooke's bedside — detoxed for the third time in 6 months</p>
+      <h1 class="promise-quote">
+        "Next time we meet,<br>
+        I won't be your patient.<br>
+        <em>I'll be your partner."</em>
+      </h1>
+      <div class="promise-signals">
+        <div class="signal">
+          <div class="signal-label">Signal 01</div>
+          <span class="signal-num">35</span>
+          <div class="signal-desc">Years self-medicating</div>
+        </div>
+        <div class="signal">
+          <div class="signal-label">Signal 02</div>
+          <span class="signal-num">6</span>
+          <div class="signal-desc">Years ADHD waiting list</div>
+        </div>
+        <div class="signal">
+          <div class="signal-label">Signal 03</div>
+          <span class="signal-num">6</span>
+          <div class="signal-desc">A&amp;E crisis presentations</div>
+        </div>
+        <div class="signal">
+          <div class="signal-label">Signal 04</div>
+          <span class="signal-num">2</span>
+          <div class="signal-desc">Intensive care admissions</div>
+        </div>
+        <div class="signal">
+          <div class="signal-label">Signal 05</div>
+          <span class="signal-num">2</span>
+          <div class="signal-desc">Private paid detoxes</div>
+        </div>
+        <div class="signal">
+          <div class="signal-label">Signal 06</div>
+          <span class="signal-num">3</span>
+          <div class="signal-desc">Days to change everything</div>
         </div>
       </div>
-      <div class="hero-card">
-        <div class="cards two">
-          <article class="card"><div class="stat">1</div><h3>Named contact</h3></article>
-          <article class="card"><div class="stat">30–45m</div><h3>Scoping call</h3></article>
-          <article class="card"><div class="stat">0</div><h3>Clinical records replaced</h3></article>
-          <article class="card"><div class="stat">0</div><h3>EPR write-back</h3></article>
+      <div class="hero-actions">
+        <a class="btn primary" href="mailto:info@otos.life?subject=OTOS - Addenbrookes">Start the conversation</a>
+        <a class="btn" href="#the-moment">Read what happened</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE MOMENT -->
+  <section class="paper-section" id="the-moment">
+    <div class="container">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start">
+        <div>
+          <span class="kicker">Addenbrooke's — Alcohol Care Team</span>
+          <h2>She said:<br><span class="accent">"I have nowhere else to send you."</span></h2>
+          <p>The last time I was at Addenbrooke's as a patient, my alcohol liaison nurse sat bedside and told me she had no onward pathway to offer. She was brilliant. She cared. But the system had nothing left to give her to give to me.</p>
+          <p>So I gave her my words. I told her what I needed the discharge letter to say — and she wrote it exactly as I asked, so I could use it to get back to my private psychiatrist and finally get on Elvanse.</p>
+          <p>Within three days, everything changed. Within hours of the first dose, my whole life made sense. The chaos, the addiction, the shame, the repeated hospitalisations — they weren't failures. They were what happens when the underlying neurological condition stays unresolved and the system treats only what arrives first.</p>
+          <p style="font-size:17px;font-weight:900;color:var(--paper-ink)">I told her: "Next time we meet, I won't be your patient. I'll be your partner."</p>
+          <p>This is me keeping that promise.</p>
+        </div>
+        <div>
+          <div style="background:linear-gradient(135deg,#0c1018,#1a1208);border-radius:24px;padding:36px;border:1px solid rgba(242,108,13,.25)">
+            <div style="font-size:11px;font-weight:950;letter-spacing:.16em;text-transform:uppercase;color:var(--orange);margin-bottom:20px">What happened at that bedside</div>
+            <div style="display:flex;flex-direction:column;gap:0;border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,.08)">
+              <div style="padding:18px 20px;border-bottom:1px solid rgba(255,255,255,.06);display:flex;gap:14px;align-items:flex-start">
+                <span style="color:var(--orange);font-weight:900;font-size:18px;flex-shrink:0;margin-top:1px">→</span>
+                <p style="font-size:14px;color:rgba(251,247,238,.72);margin:0;line-height:1.6;font-weight:700">"I have nowhere else to send you." — Helen Beeken, Alcohol Care Team</p>
+              </div>
+              <div style="padding:18px 20px;border-bottom:1px solid rgba(255,255,255,.06);display:flex;gap:14px;align-items:flex-start">
+                <span style="color:var(--orange);font-weight:900;font-size:18px;flex-shrink:0;margin-top:1px">→</span>
+                <p style="font-size:14px;color:rgba(251,247,238,.72);margin:0;line-height:1.6;font-weight:700">She wrote the discharge letter in Dean's words so he could use it to access private psychiatric care.</p>
+              </div>
+              <div style="padding:18px 20px;border-bottom:1px solid rgba(255,255,255,.06);display:flex;gap:14px;align-items:flex-start">
+                <span style="color:var(--orange);font-weight:900;font-size:18px;flex-shrink:0;margin-top:1px">→</span>
+                <p style="font-size:14px;color:rgba(251,247,238,.72);margin:0;line-height:1.6;font-weight:700">That discharge letter became the bridge to Elvanse. Three days later, everything changed.</p>
+              </div>
+              <div style="padding:18px 20px;display:flex;gap:14px;align-items:flex-start">
+                <span style="color:var(--orange-2);font-weight:900;font-size:18px;flex-shrink:0;margin-top:1px">✓</span>
+                <p style="font-size:14px;color:rgba(251,247,238,.85);margin:0;line-height:1.6;font-weight:800">OTOS is what she needed to be able to point to. A receipted next step. A thread that holds.</p>
+              </div>
+            </div>
+          </div>
+          <div style="margin-top:20px;padding:24px;border-radius:18px;border:1px solid rgba(242,108,13,.22);background:rgba(242,108,13,.06)">
+            <p style="font-size:15px;font-weight:800;color:var(--paper-ink);line-height:1.65;margin:0">"Next time we meet, I won't be your patient. I'll be your partner." — Dean, 6 months ago, Addenbrooke's bedside</p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- BEDSIDE IMAGE -->
+  <!-- WHAT OTOS DOES AT ADDENBROOKE'S -->
   <section class="dark-section">
     <div class="container">
-      <div class="image-banner" style="min-height:520px">
-        <img src="images/06-close-nurse-bedside.png" alt="Nurse showing OTOS Continuity on tablet to patient at bedside — OTOS logo visible on screen">
-        <div class="image-banner-content" style="max-width:640px">
-          <span class="kicker">Hospital to community</span>
-          <h2>The handoff from bedside<br><span class="accent">is where continuity breaks.</span></h2>
-          <p>The moment someone leaves the ward is the moment the thread most often snaps. OTOS logs that handoff before discharge — visible, receipted, and held until the next step lands.</p>
-        </div>
+      <div class="section-head">
+        <span class="kicker">What OTOS gives Helen — and every clinician like her</span>
+        <h2>Somewhere to send them.<br><span class="accent">With a receipt that it landed.</span></h2>
+        <p class="lede">The moment someone leaves the ward is the moment the thread most often snaps. OTOS logs that handoff before discharge — visible, receipted, and held until the next step is confirmed.</p>
       </div>
+      <div class="cards three">
+        <article class="card glass">
+          <h3>The bedside moment</h3>
+          <p>Mobile-first. Under 60 seconds. Register touchpoint, select onward route, issue handoff receipt. Done before the person reaches the car park.</p>
+        </article>
+        <article class="card glass">
+          <h3>The receipted handoff</h3>
+          <p>CGL, CPFT, GP, RCE — whoever is the next step. The handoff is logged and visible to both sides until it is confirmed as landed. Silence becomes a signal, not a blind spot.</p>
+        </article>
+        <article class="card glass">
+          <h3>The follow-through</h3>
+          <p>If the next step goes quiet, OTOS flags it for human review. A person makes the decision. The person doesn't disappear back into the system without a trace.</p>
+        </article>
+      </div>
+      <div class="callout" style="margin-top:34px;text-align:center;font-size:18px">"I have nowhere else to send you" — should never be the end of the conversation. OTOS gives it a next step.</div>
     </div>
   </section>
 
+  <!-- WHAT WE NEED -->
   <section class="paper-section">
     <div class="container">
       <div class="section-head">
-        <span class="kicker">From Dean — directly to Addenbrooke's</span>
-        <h2>I blagged my way into your detox.<br><span class="accent">The next person shouldn't have to.</span></h2>
+        <span class="kicker">The ask — Addenbrooke's / Alcohol Care</span>
+        <h2>Pressure-test the bedside route.<br><span class="accent">Keep it safe and low-friction.</span></h2>
       </div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px">
-        <div>
-          <p>I negotiated my way into Addenbrooke's for a final detox because I had no clean route in. I wasn't officially eligible in the way the system expected. But I knew it was my best chance, so I found a way in. It worked — but it shouldn't require that. The next person in that situation may not have the words, the energy or the luck.</p>
-          <p>What OTOS does at the Addenbrooke's touchpoint is simple: a bedside moment before discharge. Mobile-first. Logged in seconds. A handoff receipt issued. An onward route selected. The person leaves the ward with a receipted next step — not a verbal promise that vanishes the moment they hit the car park.</p>
-          <p>No EPR write-back. No new clinical record. No diagnosis. Just the handoff, logged and visible to the partner team until it is confirmed as landed.</p>
-        </div>
-        <div>
-          <div class="callout">
-            "The failure was not inside the ward. It was the moment between leaving Addenbrooke's and arriving somewhere else. That gap is exactly what OTOS is designed to hold."
-          </div>
-          <div style="margin-top:20px;padding:24px;border-radius:20px;border:1px solid rgba(242,108,13,.24);background:rgba(242,108,13,.06)">
-            <div style="font-size:11px;font-weight:950;letter-spacing:.16em;text-transform:uppercase;color:var(--orange);margin-bottom:12px">What the bedside moment looks like</div>
-            <ul style="list-style:none;display:grid;gap:10px;padding:0;margin:0">
-              <li style="display:flex;gap:10px;align-items:flex-start;font-size:14px;font-weight:700;color:var(--paper-ink)"><span style="color:var(--orange);font-weight:900;flex-shrink:0">→</span>Register touchpoint — logged in under 60 seconds</li>
-              <li style="display:flex;gap:10px;align-items:flex-start;font-size:14px;font-weight:700;color:var(--paper-ink)"><span style="color:var(--orange);font-weight:900;flex-shrink:0">→</span>Select onward route — CGL, CPFT, GP, RCE</li>
-              <li style="display:flex;gap:10px;align-items:flex-start;font-size:14px;font-weight:700;color:var(--paper-ink)"><span style="color:var(--orange);font-weight:900;flex-shrink:0">→</span>Handoff receipt issued — visible to both sides</li>
-              <li style="display:flex;gap:10px;align-items:flex-start;font-size:14px;font-weight:700;color:var(--paper-ink)"><span style="color:var(--orange);font-weight:900;flex-shrink:0">→</span>Acknowledgement signal — logged when received</li>
-              <li style="display:flex;gap:10px;align-items:flex-start;font-size:14px;font-weight:700;color:var(--paper-ink)"><span style="color:var(--orange);font-weight:900;flex-shrink:0">→</span>Drift detected — human review triggered if silence follows</li>
-            </ul>
-          </div>
-        </div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px">
+        <article class="card">
+          <div class="partner-logo-wrap"><img src="images/Addenbrookes_Logo.png" alt="Addenbrooke's NHS Trust"></div>
+          <h3>Confirm the first safe action</h3>
+          <p>A mobile-first bedside moment: register touchpoint, issue a handoff receipt, confirm acknowledgement. What does that look like within your existing ward workflow?</p>
+        </article>
+        <article class="card">
+          <h3>Define the boundary clearly</h3>
+          <p>What can be recorded in under 60 seconds before discharge? What should not be recorded? Where does clinical responsibility stay with the ward team — always?</p>
+        </article>
+        <article class="card">
+          <h3>Name a contact</h3>
+          <p>One person. One scoping conversation. Thirty minutes. We map your pathway, agree the boundaries, and build the bedside route together. No commitment beyond that call.</p>
+        </article>
       </div>
+      <div class="callout" style="margin-top:28px">The ask now is deliberately small. The future system should give your team somewhere to send people — and evidence that they got there.</div>
     </div>
   </section>
 
+  <!-- GUARDRAILS -->
   <section class="dark-section">
     <div class="container">
       <div class="section-head">
-        <span class="kicker">Clear boundaries</span>
-        <h2>What OTOS will never do.<br><span class="accent">And what stays entirely with you.</span></h2>
+        <span class="kicker">Clear boundaries — always</span>
+        <h2>What OTOS will never do.<br><span class="accent">And what stays entirely with your team.</span></h2>
       </div>
       <div class="cards three">
         <article class="card glass">
@@ -103,30 +285,32 @@
         </article>
         <article class="card glass">
           <h3>No diagnosis or prescribing</h3>
-          <p>OTOS does not diagnose, prescribe, recommend treatment or make any clinical decision. Every action in the system requires human review and human decision.</p>
+          <p>OTOS does not diagnose, prescribe, recommend treatment or make any clinical decision. Every action requires human review and human decision. Always.</p>
         </article>
         <article class="card glass">
-          <h3>Clinical leadership stays explicit</h3>
-          <p>Where eligibility criteria are met under clinical leadership and local governance, the continuity layer carries the signal — while the clinical team stays in control of every decision.</p>
+          <h3>No EPR write-back</h3>
+          <p>OTOS is not integrated with any hospital or NHS record system. It is a separate, governed continuity layer. The clinical record stays where it belongs.</p>
         </article>
       </div>
     </div>
   </section>
 
+  <!-- CTA -->
   <section class="dark-section">
     <div class="container">
       <div class="footer-card">
-        <span class="kicker">Next step</span>
-        <h2>Can we pressure-test the bedside route together?</h2>
-        <p>The ask is simple: help us confirm what would be practical, define the boundaries, and provide a short note of support where appropriate. Thirty minutes. No commitment beyond that.</p>
-        <div class="hero-actions" style="justify-content:center">
-          <a class="btn primary" href="mailto:info@otos.life?subject=OTOS - Addenbrookes">Email Dean</a>
+        <span class="kicker">Keeping the promise</span>
+        <h2>"Next time we meet, I won't be your patient.<br><span class="accent">I'll be your partner."</span></h2>
+        <p>This is that next meeting. The ask is simple: help us confirm what would be practical, define the boundaries, and provide a short note of support where appropriate. Thirty minutes. No commitment beyond that conversation.</p>
+        <div class="hero-actions" style="justify-content:center;margin-top:28px">
+          <a class="btn primary" href="mailto:info@otos.life?subject=OTOS - Addenbrookes Alcohol Care">Email Dean</a>
           <a class="btn" href="partners.html">See all partner routes</a>
           <a class="btn" href="evidence-sources.html">Evidence</a>
         </div>
       </div>
     </div>
   </section>
+
 </main>
 </body>
 </html>
