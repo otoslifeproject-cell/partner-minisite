@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>How It Works — Visuals & Diagrams — OTOS Continuity™</title>
+  <link rel="stylesheet" href="css/otos.css">
+  <style>
+    .diag-tabs {
+      display: flex;
+      gap: 0;
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 14px;
+      overflow: hidden;
+      margin-bottom: 32px;
+      background: rgba(255,255,255,.04);
+    }
+    .diag-tab {
+      flex: 1;
+      padding: 14px 18px;
+      font-size: 13px;
+      font-weight: 900;
+      cursor: pointer;
+      color: rgba(251,247,238,.45);
+      border-right: 1px solid rgba(255,255,255,.08);
+      transition: all .18s;
+      text-align: center;
+      letter-spacing: .01em;
+      background: transparent;
+      border-top: none;
+      border-bottom: none;
+      border-left: none;
+    }
+    .diag-tab:last-child { border-right: none; }
+    .diag-tab.active { background: rgba(242,108,13,.14); color: var(--orange-2); border-color: rgba(242,108,13,.2); }
+    .diag-tab:hover:not(.active) { color: rgba(251,247,238,.75); background: rgba(255,255,255,.05); }
+    .diag-panel { display: none; }
+    .diag-panel.active { display: block; }
+    .diag-img-wrap {
+      position: relative;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,.1);
+      background: #fff;
+      cursor: zoom-in;
+    }
+    .diag-img-wrap img { width: 100%; display: block; transition: transform .3s ease; }
+    .diag-img-wrap:hover img { transform: scale(1.01); }
+    .diag-expand {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      background: rgba(8,10,15,.75);
+      border: 1px solid rgba(255,255,255,.15);
+      border-radius: 8px;
+      padding: 7px 12px;
+      font-size: 12px;
+      font-weight: 800;
+      color: rgba(251,247,238,.8);
+      backdrop-filter: blur(8px);
+      letter-spacing: .04em;
+      pointer-events: none;
+    }
+    /* Lightbox */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      background: rgba(0,0,0,.92);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 32px;
+      cursor: zoom-out;
+    }
+    .lightbox.open { display: flex; }
+    .lightbox img { max-width: 95vw; max-height: 92vh; object-fit: contain; border-radius: 12px; }
+    .lightbox-close {
+      position: absolute;
+      top: 20px;
+      right: 24px;
+      font-size: 28px;
+      color: rgba(255,255,255,.7);
+      cursor: pointer;
+      font-weight: 300;
+      line-height: 1;
+    }
+    .invite-card {
+      border: 1px solid rgba(242,108,13,.3);
+      border-radius: 20px;
+      background: rgba(242,108,13,.07);
+      padding: 36px 40px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+<header class="site-header">
+  <div class="nav-shell">
+    <a class="brand" href="index.html">OTOS Continuity™</a>
+    <nav class="nav-links">
+      <a href="index.html#problem">Problem</a>
+      <a href="index.html#what-it-is">What it is</a>
+      <a href="index.html#how-it-works">How it works</a>
+      <a href="partners.html">Partners</a>
+      <a href="local-authority-public-health.html">Local Authority</a>
+      <a href="numbers.html">Numbers</a>
+      <a href="how-it-works-visuals.html">Visuals</a>
+      <a href="evidence-sources.html">Evidence</a>
+      <a class="cta" href="mailto:info@otos.life">Get involved</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section class="hero grid-bg">
+    <div class="container">
+      <span class="kicker">Working visuals — how OTOS works</span>
+      <h1>These are working drafts.<br><span class="accent">Tell us where we've got it wrong.</span></h1>
+      <p class="lede">We've mapped what we think the pathway looks like. But you know your service better than we do. These diagrams are an invitation to a conversation — not a finished specification. Point at anything that doesn't fit how you work, and we redesign it with you.</p>
+      <div class="hero-actions">
+        <a class="btn primary" href="mailto:info@otos.life?subject=OTOS diagram feedback">Share your thoughts</a>
+        <a class="btn" href="partners.html">Go to your partner page</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAIN DIAGRAMS — TABBED -->
+  <section class="dark-section">
+    <div class="container">
+      <div class="section-head">
+        <span class="kicker">Three views of the same system</span>
+        <h2>Choose the view that fits<br><span class="accent">how you think about your service.</span></h2>
+        <p class="lede">Each diagram shows the same continuity layer from a different angle. Pick the one that makes most sense for your role — and tell us if something looks wrong.</p>
+      </div>
+
+      <div class="diag-tabs" style="margin-top:36px">
+        <button class="diag-tab active" onclick="showDiag('infra')">What OTOS Is</button>
+        <button class="diag-tab" onclick="showDiag('blueprint')">Service Blueprint</button>
+        <button class="diag-tab" onclick="showDiag('loop')">Continuity Loop</button>
+        <button class="diag-tab" onclick="showDiag('roadmap')">Project Roadmap</button>
+      </div>
+
+      <div class="diag-panel active" id="diag-infra">
+        <div class="diag-img-wrap" onclick="openLightbox('images/OTOS_Continuity_Infrastructure.png')">
+          <img src="images/OTOS_Continuity_Infrastructure.png" alt="What is OTOS Continuity Infrastructure — a shared continuity layer connecting service providers, users, messages and handoffs">
+          <div class="diag-expand">Click to expand ↗</div>
+        </div>
+        <p style="margin-top:18px;font-size:15px;font-weight:700;color:var(--muted);line-height:1.7"><strong style="color:var(--ink)">What this shows:</strong> The full picture of how OTOS sits in the middle — connecting Addiction Services, ADHD Team, Hospital, GP, Wellbeing Hub and Community Support, while each organisation keeps its own user records and OTOS carries only the shared journey view, governed messages and continuity signals.</p>
+      </div>
+
+      <div class="diag-panel" id="diag-blueprint">
+        <div class="diag-img-wrap" onclick="openLightbox('images/OTOS_Service_Blueprint.png')">
+          <img src="images/OTOS_Service_Blueprint.png" alt="Service Blueprint — swimlane view of interactions across the continuity pathway">
+          <div class="diag-expand">Click to expand ↗</div>
+        </div>
+        <p style="margin-top:18px;font-size:15px;font-weight:700;color:var(--muted);line-height:1.7"><strong style="color:var(--ink)">What this shows:</strong> Three parallel tracks — Partner / Keyworker, OTOS Platform, and User — moving through Identify → Connect → Co-ordinate → Sustain → Outcome. Each track shows exactly what happens at each stage and who is responsible for each action.</p>
+      </div>
+
+      <div class="diag-panel" id="diag-loop">
+        <div class="diag-img-wrap" onclick="openLightbox('images/Continuity_Loop.png')">
+          <img src="images/Continuity_Loop.png" alt="Continuity Loop — premium journey map showing touchpoints for both Partner/Keyworker and User">
+          <div class="diag-expand">Click to expand ↗</div>
+        </div>
+        <p style="margin-top:18px;font-size:15px;font-weight:700;color:var(--muted);line-height:1.7"><strong style="color:var(--ink)">What this shows:</strong> The circular journey — Partner / Keyworker on the left (Identify → Refer → Monitor → Review → Follow up), User on the right (Enter pathway → Receive message → Respond → Get support → Continue journey), with OTOS in the centre holding the connection.</p>
+      </div>
+
+      <div class="diag-panel" id="diag-roadmap">
+        <div class="diag-img-wrap" onclick="openLightbox('images/Continuity_Roadmap.png')">
+          <img src="images/Continuity_Roadmap.png" alt="OTOS Continuity Project Roadmap — from first partner meetings to Cambridge pre-pilot and NHS pilot">
+          <div class="diag-expand">Click to expand ↗</div>
+        </div>
+        <p style="margin-top:18px;font-size:15px;font-weight:700;color:var(--muted);line-height:1.7"><strong style="color:var(--ink)">What this shows:</strong> The 10-step journey from first partner meetings to 12-week NHS pilot delivery. Who's in the room at each meeting, what decision gets made, and what technical work runs in parallel. This is the roadmap — and you are in it.</p>
+      </div>
+
+      <div class="invite-card">
+        <h3 style="font-size:22px;font-weight:900;color:var(--ink);margin-bottom:12px;letter-spacing:-.02em">These are working drafts. You are the expert.</h3>
+        <p style="font-size:16px;color:var(--paper-muted);line-height:1.75;margin-bottom:20px">If something in these diagrams doesn't fit how your service actually works — the terminology is wrong, a step is missing, a boundary isn't clear — that feedback is exactly what the scoping conversation is for. We are not selling you a finished system. We are inviting you to help build the right one.</p>
+        <a href="mailto:info@otos.life?subject=OTOS diagram feedback" style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,var(--orange),var(--orange-2));color:#fff;font-size:14px;font-weight:950;padding:13px 26px;border-radius:999px;text-decoration:none;box-shadow:0 14px 36px rgba(242,108,13,.25)">Tell us what doesn't fit →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- NIA / COST INFOGRAPHICS -->
+  <section class="paper-section">
+    <div class="container">
+      <div class="section-head">
+        <span class="kicker">The clinical and cost case</span>
+        <h2>Why ADHD first.<br><span class="accent">And what it costs to keep doing nothing.</span></h2>
+        <p class="lede">Two infographics that set out the evidence behind the NIA framing and the economic case for early continuity intervention. Both are designed to be shared.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:36px">
+        <div>
+          <div class="diag-img-wrap" onclick="openLightbox('images/NIA_ADHD_Final.png')" style="background:var(--cream-dark)">
+            <img src="images/NIA_ADHD_Final.png" alt="Neurologically Informed Addiction — the clinical case">
+            <div class="diag-expand">Click to expand ↗</div>
+          </div>
+          <p style="margin-top:14px;font-size:14px;font-weight:700;color:var(--paper-muted);line-height:1.65"><strong style="color:var(--paper-ink)">Neurologically Informed Addiction (NIA)</strong> — the clinical case: prevalence, the hidden overlap, the START study 61.3% figure, and how early identification changes the picture.</p>
+        </div>
+        <div>
+          <div class="diag-img-wrap" onclick="openLightbox('images/NIA_Cost_Final.png')" style="background:var(--cream-dark)">
+            <img src="images/NIA_Cost_Final.png" alt="NIA — The Cost of Doing Nothing">
+            <div class="diag-expand">Click to expand ↗</div>
+          </div>
+          <p style="margin-top:14px;font-size:14px;font-weight:700;color:var(--paper-muted);line-height:1.65"><strong style="color:var(--paper-ink)">The Cost of Doing Nothing</strong> — £90,000 for 3-month rehab for 1 person vs £91,520 for the 12-week OTOS pre-pilot for 50 people. £44.44bn total annual burden. The scale of the prize.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RIPPLE -->
+  <section class="dark-section">
+    <div class="container">
+      <div class="section-head">
+        <span class="kicker">The ripple effect</span>
+        <h2>One person. One year.<br><span class="accent">The costs spread outward.</span></h2>
+      </div>
+      <div class="diag-img-wrap" onclick="openLightbox('images/RippleEffect.png')" style="margin-top:32px">
+        <img src="images/RippleEffect.png" alt="The Ripple Effect of ADHD + Addiction — costs spread from one person to family, work, public services and society">
+        <div class="diag-expand">Click to expand ↗</div>
+      </div>
+      <p style="margin-top:18px;font-size:15px;font-weight:700;color:var(--muted);line-height:1.7"><strong style="color:var(--ink)">What this shows:</strong> Conservative cost to the state per person with co-occurring ADHD and addiction: £40,070 per year. With repeat cycles: £100,000+. The ripple widens intergenerationally — ADHD is inherited, the waveform doubles.</p>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="dark-section">
+    <div class="container">
+      <div class="footer-card">
+        <span class="kicker">This is an invitation</span>
+        <h2>Not a specification.<br><span class="accent">A conversation starter.</span></h2>
+        <p>We built these to show you what we're thinking. Now we need you to tell us where we're wrong, what's missing, and how your service actually works. That is the scoping conversation. That is the pre-pilot. That is what OTOS is.</p>
+        <p style="margin-top:12px;font-size:17px;font-weight:800;color:rgba(251,247,238,.85)">This is my calling. I believe it is why I survived. Help me build it right.</p>
+        <div class="hero-actions" style="justify-content:center;margin-top:28px">
+          <a class="btn primary" href="mailto:info@otos.life">Email Dean</a>
+          <a class="btn" href="partners.html">Partner routes</a>
+          <a class="btn" href="index.html">← Full briefing</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <div class="lightbox-close" onclick="closeLightbox()">✕</div>
+  <img id="lightbox-img" src="" alt="">
+</div>
+
+<script>
+function showDiag(name) {
+  document.querySelectorAll('.diag-tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.diag-panel').forEach(p => p.classList.remove('active'));
+  document.getElementById('diag-' + name).classList.add('active');
+  event.target.classList.add('active');
+}
+function openLightbox(src) {
+  document.getElementById('lightbox-img').src = src;
+  document.getElementById('lightbox').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', e => { if(e.key === 'Escape') closeLightbox(); });
+</script>
+</body>
+</html>
