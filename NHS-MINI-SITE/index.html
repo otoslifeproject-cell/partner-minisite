@@ -107,23 +107,30 @@
     .dark-banner::after{background:linear-gradient(90deg,rgba(8,10,15,.90),rgba(8,10,15,.18))}
     .dark-banner img{opacity:.76}
     .nia-grid{display:grid;grid-template-columns:minmax(0,1.02fr) minmax(0,.98fr);gap:20px;margin-top:34px}
-    .nia-grid.nia-refined{grid-template-columns:minmax(320px,.92fr) minmax(0,1.08fr);gap:42px;align-items:center;margin-top:36px}
-    .nia-refined .nia-feature-stack{display:grid;gap:18px}
-    .nia-refined .nia-feature-card{padding:28px 30px;border-radius:26px;border:1px solid rgba(60,40,24,.13);background:linear-gradient(180deg,rgba(255,255,255,.96),rgba(251,247,238,.88));box-shadow:0 24px 66px rgba(64,42,22,.13);position:relative;overflow:hidden;min-height:178px}
-    .nia-refined .nia-feature-card::after{content:'';position:absolute;right:-20px;bottom:-26px;width:110px;height:110px;background:url('images/brain.png') center/contain no-repeat;opacity:.07}
-    .nia-refined .nia-feature-card h3{font-size:22px;line-height:1.08;margin-bottom:14px;color:var(--paper-ink);letter-spacing:-.035em;position:relative;z-index:1}
-    .nia-refined .nia-feature-card p{font-size:16px;line-height:1.72;margin:0;color:var(--paper-muted);font-weight:760;position:relative;z-index:1}
-    .nia-refined .nia-feature-card.highlight-card{border-color:rgba(242,108,13,.34);background:linear-gradient(180deg,rgba(255,255,255,.96),rgba(255,237,219,.86))}
-    .nia-refined .nia-copy-panel{padding:36px 38px;border-radius:30px;border:1px solid rgba(60,40,24,.13);background:rgba(255,255,255,.78);box-shadow:0 24px 70px rgba(64,42,22,.10);position:relative;overflow:hidden}
+    .nia-kicker-row{display:flex;justify-content:flex-end;margin:0 0 18px}
+    .nia-grid.nia-refined{grid-template-columns:minmax(0,1.03fr) minmax(340px,.97fr);gap:48px;align-items:start;margin-top:0}
+    .nia-refined .nia-feature-stack{display:grid;gap:20px}
+    .nia-refined .nia-feature-card{padding:30px 32px 30px 34px;border-radius:26px;border:1px solid rgba(60,40,24,.13);background:linear-gradient(180deg,rgba(255,255,255,.98),rgba(251,247,238,.90));box-shadow:0 26px 72px rgba(64,42,22,.16);position:relative;overflow:hidden;min-height:164px}
+    .nia-refined .nia-feature-card::after{content:'';position:absolute;right:-20px;bottom:-26px;width:114px;height:114px;background:url('images/brain.png') center/contain no-repeat;opacity:.075}
+    .nia-refined .nia-feature-card h3{font-size:23px;line-height:1.08;margin-bottom:14px;color:var(--paper-ink);letter-spacing:-.035em;position:relative;z-index:1;display:grid;grid-template-columns:26px 1fr;gap:12px;align-items:center}
+    .nia-refined .nia-feature-card h3::before{content:'';width:23px;height:23px;background:url('images/brain.png') center/contain no-repeat;filter:drop-shadow(0 8px 14px rgba(242,108,13,.18))}
+    .nia-refined .nia-feature-card p{font-size:16px;line-height:1.72;margin:0;color:var(--paper-muted);font-weight:780;position:relative;z-index:1}
+    .nia-refined .nia-feature-card.highlight-card{border-color:rgba(242,108,13,.42);background:linear-gradient(180deg,rgba(255,255,255,.98),rgba(255,237,219,.88));box-shadow:0 30px 82px rgba(242,108,13,.14)}
+    .nia-refined .nia-copy-panel{padding:40px 42px;border-radius:30px;border:1px solid rgba(60,40,24,.13);background:rgba(255,255,255,.82);box-shadow:0 24px 70px rgba(64,42,22,.10);position:relative;overflow:hidden}
     .nia-refined .nia-copy-panel::after{content:'';position:absolute;right:-34px;bottom:-42px;width:170px;height:170px;background:url('images/brain.png') center/contain no-repeat;opacity:.045}
     .nia-refined .nia-copy-panel .section-head{text-align:right;margin-bottom:28px;position:relative;z-index:1}
-    .nia-refined .nia-copy-panel .section-head .kicker{justify-content:flex-end}
     .nia-refined .nia-copy-panel h2{max-width:760px;margin-left:auto}
     .nia-refined .nia-copy-panel p{font-size:18px;line-height:1.82;color:var(--paper-muted);font-weight:760;position:relative;z-index:1}
     .nia-refined .nia-copy-panel .callout{margin:26px 0 18px;position:relative;z-index:1}
     .nia-refined .brain-bullets{list-style:none;display:grid;gap:13px;margin:24px 0 0;padding:0;position:relative;z-index:1}
     .nia-refined .brain-bullets li{display:grid;grid-template-columns:24px 1fr;gap:12px;align-items:start;color:var(--paper-ink);font-size:16px;line-height:1.55;font-weight:850}
     .nia-refined .brain-bullets li::before{content:'';width:21px;height:21px;background:url('images/brain.png') center/contain no-repeat;margin-top:2px;filter:drop-shadow(0 7px 14px rgba(242,108,13,.16))}
+    .nia-refined .nia-quote-card{padding:30px 34px;border-radius:26px;border:1px solid rgba(242,108,13,.28);background:linear-gradient(180deg,rgba(255,255,255,.96),rgba(255,243,232,.88));box-shadow:0 26px 72px rgba(64,42,22,.13);position:relative;overflow:hidden}
+    .nia-refined .nia-quote-card::after{content:'';position:absolute;right:-24px;bottom:-30px;width:126px;height:126px;background:url('images/brain.png') center/contain no-repeat;opacity:.065}
+    .nia-refined .nia-quote-card p{font-size:20px;line-height:1.62;font-weight:900;color:var(--paper-ink);font-style:italic;margin:0;position:relative;z-index:1}
+    .nia-ctas{justify-content:center;margin-top:56px;gap:16px;flex-wrap:wrap}
+    .nia-ctas .btn:not(.primary){background:linear-gradient(135deg,#180f08,#3a1b0d);color:#fff;border:1px solid rgba(242,108,13,.58);box-shadow:0 18px 44px rgba(64,42,22,.18)}
+    .nia-ctas .btn:not(.primary):hover{transform:translateY(-1px);border-color:var(--orange-2);box-shadow:0 22px 56px rgba(64,42,22,.22)}
     .highlight-card{border-color:rgba(242,108,13,.28);background:rgba(242,108,13,.08)}
     .what-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;margin-top:34px}
     .step-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;margin-top:34px}
@@ -318,7 +325,23 @@
 
   <section class="paper-section">
     <div class="container">
+      <div class="nia-kicker-row">
+        <span class="kicker">Neurologically-informed addiction</span>
+      </div>
       <div class="nia-grid nia-refined">
+        <div class="nia-copy-panel">
+          <div class="section-head">
+            <h2>Addiction in the foreground.<br><span class="accent">Untreated ADHD beneath.</span></h2>
+          </div>
+          <p>Alcohol or substances can briefly do what an untreated ADHD brain has been trying to do all along: supply motivation, sustain attention, create focus and cut the noise. Then the coping strategy turns into dependency, crisis, shame, suicide risk, court, probation, relapse and repeated cost.</p>
+          <p>At that point, services quite reasonably respond to the addiction. But if the ADHD remains untouched, the work often does not hold. Support can fail to land when untreated ADHD is still disrupting sequencing, memory, follow-through, motivation and emotional regulation.</p>
+          <div class="callout">Trauma-informed care treats the story. Neuro-informed care stabilises the brain. Recovery needs both.</div>
+          <ul class="brain-bullets">
+            <li>Sequencing, memory, follow-through and emotional regulation are part of the continuity problem.</li>
+            <li>The addiction work can be good — but the brain still needs the right conditions for that work to hold.</li>
+            <li>OTOS does not diagnose or prescribe. It makes the drift visible so a human team can review the next step.</li>
+          </ul>
+        </div>
         <div class="nia-feature-stack">
           <article class="card light-card nia-feature-card">
             <h3>Why NIA belongs here</h3>
@@ -332,28 +355,16 @@
             <h3>The tsunami is building.</h3>
             <p>Adults with undiagnosed ADHD cycle through A&amp;E, housing, probation, detox and recovery while the pathway treats the symptom that arrives first. OTOS surfaces signals. The partner team makes the decision.</p>
           </article>
-        </div>
-        <div class="nia-copy-panel">
-          <div class="section-head">
-            <span class="kicker">Neurologically-informed addiction</span>
-            <h2>Addiction in the foreground.<br><span class="accent">Untreated ADHD beneath.</span></h2>
-          </div>
-          <p>Alcohol or substances can briefly do what an untreated ADHD brain has been trying to do all along: supply motivation, sustain attention, create focus and cut the noise. Then the coping strategy turns into dependency, crisis, shame, suicide risk, court, probation, relapse and repeated cost.</p>
-          <p>At that point, services quite reasonably respond to the addiction. But if the ADHD remains untouched, the work often does not hold. Support can fail to land when untreated ADHD is still disrupting sequencing, memory, follow-through, motivation and emotional regulation.</p>
-          <div class="callout">Trauma-informed care treats the story. Neuro-informed care stabilises the brain. Recovery needs both.</div>
-          <ul class="brain-bullets">
-            <li>Sequencing, memory, follow-through and emotional regulation are part of the continuity problem.</li>
-            <li>The addiction work can be good — but the brain still needs the right conditions for that work to hold.</li>
-            <li>OTOS does not diagnose or prescribe. It makes the drift visible so a human team can review the next step.</li>
-          </ul>
-          <p><em>“I did recovery groups, therapy, meetings, detox, relapse prevention — all of it helped. But only when my ADHD was treated did any of it finally work.”</em></p>
+          <article class="nia-quote-card">
+            <p>“I did recovery groups, therapy, meetings, detox, relapse prevention — all of it helped. But only when my ADHD was treated did any of it finally work.”</p>
+          </article>
         </div>
       </div>
-      <div class="hero-actions" style="justify-content:center;margin-top:54px;gap:14px;flex-wrap:wrap">
+      <div class="hero-actions nia-ctas">
         <a class="btn primary" href="partners.html">See your partner page →</a>
         <a class="btn" href="evidence-sources.html">Read the evidence →</a>
       </div>
-      <a class="scroll-cue" href="#what-it-is" aria-label="Scroll to continue" style="margin-top:36px">
+      <a class="scroll-cue" href="#what-it-is" aria-label="Scroll to continue" style="margin-top:38px">
         <span>Scroll to continue</span>
         <span class="arrow">⌄</span>
       </a>
