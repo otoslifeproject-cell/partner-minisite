@@ -5,780 +5,250 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>The Founder Story — OTOS Continuity™</title>
   <link rel="stylesheet" href="css/otos.css">
-  <style>
-    /* ── TIMELINE ── */
-    .timeline { position: relative; padding: 0; list-style: none; margin: 56px 0 0; }
-    .timeline::before {
-      content: '';
-      position: absolute;
-      left: 22px;
-      top: 0;
-      bottom: 0;
-      width: 2px;
-      background: linear-gradient(to bottom, var(--orange), rgba(242,108,13,.15));
-    }
-    .tl-item {
-      position: relative;
-      padding: 0 0 40px 64px;
-    }
-    .tl-item:last-child { padding-bottom: 0; }
-    .tl-dot {
-      position: absolute;
-      left: 10px;
-      top: 4px;
-      width: 26px;
-      height: 26px;
-      border-radius: 50%;
-      background: var(--cream-dark);
-      border: 2px solid rgba(242,108,13,.3);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 9px;
-      font-weight: 900;
-      color: var(--orange);
-      z-index: 1;
-      flex-shrink: 0;
-    }
-    .tl-dot.crisis {
-      background: rgba(220,38,38,.1);
-      border-color: rgba(220,38,38,.4);
-      color: #dc2626;
-    }
-    .tl-dot.system {
-      background: rgba(29,78,216,.08);
-      border-color: rgba(29,78,216,.25);
-      color: #1d4ed8;
-    }
-    .tl-dot.turn {
-      background: rgba(242,108,13,.15);
-      border-color: var(--orange);
-      color: var(--orange);
-      width: 32px;
-      height: 32px;
-      left: 7px;
-      box-shadow: 0 0 0 6px rgba(242,108,13,.12);
-    }
-    .tl-title {
-      font-size: 1rem;
-      font-weight: 800;
-      color: var(--paper-ink);
-      margin-bottom: 4px;
-      letter-spacing: -.01em;
-      line-height: 1.3;
-    }
-    .tl-org {
-      font-size: 0.72rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: .08em;
-      color: var(--paper-muted);
-      margin-bottom: 6px;
-    }
-    .tl-body {
-      font-size: 0.88rem;
-      color: var(--paper-muted);
-      line-height: 1.7;
-    }
-    .tl-cost {
-      display: inline-block;
-      margin-top: 6px;
-      font-size: 0.75rem;
-      font-weight: 800;
-      color: #dc2626;
-      background: rgba(220,38,38,.08);
-      border: 1px solid rgba(220,38,38,.2);
-      padding: 2px 9px;
-      border-radius: 4px;
-      letter-spacing: .03em;
-    }
-
-    /* ── PHASE MARKERS ── */
-    .phase-marker {
-      margin: 0 0 32px 0;
-      padding: 16px 20px 16px 64px;
-      position: relative;
-    }
-    .phase-marker::before {
-      content: '';
-      position: absolute;
-      left: 10px;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 26px;
-      height: 26px;
-      border-radius: 50%;
-      background: var(--brown);
-      border: 3px solid var(--orange);
-    }
-    .phase-label {
-      font-size: 0.68rem;
-      font-weight: 900;
-      text-transform: uppercase;
-      letter-spacing: .16em;
-      color: var(--orange);
-      margin-bottom: 4px;
-    }
-    .phase-title {
-      font-size: 1.4rem;
-      font-weight: 900;
-      color: var(--paper-ink);
-      letter-spacing: -.02em;
-      line-height: 1.1;
-    }
-
-    /* ── COST RUNNING TOTAL ── */
-    .cost-ticker {
-      position: sticky;
-      top: 70px;
-      z-index: 50;
-      background: var(--brown);
-      border-bottom: 1px solid rgba(255,255,255,.08);
-      padding: 12px 0;
-    }
-    .cost-ticker-inner {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 32px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-    }
-    .cost-label {
-      font-size: 0.7rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: .12em;
-      color: rgba(255,255,255,.45);
-    }
-    .cost-total {
-      font-size: 1.6rem;
-      font-weight: 900;
-      color: var(--orange-2);
-      letter-spacing: -.03em;
-      font-variant-numeric: tabular-nums;
-      transition: all .3s ease;
-    }
-    .cost-note {
-      font-size: 0.75rem;
-      font-weight: 600;
-      color: rgba(255,255,255,.35);
-      max-width: 380px;
-      line-height: 1.4;
-      text-align: right;
-    }
-
-    /* ── MOMENT CARDS ── */
-    .moment-card {
-      background: linear-gradient(135deg,rgba(242,108,13,.08),rgba(242,108,13,.03));
-      border: 1px solid rgba(242,108,13,.25);
-      border-left: 4px solid var(--orange);
-      border-radius: 0 20px 20px 0;
-      padding: 24px 28px;
-      margin: 40px 0 40px 64px;
-    }
-    .moment-card h3 {
-      font-size: 1.1rem;
-      font-weight: 900;
-      color: var(--paper-ink);
-      margin-bottom: 10px;
-      letter-spacing: -.015em;
-    }
-    .moment-card p {
-      font-size: 0.95rem;
-      color: var(--paper-muted);
-      line-height: 1.75;
-      margin: 0;
-    }
-    .moment-card.crisis-moment {
-      border-left-color: #dc2626;
-      background: linear-gradient(135deg,rgba(220,38,38,.06),rgba(220,38,38,.02));
-      border-color: rgba(220,38,38,.2);
-    }
-    .moment-card.crisis-moment h3 { color: #991b1b; }
-
-    /* ── THE SHIFT — first person section ── */
-    .shift-section {
-      background: var(--brown);
-      margin: 0;
-      padding: 80px 40px;
-    }
-    .shift-inner {
-      max-width: 800px;
-      margin: 0 auto;
-    }
-    .shift-section .phase-label { color: var(--orange-2); }
-    .shift-big {
-      font-family: 'Georgia', serif;
-      font-size: clamp(1.8rem, 4vw, 3rem);
-      font-weight: 400;
-      font-style: italic;
-      color: #fff;
-      line-height: 1.2;
-      letter-spacing: -.02em;
-      margin: 20px 0 32px;
-    }
-    .shift-big em { font-style: normal; color: var(--orange-2); }
-    .shift-body p {
-      font-size: 1rem;
-      color: rgba(255,255,255,.68);
-      line-height: 1.85;
-      margin-bottom: 18px;
-    }
-    .shift-body p strong { color: rgba(255,255,255,.9); font-weight: 700; }
-    .shift-body p.big {
-      font-size: 1.1rem;
-      font-weight: 700;
-      color: rgba(255,255,255,.88);
-      line-height: 1.65;
-    }
-
-    /* ── SIGNAL GRID ── */
-    .signal-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2px;
-      background: rgba(255,255,255,.06);
-      border: 1px solid rgba(255,255,255,.1);
-      border-radius: 18px;
-      overflow: hidden;
-      margin: 32px 0;
-    }
-    .signal-box {
-      padding: 22px 18px;
-      border-right: 1px solid rgba(255,255,255,.06);
-    }
-    .signal-box:last-child { border-right: none; }
-    .signal-n {
-      font-size: 2.2rem;
-      font-weight: 900;
-      color: #fff;
-      line-height: 1;
-      letter-spacing: -.04em;
-      margin-bottom: 4px;
-      display: block;
-    }
-    .signal-l {
-      font-size: 10px;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: .12em;
-      color: rgba(255,255,255,.4);
-      line-height: 1.3;
-    }
-
-    /* ── WHAT THIS MEANS ── */
-    .what-this-means {
-      background: var(--cream-dark);
-      border-top: 1px solid var(--border);
-    }
-
-    @media(max-width:700px) {
-      .timeline::before { left: 14px; }
-      .tl-item { padding-left: 44px; }
-      .tl-dot { left: 3px; width: 22px; height: 22px; }
-      .tl-dot.turn { left: 0; width: 28px; height: 28px; }
-      .phase-marker { padding-left: 44px; }
-      .phase-marker::before { left: 3px; width: 22px; height: 22px; }
-      .moment-card { margin-left: 44px; }
-      .signal-grid { grid-template-columns: 1fr 1fr; }
-    }
-  </style>
 </head>
-<body class="light-page">
-
+<body>
 <header class="site-header">
   <div class="nav-shell">
-    <a class="brand" href="index.html">OTOS Continuity™</a>
+    <a class="brand" href="index.html"><span class="brand-icon"></span>OTOS Continuity™</a>
     <nav class="nav-links">
-      <a href="founder-story.html">The Story</a>
-      <a href="index.html#problem">Problem</a>
-      <a href="index.html#what-it-is">What it is</a>
       <a href="partners.html">Partners</a>
-      <a href="local-authority-public-health.html">Local Authority</a>
+      <a href="founder-story.html" class="active">The Story</a>
       <a href="numbers.html">Numbers</a>
-      <a href="how-it-works-visuals.html">Visuals</a>
       <a href="evidence-sources.html">Evidence</a>
+      <a href="how-it-works-visuals.html">Visuals</a>
       <a class="cta" href="mailto:info@otos.life">Get involved</a>
     </nav>
   </div>
 </header>
-
-<!-- HERO -->
-<section class="hero grid-bg">
-  <div class="container">
-    <span class="kicker">The lived arc — Dean Butler, founder</span>
-    <h1>Not a theory.<br><span class="accent">A lived reality.</span></h1>
-    <p class="lede">Dean Butler built OTOS Continuity™ because nothing held the thread between services. This is the story behind the infrastructure — told in full, with the real costs, the real services, and the real moment everything changed.</p>
-    <p style="font-size:15px;font-weight:700;color:rgba(251,247,238,.55);margin-top:12px">73 steps. Four phases. One turning point. £123,560 before the right treatment.</p>
-    <div class="hero-actions" style="margin-top:28px">
-      <a class="btn primary" href="#phase-1">Read the story</a>
-      <a class="btn" href="partners.html">Partner routes</a>
-    </div>
-  </div>
-</section>
-
-<!-- RUNNING COST TICKER -->
-<div class="cost-ticker" id="costTicker">
-  <div class="cost-ticker-inner">
-    <div>
-      <div class="cost-label">Running total — known costs only</div>
-      <div class="cost-total" id="costDisplay">£0 — counting as you read</div>
-    </div>
-    <div class="cost-note">Known, documented costs only. Does not include NHS emergency, A&amp;E, ICU, ambulance, police or criminal justice spend — all of which were also real.</div>
-  </div>
-</div>
-
 <main>
 
-<!-- ══════════════════════════════════════════
-     PHASE 1 — THE JOURNEY
-═══════════════════════════════════════════ -->
-<section class="sec" id="phase-1" style="background:var(--cream)">
-  <div class="wrap" style="max-width:860px">
-
-    <div class="phase-marker" id="phase-1">
-      <div class="phase-label">Phase 1</div>
-      <div class="phase-title">The Journey — Self / Undiagnosed</div>
-    </div>
-
-    <p style="font-size:1rem;color:var(--paper-muted);line-height:1.85;margin-bottom:36px;padding-left:64px">For much of his adult life, Dean Butler's drinking appeared to work. He was a DJ, a promoter, part of the Cambridge scene. Alcohol gave energy, focus, relief from mental friction. He was high-functioning enough that the question nobody ever asked was: <em>why does this work so well?</em> The answer, when it finally came, changed everything.</p>
-
-    <ul class="timeline">
-
-      <li class="tl-item" data-cost="0">
-        <div class="tl-dot">✦</div>
-        <div class="tl-org">Self / Undiagnosed ADHD</div>
-        <div class="tl-title">35 years of successfully self-medicating</div>
-        <div class="tl-body">35 years of self-medicating with alcohol every day before crossing the invisible line. Addiction and dependency kicked in. The journey begins here. ADHD undiagnosed. Nobody is asking the right question.</div>
-      </li>
-
-      <li class="tl-item" data-cost="900">
-        <div class="tl-dot system">Dx</div>
-        <div class="tl-org">Psymplicity Healthcare — self-funded</div>
-        <div class="tl-title">ADHD Diagnosis — first formal identification</div>
-        <div class="tl-body">Parental intervention seeking ADHD psychiatric assessment. First formal diagnosis. Self-funded. Prescribed a small dose of methylphenidate. The diagnosis exists. The system still does not know what to do with it alongside the addiction.</div>
-        <span class="tl-cost">£900</span>
-      </li>
-
-      <li class="tl-item" data-cost="0">
-        <div class="tl-dot system">GP</div>
-        <div class="tl-org">GP (Comberton)</div>
-        <div class="tl-title">Diagnosed with Depression &amp; Anxiety</div>
-        <div class="tl-body">GP diagnoses Depression and Anxiety. Anti-depressants started. Root cause — ADHD — not identified. The system treats the visible symptoms. The underlying condition remains untouched.</div>
-      </li>
-
-      <li class="tl-item" data-cost="0">
-        <div class="tl-dot">↗</div>
-        <div class="tl-org">Self</div>
-        <div class="tl-title">Moved to Spain — 3 years</div>
-        <div class="tl-body">Moved to Spain for three years. Constant heavy drinking. Self-medicating now for alcoholism, not just ADHD. The ADHD brain needs stimulation, regulation, relief. Alcohol provides all three — until it doesn't.</div>
-      </li>
-
-      <li class="tl-item" data-cost="0">
-        <div class="tl-dot crisis">!</div>
-        <div class="tl-org">La Linea Hospital, Spain</div>
-        <div class="tl-title">Pancreatic attack — "You can never drink again"</div>
-        <div class="tl-body">Hospital admission in Spain. Pancreatic attack. Spanish doctor delivers a clear, honest verdict: "You can never drink again." First time this was said clearly by a clinician. Dean felt relief, not fear. The threat of death felt like permission to stop.</div>
-      </li>
-
-      <li class="tl-item" data-cost="0">
-        <div class="tl-dot system">UK</div>
-        <div class="tl-org">GP (UK)</div>
-        <div class="tl-title">"You're healthy enough to drink"</div>
-        <div class="tl-body">Back in the UK, Dean sees a GP who tells him he is healthy enough and effectively gives permission to continue drinking. Direct contradiction of the Spanish doctor's clear clinical advice. No continuity of care has transferred. The thread broke the moment he crossed the Channel.</div>
-      </li>
-
-    </ul>
-
-    <div class="moment-card crisis-moment">
-      <h3>The system has no thread to hold.</h3>
-      <p>Three countries. Multiple GPs. Two contradictory clinical verdicts. One diagnosis that exists on paper but has no pathway attached. The ADHD is identified but not treated in the context of the addiction. Every service sees only what arrives in front of it — nothing holds the whole picture.</p>
-    </div>
-
-  </div>
-</section>
-
-<!-- ══════════════════════════════════════════
-     PHASE 2 — THE SYSTEM
-═══════════════════════════════════════════ -->
-<section class="sec" id="phase-2" style="background:var(--cream-dark)">
-  <div class="wrap" style="max-width:860px">
-
-    <div class="phase-marker">
-      <div class="phase-label">Phase 2</div>
-      <div class="phase-title">The System — Services, Silos, Silence</div>
-    </div>
-
-    <p style="font-size:1rem;color:var(--paper-muted);line-height:1.85;margin-bottom:36px;padding-left:64px">Over the following years, Dean moved through police, A&amp;E, ICU, courts, probation, private detox, day rehabilitation and residential rehab. Each service did what it could. None of them could see the whole thread. The ADHD remained unmedicated throughout.</p>
-
-    <ul class="timeline">
-
-      <li class="tl-item" data-cost="0">
-        <div class="tl-dot crisis">!</div>
-        <div class="tl-org">Police</div>
-        <div class="tl-title">Police called — missing / suicide risk</div>
-        <div class="tl-body">Police called after Dean goes missing. Suicide risk flagged. No health referral pathway triggered. The crisis response system activates. The addiction pathway does not.</div>
-      </li>
-
-      <li class="tl-item" data-cost="0">
-        <div class="tl-dot crisis">ICU</div>
-        <div class="tl-org">Addenbrooke's ICU</div>
-        <div class="tl-title">Assaulted by neighbour — ICU admission</div>
-        <div class="tl-body">Assault by neighbour. ICU admission at Addenbrooke's. No connection made to ADHD or addiction history. The system saves a life. Then discharges with no pathway.</div>
-      </li>
-
-      <li class="tl-item" data-cost="0">
-        <div class="tl-dot crisis">↓</div>
-        <div class="tl-org">Self / 999</div>
-        <div class="tl-title">Fall into withdrawal — collapse and seizures</div>
-        <div class="tl-body">Moves to Northampton. Medical continuity broken again. Falls into alcohol withdrawal. Collapse. Fitting with seizures. Out of area — no Cambridge records available. The system is blind to what has happened before.</div>
-      </li>
-
-      <li class="tl-item" data-cost="0">
-        <div class="tl-dot crisis">DT</div>
-        <div class="tl-org">Addenbrooke's ICU</div>
-        <div class="tl-title">Delirium Tremens — 2nd floor balcony jump</div>
-        <div class="tl-body">Severe delirium tremens withdrawal. 2nd floor balcony jump. ICU admission. Life-threatening crisis. The system responds. Then discharges. Then the thread breaks again.</div>
-      </li>
-
-      <li class="tl-item" data-cost="0">
-        <div class="tl-dot system">★</div>
-        <div class="tl-org">CPFT @ Addenbrooke's — bedside</div>
-        <div class="tl-title">Meet CPFT alcohol liaison nurse — bedside, first time</div>
-        <div class="tl-body">CPFT on-site alcohol liaison nurse visits bedside after a detox trigger. First professional to try to join the picture up. She begins to understand the full story. She signposts. She tries. But she has nowhere to send him.</div>
-      </li>
-
-      <li class="tl-item" data-cost="26000">
-        <div class="tl-dot">£</div>
-        <div class="tl-org">Nightingale Hospital — self-funded</div>
-        <div class="tl-title">2-week inpatient detox — Nightingale Hospital</div>
-        <div class="tl-body">First formal private treatment setting. Two-week inpatient detox. Genuine care. Real effort. ADHD still not addressed in the treatment programme. The underlying condition remains untouched.</div>
-        <span class="tl-cost">£26,000</span>
-      </li>
-
-      <li class="tl-item" data-cost="3600">
-        <div class="tl-dot">£</div>
-        <div class="tl-org">HelpMeStop</div>
-        <div class="tl-title">6-week day rehabilitation — Help Me Stop</div>
-        <div class="tl-body">Six-week day rehabilitation programme. Structured support. Real engagement. ADHD still not addressed in the programme. The work is good. It doesn't hold because the underlying condition is still driving the pattern underneath.</div>
-        <span class="tl-cost">£3,600</span>
-      </li>
-
-      <li class="tl-item" data-cost="0">
-        <div class="tl-dot">↩</div>
-        <div class="tl-org">AA / Self</div>
-        <div class="tl-title">AA — regular attendance, then it starts to feel wrong</div>
-        <div class="tl-body">Joins AA and attends regularly for approximately one year. Some benefit. Then it starts to drag. The repetition isn't helpful for an ADHD brain. The programme says "character defect." Dean knows it isn't that. It's the ADHD. Still unmedicated.</div>
-      </li>
-
-      <li class="tl-item" data-cost="0">
-        <div class="tl-dot crisis">↓</div>
-        <div class="tl-org">Self / 999</div>
-        <div class="tl-title">Experiment turns into crisis — 11 months in</div>
-        <div class="tl-body">Eleven months into a controlled drinking experiment. Things got slowly, then quickly, worse. Paranoia. Real fear of survival. Now in very real crisis again. The ADHD brain cannot manage moderation. The self-medication pattern is back, harder than before.</div>
-      </li>
-
-      <li class="tl-item" data-cost="0">
-        <div class="tl-dot crisis">✗</div>
-        <div class="tl-org">GP Cambridge</div>
-        <div class="tl-title">GP refuses — "Come back when you're in full withdrawal"</div>
-        <div class="tl-body">Collapse. GP refuses admission. Told to come back when in full withdrawal. The system turns Dean away at the door. He needs help now. He is told to get worse first.</div>
-      </li>
-
-      <li class="tl-item" data-cost="0">
-        <div class="tl-dot crisis">✗</div>
-        <div class="tl-org">999 / Ambulance</div>
-        <div class="tl-title">999 Ambulance refuses to take him</div>
-        <div class="tl-body">999 Ambulance refuses. Dean's parents are roped in. With nowhere else to turn and withdrawal worsening, he had to find a way to be taken seriously by the system. The detox he needed to access the medication was the only route forward.</div>
-      </li>
-
-      <li class="tl-item" data-cost="300">
-        <div class="tl-dot system">★</div>
-        <div class="tl-org">Addenbrooke's A&amp;E</div>
-        <div class="tl-title">A&amp;E refuses — then the Psychological Director believes him</div>
-        <div class="tl-body">A&amp;E refuses again. Dean articulates his case exactly to the Psychological Director. She believes him. She backs him. She is the first senior clinician who sees the whole picture and acts on it. Dean is admitted.</div>
-        <span class="tl-cost">£300</span>
-      </li>
-
-      <li class="tl-item" data-cost="1500">
-        <div class="tl-dot system">3</div>
-        <div class="tl-org">Addenbrooke's Ward</div>
-        <div class="tl-title">One final detox — third Addenbrooke's admission</div>
-        <div class="tl-body">Third Addenbrooke's detox ward admission. The system intervenes again. The system still cannot see the cause. But this time, someone at the bedside is listening.</div>
-        <span class="tl-cost">£1,500</span>
-      </li>
-
-    </ul>
-
-    <div class="moment-card crisis-moment">
-      <h3>The most expensive line in this story: Castle Craig — £90,000</h3>
-      <p>Three months in residential dual-diagnosis rehabilitation. Funded by CGL and charity support. Remarkable effort by all involved. The treatment was genuine. And then: ADHD medication was removed on arrival because it was a stimulant. <strong>£45,000 of that funding was spent during the period when the underlying condition was being actively suppressed by the treatment system itself.</strong> The system created the conditions for relapse inside the treatment setting.</p>
-    </div>
-
-    <ul class="timeline" style="margin-top:24px">
-      <li class="tl-item" data-cost="90000">
-        <div class="tl-dot" style="background:rgba(220,38,38,.15);border-color:#dc2626;color:#dc2626;font-weight:900">£</div>
-        <div class="tl-org">Castle Craig Residential Rehab — funded by CGL</div>
-        <div class="tl-title">Castle Craig — Residential Rehab (Dual Diagnosis)</div>
-        <div class="tl-body">Three months. £90,000. Dual-diagnosis. ADHD medication removed on arrival because it was a stimulant. £45,000 wasted. The system created a system-generated relapse inside the treatment itself. This is the most important number in the entire OTOS story.</div>
-        <span class="tl-cost">£90,000</span>
-      </li>
-      <li class="tl-item" data-cost="900">
-        <div class="tl-dot system">Ps</div>
-        <div class="tl-org">Family / Psymplicity Healthcare</div>
-        <div class="tl-title">Dean is honest with his parents — they fund the assessment</div>
-        <div class="tl-body">Dean tells his parents the full truth for the first time. They understand. They agree to help fund the psychiatric reassessment. The turning point is coming — but only because of private funding, family support, and Dean's own determination to navigate the system himself.</div>
-        <span class="tl-cost">£900</span>
-      </li>
-    </ul>
-
-  </div>
-</section>
-
-<!-- ══════════════════════════════════════════
-     PHASE 3 — THE CRACK
-═══════════════════════════════════════════ -->
-<section class="sec" id="phase-3" style="background:var(--cream)">
-  <div class="wrap" style="max-width:860px">
-
-    <div class="phase-marker">
-      <div class="phase-label">Phase 3</div>
-      <div class="phase-title">The Crack — The Promise</div>
-    </div>
-
-    <ul class="timeline">
-
-      <li class="tl-item" data-cost="0">
-        <div class="tl-dot turn">★</div>
-        <div class="tl-org">CPFT @ Addenbrooke's — bedside, final admission</div>
-        <div class="tl-title">"I have nowhere to send you."</div>
-        <div class="tl-body">The CPFT alcohol liaison nurse visits bedside. She remembers Dean. She has been through everything she can signpost. She says the words that change everything: "I have nowhere else to send you." Dean says: "Next time we meet, I won't be your patient. I'll be your partner." She writes the discharge letter in Dean's words — so he can use it to access Psymplicity and get on Elvanse.</div>
-      </li>
-
-      <li class="tl-item" data-cost="0">
-        <div class="tl-dot">→</div>
-        <div class="tl-org">Self — the route mapped by Dean himself</div>
-        <div class="tl-title">I know what I need to do</div>
-        <div class="tl-body">Dean maps his own rescue route: get detoxed, get to CGL, get the right letters, get to the medication. He has worked out the system himself. Nobody designed this pathway for him. He designed it by surviving it.</div>
-      </li>
-
-      <li class="tl-item" data-cost="0">
-        <div class="tl-dot system">CGL</div>
-        <div class="tl-org">CGL — Annie &amp; Rak</div>
-        <div class="tl-title">CGL — Annie writes the letter. Rak backs Dean up.</div>
-        <div class="tl-body">Annie at CGL writes the letter Psymplicity needs — confirming CGL attendance and confirming no risk. Rak speaks with the psychiatrist and backs Dean up as committed to recovery — blowing zeros, attending groups. Two people hold the thread. For the first time, the thread holds.</div>
-      </li>
-
-      <li class="tl-item" data-cost="600">
-        <div class="tl-dot turn">→</div>
-        <div class="tl-org">Psymplicity Healthcare</div>
-        <div class="tl-title">Psymplicity agrees to prescribe Elvanse</div>
-        <div class="tl-body">The psychiatrist is more than happy — proof of CGL engagement, proof of medical detox, confirmation from Rak. Elvanse is prescribed. Everything is about to change. Dean does not know it yet, but he is three days away from the most significant moment of his life.</div>
-        <span class="tl-cost">£600</span>
-      </li>
-
-    </ul>
-
-  </div>
-</section>
-
-<!-- ══════════════════════════════════════════
-     THE SHIFT — FIRST PERSON
-═══════════════════════════════════════════ -->
-<div class="shift-section">
-  <div class="shift-inner">
-    <div class="phase-label">Phase 4 — Out The Other Side</div>
-    <div class="shift-big">
-      "My whole life changed<br>in <em>three days.</em>"
-    </div>
-    <div class="shift-body">
-      <p class="big">This is where the story changes voice. Because this part is mine.</p>
-      <p>I took the first Elvanse. And within hours — not weeks, not months — everything made sense. The chaos. The addiction. The relapses. The A&amp;E admissions. The ICU. The courts. The shame. The AA meetings that felt wrong. The residential rehab where they took my medication away and called it treatment. All of it.</p>
-      <p>Not failures of willpower. Not a character defect. <strong>What happens when the underlying neurological condition stays unresolved while the system treats only what arrives first.</strong></p>
-      <p>The dopamine was restored. The executive function returned. For the first time in 35 years, "next week" existed as a felt concept. I could sequence. I could follow through. I could sit with a thought long enough to do something with it.</p>
-      <p>Within days, I started decorating my flat. I had focus, motivation, drive — not the artificial kind that alcohol gave me, but something clean and real. I started building OTOS. I worked 18-hour days and felt grateful for every one of them.</p>
-      <p class="big">The therapy started to hold. The CBT landed. The recovery work held — not because the addiction work hadn't been good. It had been excellent. But because the brain finally had what it needed to use it.</p>
-      <p>I am telling you this not because I want sympathy. I am telling you this because I want you to understand what was possible, all along — if the thread had held between services, if the ADHD had been treated in the context of the addiction, if someone had said earlier: the crisis is visible, but the cause is underneath it.</p>
-    </div>
-
-    <div class="signal-grid">
-      <div class="signal-box">
-        <span class="signal-n">35</span>
-        <span class="signal-l">Years self-medicating</span>
-      </div>
-      <div class="signal-box">
-        <span class="signal-n">6</span>
-        <span class="signal-l">Years on ADHD waiting list</span>
-      </div>
-      <div class="signal-box">
-        <span class="signal-n">3</span>
-        <span class="signal-l">Days to change everything</span>
-      </div>
-      <div class="signal-box">
-        <span class="signal-n">£90k</span>
-        <span class="signal-l">Rehab with ADHD meds removed</span>
-      </div>
-      <div class="signal-box">
-        <span class="signal-n">£200</span>
-        <span class="signal-l">Elvanse prescription cost</span>
-      </div>
-      <div class="signal-box">
-        <span class="signal-n">0</span>
-        <span class="signal-l">Relapses since Elvanse</span>
-      </div>
-    </div>
-
-    <div style="margin-top:8px;padding:24px;border-radius:18px;border:1px solid rgba(242,108,13,.3);background:rgba(242,108,13,.08)">
-      <p style="font-size:16px;font-weight:800;color:rgba(251,247,238,.85);line-height:1.65;margin:0">"Next time we meet, I won't be your patient. I'll be your partner." — Said to the Alcohol Liaison Nurse, Addenbrooke's bedside, six months ago. This is me keeping that promise.</p>
-    </div>
-  </div>
-</div>
-
-<!-- ══════════════════════════════════════════
-     PHASE 4 — OUT THE OTHER SIDE
-═══════════════════════════════════════════ -->
-<section class="sec" id="phase-4" style="background:var(--cream-dark)">
-  <div class="wrap" style="max-width:860px">
-
-    <div class="phase-marker">
-      <div class="phase-label">Phase 4 — Out The Other Side</div>
-      <div class="phase-title">The people who became partners</div>
-    </div>
-
-    <p style="font-size:1rem;color:var(--paper-muted);line-height:1.85;margin-bottom:36px;padding-left:64px">In recovery, medicated, building — Dean began to meet the people who would become the partner network. Not strangers. The same services, the same professionals, now seen from the other side.</p>
-
-    <ul class="timeline">
-
-      <li class="tl-item" data-cost="0">
-        <div class="tl-dot system">↩</div>
-        <div class="tl-org">SMART Recovery</div>
-        <div class="tl-title">Meet Inertia — Cambridge Recovery Service, Business Development</div>
-        <div class="tl-body">Attends SMART Recovery. Reconnects with Inertia who is keen to know how OTOS can help Cambridge Recovery Service. Added to the list of pilot partners.</div>
-      </li>
-
-      <li class="tl-item" data-cost="0">
-        <div class="tl-org">RCE Wellbeing Hub</div>
-        <div class="tl-dot system">★</div>
-        <div class="tl-title">Meet Franceska — RCE Hub Wellbeing Course</div>
-        <div class="tl-body">Meets Franceska on an RCE Hub Wellbeing Course. She really gets the ADHD and addiction connection. Added to the list of pilot partners.</div>
-      </li>
-
-      <li class="tl-item" data-cost="0">
-        <div class="tl-dot system">★</div>
-        <div class="tl-org">Cambridge Recovery Service</div>
-        <div class="tl-title">Meet Andrea — transferred to CRS</div>
-        <div class="tl-body">Meets Andrea. Transferred from CGL to Cambridge Recovery Service. Andrea totally gets Dean and promises to help. Introduces to KC at The SUN Network. Added to the list of pilot partners.</div>
-      </li>
-
-      <li class="tl-item" data-cost="0">
-        <div class="tl-dot system">★</div>
-        <div class="tl-org">CPFT ADHD Team</div>
-        <div class="tl-title">Meet Paula — CPFT ADHD Team</div>
-        <div class="tl-body">Meets Paula at the CPFT ADHD Team. A very interesting conversation. Specialist input begins. Added to the list of pilot partners.</div>
-      </li>
-
-      <li class="tl-item" data-cost="360">
-        <div class="tl-dot system">★</div>
-        <div class="tl-org">Jo Fenton Consultancy / MIND / WorkWell</div>
-        <div class="tl-title">Jo Fenton — Integrated Therapist</div>
-        <div class="tl-body">Six weeks with Jo Fenton, Integrated Therapist via MIND-funded WorkWell scheme. Great therapeutic work — finally landing because the brain has what it needs. Jo sees the ADHD and addiction connection every day in her practice. Added to the list of pilot partners.</div>
-        <span class="tl-cost">£360</span>
-      </li>
-
-      <li class="tl-item" data-cost="200">
-        <div class="tl-dot turn">★</div>
-        <div class="tl-org">Psymplicity Healthcare</div>
-        <div class="tl-title">Elvanse — my whole life changed in 3 days</div>
-        <div class="tl-body">Psychiatrist prescribes Elvanse. Dean's whole life changed in three days. Executive function. Motivation. Sequencing. The ability to plan, follow through, sit with a thought. The self-medication pattern changed — not because of willpower, but because the brain finally had what it needed. Everything built since — OTOS, this site, every partner conversation — began here.</div>
-        <span class="tl-cost">£200</span>
-      </li>
-
-    </ul>
-
-  </div>
-</section>
-
-<!-- ══════════════════════════════════════════
-     WHAT THIS MEANS
-═══════════════════════════════════════════ -->
-<section class="sec what-this-means">
-  <div class="wrap" style="max-width:860px">
-    <div style="padding-left:0">
-      <span class="kicker">What this means for you</span>
-      <h2 style="font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:900;letter-spacing:-.025em;color:var(--paper-ink);margin-bottom:20px">The system tried.<br><span style="color:var(--orange)">The thread kept breaking.</span><br>This is what fills that gap.</h2>
-      <p style="font-size:1rem;color:var(--paper-muted);line-height:1.85;max-width:680px;margin-bottom:28px">OTOS Continuity™ was not built from a theory or a business plan. It was built from the gaps that nearly killed the person who built it. Every feature exists because of a specific moment where the thread broke. Every guardrail exists because of a specific mistake the system made.</p>
-      <p style="font-size:1rem;color:var(--paper-muted);line-height:1.85;max-width:680px;margin-bottom:32px">The people who will open this page are, in most cases, the same services Dean moved through. He is not coming back to criticise. He is coming back to close the loop — to build the layer that would have held him, for the people still on the inside.</p>
-      <div class="callout" style="margin-bottom:32px;max-width:680px">"The lived experience is not the sales pitch. It is the design specification. Every broken thread in this story is a feature that OTOS Continuity™ is built to prevent."</div>
+  <!-- ── HERO ──────────────────────────────────────────── -->
+  <section class="hero">
+    <div class="container">
+      <span class="kicker"><span class="kicker-icon"></span>The lived arc — Dean Butler, founder</span>
+      <h1>Not a theory.<br><span class="accent">A lived reality.</span></h1>
+      <p class="lede">Dean Butler built OTOS Continuity™ because nothing held the thread between services. This is the story behind the infrastructure — told in full, with the real costs, the real services, and the real moment everything changed.</p>
+      <p style="font-size:14px;font-weight:600;color:rgba(174,180,192,.55);margin-top:10px">Four phases. One turning point. £123,560 before the right treatment.</p>
       <div class="hero-actions">
-        <a class="btn primary" href="partners.html">Go to your partner page</a>
-        <a class="btn" href="partners-addenbrookes.html">Read the Addenbrooke's promise</a>
-        <a class="btn" href="index.html">← Full briefing</a>
+        <a class="btn-primary" href="#phase-1">Read the story</a>
+        <a class="btn" href="partners.html">Partner routes</a>
       </div>
     </div>
+  </section>
+
+  <!-- ── COST TICKER ────────────────────────────────────── -->
+  <div class="cost-ticker" id="costTicker">
+    <div class="cost-ticker-inner">
+      <div>
+        <div class="cost-label">Running total — known costs only</div>
+        <div class="cost-total" id="costDisplay">£0 — counting as you read</div>
+      </div>
+      <div class="cost-note">Known, documented costs only. Does not include NHS emergency, A&amp;E, ICU, ambulance, police or criminal justice spend — all of which were also real.</div>
+    </div>
   </div>
-</section>
+
+  <!-- ── PHASE 1: THE JOURNEY ───────────────────────────── -->
+  <section class="paper-section" id="phase-1">
+    <div class="container" style="max-width:800px">
+      <div class="phase-marker">
+        <div class="phase-label">Phase 1</div>
+        <div class="phase-title">The Journey — Self / Undiagnosed</div>
+      </div>
+      <p style="color:var(--paper-muted);line-height:1.85;padding-left:58px;margin-bottom:36px">For much of his adult life, Dean Butler's drinking appeared to work. He was a DJ, a promoter, part of the Cambridge scene. Alcohol gave energy, focus, relief from mental friction. He was high-functioning enough that the question nobody ever asked was: <em>why does this work so well?</em> The answer, when it finally came, changed everything.</p>
+
+      <ul class="timeline">
+        <li class="tl-item" data-cost="0">
+          <div class="tl-dot">✦</div>
+          <div class="tl-org">Self / Undiagnosed ADHD</div>
+          <div class="tl-title">35 years of successfully self-medicating</div>
+          <div class="tl-body">35 years of self-medicating with alcohol every day before crossing the invisible line. Addiction and dependency kicked in. ADHD undiagnosed. Nobody is asking the right question.</div>
+        </li>
+        <li class="tl-item" data-cost="900">
+          <div class="tl-dot system">Dx</div>
+          <div class="tl-org">Psymplicity Healthcare — self-funded</div>
+          <div class="tl-title">ADHD Diagnosis — first formal identification</div>
+          <div class="tl-body">Parental intervention seeking ADHD psychiatric assessment. First formal diagnosis. Self-funded. Prescribed a small dose of methylphenidate. The system still doesn't know what to do with it alongside the addiction.</div>
+          <span class="tl-cost">£900</span>
+        </li>
+        <li class="tl-item" data-cost="0">
+          <div class="tl-dot system">GP</div>
+          <div class="tl-org">GP — Comberton</div>
+          <div class="tl-title">Diagnosed with depression and anxiety</div>
+          <div class="tl-body">GP diagnoses depression and anxiety. Anti-depressants started. Root cause — ADHD — not identified. The system treats the visible symptoms. The underlying condition remains untouched.</div>
+        </li>
+        <li class="tl-item" data-cost="0">
+          <div class="tl-dot crisis">!</div>
+          <div class="tl-org">Self</div>
+          <div class="tl-title">Moved to Spain — three years of heavy drinking</div>
+          <div class="tl-body">Self-medicating now for alcoholism, not just ADHD. The ADHD brain needs stimulation, regulation, relief. Alcohol provides all three — until it doesn't.</div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ── PHASE 2: THE SYSTEM ────────────────────────────── -->
+  <section class="paper-section paper-section--alt" id="phase-2">
+    <div class="container" style="max-width:800px">
+      <div class="phase-marker">
+        <div class="phase-label">Phase 2</div>
+        <div class="phase-title">The System — Services, Silos, Silence</div>
+      </div>
+
+      <ul class="timeline">
+        <li class="tl-item" data-cost="0">
+          <div class="tl-dot crisis">A&amp;E</div>
+          <div class="tl-org">Addenbrooke's NHS Trust</div>
+          <div class="tl-title">Six A&amp;E crisis presentations</div>
+          <div class="tl-body">Six emergency presentations at Addenbrooke's over several years. Each one a crisis. Each one treated as the presenting issue — alcohol — with no connection to the underlying neurological condition. No thread held between presentations.</div>
+        </li>
+        <li class="tl-item" data-cost="0">
+          <div class="tl-dot crisis">ICU</div>
+          <div class="tl-org">Addenbrooke's — Intensive Care</div>
+          <div class="tl-title">Two intensive care admissions</div>
+          <div class="tl-body">Two admissions to intensive care. The addiction is now life-threatening. Still no record that ADHD may be the driver. Each admission isolated in its own service record.</div>
+        </li>
+        <li class="tl-item" data-cost="4500">
+          <div class="tl-dot">DX</div>
+          <div class="tl-org">Addenbrooke's — NHS detox (blagged entry)</div>
+          <div class="tl-title">Three Addenbrooke's detoxes</div>
+          <div class="tl-body">Three NHS-funded alcohol detoxes at Addenbrooke's. The last one required negotiating his way in — no formal route existed. No discharge pathway. No continuity. No thread held on leaving.</div>
+        </li>
+        <li class="tl-item" data-cost="90000">
+          <div class="tl-dot crisis">£</div>
+          <div class="tl-org">Castle Craig — residential rehab, self-funded</div>
+          <div class="tl-title">£90,000 residential rehab — ADHD medication removed on arrival</div>
+          <div class="tl-body">£90,000 residential rehab at Castle Craig. On arrival, ADHD medication removed as standard policy. For three months, the underlying condition that drove the addiction was actively untreated while the visible symptom — addiction — was treated intensively. Relapse followed.</div>
+          <span class="tl-cost">£90,000</span>
+        </li>
+        <li class="tl-item" data-cost="8000">
+          <div class="tl-dot">CGL</div>
+          <div class="tl-org">Change Grow Live — emergency intake</div>
+          <div class="tl-title">Emergency CGL intake — Annie and Rak</div>
+          <div class="tl-body">Walked into CGL with nothing. Annie wrote the referral letter. Rak backed him up. Two keyworkers held the thread when the system was giving nothing to hold. The thread existed only in those two people — not in any system.</div>
+        </li>
+      </ul>
+
+      <div class="moment-card crisis-moment">
+        <h3>The system's failure, precisely described</h3>
+        <p>Every service Dean encountered was doing its job correctly. Addenbrooke's treated alcohol withdrawal. Castle Craig ran addiction rehabilitation. CGL provided community recovery support. None of them were connected. None of them held a thread between services. And none of them — until the very end — identified that ADHD might be the reason everything else kept failing.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PHASE 3: THE CRACK ─────────────────────────────── -->
+  <section class="shift-section" id="phase-3">
+    <div class="shift-inner">
+      <div class="phase-label" style="color:var(--orange-2)">Phase 3</div>
+      <div class="shift-big">The Crack — <em>The Bedside Promise</em></div>
+      <div class="shift-body">
+        <p class="big">The last time Dean was at Addenbrooke's as a patient, his alcohol liaison nurse sat bedside and said she had nowhere else to send him.</p>
+        <p>She was brilliant. She cared deeply. But the system had nothing left to give her to give to him. So he gave her his words. He told her what the discharge letter needed to say — and she wrote it exactly as he asked, so he could use it to get back to his private psychiatrist.</p>
+        <p>He told her: <strong style="color:#fff">"Next time we meet, I won't be your patient. I'll be your partner."</strong></p>
+        <p>He meant it as a promise. He didn't know yet that it would become an infrastructure.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PHASE 4: OUT THE OTHER SIDE ───────────────────── -->
+  <section class="paper-section" id="phase-4">
+    <div class="container" style="max-width:800px">
+      <div class="phase-marker">
+        <div class="phase-label">Phase 4</div>
+        <div class="phase-title">Out The Other Side — Elvanse, Partners, OTOS Built</div>
+      </div>
+
+      <ul class="timeline">
+        <li class="tl-item" data-cost="1200">
+          <div class="tl-dot turn">→</div>
+          <div class="tl-org">Private psychiatrist — Elvanse prescribed</div>
+          <div class="tl-title">Three days. Everything changed.</div>
+          <div class="tl-body">Private ADHD assessment. Elvanse prescribed. Within three days, the chaos of 35 years resolved. The addiction wasn't a failure of treatment. It was what happens when the underlying neurological condition stays unresolved while the system treats the visible damage.</div>
+          <span class="tl-cost">£1,200</span>
+        </li>
+        <li class="tl-item" data-cost="0">
+          <div class="tl-dot">Jo</div>
+          <div class="tl-org">Jo Fenton — therapy in recovery</div>
+          <div class="tl-title">"Everything we'd worked on finally started to hold."</div>
+          <div class="tl-body">Therapy with Jo Fenton. Once the ADHD was treated, the therapeutic work that had previously been effortful and partial began to hold. The groundwork was always there. The brain finally had the conditions to build on it.</div>
+        </li>
+        <li class="tl-item" data-cost="0">
+          <div class="tl-dot">RCE</div>
+          <div class="tl-org">RCE Wellbeing Hub — Franceska's course</div>
+          <div class="tl-title">Met Franceska. She got it immediately.</div>
+          <div class="tl-body">RCE Wellbeing Hub. Franceska ran the course. She understood the ADHD-addiction connection without being told. The community held the thread while the clinical system was still catching up.</div>
+        </li>
+        <li class="tl-item" data-cost="0">
+          <div class="tl-dot turn">★</div>
+          <div class="tl-org">OTOS Digital Ltd — founded 2024</div>
+          <div class="tl-title">OTOS Continuity™ — the infrastructure built from lived experience</div>
+          <div class="tl-body">OTOS Continuity™ is the thread that should have held between every service Dean moved through. Not a new clinical service. Not an EPR. A receipted, visible continuity layer — built by someone who lived the gap it's designed to close.</div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ── WHAT THIS MEANS ────────────────────────────────── -->
+  <section class="paper-section paper-section--alt">
+    <div class="container">
+      <div class="section-head center">
+        <span class="kicker"><span class="kicker-icon"></span>What this means for the people in your caseload</span>
+        <h2>There are people in your services right now<br><span class="accent">who are where Dean was.</span></h2>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <div class="label">The visible problem</div>
+          <h3>Addiction, crisis, revolving door</h3>
+          <p>They are cycling through A&amp;E, detox, community support, and criminal justice. The presenting issue is addiction. The system treats what arrives first.</p>
+        </article>
+        <article class="card">
+          <div class="label">The invisible driver</div>
+          <h3>Unresolved ADHD</h3>
+          <p>23–45% of people in addiction treatment have undiagnosed ADHD. The underlying neurological condition is untreated. The visible damage keeps accumulating.</p>
+        </article>
+        <article class="card">
+          <div class="label">The missing piece</div>
+          <h3>A receipted continuity thread</h3>
+          <p>Not a new service. Not a clinical intervention. A thread that holds between every door they walk through — so the next service knows where they've been and where they're going.</p>
+        </article>
+      </div>
+      <div class="cta-row center" style="margin-top:36px">
+        <a class="btn-primary" href="partners.html">Find your partner page</a>
+        <a class="btn outline" href="evidence-sources.html">Full evidence register</a>
+      </div>
+    </div>
+  </section>
 
 </main>
-
-<footer style="background:var(--brown);padding:36px 40px">
-  <div style="max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px">
-    <div><img src="images/otos-logo.png" alt="OTOS Continuity" style="height:28px"></div>
-    <div style="font-size:0.77rem;color:rgba(255,255,255,.3)">OTOS Digital Ltd · Company No. 17084455</div>
-    <div style="font-size:0.77rem;color:rgba(255,255,255,.3)"><a href="mailto:info@otos.life" style="color:var(--orange-2)">info@otos.life</a></div>
+<footer class="page-footer">
+  <div class="page-footer-inner">
+    <img src="images/otos-logo.png" alt="OTOS Continuity">
+    <span class="page-footer-meta">OTOS Digital Ltd &middot; Co. No. 17084455 &middot; Founder: Dean Butler &middot; Clinical governance: discussed at scoping stage</span>
+    <a href="mailto:info@otos.life">info@otos.life</a>
   </div>
 </footer>
 
 <script>
-// Running cost ticker
-const costEls = document.querySelectorAll('[data-cost]');
+// Running cost ticker — accumulates as user scrolls through timeline items
 const display = document.getElementById('costDisplay');
-let currentDisplayed = 0;
+const items = document.querySelectorAll('.tl-item[data-cost]');
+let total = 0;
+const fmt = n => '£' + n.toLocaleString('en-GB');
 
-function formatCost(n) {
-  return '£' + n.toLocaleString('en-GB');
-}
-
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      const cost = parseInt(entry.target.dataset.cost) || 0;
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      const cost = parseInt(e.target.dataset.cost, 10);
       if (cost > 0) {
-        currentDisplayed += cost;
-        animateCost(currentDisplayed);
+        total += cost;
+        display.textContent = fmt(total);
       }
-      observer.unobserve(entry.target);
+      io.unobserve(e.target);
     }
   });
 }, { threshold: 0.5 });
 
-costEls.forEach(el => observer.observe(el));
-
-function animateCost(target) {
-  const start = currentDisplayed - (parseInt(display.dataset.last) || 0);
-  const startVal = currentDisplayed - start;
-  const duration = 600;
-  const startTime = performance.now();
-  display.dataset.last = target;
-
-  function step(now) {
-    const elapsed = now - startTime;
-    const progress = Math.min(elapsed / duration, 1);
-    const eased = 1 - Math.pow(1 - progress, 3);
-    display.textContent = formatCost(Math.round(startVal + start * eased));
-    if (progress < 1) requestAnimationFrame(step);
-    else display.textContent = formatCost(target);
-  }
-  requestAnimationFrame(step);
-}
+items.forEach(el => io.observe(el));
+display.textContent = '£0 — counting as you read';
 </script>
-
-  <footer style="background:var(--brown);padding:28px 40px;border-top:1px solid rgba(255,255,255,.06)">
-    <div style="max-width:1360px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px">
-      <div style="font-size:13px;color:rgba(255,255,255,.45);font-weight:700">OTOS Digital Ltd &middot; Co. No. 17084455 &middot; Founder: Dean Butler &middot; Clinical governance: discussed at scoping stage</div>
-      <a href="mailto:info@otos.life" style="font-size:13px;font-weight:800;color:var(--orange-2)">info@otos.life</a>
-    </div>
-  </footer>
 </body>
 </html>

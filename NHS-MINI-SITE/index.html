@@ -6,571 +6,267 @@
   <title>OTOS Continuity™ — When ADHD is left waiting, addiction steps in.</title>
   <meta name="description" content="A private partner briefing for NHS, local authority, addiction, recovery and community partners in Cambridge and Peterborough.">
   <link rel="stylesheet" href="css/otos.css">
-  <style>
-    .index-hero-stage{
-      min-height:108vh;
-      padding:136px 0 54px;
-    }
-    .index-hero-wrap{
-      display:grid;
-      gap:22px;
-    }
-    .index-hero-banner{
-      min-height:720px;
-      border-radius:36px;
-      overflow:hidden;
-      border:1px solid rgba(255,255,255,.12);
-      box-shadow:var(--glow);
-      background:#10151d;
-    }
-    .index-hero-banner::after{
-      background:linear-gradient(90deg,rgba(8,10,15,.92) 0%,rgba(8,10,15,.82) 24%,rgba(8,10,15,.48) 48%,rgba(8,10,15,.16) 68%,rgba(8,10,15,.10) 100%);
-    }
-    .index-hero-banner img{opacity:.88;object-position:center right}
-    .index-hero-banner .image-banner-content{max-width:700px;padding:54px 54px 58px}
-    .index-hero-banner h1{max-width:12ch;margin:0 0 18px}
-    .index-hero-banner .lede{margin:0;max-width:620px;color:rgba(251,247,238,.82)}
-    .index-metrics-strip{
-      display:grid;
-      grid-template-columns:repeat(3,minmax(0,1fr));
-      gap:14px;
-    }
-    .index-metric{
-      padding:20px 22px;
-      border-radius:22px;
-      border:1px solid rgba(255,255,255,.12);
-      background:linear-gradient(180deg,rgba(17,24,33,.82),rgba(12,16,24,.62));
-      box-shadow:0 20px 58px rgba(0,0,0,.22);
-      backdrop-filter:blur(14px);
-      -webkit-backdrop-filter:blur(14px);
-      min-height:132px;
-    }
-    .index-metric strong{
-      display:block;
-      font-size:clamp(30px,3vw,46px);
-      line-height:.95;
-      letter-spacing:-.05em;
-      color:var(--orange-2);
-      margin-bottom:10px;
-    }
-    .index-metric span{
-      display:block;
-      color:var(--muted);
-      font-size:12px;
-      line-height:1.4;
-      font-weight:900;
-      text-transform:uppercase;
-      letter-spacing:.12em;
-    }
-    .founder-grid,
-    .two-col{
-      display:grid;
-      grid-template-columns:minmax(0,1.05fr) minmax(320px,.95fr);
-      gap:34px;
-      align-items:start;
-    }
-    .story-card{padding:34px}
-    .story-card p{margin:0 0 18px}
-    .story-card p:last-child{margin-bottom:0}
-    .founder-quote{
-      margin:26px 0;
-      border-left:4px solid var(--orange);
-      border-radius:0 22px 22px 0;
-      background:rgba(242,108,13,.10);
-      padding:22px 24px;
-      color:var(--paper-ink);
-      font-size:20px;
-      line-height:1.65;
-      font-weight:800;
-    }
-    .founder-photo{
-      padding:14px;
-      border-radius:32px;
-      overflow:hidden;
-    }
-    .founder-photo img{
-      width:100%;
-      min-height:540px;
-      object-fit:cover;
-      border-radius:24px;
-    }
-    .caption{
-      margin-top:12px;
-      color:var(--paper-muted);
-      font-size:13px;
-      line-height:1.5;
-      font-weight:800;
-      letter-spacing:.04em;
-      text-transform:uppercase;
-    }
-    .dark-banner{min-height:580px}
-    .dark-banner::after{background:linear-gradient(90deg,rgba(8,10,15,.90),rgba(8,10,15,.18))}
-    .dark-banner img{opacity:.76}
-    .nia-grid{display:grid;grid-template-columns:minmax(0,1.02fr) minmax(0,.98fr);gap:20px;margin-top:34px}
-    .nia-kicker-row{display:flex;justify-content:flex-end;margin:0 0 18px}
-    .nia-grid.nia-refined{grid-template-columns:minmax(0,1.03fr) minmax(340px,.97fr);gap:48px;align-items:start;margin-top:0}
-    .nia-refined .nia-feature-stack{display:grid;gap:20px}
-    .nia-refined .nia-feature-card{padding:30px 32px 30px 34px;border-radius:26px;border:1px solid rgba(60,40,24,.13);background:linear-gradient(180deg,rgba(255,255,255,.98),rgba(251,247,238,.90));box-shadow:0 26px 72px rgba(64,42,22,.16);position:relative;overflow:hidden;min-height:164px}
-    .nia-refined .nia-feature-card::after{content:'';position:absolute;right:-20px;bottom:-26px;width:114px;height:114px;background:url('images/brain.png') center/contain no-repeat;opacity:.075}
-    .nia-refined .nia-feature-card h3{font-size:23px;line-height:1.08;margin-bottom:14px;color:var(--paper-ink);letter-spacing:-.035em;position:relative;z-index:1;display:grid;grid-template-columns:26px 1fr;gap:12px;align-items:center}
-    .nia-refined .nia-feature-card h3::before{content:'';width:23px;height:23px;background:url('images/brain.png') center/contain no-repeat;filter:drop-shadow(0 8px 14px rgba(242,108,13,.18))}
-    .nia-refined .nia-feature-card p{font-size:16px;line-height:1.72;margin:0;color:var(--paper-muted);font-weight:780;position:relative;z-index:1}
-    .nia-refined .nia-feature-card.highlight-card{border-color:rgba(242,108,13,.42);background:linear-gradient(180deg,rgba(255,255,255,.98),rgba(255,237,219,.88));box-shadow:0 30px 82px rgba(242,108,13,.14)}
-    .nia-refined .nia-copy-panel{padding:40px 42px;border-radius:30px;border:1px solid rgba(60,40,24,.13);background:rgba(255,255,255,.82);box-shadow:0 24px 70px rgba(64,42,22,.10);position:relative;overflow:hidden}
-    .nia-refined .nia-copy-panel::after{content:'';position:absolute;right:-34px;bottom:-42px;width:170px;height:170px;background:url('images/brain.png') center/contain no-repeat;opacity:.045}
-    .nia-refined .nia-copy-panel .section-head{text-align:right;margin-bottom:28px;position:relative;z-index:1}
-    .nia-refined .nia-copy-panel h2{max-width:760px;margin-left:auto}
-    .nia-refined .nia-copy-panel p{font-size:18px;line-height:1.82;color:var(--paper-muted);font-weight:760;position:relative;z-index:1}
-    .nia-refined .nia-copy-panel .callout{margin:26px 0 18px;position:relative;z-index:1}
-    .nia-refined .brain-bullets{list-style:none;display:grid;gap:13px;margin:24px 0 0;padding:0;position:relative;z-index:1}
-    .nia-refined .brain-bullets li{display:grid;grid-template-columns:24px 1fr;gap:12px;align-items:start;color:var(--paper-ink);font-size:16px;line-height:1.55;font-weight:850}
-    .nia-refined .brain-bullets li::before{content:'';width:21px;height:21px;background:url('images/brain.png') center/contain no-repeat;margin-top:2px;filter:drop-shadow(0 7px 14px rgba(242,108,13,.16))}
-    .nia-refined .nia-quote-card{padding:30px 34px;border-radius:26px;border:1px solid rgba(242,108,13,.28);background:linear-gradient(180deg,rgba(255,255,255,.96),rgba(255,243,232,.88));box-shadow:0 26px 72px rgba(64,42,22,.13);position:relative;overflow:hidden}
-    .nia-refined .nia-quote-card::after{content:'';position:absolute;right:-24px;bottom:-30px;width:126px;height:126px;background:url('images/brain.png') center/contain no-repeat;opacity:.065}
-    .nia-refined .nia-quote-card p{font-size:20px;line-height:1.62;font-weight:900;color:var(--paper-ink);font-style:italic;margin:0;position:relative;z-index:1}
-    .nia-ctas{justify-content:center;margin-top:56px;gap:16px;flex-wrap:wrap}
-    .nia-ctas .btn:not(.primary){background:linear-gradient(135deg,#180f08,#3a1b0d);color:#fff;border:1px solid rgba(242,108,13,.58);box-shadow:0 18px 44px rgba(64,42,22,.18)}
-    .nia-ctas .btn:not(.primary):hover{transform:translateY(-1px);border-color:var(--orange-2);box-shadow:0 22px 56px rgba(64,42,22,.22)}
-    .highlight-card{border-color:rgba(242,108,13,.28);background:rgba(242,108,13,.08)}
-    .what-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;margin-top:34px}
-    .step-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;margin-top:34px}
-    .step-card{padding:28px;min-height:250px}
-    .step-no{display:block;color:var(--orange-2);font-size:14px;font-weight:950;letter-spacing:.18em;text-transform:uppercase;margin-bottom:14px}
-    .step-card p{font-size:16px;margin:0}
-    .center-figure{margin-top:34px}
-    .center-figure img{width:100%;border-radius:34px;border:1px solid rgba(60,40,24,.14);box-shadow:0 26px 70px rgba(64,42,22,.12)}
-    .center-figure figcaption{margin-top:12px;color:var(--paper-muted);font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:.05em;text-align:center}
-    .morning-banner{min-height:680px}
-    .morning-banner::after{background:linear-gradient(90deg,rgba(8,10,15,.82) 0%,rgba(8,10,15,.54) 34%,rgba(8,10,15,.16) 68%,rgba(8,10,15,.08) 100%)}
-    .morning-banner img{object-position:center center;opacity:.94}
-    .morning-banner .image-banner-content{max-width:640px}
-    .morning-banner h2{max-width:10ch;margin-bottom:0}
-    .morning-banner .kicker{background:rgba(251,247,238,.92);color:var(--orange);border-color:rgba(251,247,238,.75)}
-    .numbers-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:34px}
-    .number-card{min-height:244px}
-    .badge{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;border:1px solid rgba(60,40,24,.12);background:rgba(255,255,255,.72);color:var(--paper-muted);font-size:11px;font-weight:950;letter-spacing:.16em;text-transform:uppercase;margin-bottom:18px}
-    .ripple-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;margin-top:34px}
-    .ripple-card{padding:14px}
-    .ripple-card img{width:100%;border-radius:22px}
-    .ripple-card .caption{color:rgba(251,247,238,.58);text-align:left;padding:0 10px 4px}
-    .community-split,
-    .bedside-split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
-    .community-visual,
-    .bedside-visual{min-height:520px;overflow:hidden}
-    .community-visual img,
-    .bedside-visual img{width:100%;height:100%;object-fit:cover}
-    .community-copy,
-    .bedside-copy{padding:78px 56px;display:flex;flex-direction:column;justify-content:center}
-    .partner-figure{margin:34px 0 28px}
-    .partner-figure img{width:100%;max-width:860px;margin:0 auto;border-radius:36px;box-shadow:0 28px 76px rgba(64,42,22,.16);border:1px solid rgba(60,40,24,.14)}
-    .partner-figure figcaption{margin-top:14px;text-align:center;color:var(--paper-muted);font-size:13px;font-weight:800;letter-spacing:.05em;text-transform:uppercase}
-    .partner-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
-    .partner-card-local{min-height:256px}
-    .partner-card-local .partner-logo-wrap{min-height:82px}
-    .partner-card-local p{margin:0}
-    .inline-logo-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
-    .inline-logo-row img{max-height:32px;max-width:120px;object-fit:contain;background:rgba(255,255,255,.92);padding:6px 8px;border-radius:10px}
-    .evidence-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:34px}
-
-    .dean-opener-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(380px,500px);gap:48px;align-items:stretch}
-    .dean-opener-copy .kicker{display:inline-flex;align-items:center;width:max-content;background:rgba(255,255,255,.88);border:1px solid rgba(242,108,13,.36);box-shadow:0 14px 34px rgba(64,42,22,.08);padding:8px 16px;border-radius:999px;margin-bottom:26px;color:var(--orange);font-size:12px;font-weight:950;letter-spacing:.17em;text-transform:uppercase}
-    .dean-opener-copy h2{font-size:clamp(44px,5vw,76px);line-height:.92;margin-bottom:24px;letter-spacing:-.065em}
-    .dean-opener-copy p{font-size:18px;line-height:1.86;color:var(--paper-muted);margin:0 0 20px;font-weight:760}
-    .dean-opener-copy p.lead{font-size:21px;line-height:1.72;color:var(--paper-ink);font-weight:880}
-    .dean-feature-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;margin-top:38px;width:100%}
-    .dean-feature{padding:30px 34px;border-radius:24px;border:1px solid rgba(60,40,24,.14);background:linear-gradient(180deg,rgba(255,255,255,.92),rgba(251,247,238,.84));box-shadow:0 24px 60px rgba(64,42,22,.10);position:relative;overflow:hidden;min-height:166px;display:flex;flex-direction:column;justify-content:center}
-    .dean-feature::after{content:'';position:absolute;right:-22px;bottom:-30px;width:112px;height:112px;background:url('images/brain.png') center/contain no-repeat;opacity:.065}
-    .dean-feature .mini-kicker{font-size:13px;font-weight:950;letter-spacing:.18em;text-transform:uppercase;color:var(--orange);margin-bottom:13px}
-    .dean-feature p{font-size:18px;line-height:1.55;font-weight:900;color:var(--paper-ink);margin:0;position:relative;z-index:1}
-    .dean-photo-panel{padding:0;overflow:hidden;border-radius:30px;box-shadow:0 24px 70px rgba(64,42,22,.16);height:100%;display:flex;flex-direction:column;align-self:stretch}
-    .dean-photo-panel img{width:100%;min-height:0;flex:1 1 auto;height:100%;object-fit:cover;object-position:center}
-    .dean-photo-caption{background:linear-gradient(135deg,#180f08,#3a1b0d);padding:22px 24px;border-top:1px solid rgba(242,108,13,.28);flex:0 0 auto}
-    .dean-photo-caption p{font-size:17px;line-height:1.62;font-weight:850;font-style:italic;color:rgba(251,247,238,.82);margin:0}
-    .dean-photo-caption .source{display:block;margin-top:12px;color:var(--orange-2);font-size:11px;font-weight:950;letter-spacing:.14em;text-transform:uppercase}
-    .dean-actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:34px;align-items:center}
-    .dean-actions .btn:not(.primary){background:linear-gradient(135deg,#180f08,#3a1b0d);color:#fff;border:1px solid rgba(242,108,13,.58);box-shadow:0 18px 44px rgba(64,42,22,.18)}
-    .dean-actions .btn:not(.primary):hover{transform:translateY(-1px);border-color:var(--orange-2);box-shadow:0 22px 56px rgba(64,42,22,.22)}
-    .scroll-cue{display:flex;flex-direction:column;align-items:center;gap:8px;width:max-content;margin:30px auto 0;color:rgba(64,42,22,.44);font-size:11px;font-weight:900;letter-spacing:.16em;text-transform:uppercase}
-    .scroll-cue .arrow{width:52px;height:52px;border-radius:999px;display:grid;place-items:center;color:var(--orange);font-size:30px;line-height:1;background:rgba(255,255,255,.58);box-shadow:0 0 0 0 rgba(242,108,13,.20);animation:otosPulseArrow 1.8s ease-in-out infinite}
-    @keyframes otosPulseArrow{0%,100%{transform:translateY(0);box-shadow:0 0 0 0 rgba(242,108,13,.18)}50%{transform:translateY(8px);box-shadow:0 0 0 18px rgba(242,108,13,0)}}
-    .quote-band{padding:88px 0;background:linear-gradient(135deg,var(--orange),var(--orange-2));color:#fff;text-align:center}
-    .quote-band blockquote{max-width:980px;margin:0 auto 18px;font-size:clamp(24px,2.3vw,34px);line-height:1.5;font-style:italic;font-weight:760;letter-spacing:-.02em}
-    .quote-band .source{font-size:13px;font-weight:950;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.72)}
-    .route-actions{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin-top:32px}
-    @media (max-width:1100px){
-      .index-metrics-strip,.numbers-grid,.step-grid,.partner-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
-      .founder-grid,.two-col,.nia-grid,.what-grid,.ripple-grid,.dean-opener-grid{grid-template-columns:1fr}
-      .community-split,.bedside-split{grid-template-columns:1fr}
-      .community-copy,.bedside-copy{padding:54px 30px}
-    }
-    @media (max-width:760px){
-      .index-hero-stage{padding:122px 0 42px}
-      .index-hero-banner{min-height:620px}
-      .index-hero-banner::after{background:linear-gradient(180deg,rgba(8,10,15,.78),rgba(8,10,15,.42),rgba(8,10,15,.72))}
-      .index-hero-banner .image-banner-content{padding:32px 24px 34px}
-      .index-hero-banner h1{max-width:100%}
-      .index-metrics-strip,.numbers-grid,.step-grid,.partner-grid,.evidence-grid,.dean-feature-grid{grid-template-columns:1fr}
-      .story-card{padding:26px}
-      .community-visual,.bedside-visual{min-height:320px}
-    }
-  </style>
 </head>
-<body class="light-page">
+<body>
 
 <header class="site-header">
   <div class="nav-shell">
-    <a class="brand" href="index.html">OTOS Continuity™</a>
+    <a class="brand" href="index.html">
+      <span class="brand-icon"></span>OTOS Continuity™
+    </a>
     <nav class="nav-links">
-      <a href="founder-story.html">The Story</a>
-      <a href="#problem">Problem</a>
-      <a href="#what-it-is">What it is</a>
       <a href="partners.html">Partners</a>
-      <a href="local-authority-public-health.html">Local Authority</a>
+      <a href="founder-story.html">The Story</a>
       <a href="numbers.html">Numbers</a>
-      <a href="how-it-works-visuals.html">Visuals</a>
       <a href="evidence-sources.html">Evidence</a>
+      <a href="how-it-works-visuals.html">Visuals</a>
       <a class="cta" href="mailto:info@otos.life">Get involved</a>
     </nav>
   </div>
 </header>
 
 <main>
-  <section class="hero grid-bg index-hero-stage">
-    <div class="container index-hero-wrap">
-      <div class="image-banner index-hero-banner">
-        <img src="images/02-chaos-tunnel.png" alt="Chaos tunnel representing untreated ADHD and addiction drift">
-        <div class="image-banner-content">
-          <span class="kicker">Private partner briefing — Cambridge &amp; Peterborough</span>
+
+  <!-- ══ HERO ══════════════════════════════════════════════ -->
+  <section class="hero">
+    <div class="container">
+      <span class="kicker"><span class="kicker-icon"></span>Private partner briefing — Cambridge &amp; Peterborough</span>
+
+      <!-- Contained image card — NOT full bleed -->
+      <div class="hero-image-card" style="margin-bottom:32px">
+        <img src="images/02-chaos-tunnel.png" alt="A man in distress in a tunnel — the experience of untreated ADHD and addiction" style="max-height:600px;width:100%;object-fit:cover;object-position:center 30%">
+        <div class="hero-image-card-overlay"></div>
+        <div class="hero-image-card-content">
           <h1>When ADHD is left waiting,<br><span class="accent">addiction steps in.</span><br>And it doesn't come quietly.</h1>
-          <p class="lede">A private briefing for NHS, local authority, addiction, recovery, mental-health and community partners. A <strong>targeted ADHD + addiction continuity intervention</strong>: 12 weeks, 50 people, adults already visible to services — where unresolved ADHD may be the underlying cause of their addiction.</p>
+          <p class="lede">A targeted ADHD + addiction continuity intervention: 12 weeks, 50 people, adults already visible to services — where unresolved ADHD may be the underlying cause of their addiction.</p>
           <div class="hero-actions">
-            <a class="btn primary" href="#problem">Start with the problem</a>
-            <a class="btn" href="partners.html">Partner routes →</a>
+            <a class="btn-primary" href="#partner-routes">Find your page</a>
+            <a class="btn" href="founder-story.html">The story behind this</a>
           </div>
         </div>
       </div>
-      <div class="index-metrics-strip">
-        <article class="index-metric"><strong>23–45%</strong><span>ADHD in addiction cohorts</span></article>
-        <article class="index-metric"><strong>61.3%</strong><span>Improvement after ADHD Dx (START study)</span></article>
-        <article class="index-metric"><strong>800–900</strong><span>Estimated local risk cohort</span></article>
-      </div>
-    </div>
-  </section>
 
-  <!-- ══ SECTION 1: ONE SENTENCE + ROUTE CARDS (10-30 seconds) ══ -->
-  <section class="paper-section" id="problem" style="padding-top:56px;padding-bottom:0">
-    <div class="container">
-
-      <!-- One sentence -->
-      <div style="max-width:860px;margin:0 auto 44px;text-align:center">
-        <span class="kicker" style="margin-bottom:16px">In one sentence</span>
-        <p style="font-size:clamp(19px,2.2vw,26px);font-weight:800;color:var(--paper-ink);line-height:1.5;letter-spacing:-.02em;margin:0 0 20px">OTOS Continuity is a non-clinical, communications layer that helps services and clients &ldquo;hold the thread&rdquo; between referrals, discharges and waiting lists &mdash; so ADHD-driven drift does not turn into addiction-driven crisis.</p>
-        <p style="font-size:16px;font-weight:700;color:var(--paper-muted);margin:0">Not diagnosis. Not prescribing. Not a new treatment service. Not an EPR. A continuity layer around what already exists.</p>
-      </div>
-
-      <!-- SIX PARTNER ROUTE CARDS -->
-      <div style="margin-bottom:16px;text-align:center">
-        <span class="kicker" style="margin-bottom:12px">You have a page written specifically for you</span>
-        <h2 style="font-size:clamp(28px,3vw,44px);color:var(--paper-ink);margin-bottom:8px;letter-spacing:-.03em">Choose your route.<br><span style="color:var(--orange)">Open your draft note.</span></h2>
-        <p style="font-size:clamp(18px,2vw,24px);font-weight:800;color:var(--paper-ink);margin-bottom:8px;letter-spacing:-.02em">Existing services. Existing routes. <span style="color:var(--orange)">One continuity layer.</span></p>
-        <p style="font-size:16px;color:var(--paper-muted);font-weight:700;margin-bottom:32px">Each page explains your specific role, what we&rsquo;re asking, what you don&rsquo;t need to do &mdash; and has a 2&ndash;3 sentence support note ready to edit and send.</p>
-      </div>
-
-      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:48px">
-
-        <a href="partners-addenbrookes.html" style="text-decoration:none;display:flex;flex-direction:column;border:1px solid rgba(60,40,24,.15);border-radius:22px;overflow:hidden;background:#fff;box-shadow:0 4px 16px rgba(64,42,22,.07)">
-          <div style="padding:32px 28px 16px;display:flex;align-items:center;justify-content:center;min-height:80px">
-            <img src="images/Addenbrookes_Logo.png" alt="Addenbrooke's NHS Trust" style="height:44px;width:auto;max-width:200px;object-fit:contain">
-          </div>
-          <div style="padding:0 28px 0;flex:1">
-            <p style="font-size:14px;font-weight:700;color:var(--paper-muted);line-height:1.6;margin:0">You were my last detox. OTOS means the next person doesn&rsquo;t have to blag their way in. The handoff is logged before they leave the ward.</p>
-          </div>
-          <div style="margin-top:auto;padding:18px 28px;border-top:1px solid rgba(60,40,24,.08)">
-            <span style="font-size:13px;font-weight:900;color:var(--orange)">Open your page &rarr;</span>
-          </div>
-        </a>
-
-        <a href="partners-cgl-crs.html" style="text-decoration:none;display:flex;flex-direction:column;border:1px solid rgba(60,40,24,.15);border-radius:22px;overflow:hidden;background:#fff;box-shadow:0 4px 16px rgba(64,42,22,.07)">
-          <div style="padding:32px 28px 16px;display:flex;align-items:center;justify-content:center;min-height:80px;gap:16px">
-            <img src="images/CGL_Logo.png" alt="Change Grow Live" style="height:44px;width:auto;object-fit:contain">
-            <img src="images/CRS_Logo.png" alt="Cambridgeshire Recovery Service" style="height:36px;width:auto;max-width:140px;object-fit:contain">
-          </div>
-          <div style="padding:0 28px 0;flex:1">
-            <p style="font-size:14px;font-weight:700;color:var(--paper-muted);line-height:1.6;margin:0">You signed me up in an emergency. You know how often people cycle back without the thread ever holding. Here is how OTOS changes that.</p>
-          </div>
-          <div style="margin-top:auto;padding:18px 28px;border-top:1px solid rgba(60,40,24,.08)">
-            <span style="font-size:13px;font-weight:900;color:var(--orange)">Open your page &rarr;</span>
-          </div>
-        </a>
-
-        <a href="partners-cpft-adhd.html" style="text-decoration:none;display:flex;flex-direction:column;border:1px solid rgba(60,40,24,.15);border-radius:22px;overflow:hidden;background:#fff;box-shadow:0 4px 16px rgba(64,42,22,.07)">
-          <div style="padding:32px 28px 16px;display:flex;align-items:center;justify-content:center;min-height:80px">
-            <img src="images/ADHD_Team_Logo.png" alt="CPFT ADHD Team" style="height:54px;width:auto;object-fit:contain">
-          </div>
-          <div style="padding:0 28px 0;flex:1">
-            <p style="font-size:14px;font-weight:700;color:var(--paper-muted);line-height:1.6;margin:0">I&rsquo;m still on your waiting list. OTOS doesn&rsquo;t solve that &mdash; it stops people falling out of contact while they wait for you.</p>
-          </div>
-          <div style="margin-top:auto;padding:18px 28px;border-top:1px solid rgba(60,40,24,.08)">
-            <span style="font-size:13px;font-weight:900;color:var(--orange)">Open your page &rarr;</span>
-          </div>
-        </a>
-
-        <a href="partners-rce.html" style="text-decoration:none;display:flex;flex-direction:column;border:1px solid rgba(60,40,24,.15);border-radius:22px;overflow:hidden;background:#fff;box-shadow:0 4px 16px rgba(64,42,22,.07)">
-          <div style="padding:32px 28px 16px;display:flex;align-items:center;justify-content:center;min-height:80px">
-            <img src="images/rce.png" alt="RCE Wellbeing Hub" style="height:54px;width:auto;object-fit:contain">
-          </div>
-          <div style="padding:0 28px 0;flex:1">
-            <p style="font-size:14px;font-weight:700;color:var(--paper-muted);line-height:1.6;margin:0">You held me while I waited. OTOS gives that holding support a receipted thread &mdash; so when someone moves on, the continuity moves with them.</p>
-          </div>
-          <div style="margin-top:auto;padding:18px 28px;border-top:1px solid rgba(60,40,24,.08)">
-            <span style="font-size:13px;font-weight:900;color:var(--orange)">Open your page &rarr;</span>
-          </div>
-        </a>
-
-        <a href="partners-gp-rtc-qbtech.html" style="text-decoration:none;display:flex;flex-direction:column;border:1px solid rgba(60,40,24,.15);border-radius:22px;overflow:hidden;background:#fff;box-shadow:0 4px 16px rgba(64,42,22,.07)">
-          <div style="padding:32px 28px 16px;display:flex;align-items:center;justify-content:center;min-height:80px;gap:12px">
-            <img src="images/nhs-rtc.png" alt="NHS Right to Choose" style="height:44px;width:auto;object-fit:contain">
-            <img src="images/qbtech.png" alt="QbTech" style="height:38px;width:auto;object-fit:contain">
-          </div>
-          <div style="padding:0 28px 0;flex:1">
-            <p style="font-size:14px;font-weight:700;color:var(--paper-muted);line-height:1.6;margin:0">Right to Choose was the route that finally worked. OTOS makes it visible and receipted from first contact &mdash; without adding clinical burden.</p>
-          </div>
-          <div style="margin-top:auto;padding:18px 28px;border-top:1px solid rgba(60,40,24,.08)">
-            <span style="font-size:13px;font-weight:900;color:var(--orange)">Open your page &rarr;</span>
-          </div>
-        </a>
-
-        <a href="partners-mind-workwell-jo-fenton.html" style="text-decoration:none;display:flex;flex-direction:column;border:1px solid rgba(60,40,24,.15);border-radius:22px;overflow:hidden;background:#fff;box-shadow:0 4px 16px rgba(64,42,22,.07)">
-          <div style="padding:32px 28px 16px;display:flex;align-items:center;justify-content:center;min-height:80px;gap:12px;flex-wrap:wrap">
-            <img src="images/MIND_Logo.png" alt="Mind" style="height:40px;width:auto;object-fit:contain">
-            <img src="images/WorkWell_Logo.png" alt="WorkWell" style="height:36px;width:auto;max-width:120px;object-fit:contain">
-            <img src="images/Jo_Fenton_Logo.png" alt="Jo Fenton Consultancy" style="height:32px;width:auto;max-width:110px;object-fit:contain">
-          </div>
-          <div style="padding:0 28px 0;flex:1">
-            <p style="font-size:14px;font-weight:700;color:var(--paper-muted);line-height:1.6;margin:0">Community support is where people land when everything else has run out. OTOS gives your work a thread into the wider pathway &mdash; no NHS record access needed.</p>
-          </div>
-          <div style="margin-top:auto;padding:18px 28px;border-top:1px solid rgba(60,40,24,.08)">
-            <span style="font-size:13px;font-weight:900;color:var(--orange)">Open your page &rarr;</span>
-          </div>
-        </a>
-
-      </div><!-- end route cards -->
-
-      <div style="text-align:center;padding-bottom:56px;border-bottom:1px solid rgba(60,40,24,.1)">
-        <p style="font-size:15px;font-weight:700;color:var(--paper-muted);margin-bottom:6px">Not one of these partners? Looking for the Local Authority or ICB briefing?</p>
-        <a href="local-authority-public-health.html" style="font-size:14px;font-weight:900;color:var(--orange)">Open the Cambridgeshire County Council page &rarr;</a>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ══ SECTION 2: DEAN IN 5 LINES (60 seconds) ══ -->
-  <section class="paper-section" style="padding-top:56px;padding-bottom:48px">
-    <div class="container">
-      <div style="display:grid;grid-template-columns:1fr 420px;gap:56px;align-items:center">
-        <div>
-          <span class="kicker" style="margin-bottom:16px">Why this exists</span>
-          <h2 style="font-size:clamp(30px,3.2vw,48px);color:var(--paper-ink);margin-bottom:20px;letter-spacing:-.03em">I was your patient.<br><span style="color:var(--orange)">I built the fix.</span></h2>
-          <p style="font-size:17px;color:var(--paper-muted);line-height:1.8;margin-bottom:16px">35 years of self-medication. Six A&amp;E presentations. Three detoxes at Addenbrooke&rsquo;s. £90,000 of residential rehab with my ADHD medication removed on arrival. Then a private diagnosis. Three days on Elvanse. Everything made sense.</p>
-          <p style="font-size:17px;color:var(--paper-muted);line-height:1.8;margin-bottom:24px">The chaos wasn&rsquo;t a character defect. The addiction wasn&rsquo;t a failure of treatment. It was what happens when the underlying neurological condition stays unresolved while the system treats the visible damage. <strong style="color:var(--paper-ink)">OTOS is the thread that should have held between the services I moved through.</strong></p>
-          <a href="founder-story.html" style="font-size:15px;font-weight:900;color:var(--orange);text-decoration:none">Read the full story &rarr;</a>
+      <!-- Metrics strip -->
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px">
+        <div style="padding:18px 20px;border-radius:16px;border:1px solid rgba(255,255,255,.10);background:rgba(255,255,255,.04)">
+          <strong style="display:block;font-size:clamp(26px,2.8vw,40px);font-weight:900;letter-spacing:-.055em;line-height:.92;color:#ff8a1f;margin-bottom:8px">23–45%</strong>
+          <span style="font-size:12px;font-weight:700;color:#aeb4c0;text-transform:uppercase;letter-spacing:.1em;line-height:1.4">ADHD in addiction cohorts<br><em style="font-style:normal;color:rgba(174,180,192,.55)">Royal College of Psychiatrists</em></span>
         </div>
-        <div style="border-radius:24px;overflow:hidden;box-shadow:0 20px 60px rgba(64,42,22,.16)">
-          <img src="images/06-close-nurse-bedside.png" alt="The bedside promise — Addenbrooke's" style="width:100%;display:block">
-          <div style="background:var(--brown);padding:18px 22px">
-            <p style="font-size:14px;font-style:italic;font-weight:800;color:rgba(251,247,238,.8);margin:0;line-height:1.6">&ldquo;Next time we meet, I won&rsquo;t be your patient. I&rsquo;ll be your partner.&rdquo;</p>
-          </div>
+        <div style="padding:18px 20px;border-radius:16px;border:1px solid rgba(255,255,255,.10);background:rgba(255,255,255,.04)">
+          <strong style="display:block;font-size:clamp(26px,2.8vw,40px);font-weight:900;letter-spacing:-.055em;line-height:.92;color:#ff8a1f;margin-bottom:8px">61.3%</strong>
+          <span style="font-size:12px;font-weight:700;color:#aeb4c0;text-transform:uppercase;letter-spacing:.1em;line-height:1.4">Improvement in addiction after ADHD treatment<br><em style="font-style:normal;color:rgba(174,180,192,.55)">START study, France 2025</em></span>
+        </div>
+        <div style="padding:18px 20px;border-radius:16px;border:1px solid rgba(255,255,255,.10);background:rgba(255,255,255,.04)">
+          <strong style="display:block;font-size:clamp(26px,2.8vw,40px);font-weight:900;letter-spacing:-.055em;line-height:.92;color:#ff8a1f;margin-bottom:8px">800–900</strong>
+          <span style="font-size:12px;font-weight:700;color:#aeb4c0;text-transform:uppercase;letter-spacing:.1em;line-height:1.4">Estimated local risk cohort<br><em style="font-style:normal;color:rgba(174,180,192,.55)">OTOS planning estimate</em></span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ══ SECTION 3: 3 KEY FACTS + GUARDRAILS (90 seconds) ══ -->
-  <section class="dark-section" style="padding-top:56px;padding-bottom:56px">
-    <div class="container">
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start">
-
-        <div>
-          <span class="kicker" style="margin-bottom:20px">The evidence in three facts</span>
-          <div style="display:flex;flex-direction:column;gap:16px">
-            <div style="padding:24px;border-radius:18px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1)">
-              <div style="font-size:32px;font-weight:900;color:var(--orange-2);letter-spacing:-.04em;margin-bottom:8px">61.3%</div>
-              <p style="font-size:14px;font-weight:700;color:rgba(251,247,238,.65);margin:0;line-height:1.65">Improvement in addictive disorders after ADHD diagnosis and treatment. START study, France 2025. This is the comparator the pre-pilot is designed to test locally.</p>
-            </div>
-            <div style="padding:24px;border-radius:18px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1)">
-              <div style="font-size:32px;font-weight:900;color:var(--orange-2);letter-spacing:-.04em;margin-bottom:8px">23&ndash;45%</div>
-              <p style="font-size:14px;font-weight:700;color:rgba(251,247,238,.65);margin:0;line-height:1.65">Of people in addiction treatment have undiagnosed ADHD. Royal College of Psychiatrists. In the CPFT footprint alone: an estimated 800&ndash;900 adults in this overlap.</p>
-            </div>
-            <div style="padding:24px;border-radius:18px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1)">
-              <div style="font-size:32px;font-weight:900;color:var(--orange-2);letter-spacing:-.04em;margin-bottom:8px">£90k&nbsp;<span style="font-size:20px;color:rgba(255,255,255,.4)">=</span>&nbsp;£91k</div>
-              <p style="font-size:14px;font-weight:700;color:rgba(251,247,238,.65);margin:0;line-height:1.65">3-month residential rehab for 1 person costs roughly what a 12-week OTOS pre-pilot costs for 50. This is the cost-redirection question the pilot is designed to answer.</p>
-            </div>
-          </div>
-          <a href="evidence-sources.html" style="display:inline-block;margin-top:18px;font-size:14px;font-weight:900;color:var(--orange-2)">Full evidence register &rarr;</a>
-        </div>
-
-        <div>
-          <span class="kicker" style="margin-bottom:20px">What OTOS will never do</span>
-          <div style="padding:28px;border-radius:20px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1)">
-            <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:12px">
-              <li style="display:flex;gap:12px;font-size:15px;font-weight:700;color:rgba(251,247,238,.75);line-height:1.5"><span style="color:#f87171;flex-shrink:0;font-weight:900">&#215;</span>Diagnose, prescribe or make any clinical decision</li>
-              <li style="display:flex;gap:12px;font-size:15px;font-weight:700;color:rgba(251,247,238,.75);line-height:1.5"><span style="color:#f87171;flex-shrink:0;font-weight:900">&#215;</span>Replace, access or write back to any EPR system</li>
-              <li style="display:flex;gap:12px;font-size:15px;font-weight:700;color:rgba(251,247,238,.75);line-height:1.5"><span style="color:#f87171;flex-shrink:0;font-weight:900">&#215;</span>Create a new clinical record or share identifiable data</li>
-              <li style="display:flex;gap:12px;font-size:15px;font-weight:700;color:rgba(251,247,238,.75);line-height:1.5"><span style="color:#f87171;flex-shrink:0;font-weight:900">&#215;</span>Automate any decision that should have a human in it</li>
-              <li style="display:flex;gap:12px;font-size:15px;font-weight:700;color:rgba(251,247,238,.75);line-height:1.5"><span style="color:#f87171;flex-shrink:0;font-weight:900">&#215;</span>Commit you to a full rollout by joining a scoping call</li>
-            </ul>
-            <div style="margin-top:20px;padding-top:18px;border-top:1px solid rgba(255,255,255,.08);font-size:15px;font-weight:900;color:#fff;font-style:italic">&ldquo;OTOS surfaces signals. The partner teams make the decisions.&rdquo;</div>
-          </div>
-          <div style="margin-top:16px;padding:20px 24px;border-radius:18px;background:rgba(242,108,13,.1);border:1px solid rgba(242,108,13,.25)">
-            <div style="font-size:11px;font-weight:900;letter-spacing:.16em;text-transform:uppercase;color:var(--orange);margin-bottom:10px">The bounded pre-pilot</div>
-            <p style="font-size:15px;font-weight:700;color:rgba(251,247,238,.82);margin:0;line-height:1.65"><strong style="color:#fff">50 people. 12 weeks. Cambridge &amp; Peterborough.</strong> One continuity thread. Zero clinical record merge. One named contact per partner. One 30-minute scoping call to start.</p>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ══ SECTION 4: DASHBOARD (2 minutes) ══ -->
-  <section class="paper-section" style="padding-top:56px;padding-bottom:56px">
-    <div class="container">
-      <div style="text-align:center;margin-bottom:32px">
-        <span class="kicker" style="margin-bottom:14px">What it looks like in practice</span>
-        <h2 style="font-size:clamp(28px,3vw,44px);color:var(--paper-ink);margin-bottom:12px;letter-spacing:-.03em">The overview a commissioner sees at Week 7.</h2>
-        <p style="font-size:16px;font-weight:700;color:var(--paper-muted)">Real pilot data structure. Anonymous threads. No identifying details.</p>
-      </div>
-      <div style="border-radius:24px;overflow:hidden;border:1px solid rgba(60,40,24,.12);box-shadow:0 24px 72px rgba(64,42,22,.12)">
-        <img src="images/OTOS_continuity_pilot_dashboard.png" alt="OTOS Continuity pilot overview dashboard — Cambridge Pre-Pilot Week 7 of 12, 89% continuity held, 94% handoff receipt rate" style="width:100%;display:block">
-      </div>
-      <div style="display:flex;justify-content:center;gap:24px;margin-top:20px;flex-wrap:wrap">
-        <a href="how-it-works-visuals.html" style="font-size:14px;font-weight:900;color:var(--orange)">See all diagrams &amp; mockups &rarr;</a>
-        <a href="numbers.html" style="font-size:14px;font-weight:900;color:var(--paper-muted)">Full numbers &amp; model &rarr;</a>
-        <a href="local-authority-public-health.html" style="font-size:14px;font-weight:900;color:var(--paper-muted)">Local Authority briefing &rarr;</a>
-      </div>
-    </div>
-  </section>
-
-
-  <section class="dark-section" id="what-it-is">
-    <div class="container">
-      <div class="section-head">
-        <span class="kicker">What OTOS is</span>
-        <h2>Not a new service.<br><span class="accent">A continuity layer around the services already there.</span></h2>
-        <p class="lede">OTOS does not replace existing services. It connects them and maintains the person's thread through every organisation they touch. The person can remain anonymous. The clinical notes stay where they are. The continuity signal travels.</p>
-      </div>
-      <div class="what-grid">
-        <article class="card glass">
-          <div class="label">What it creates</div>
-          <ul class="list brain">
-            <li>Referrals and next steps become visible and receipted instead of assumed.</li>
-            <li>Waiting-list silence becomes a continuity signal, not a blind spot.</li>
-            <li>Micro-check-ins create lightweight engagement signals without requiring a keyworker phone call.</li>
-            <li>Partners can send familiar, governed messages in their own voice where agreed.</li>
-            <li>Human review closes the loop before any action is taken.</li>
-          </ul>
-        </article>
-        <article class="card glass">
-          <div class="label">What it is not</div>
-          <ul class="list no">
-            <li>Not an EPR, clinical record or diagnostic platform.</li>
-            <li>Not a prescribing, treatment or clinical decision-support system.</li>
-            <li>Not surveillance, and not full record-sharing by default.</li>
-            <li>Not another service asking frontline teams to start again.</li>
-            <li>Not a replacement for safeguarding, crisis or existing partner protocols.</li>
-          </ul>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section class="paper-section" id="how-it-works">
+  <!-- ══ PARTNER ROUTE CARDS ═══════════════════════════════ -->
+  <section class="paper-section" id="partner-routes" style="padding-top:56px">
     <div class="container">
       <div class="section-head center">
-        <span class="kicker">How it works</span>
-        <h2>Four steps.<br><span class="accent">One connected pathway.</span></h2>
-        <p class="lede">OTOS Continuity™ holds the continuity thread across services so each partner can see the relevant continuity status — not another service's clinical notes.</p>
+        <span class="kicker"><span class="kicker-icon"></span>You have a page written specifically for your service</span>
+        <h2>Choose your route.<br><span class="accent">Please open your draft note.</span></h2>
+        <p>Each page explains your specific role, what we're asking, what you don't need to do — and has a 2–3 sentence support note ready to edit and send.</p>
       </div>
-      <div class="step-grid">
-        <article class="card light-card step-card"><span class="step-no">01</span><h3>Identify</h3><p>People already touching addiction, recovery, crisis, hospital, GP, ADHD or community support are identified where co-occurring ADHD and substance misuse may be clinically relevant.</p></article>
-        <article class="card light-card step-card"><span class="step-no">02</span><h3>Connect</h3><p>The next appropriate route is named: ADHD assessment, Right to Choose, CPFT, GP, recovery or community support. The referral is logged and the next step is visible.</p></article>
-        <article class="card light-card step-card"><span class="step-no">03</span><h3>Co-ordinate</h3><p>The continuity thread shows whether the next step landed, stalled or needs human review. No extra clinical record is shared between services.</p></article>
-        <article class="card light-card step-card"><span class="step-no">04</span><h3>Sustain</h3><p>Drift, silence and missed follow-through become visible early enough for partner-led review, safe re-engagement and measurable learning.</p></article>
+      <div class="route-grid">
+        <a class="route-card" href="partners-addenbrookes.html">
+          <div class="route-card-logo"><img src="images/Addenbrookes_Logo.png" alt="Addenbrooke's NHS Trust"></div>
+          <div class="route-card-body">You were my last detox. OTOS means the next person doesn't have to blag their way in. Notification of an A&E crisis handoff is logged before they leave the ward.</div>
+          <div class="route-card-footer">Open your page →</div>
+        </a>
+        <a class="route-card" href="partners-cgl-crs.html">
+          <div class="route-card-logo">
+            <img src="images/CGL_Logo.png" alt="Change Grow Live">
+            <img src="images/CRS_Logo.png" alt="Cambridgeshire Recovery Service">
+          </div>
+          <div class="route-card-body">You signed me up in an emergency. You know how often people cycle back without the thread ever holding. Here is how OTOS changes that.</div>
+          <div class="route-card-footer">Open your page →</div>
+        </a>
+        <a class="route-card" href="partners-cpft-adhd.html">
+          <div class="route-card-logo"><img src="images/ADHD_Team_Logo.png" alt="CPFT ADHD Team"></div>
+          <div class="route-card-body">I'm still on your waiting list. OTOS doesn't solve that — it stops people falling out of contact while they wait for you.</div>
+          <div class="route-card-footer">Open your page →</div>
+        </a>
+        <a class="route-card" href="partners-rce.html">
+          <div class="route-card-logo"><img src="images/rce.png" alt="RCE Wellbeing Hub" style="max-height:38px"></div>
+          <div class="route-card-body">You held me while I waited. OTOS gives that holding support a receipted thread — so when someone moves on, the continuity moves with them.</div>
+          <div class="route-card-footer">Open your page →</div>
+        </a>
+        <a class="route-card" href="partners-gp-rtc-qbtech.html">
+          <div class="route-card-logo">
+            <img src="images/nhs-rtc.png" alt="NHS Right to Choose">
+            <img src="images/qbtech.png" alt="QbTech">
+          </div>
+          <div class="route-card-body">Right to Choose is availabel to all participants. OTOS makes that referal visible and receipted from first contact — without adding clinical burden.</div>
+          <div class="route-card-footer">Open your page →</div>
+        </a>
+        <a class="route-card" href="partners-mind-workwell-jo-fenton.html">
+          <div class="route-card-logo">
+            <img src="images/MIND_Logo.png" alt="Mind">
+            <img src="images/WorkWell_Logo.png" alt="WorkWell">
+            <img src="images/Jo_Fenton_Logo.png" alt="Jo Fenton Consultancy">
+          </div>
+          <div class="route-card-body">Community support is where people land when everything else has run out. OTOS gives your work a thread into the wider pathway — no NHS record access needed.</div>
+          <div class="route-card-footer">Open your page →</div>
+        </a>
       </div>
-      <figure class="center-figure">
-        <img src="images/partner-pathway.png" alt="OTOS partner pathway brain diagram — all partners connected">
-        <figcaption>Partners shown are invited and/or in discussion. Inclusion here does not imply confirmed participation or endorsement.</figcaption>
-      </figure>
+      <p style="text-align:center;font-size:14px;font-weight:600;color:var(--paper-muted);margin-top:20px">
+        Cambridgeshire County Council / public health lead? <a href="local-authority-public-health.html" style="color:var(--orange);font-weight:800">Open the Local Authority briefing →</a>
+      </p>
     </div>
   </section>
 
-
-  <section class="paper-section" id="evidence">
+  <!-- ══ DEAN IN FOUR LINES ════════════════════════════════ -->
+  <section class="paper-section paper-section--alt">
     <div class="container">
-      <div class="section-head">
-        <span class="kicker">Evidence you can trace</span>
-        <h2>Not ahead of the evidence.<br><span class="accent">Precisely within it.</span></h2>
+      <div class="split split-wide align-center">
+        <div>
+          <span class="kicker"><span class="kicker-icon"></span>Why this exists</span>
+          <h2>I was your patient.<br><span class="accent">I built the fix.</span></h2>
+          <p style="font-size:17px;color:var(--paper-muted);margin-top:16px">35 years of self-medication. Six A&amp;E presentations. Three detoxes at Addenbrooke's. £90,000 of residential rehab with my ADHD medication removed on arrival.</p>
+          <p style="font-size:17px;color:var(--paper-muted)">Then a private diagnosis. Three days on Elvanse. Everything made sense. The chaos wasn't a character defect. The addiction wasn't a failure of treatment. It was what happens when the underlying neurological condition stays unresolved while the system treats the visible damage.</p>
+          <p style="font-size:17px;font-weight:800;color:var(--paper-ink)">OTOS is the thread that should have held between the services I moved through.</p>
+          <a href="founder-story.html" style="display:inline-block;margin-top:18px;font-size:14px;font-weight:800;color:var(--orange);text-decoration:none">Read the full story →</a>
+        </div>
+        <div class="image-contained" style="max-width:380px;margin-left:auto">
+          <img src="images/06-close-nurse-bedside.png" alt="The bedside moment — Addenbrooke's Alcohol Care">
+          <div style="background:var(--brown);padding:16px 20px">
+            <p style="font-family:Georgia,'Times New Roman',serif;font-size:15px;font-style:italic;font-weight:400;color:rgba(251,247,238,.82);margin:0;line-height:1.6">"Next time we meet, I won't be your patient. I'll be your partner."</p>
+          </div>
+        </div>
       </div>
-      <div class="evidence-grid">
-        <article class="card light-card"><div class="label">RCPsych 2022</div><h3>ADHD with substance use</h3><p>There is more benefit than risk from treating ADHD in patients with substance use disorder — in both ADHD and substance use symptom reduction.</p></article>
-        <article class="card light-card"><div class="label">NICE NG87</div><h3>Coexisting substance misuse</h3><p>NICE guidance supports ADHD assessment and treatment in active substance misuse contexts. Not a barrier — a pathway.</p></article>
-        <article class="card light-card"><div class="label">START study</div><h3>61.3% improvement</h3><p>Comparator study: improvement in addictive disorders at six months after ADHD diagnosis and appropriate treatment.</p></article>
-        <article class="card light-card"><div class="label">Co-occurring framework</div><h3>No wrong door, shared responsibility</h3><p>National policy direction supports clearer pathways, better continuity and shared responsibility across services.</p></article>
-      </div>
-      <div class="cards two" style="margin-top:18px">
-        <article class="card light-card"><p><strong>NHS 10 Year Health Plan</strong> — hospital to community, analogue to digital, sickness to prevention.</p></article>
-        <article class="card light-card"><p><strong>NHS ADHD Taskforce</strong> — undiagnosed ADHD framed as a major and under-addressed public health issue.</p></article>
-        <article class="card light-card"><p><strong>250 NHS Community Hubs</strong> — the continuity layer is designed to operate naturally in community health infrastructure.</p></article>
-        <article class="card light-card"><p><strong>DHSC addiction healthcare goals</strong> — government investment in addiction technology addressing structural fragmentation.</p></article>
-      </div>
-      <div class="hero-actions" style="justify-content:center;margin-top:28px"><a class="btn" href="evidence-sources.html">View all evidence sources →</a></div>
     </div>
   </section>
 
-  <section class="quote-band">
-    <div class="container">
-      <blockquote>“ADHD, when unsupported, is a potent route into educational failure, long-term unemployment, crime, substance misuse, suicide, mental and physical illness. Economic costs to individuals and the government of at least £17 billion are avoidable.”</blockquote>
-      <div class="source">Independent NHS ADHD Taskforce — April 2025</div>
-    </div>
-  </section>
-
+  <!-- ══ EVIDENCE + GUARDRAILS (ONE dark section) ══════════ -->
   <section class="dark-section">
     <div class="container">
-      <div class="section-head center">
-        <span class="kicker">Choose your route</span>
-        <h2>Read the shared model.<br><span class="accent">Then go to the page written for your role.</span></h2>
-        <p class="lede">The next step is not a purchase decision. It is a partner conversation about whether this bounded, evidence-generating intervention fits the local pathway — and who needs to be in the room.</p>
+      <div class="split">
+
+        <!-- Three evidence facts -->
+        <div>
+          <span class="kicker"><span class="kicker-icon"></span>The evidence in three facts</span>
+          <div class="stack" style="margin-top:4px">
+            <div style="padding:22px;border-radius:16px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09)">
+              <div class="stat">61.3%</div>
+              <p style="font-size:14px;font-weight:700;color:var(--muted);margin:0;line-height:1.6">Improvement in addictive disorders after ADHD diagnosis and treatment. START study, France 2025. This is the comparator the pre-pilot is designed to test locally.</p>
+            </div>
+            <div style="padding:22px;border-radius:16px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09)">
+              <div class="stat">23–45%</div>
+              <p style="font-size:14px;font-weight:700;color:var(--muted);margin:0;line-height:1.6">Of people in addiction treatment have undiagnosed ADHD. Royal College of Psychiatrists. In the CPFT footprint: an estimated 800–900 adults in this overlap.</p>
+            </div>
+            <div style="padding:22px;border-radius:16px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09)">
+              <div class="stat" style="font-size:clamp(22px,2.2vw,32px)">£90k&nbsp;<span style="font-size:16px;opacity:.4">=</span>&nbsp;£91k</div>
+              <p style="font-size:14px;font-weight:700;color:var(--muted);margin:0;line-height:1.6">Three-month residential rehab for one person costs roughly what a 12-week OTOS pre-pilot costs for 50. This is the cost-redirection question the pilot is designed to answer.</p>
+            </div>
+          </div>
+          <a href="evidence-sources.html" style="display:inline-block;margin-top:16px;font-size:13px;font-weight:800;color:var(--orange-2);text-decoration:none">Full evidence register →</a>
+        </div>
+
+        <!-- Guardrails -->
+        <div>
+          <span class="kicker"><span class="kicker-icon"></span>What OTOS will never do</span>
+          <ul class="guardrail-list" style="margin-top:4px">
+            <li><span class="icon no">✕</span>Diagnose, prescribe or make any clinical decision</li>
+            <li><span class="icon no">✕</span>Replace, access or write back to any EPR system</li>
+            <li><span class="icon no">✕</span>Create a new clinical record or share identifiable data</li>
+            <li><span class="icon no">✕</span>Automate any decision that should have a human in it</li>
+            <li><span class="icon no">✕</span>Commit you to a full rollout by joining a scoping call</li>
+          </ul>
+          <div style="margin-top:20px;padding:20px 22px;border-radius:16px;background:rgba(242,108,13,.09);border:1px solid rgba(242,108,13,.22)">
+            <div class="label" style="margin-bottom:8px">The bounded pre-pilot</div>
+            <p style="font-size:15px;font-weight:700;color:rgba(251,247,238,.82);margin:0;line-height:1.65"><strong style="color:#fff">50 people. 12 weeks. Cambridge &amp; Peterborough.</strong> One continuity thread. Zero clinical record merge. One named contact per partner. One 30-minute scoping call to start.</p>
+          </div>
+          <div class="callout" style="margin-top:16px">"OTOS surfaces signals. The partner teams make the decisions."</div>
+        </div>
+
       </div>
-      <div class="route-actions">
-        <a class="btn primary" href="partners.html">Partner routes</a>
+    </div>
+  </section>
+
+  <!-- ══ HOW IT WORKS — four steps ════════════════════════ -->
+  <section class="paper-section">
+    <div class="container">
+      <div class="section-head center">
+        <span class="kicker"><span class="kicker-icon"></span>How it works</span>
+        <h2>Four steps. One connected pathway.</h2>
+        <p>OTOS holds the continuity thread across services so each partner can see the relevant continuity status — not another service's clinical notes.</p>
+      </div>
+      <div class="cards four">
+        <article class="card">
+          <div class="label">01 — Identify</div>
+          <h3>People already visible</h3>
+          <p>Adults already touching addiction, recovery, crisis, hospital, GP, ADHD or community support — where co-occurring ADHD may be clinically relevant.</p>
+        </article>
+        <article class="card">
+          <div class="label">02 — Connect</div>
+          <h3>The next step is named</h3>
+          <p>The next appropriate route is named: ADHD assessment, Right to Choose, CPFT, GP, recovery or community support. The referral is logged and visible.</p>
+        </article>
+        <article class="card">
+          <div class="label">03 — Co-ordinate</div>
+          <h3>Thread stays visible</h3>
+          <p>The continuity thread shows whether the next step landed, stalled or needs human review. No extra clinical record is shared between services.</p>
+        </article>
+        <article class="card">
+          <div class="label">04 — Sustain</div>
+          <h3>Drift becomes visible</h3>
+          <p>Silence and missed follow-through become visible early enough for partner-led review, safe re-engagement and measurable learning.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ DASHBOARD THUMBNAIL ════════════════════════════════ -->
+  <section class="paper-section paper-section--alt" style="padding-top:0;padding-bottom:56px">
+    <div class="container">
+      <div style="display:grid;grid-template-columns:1fr 360px;gap:44px;align-items:center">
+        <div>
+          <span class="kicker"><span class="kicker-icon"></span>What it looks like in practice</span>
+          <h2>The overview a commissioner sees at Week 7.</h2>
+          <p style="margin-top:14px;color:var(--paper-muted)">Real pilot data structure. Anonymous threads. No identifying details. 89% continuity held. 94% handoff receipt rate.</p>
+          <div class="cta-row mt">
+            <a class="btn-primary" href="how-it-works-visuals.html">See all diagrams &amp; mockups</a>
+            <a class="btn outline" href="numbers.html">Full numbers &amp; model</a>
+          </div>
+        </div>
+        <div class="image-thumbnail">
+          <img src="images/OTOS_continuity_pilot_dashboard.png" alt="OTOS Continuity pilot overview dashboard — Week 7">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ FINAL CTA ══════════════════════════════════════════ -->
+  <section class="brown-section">
+    <div class="container" style="text-align:center">
+      <div class="quote-block" style="padding:0 0 32px">
+        <blockquote>"ADHD, when unsupported, is a potent route into educational failure, long-term unemployment, crime, substance misuse, suicide, mental and physical illness. Economic costs of at least £17 billion are avoidable."</blockquote>
+        <div class="quote-attr">Independent NHS ADHD Taskforce — April 2025</div>
+      </div>
+      <p style="font-size:16px;font-weight:600;color:rgba(251,247,238,.6);margin-bottom:24px">The next step is not a purchase decision. It is a partner conversation.</p>
+      <div class="cta-row center">
+        <a class="btn-primary" href="partners.html">Partner routes</a>
         <a class="btn" href="local-authority-public-health.html">Local Authority briefing</a>
         <a class="btn" href="evidence-sources.html">Evidence</a>
-        <a class="btn" href="numbers.html">Numbers</a>
         <a class="btn" href="mailto:info@otos.life">Get involved →</a>
       </div>
     </div>
   </section>
+
 </main>
 
-<footer class="dark-section" style="padding:36px 0 44px;">
-  <div class="container" style="display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap;">
-    <img src="images/otos-logo.png" alt="OTOS Continuity" style="height:30px;width:auto;filter:none;">
-    <small>Private partner briefing — Cambridge &amp; Peterborough ICB</small>
-    <small><a href="mailto:info@otos.life">info@otos.life</a></small>
+<footer class="page-footer">
+  <div class="page-footer-inner">
+    <img src="images/otos-logo.png" alt="OTOS Continuity">
+    <span class="page-footer-meta">OTOS Digital Ltd &middot; Co. No. 17084455 &middot; Founder: Dean Butler &middot; Clinical governance: discussed at scoping stage</span>
+    <a href="mailto:info@otos.life">info@otos.life</a>
   </div>
 </footer>
 
-<script>
-const fds=document.querySelectorAll('.fd');
-const io=new IntersectionObserver(entries=>{
-  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}});
-},{threshold:0.07,rootMargin:'0px 0px -30px 0px'});
-fds.forEach(el=>io.observe(el));
-</script>
-  <footer style="background:var(--brown);padding:28px 40px;border-top:1px solid rgba(255,255,255,.06)">
-    <div style="max-width:1360px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px">
-      <div style="font-size:13px;color:rgba(255,255,255,.45);font-weight:700">OTOS Digital Ltd &middot; Co. No. 17084455 &middot; Founder: Dean Butler &middot; Clinical governance: discussed at scoping stage</div>
-      <a href="mailto:info@otos.life" style="font-size:13px;font-weight:800;color:var(--orange-2)">info@otos.life</a>
-    </div>
-  </footer>
 </body>
 </html>
