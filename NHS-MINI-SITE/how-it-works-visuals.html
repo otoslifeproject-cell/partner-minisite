@@ -245,8 +245,8 @@
 
 <!-- LIGHTBOX -->
 <div class="lightbox" id="lightbox" onclick="closeLightbox()">
-  <div class="lightbox-close" onclick="closeLightbox()">✕</div>
-  <img id="lightbox-img" src="" alt="">
+  <div class="lightbox-close" onclick="closeLightbox()" style="cursor:pointer">&#215;</div>
+  <img id="lightbox-img" src="" alt="Expanded diagram">
 </div>
 
 <script>
@@ -267,5 +267,11 @@ function closeLightbox() {
 }
 document.addEventListener('keydown', e => { if(e.key === 'Escape') closeLightbox(); });
 </script>
+  <footer style="background:var(--brown);padding:28px 40px;border-top:1px solid rgba(255,255,255,.06)">
+    <div style="max-width:1360px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px">
+      <div style="font-size:13px;color:rgba(255,255,255,.45);font-weight:700">OTOS Digital Ltd &middot; Co. No. 17084455 &middot; Founder: Dean Butler &middot; Clinical governance: discussed at scoping stage</div>
+      <a href="mailto:info@otos.life" style="font-size:13px;font-weight:800;color:var(--orange-2)">info@otos.life</a>
+    </div>
+  </footer>
 </body>
 </html>
