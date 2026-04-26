@@ -802,16 +802,22 @@ td strong { color: var(--paper-ink); }
 .hero-image-card-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, rgba(8,10,15,.9) 0%, rgba(8,10,15,.72) 30%, rgba(8,10,15,.3) 65%, transparent 100%);
+  background: linear-gradient(
+    to top,
+    rgba(8,10,15,.96) 0%,
+    rgba(8,10,15,.82) 35%,
+    rgba(8,10,15,.55) 60%,
+    rgba(8,10,15,.28) 100%
+  );
 }
 .hero-image-card-content {
   position: absolute;
   inset: 0;
-  padding: 44px 48px;
+  padding: 44px 48px 48px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  max-width: 680px;
+  max-width: 760px;
 }
 
 /* ── COST TICKER (founder story) ────────────────────────── */
@@ -1023,110 +1029,6 @@ td strong { color: var(--paper-ink); }
 /* ── GRID HELPERS ────────────────────────────────────────── */
 .stack { display: flex; flex-direction: column; gap: 14px; }
 
-
-/* ── POLISH COMPONENTS — shared replacements for ad-hoc boxes ── */
-.partner-logo-row {
-  display: flex;
-  gap: 12px;
-  align-items: center;
-  flex-wrap: wrap;
-  margin-bottom: 24px;
-}
-.partner-logo-row img {
-  height: 36px;
-  max-width: 150px;
-  object-fit: contain;
-  background: rgba(255,255,255,.92);
-  border-radius: 9px;
-  padding: 6px 9px;
-}
-.partner-logo-row.wrap img { height: 32px; max-width: 120px; }
-
-.metric-strip {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
-}
-.metric-pill {
-  padding: 18px 20px;
-  border-radius: 16px;
-  border: 1px solid rgba(255,255,255,.10);
-  background: rgba(255,255,255,.04);
-}
-.metric-pill strong {
-  display: block;
-  font-size: clamp(26px,2.8vw,40px);
-  font-weight: 900;
-  letter-spacing: -.055em;
-  line-height: .92;
-  color: var(--orange-2);
-  margin-bottom: 8px;
-}
-.metric-pill span {
-  display: block;
-  font-size: 12px;
-  font-weight: 700;
-  color: var(--muted);
-  text-transform: uppercase;
-  letter-spacing: .1em;
-  line-height: 1.4;
-}
-.metric-pill em { font-style: normal; color: rgba(174,180,192,.55); }
-
-.info-grid { display: grid; gap: 20px; }
-.info-grid.two { grid-template-columns: 1fr 1fr; }
-.info-card {
-  padding: 28px 32px;
-  border-radius: 20px;
-  border: 1px solid var(--line-paper);
-  background: var(--paper-3);
-  box-shadow: var(--shadow-sm);
-}
-.info-card.compact { padding: 22px 24px; border-radius: 18px; }
-.info-card.accent-card { background: rgba(242,108,13,.07); border-color: rgba(242,108,13,.18); }
-.info-card p { font-size: 15px; color: var(--paper-muted); margin: 0 0 14px; line-height: 1.75; }
-.info-card p:last-child { margin-bottom: 0; }
-.strong-line { font-weight: 800 !important; color: var(--paper-ink) !important; }
-.strong-line.center { text-align: center; }
-.accent-text { color: var(--orange); }
-.mt-none { margin-top: 0 !important; }
-.mt-sm { margin-top: 16px !important; }
-.mt-md { margin-top: 24px !important; }
-.mt-lg { margin-top: 40px !important; }
-.mb-lg { margin-bottom: 40px !important; }
-.compact-section { padding-top: 40px; padding-bottom: 40px; }
-.list.flush { margin-top: 0; }
-
-.mini-role-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 14px;
-}
-.mini-role-card {
-  border: 1px solid var(--line-paper);
-  border-radius: var(--radius-sm);
-  background: var(--paper-3);
-  padding: 20px 22px;
-  box-shadow: var(--shadow-sm);
-}
-.mini-role-card p { font-size: 14px; font-weight: 600; color: var(--paper-muted); line-height: 1.65; margin: 0; }
-
-.mini-stat-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 12px;
-  margin: 0 0 20px;
-}
-.mini-stat-card {
-  padding: 16px;
-  border-radius: 14px;
-  background: #fff;
-  border: 1px solid rgba(60,40,24,.1);
-  text-align: center;
-}
-.mini-stat-card strong { display: block; font-size: 13px; font-weight: 900; color: var(--paper-ink); margin-bottom: 6px; }
-.mini-stat-card span { display: block; font-size: 12px; color: var(--paper-muted); line-height: 1.5; }
-
 /* ── RESPONSIVE ─────────────────────────────────────────── */
 @media (max-width: 1100px) {
   :root { --max: 1060px; }
@@ -1139,16 +1041,11 @@ td strong { color: var(--paper-ink); }
   .partner-hero-image { display: none; }
   .guardrail-grid { grid-template-columns: 1fr; }
   .needs-grid { grid-template-columns: 1fr; }
-  .info-grid.two { grid-template-columns: 1fr; }
-  .mini-role-grid { grid-template-columns: 1fr; }
-  .mini-stat-grid { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 700px) {
   body { font-size: 16px; }
   .cards, .cards.two, .cards.four { grid-template-columns: 1fr; }
   .route-grid { grid-template-columns: 1fr; }
-  .metric-strip { grid-template-columns: 1fr; }
-  .mini-stat-grid { grid-template-columns: 1fr; }
   .nav-links { display: none; }
   .hero { padding-top: 80px; }
   .paper-section, .dark-section, .brown-section { padding: 56px 0; }
