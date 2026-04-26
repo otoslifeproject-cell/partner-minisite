@@ -582,8 +582,8 @@ h3 {
 }
 .partner-hero-inner {
   display: grid;
-  grid-template-columns: 1fr minmax(0, 360px);
-  gap: 44px;
+  grid-template-columns: minmax(0, 1fr) minmax(360px, 440px);
+  gap: clamp(32px, 5vw, 64px);
   align-items: center;
 }
 .partner-hero-copy .partner-logo {
