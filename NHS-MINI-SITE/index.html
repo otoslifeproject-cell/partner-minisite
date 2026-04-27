@@ -49,6 +49,43 @@
       .home-stat-card { min-height: auto; }
     }
   </style>
+
+  <style>
+    .why-lean-grid {
+      display: grid;
+      grid-template-columns: minmax(0, .85fr) minmax(520px, 1.15fr);
+      gap: 48px;
+      align-items: center;
+    }
+    .why-lean-grid .image-contained {
+      max-width: 720px;
+      margin-left: auto;
+    }
+    .why-mini-proof {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 22px;
+    }
+    .why-mini-proof div {
+      padding: 14px 16px;
+      border-radius: 14px;
+      border: 1px solid var(--line-paper);
+      background: rgba(255,255,255,.42);
+      font-size: 13px;
+      font-weight: 800;
+      line-height: 1.35;
+      color: var(--paper-muted);
+    }
+    @media (max-width: 980px) {
+      .why-lean-grid { grid-template-columns: 1fr; }
+      .why-lean-grid .image-contained { max-width: 100%; margin-left: 0; }
+    }
+    @media (max-width: 680px) {
+      .why-mini-proof { grid-template-columns: 1fr; }
+    }
+  </style>
+
 </head>
 <body>
 
@@ -183,71 +220,26 @@
   <!-- ══ WHY THIS EXISTS ════════════════════════════════ -->
   <section class="paper-section paper-section--alt" id="why-this-exists">
     <div class="container">
-      <div class="split split-wide align-center">
+      <div class="why-lean-grid">
         <div>
           <span class="kicker"><span class="kicker-icon"></span>Why this exists</span>
           <h2>The care is real.<br><span class="accent">The thread is not.</span></h2>
-          <p style="font-size:17px;color:var(--paper-muted);margin-top:16px">People do not usually disappear because one service failed. They disappear because the next contact, referral, wait, discharge or community touchpoint is held in separate systems, inboxes and memories.</p>
-          <p style="font-size:17px;color:var(--paper-muted)">OTOS exists to make that between-space visible. A partner can log a referral, handoff or support touchpoint. The person stays lightly connected while they wait. Silence or drift becomes visible before the thread goes cold.</p>
-          <p style="font-size:17px;color:var(--paper-muted)">It does not diagnose, prescribe or replace clinical judgement. It simply helps the services already around a person see that the pathway is still alive.</p>
-          <p style="font-size:17px;font-weight:800;color:var(--paper-ink)">That is why OTOS exists: not to add another service, but to connect the ones already doing the work.</p>
-          <a href="founder-story.html" style="display:inline-block;margin-top:18px;font-size:14px;font-weight:800;color:var(--orange);text-decoration:none">Read the full story →</a>
+          <p style="font-size:17px;color:var(--paper-muted);margin-top:16px">People do not usually disappear because one service failed. They disappear because referral, waiting, discharge, community support and next contact are held in different places.</p>
+          <p style="font-size:17px;color:var(--paper-muted)">OTOS makes that between-space visible: one person, one continuity thread, enough signal for the right team to see the pathway is still alive.</p>
+          <p style="font-size:17px;font-weight:800;color:var(--paper-ink)">The test is small: 50 people, 12 weeks, one named contact per partner.</p>
+
+          <div class="why-mini-proof">
+            <div>No diagnosis<br>No prescribing</div>
+            <div>No EPR write-back<br>No new clinical record</div>
+            <div>Signals surfaced<br>Humans decide</div>
+          </div>
+
+          <a href="founder-story.html" style="display:inline-block;margin-top:22px;font-size:14px;font-weight:800;color:var(--orange);text-decoration:none">Read the full story →</a>
         </div>
-        <div class="image-contained" style="max-width:520px;margin-left:auto">
+
+        <div class="image-contained">
           <img src="images/Better_Continuity_better_outcomes_in_healthcare.png" alt="Better continuity, better outcomes — OTOS pathway visual" style="width:100%;display:block">
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══ EVIDENCE + GUARDRAILS (ONE dark section) ══════════ -->
-  <section class="dark-section">
-    <div class="container">
-      <div class="split">
-
-        <!-- Three evidence facts -->
-        <div>
-          <span class="kicker"><span class="kicker-icon"></span>The evidence in three facts</span>
-          <div class="stack" style="margin-top:4px">
-            <div style="padding:22px;border-radius:16px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09)">
-              <div class="stat">61.3%</div>
-              <p style="font-size:14px;font-weight:700;color:var(--muted);margin:0;line-height:1.6">Improvement in addictive disorders after ADHD diagnosis and treatment. START study, France 2025. This is the comparator the pre-pilot is designed to test locally.</p>
-            </div>
-            <div style="padding:22px;border-radius:16px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09)">
-              <div class="stat">23–45%</div>
-              <p style="font-size:14px;font-weight:700;color:var(--muted);margin:0;line-height:1.6">Of people in addiction treatment have undiagnosed ADHD. Royal College of Psychiatrists. In the CPFT footprint: an estimated 800–900 adults in this overlap.</p>
-            </div>
-            <div style="padding:22px;border-radius:16px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09)">
-              <div class="stat" style="font-size:clamp(22px,2.2vw,32px)">£90k&nbsp;<span style="font-size:16px;opacity:.4">=</span>&nbsp;£91k</div>
-              <p style="font-size:14px;font-weight:700;color:var(--muted);margin:0;line-height:1.6"><strong style="color:rgba(251,247,238,.92)">Cost comparison — order of magnitude.</strong> Three-month residential rehab for one person costs roughly what a 12-week OTOS pre-pilot costs for 50. This is the cost-redirection question the pilot is designed to answer.</p>
-            </div>
-          </div>
-          <a href="evidence-sources.html" style="display:inline-block;margin-top:16px;font-size:13px;font-weight:800;color:var(--orange-2);text-decoration:none">Sources, claims register and caveats: Evidence &amp; Sources →</a>
-        </div>
-
-        <!-- Guardrails -->
-        <div>
-          <span class="kicker"><span class="kicker-icon"></span>What OTOS will never do</span>
-          <ul class="guardrail-list" style="margin-top:4px">
-            <li><span class="icon no">✕</span>Diagnose, prescribe or make any clinical decision</li>
-            <li><span class="icon no">✕</span>Replace, access or write back to any EPR system</li>
-            <li><span class="icon no">✕</span>Create a new clinical record or share identifiable data</li>
-            <li><span class="icon no">✕</span>Automate any decision that should have a human in it</li>
-            <li><span class="icon no">✕</span>Commit you to a full rollout by joining a scoping call</li>
-          </ul>
-          <div style="margin-top:20px;padding:20px 22px;border-radius:16px;background:rgba(242,108,13,.09);border:1px solid rgba(242,108,13,.22)">
-            <div class="label" style="margin-bottom:8px">The bounded ask</div>
-            <p style="font-size:15px;font-weight:800;color:rgba(251,247,238,.92);margin:0 0 10px;line-height:1.65">50 people. 12 weeks. Cambridge &amp; Peterborough.</p><p style="font-size:14px;font-weight:700;color:rgba(251,247,238,.72);margin:0 0 12px;line-height:1.55">OTOS is not asking partners to adopt a product. It is asking partners to help test whether a receipted continuity layer can reduce silent disengagement in a high-risk, already-visible cohort.</p>
-            <ul class="list" style="margin-top:0">
-              <li>Nominate one named contact.</li>
-              <li>Join one 30-minute scoping conversation.</li>
-              <li>Help confirm where suitable people are already visible to services.</li>
-              <li>Optionally send Dean a short support note for the pilot pack.</li>
-            </ul>
-          </div>
-          <div class="callout" style="margin-top:16px">"OTOS surfaces signals. Your team makes the decisions."</div>
-        </div>
-
       </div>
     </div>
   </section>
