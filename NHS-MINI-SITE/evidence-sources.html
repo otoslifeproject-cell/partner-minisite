@@ -33,6 +33,8 @@
     .source-org { font-size:11px; font-weight:800; text-transform:uppercase; letter-spacing:.1em; color:var(--muted); margin-bottom:5px; }
     .ev-tags { display:flex; gap:6px; flex-wrap:wrap; margin-top:10px; }
     .ev-tag { font-size:10px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; background:rgba(255,255,255,.04); color:var(--muted); border:1px solid rgba(255,255,255,.08); padding:3px 8px; border-radius:4px; }
+    .source-link { display:inline-flex; margin-top:12px; font-size:12px; font-weight:900; color:var(--orange-2); text-decoration:none; letter-spacing:.02em; }
+    .source-link:hover { text-decoration:underline; }
     .kpi-grid { display:grid; grid-template-columns:repeat(3,1fr); border:1px solid var(--line); border-radius:var(--radius); overflow:hidden; margin-top:8px; }
     .kpi-col { padding:24px 22px; border-right:1px solid var(--line); }
     .kpi-col:last-child { border-right:none; }
@@ -64,6 +66,7 @@
       <span class="kicker"><span class="kicker-icon"></span>Evidence &amp; Sources</span>
       <h1>Every claim is sourced.<br><span class="accent">Every estimate is labelled.</span></h1>
       <p class="lede">Published evidence, local service figures, OTOS modelling estimates and assumptions are kept visibly separate. OTOS does not turn modelling into fact.</p>
+      <p class="lede" style="font-size:16px;margin-top:12px;color:rgba(251,247,238,.66)">OTOS is non-clinical: it does not diagnose, prescribe, write back to EPRs or automate clinical decisions. This page exists so partners can trace sources, caveats and assumptions before engaging.</p>
       <div class="hero-actions">
         <a class="btn-primary" href="#published">Published sources</a>
         <a class="btn" href="#modelling">OTOS modelling</a>
@@ -78,7 +81,7 @@
       <div class="section-head">
         <span class="kicker"><span class="kicker-icon"></span>Key supporting evidence</span>
         <h2>The research already says<br><span class="accent">what we know is true.</span></h2>
-        <p>Four studies and frameworks that directly underpin the OTOS clinical rationale. All published. All traceable.</p>
+        <p>Core sources that underpin the OTOS rationale, plus wider ADHD + substance-use evidence across alcohol, cocaine, cannabis and mixed SUD populations. All claims are labelled and caveated.</p>
       </div>
       <div class="cards four">
         <article class="card">
@@ -97,9 +100,9 @@
           <p>Improvement in addictive disorders at six months after ADHD diagnosis and appropriate treatment. France, 2025.</p>
         </article>
         <article class="card">
-          <div class="label">Co-occurring framework</div>
-          <h3>No wrong door</h3>
-          <p>National policy direction supports clearer pathways, better continuity and shared responsibility across services.</p>
+          <div class="label">JAMA Psychiatry 2015</div>
+          <h3>ADHD + cocaine RCT</h3>
+          <p>Adults with co-occurring ADHD and cocaine-use disorder had higher cocaine-negative weeks and higher last-three-week abstinence when ADHD was treated alongside CBT.</p>
         </article>
       </div>
     </div>
@@ -110,14 +113,15 @@
     <div class="container">
       <div class="section-head">
         <span class="kicker"><span class="kicker-icon"></span>Full evidence register</span>
-        <h2>Published, local, modelled, policy.</h2>
+        <h2>Published, local, modelled, policy.<br><span class="accent">Sources, claims register and caveats.</span></h2>
+        <p>OTOS covers drug and alcohol addiction. Cocaine evidence is therefore relevant, but it is labelled as substance-specific and is not presented as a guaranteed OTOS outcome.</p>
       </div>
 
       <div class="ev-tabs" role="tablist">
         <button class="ev-tab active" onclick="showTab('pub')" role="tab">Published sources</button>
         <button class="ev-tab" onclick="showTab('cpft')" role="tab">CPFT / local data</button>
         <button class="ev-tab" onclick="showTab('model')" role="tab" id="modelling">OTOS modelling</button>
-        <button class="ev-tab" onclick="showTab('policy')" role="tab">Policy alignment</button>
+        <button class="ev-tab" onclick="showTab('policy')" role="tab">Policy / assurance</button>
       </div>
 
       <div id="tab-pub" class="ev-panel active">
@@ -128,6 +132,7 @@
             <h3>ADHD and substance use disorders</h3>
             <p>There is more benefit than risk from treating ADHD in patients with substance use disorder, in both ADHD symptom reduction and substance use outcomes. Prevalence of ADHD in addiction cohorts: 23–45%.</p>
             <div class="ev-tags"><span class="ev-tag">Prevalence</span><span class="ev-tag">Treatment rationale</span><span class="ev-tag">Clinical evidence</span></div>
+            <a class="source-link" href="https://www.rcpsych.ac.uk/docs/default-source/improving-care/better-mh-policy/college-reports/cr235-adhd-in-adults---good-practice-guidance.pdf?sfvrsn=7c8cc8e4_12" target="_blank" rel="noopener">Open RCPsych guidance →</a>
           </div>
           <div class="source-card published">
             <div class="source-org">NICE NG87 — Attention deficit hyperactivity disorder</div>
@@ -135,6 +140,7 @@
             <h3>ADHD assessment in active substance misuse</h3>
             <p>NICE guidance supports ADHD assessment and treatment in the context of active substance misuse. Co-occurring substance use is not a contraindication to ADHD diagnosis or treatment.</p>
             <div class="ev-tags"><span class="ev-tag">Clinical guideline</span><span class="ev-tag">NICE</span><span class="ev-tag">Pathway rationale</span></div>
+            <a class="source-link" href="https://www.nice.org.uk/guidance/ng87/chapter/recommendations" target="_blank" rel="noopener">Open NICE NG87 →</a>
           </div>
           <div class="source-card published">
             <div class="source-org">START study — France, 2025</div>
@@ -142,6 +148,7 @@
             <h3>61.3% improvement in addictive disorders</h3>
             <p>Improvement in addictive disorders at six months after ADHD diagnosis and appropriate treatment. This is the primary comparator the OTOS pre-pilot is designed to test locally.</p>
             <div class="ev-tags"><span class="ev-tag">Comparator study</span><span class="ev-tag">Outcomes evidence</span></div>
+            <a class="source-link" href="https://www.sciencedirect.com/science/article/pii/S0306460325003260" target="_blank" rel="noopener">Open START study →</a>
           </div>
           <div class="source-card published">
             <div class="source-org">NHS ADHD Taskforce — April 2025</div>
@@ -149,13 +156,71 @@
             <h3>£17bn avoidable economic cost</h3>
             <p>"ADHD, when unsupported, is a potent route into educational failure, long-term unemployment, crime, substance misuse, suicide, mental and physical illness. Economic costs to individuals and the government of at least £17 billion are avoidable."</p>
             <div class="ev-tags"><span class="ev-tag">NHS policy</span><span class="ev-tag">Economic case</span></div>
+            <a class="source-link" href="https://www.england.nhs.uk/long-read/report-of-the-independent-adhd-taskforce-part-1/" target="_blank" rel="noopener">Open NHS ADHD Taskforce report →</a>
           </div>
           <div class="source-card published">
             <div class="source-org">Turning Point / LSE</div>
-            <span class="source-badge badge-pub">Published source</span>
+            <span class="source-badge badge-model">Source link to add before use as headline</span>
             <h3>£4.07 return per £1 invested in addiction continuity</h3>
-            <p>Social return on investment analysis of addiction continuity interventions. Used as a ROI comparator for the OTOS pre-pilot cost model. Subject to local validation.</p>
+            <p>Social return on investment analysis of integrated addiction / dual-diagnosis support. This is retained only as a comparator until a direct primary report link is attached. Do not use as a headline claim until traceable.</p>
             <div class="ev-tags"><span class="ev-tag">ROI</span><span class="ev-tag">Economic comparator</span></div>
+          </div>
+
+          <div class="source-card published">
+            <div class="source-org">BMJ — Swedish national register target-trial emulation, 2025</div>
+            <span class="source-badge badge-pub">Large observational study</span>
+            <h3>ADHD medication associated with lower substance-misuse risk</h3>
+            <p>In 148,581 people newly diagnosed with ADHD, starting ADHD medication was associated with lower two-year rates of substance misuse and several other adverse outcomes. This is association, not randomised proof.</p>
+            <div class="ev-tags"><span class="ev-tag">Population evidence</span><span class="ev-tag">Substance misuse</span><span class="ev-tag">Association</span></div>
+            <a class="source-link" href="https://www.bmj.com/content/390/bmj-2024-083658" target="_blank" rel="noopener">Open BMJ study →</a>
+          </div>
+          <div class="source-card published">
+            <div class="source-org">International consensus statement — European Addiction Research, 2018</div>
+            <span class="source-badge badge-pub">Consensus statement</span>
+            <h3>Routine ADHD screening in substance-use services</h3>
+            <p>International experts recommend routine ADHD screening in SUD services and integrated treatment for ADHD-SUD comorbidity. This supports the principle that ADHD belongs inside the addiction conversation, not outside it.</p>
+            <div class="ev-tags"><span class="ev-tag">Screening</span><span class="ev-tag">Integrated treatment</span><span class="ev-tag">SUD services</span></div>
+            <a class="source-link" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5986068/" target="_blank" rel="noopener">Open consensus statement →</a>
+          </div>
+          <div class="source-card published">
+            <div class="source-org">JAMA Psychiatry — ADHD + cocaine-use disorder RCT, 2015</div>
+            <span class="source-badge badge-pub">Randomised clinical trial</span>
+            <h3>30.2% vs 7.0% last-three-week cocaine abstinence</h3>
+            <p>In adults with co-occurring ADHD and cocaine-use disorder, robust-dose extended-release mixed amphetamine salts plus CBT improved ADHD symptoms and cocaine outcomes. Continuous abstinence in the last three weeks was 30.2% in the 80 mg group and 17.5% in the 60 mg group versus 7.0% with placebo.</p>
+            <div class="ev-tags"><span class="ev-tag">Cocaine</span><span class="ev-tag">ADHD treatment</span><span class="ev-tag">RCT</span></div>
+            <a class="source-link" href="https://jamanetwork.com/journals/jamapsychiatry/fullarticle/2276136" target="_blank" rel="noopener">Open JAMA Psychiatry trial →</a>
+          </div>
+          <div class="source-card published">
+            <div class="source-org">Biological Psychiatry — cocaine dependence RCT, 2012</div>
+            <span class="source-badge badge-pub">Randomised controlled trial</span>
+            <h3>33.3% vs 16.7% achieved three consecutive abstinent weeks</h3>
+            <p>Extended-release mixed amphetamine salts plus topiramate showed higher three-week abstinence than placebo in cocaine-dependent adults, with the strongest effect among people using cocaine more frequently at baseline.</p>
+            <div class="ev-tags"><span class="ev-tag">Cocaine</span><span class="ev-tag">Abstinence</span><span class="ev-tag">RCT</span></div>
+            <a class="source-link" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3648884/" target="_blank" rel="noopener">Open Biological Psychiatry trial →</a>
+          </div>
+          <div class="source-card published">
+            <div class="source-org">Drug and Alcohol Dependence — frequent cocaine users replication trial, 2020</div>
+            <span class="source-badge badge-pub">Randomised clinical replication trial</span>
+            <h3>14.1% vs 0.0% end-of-study three-week abstinence</h3>
+            <p>A later replication trial targeted frequent cocaine users and found a higher proportion achieving three consecutive abstinent weeks at the end of the study in the medication group than placebo. This is substance-specific and should not be overgeneralised.</p>
+            <div class="ev-tags"><span class="ev-tag">Cocaine</span><span class="ev-tag">Replication</span><span class="ev-tag">Frequent users</span></div>
+            <a class="source-link" href="https://pubmed.ncbi.nlm.nih.gov/31753736/" target="_blank" rel="noopener">Open replication trial →</a>
+          </div>
+          <div class="source-card published">
+            <div class="source-org">J Child Adolesc Psychopharmacol / JAACAP — atomoxetine in adolescents with ADHD + SUD</div>
+            <span class="source-badge badge-pub">Randomised controlled trial</span>
+            <h3>Mixed evidence — not every ADHD-SUD trial is positive</h3>
+            <p>Atomoxetine plus MI/CBT did not significantly outperform placebo plus MI/CBT on ADHD or substance-use change in adolescents with ADHD and SUD. This is included deliberately: OTOS is testing continuity, not claiming every treatment automatically improves addiction outcomes.</p>
+            <div class="ev-tags"><span class="ev-tag">Mixed evidence</span><span class="ev-tag">Adolescent SUD</span><span class="ev-tag">Caution</span></div>
+            <a class="source-link" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC2876346/" target="_blank" rel="noopener">Open atomoxetine trial →</a>
+          </div>
+          <div class="source-card published">
+            <div class="source-org">Journal of Attention Disorders — ADHD + cannabis-use disorder pilot RCT, 2024</div>
+            <span class="source-badge badge-pub">Small pilot trial</span>
+            <h3>Cannabis evidence is emerging and still limited</h3>
+            <p>A small adult ADHD + cannabis-use disorder pilot found no significant difference in abstinence, but weekly cannabis-use days decreased over time in the medication group. Useful context, not a headline outcome claim.</p>
+            <div class="ev-tags"><span class="ev-tag">Cannabis</span><span class="ev-tag">Pilot</span><span class="ev-tag">Caution</span></div>
+            <a class="source-link" href="https://journals.sagepub.com/doi/10.1177/10870547241264675" target="_blank" rel="noopener">Open cannabis pilot →</a>
           </div>
         </div>
       </div>
@@ -166,13 +231,15 @@
             <div class="source-org">CPFT — planning data</div>
             <span class="source-badge badge-cpft">Local source / pending validation</span>
             <h3>Adults in addiction treatment — Cambridgeshire + Peterborough</h3>
-            <p>4,175 adults in structured addiction treatment across Cambridgeshire and Peterborough. Used as the planning denominator for the local risk cohort estimate. Source: CPFT / NDTMS extracted data.</p>
+            <p>4,175 adults in structured addiction treatment across Cambridgeshire and Peterborough. Used as the planning denominator for the local risk cohort estimate. Source: NDTMS extracted data / local validation.</p>
+            <a class="source-link" href="https://beta2.ndtms.net/ViewIt/AdultArchive" target="_blank" rel="noopener">Open NDTMS adult archive →</a>
           </div>
           <div class="source-card cpft">
             <div class="source-org">CPFT ADHD waiting list — planning estimate</div>
             <span class="source-badge badge-cpft">Local source / pending validation</span>
             <h3>ADHD waiting list length and duration</h3>
             <p>Significant and growing ADHD waiting list within CPFT. Exact figures subject to local validation. The waiting period — not the list length — is the gap OTOS addresses.</p>
+            <a class="source-link" href="https://www.cpft.nhs.uk/aboutus/" target="_blank" rel="noopener">Open CPFT context →</a>
           </div>
         </div>
       </div>
@@ -211,11 +278,20 @@
             <span class="source-badge badge-policy">Policy alignment</span>
             <h3>NHS ADHD Taskforce — April 2025</h3>
             <p>Undiagnosed ADHD framed as a major and under-addressed public health issue. Recommends improved identification, continuity and pathway coordination.</p>
+            <a class="source-link" href="https://www.england.nhs.uk/long-read/report-of-the-independent-adhd-taskforce-part-1/" target="_blank" rel="noopener">Open NHS ADHD Taskforce report →</a>
           </div>
+          <div class="source-card policy">
+            <span class="source-badge badge-policy">Assurance position</span>
+            <h3>Designed to align — not claiming certification</h3>
+            <p>OTOS is being designed against NHS digital assurance expectations, including DTAC domains, data protection, clinical safety, interoperability and usability. This is an alignment statement only: no DTAC, DSPT, ISO or NHS App certification is claimed unless evidenced.</p>
+            <a class="source-link" href="https://transform.england.nhs.uk/key-tools-and-info/digital-technology-assessment-criteria-dtac/how-to-use-the-dtac" target="_blank" rel="noopener">Open NHS DTAC guidance →</a>
+          </div>
+
           <div class="source-card policy">
             <span class="source-badge badge-policy">Policy alignment</span>
             <h3>DHSC addiction healthcare goals</h3>
-            <p>Government investment in addiction technology addressing structural fragmentation. OTOS aligns directly with the stated goal of reducing fragmentation in the addiction and mental health pathway.</p>
+            <p>Government and NHS policy direction increasingly frames drug, alcohol and mental health needs as co-occurring problems requiring better integrated, person-centred care rather than being passed between separate services.</p>
+            <a class="source-link" href="https://www.gov.uk/government/publications/co-occurring-mental-health-and-substance-use-delivery-framework" target="_blank" rel="noopener">Open co-occurring framework →</a>
           </div>
           <div class="source-card policy">
             <span class="source-badge badge-policy">Policy alignment</span>
