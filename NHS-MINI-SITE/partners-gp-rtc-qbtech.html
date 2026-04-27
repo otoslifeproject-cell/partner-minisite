@@ -37,7 +37,7 @@
           </div>
         </div>
         <div class="partner-hero-image">
-          <img src="images/Sleek_UI_for_integrated_healthcare_management.png" alt="Sleek OTOS continuity overview for referral and pathway visibility">
+          <img src="images/many_doors_rainbow.png" alt="Many doors into care — referral routes should still connect">
         </div>
       </div>
     </div>
@@ -89,6 +89,11 @@
           <p>I was diagnosed privately seven years ago. I went onto shared care. I moved GP and was lucky — continuation of methylphenidate followed me. I have been on the waiting list since 2020 for a medication review. Right to Choose was never offered to me. I didn't know it existed until recently. And now, when I try to move forward, new GPs want either RTC proof or NHS diagnosis proof — neither of which I have, because my private diagnosis predates the RTC pathway entirely.</p>
           <p>I am stuck in a gap the system created. And I am one of the more resourced people navigating it. For the adults in the ADHD and addiction cohort — without the language, the money or the fight — that gap is a full stop.</p>
           <p>OTOS makes the RTC pathway visible from the moment someone first touches addiction or mental health services. It doesn't change how GPs make referrals. It makes it more likely that the referral gets made, and receipted when it does — so the person doesn't fall out of contact before they get there.</p>
+<figure class="inline-visual " onclick="openSiteLightbox(this)" data-src="images/Sleek_UI_for_integrated_healthcare_management.png" data-alt="Integrated healthcare continuity dashboard and pathway overview" data-caption="What a connected referral view can look like. It stays in the body copy so the page still opens with the human story, while the detail remains expandable. Click to enlarge.">
+  <span class="inline-visual-label">Inline visual</span>
+  <img src="images/Sleek_UI_for_integrated_healthcare_management.png" alt="Integrated healthcare continuity dashboard and pathway overview">
+  <figcaption><strong>What a connected referral view can look like.</strong>It stays in the body copy so the page still opens with the human story, while the detail remains expandable.<span>Hover / click to enlarge</span></figcaption>
+</figure>
           <div class="callout">"QbTech's objective measure is exactly what this cohort needs — and exactly what they can't currently get to without someone holding the thread long enough to make it happen."</div>
         </div>
         <div class="stack">
@@ -183,5 +188,43 @@
     <a href="mailto:info@otos.life">info@otos.life</a>
   </div>
 </footer>
+
+<div class="site-lightbox" id="site-lightbox" aria-hidden="true" onclick="closeSiteLightbox(event)">
+  <div class="site-lightbox-panel">
+    <button class="site-lightbox-close" type="button" onclick="closeSiteLightbox(event)" aria-label="Close expanded image">×</button>
+    <img id="site-lightbox-img" src="" alt="Expanded visual">
+    <div class="site-lightbox-caption" id="site-lightbox-caption"></div>
+  </div>
+</div>
+<script>
+(function(){
+  function openLightboxFromFigure(figure){
+    var box = document.getElementById('site-lightbox');
+    if(!box || !figure) return;
+    var img = box.querySelector('#site-lightbox-img');
+    var caption = box.querySelector('#site-lightbox-caption');
+    img.src = figure.getAttribute('data-src') || (figure.querySelector('img') ? figure.querySelector('img').src : '');
+    img.alt = figure.getAttribute('data-alt') || (figure.querySelector('img') ? figure.querySelector('img').alt : 'Expanded visual');
+    caption.textContent = figure.getAttribute('data-caption') || '';
+    box.classList.add('open');
+    box.setAttribute('aria-hidden','false');
+    document.body.style.overflow = 'hidden';
+  }
+  window.openSiteLightbox = function(el){ openLightboxFromFigure(el); };
+  window.closeSiteLightbox = function(event){
+    if(event && event.target && event.target.closest('.site-lightbox-panel') && !event.target.classList.contains('site-lightbox-close')) return;
+    var box = document.getElementById('site-lightbox');
+    if(!box) return;
+    box.classList.remove('open');
+    box.setAttribute('aria-hidden','true');
+    document.body.style.overflow = '';
+  };
+  document.querySelectorAll('.inline-visual').forEach(function(fig){
+    fig.addEventListener('click', function(){ openLightboxFromFigure(fig); });
+  });
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape'){ window.closeSiteLightbox(); } });
+})();
+</script>
+
 </body>
 </html>

@@ -37,7 +37,7 @@
           </div>
         </div>
         <div class="partner-hero-image">
-          <img src="images/From_connection_to_care.png" alt="From connection to care — no one falls through the gaps">
+          <img src="images/woman_showing_otos.png" alt="Community support conversation with OTOS in view">
         </div>
       </div>
     </div>
@@ -125,6 +125,11 @@
           <p>RCE was not treatment. It was somewhere to stay connected while everything else was still unresolved. That matters more than the clinical pathway ever acknowledged.</p>
           <p>That kind of holding is not visible in any clinical record. It is not receipted anywhere. It exists in the memory of the person and the practitioner and when either moves on, the continuity disappears with them.</p>
           <p>OTOS makes that holding visible. Not by recording what happens in sessions — that stays private. But by making the thread legible: this person is engaged, here, with this support, as part of this wider pathway.</p>
+<figure class="inline-visual inline-visual--left" onclick="openSiteLightbox(this)" data-src="images/From_connection_to_care.png" data-alt="From connection to care — no one falls through the gaps" data-caption="Community support made legible in the wider pathway. Inserted where the page explains what RCE already does, so the visual reinforces the point instead of front-loading it. Click to enlarge.">
+  <span class="inline-visual-label">Inline visual</span>
+  <img src="images/From_connection_to_care.png" alt="From connection to care — no one falls through the gaps">
+  <figcaption><strong>Community support made legible in the wider pathway.</strong>Inserted where the page explains what RCE already does, so the visual reinforces the point instead of front-loading it.<span>Hover / click to enlarge</span></figcaption>
+</figure>
           <div class="callout">"Community support is often the only thing holding a person in the system during the wait. OTOS makes that visible — so the next service knows it happened."</div>
         </div>
         <div class="stack">
@@ -218,5 +223,43 @@
     <a href="mailto:info@otos.life">info@otos.life</a>
   </div>
 </footer>
+
+<div class="site-lightbox" id="site-lightbox" aria-hidden="true" onclick="closeSiteLightbox(event)">
+  <div class="site-lightbox-panel">
+    <button class="site-lightbox-close" type="button" onclick="closeSiteLightbox(event)" aria-label="Close expanded image">×</button>
+    <img id="site-lightbox-img" src="" alt="Expanded visual">
+    <div class="site-lightbox-caption" id="site-lightbox-caption"></div>
+  </div>
+</div>
+<script>
+(function(){
+  function openLightboxFromFigure(figure){
+    var box = document.getElementById('site-lightbox');
+    if(!box || !figure) return;
+    var img = box.querySelector('#site-lightbox-img');
+    var caption = box.querySelector('#site-lightbox-caption');
+    img.src = figure.getAttribute('data-src') || (figure.querySelector('img') ? figure.querySelector('img').src : '');
+    img.alt = figure.getAttribute('data-alt') || (figure.querySelector('img') ? figure.querySelector('img').alt : 'Expanded visual');
+    caption.textContent = figure.getAttribute('data-caption') || '';
+    box.classList.add('open');
+    box.setAttribute('aria-hidden','false');
+    document.body.style.overflow = 'hidden';
+  }
+  window.openSiteLightbox = function(el){ openLightboxFromFigure(el); };
+  window.closeSiteLightbox = function(event){
+    if(event && event.target && event.target.closest('.site-lightbox-panel') && !event.target.classList.contains('site-lightbox-close')) return;
+    var box = document.getElementById('site-lightbox');
+    if(!box) return;
+    box.classList.remove('open');
+    box.setAttribute('aria-hidden','true');
+    document.body.style.overflow = '';
+  };
+  document.querySelectorAll('.inline-visual').forEach(function(fig){
+    fig.addEventListener('click', function(){ openLightboxFromFigure(fig); });
+  });
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape'){ window.closeSiteLightbox(); } });
+})();
+</script>
+
 </body>
 </html>

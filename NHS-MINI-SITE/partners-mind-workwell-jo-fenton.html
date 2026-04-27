@@ -37,7 +37,7 @@
           </div>
         </div>
         <div class="partner-hero-image">
-          <img src="images/Therapist%20reviewing%20OTOS%20app%20progress.png" alt="Therapist reviewing OTOS app progress">
+          <img src="images/Therapist_reviewing_OTOS.png" alt="Therapeutic support helping continuity hold">
         </div>
       </div>
     </div>
@@ -158,6 +158,11 @@
           <p>Jo Fenton saw the change happen in real time. For months, the therapeutic work had been effortful, partial, like trying to build on unstable ground. Then the ADHD was treated. Within weeks, the same therapeutic frameworks began to hold. The groundwork we'd laid was still there — the brain just finally had the conditions to build on it.</p>
           <p>That is the connection OTOS is trying to make structurally visible. Therapeutic support, especially CBT, is more likely to work and hold when underlying neurological conditions are addressed. And the people in this cohort can rarely get both in sequence, because no one is holding the thread between them.</p>
           <p>OTOS doesn't make therapeutic decisions. It makes it more likely that someone receiving community or therapeutic support also reaches clinical ADHD assessment and that the two parts of their journey are connected, not siloed.</p>
+<figure class="inline-visual inline-visual--left" onclick="openSiteLightbox(this)" data-src="images/Connected_care_in_action.png" data-alt="Connected care in action — OTOS continuity in use" data-caption="A continuity view that supports therapy and community work. Placed beside the copy about therapy finally holding, with hover / click expansion for readability. Click to enlarge.">
+  <span class="inline-visual-label">Inline visual</span>
+  <img src="images/Connected_care_in_action.png" alt="Connected care in action — OTOS continuity in use">
+  <figcaption><strong>A continuity view that supports therapy and community work.</strong>Placed beside the copy about therapy finally holding, with hover / click expansion for readability.<span>Hover / click to enlarge</span></figcaption>
+</figure>
           <div class="callout">"Once the ADHD was treated, everything else we'd worked on finally started to hold."</div>
         </div>
         <div class="stack">
@@ -251,5 +256,43 @@
     <a href="mailto:info@otos.life">info@otos.life</a>
   </div>
 </footer>
+
+<div class="site-lightbox" id="site-lightbox" aria-hidden="true" onclick="closeSiteLightbox(event)">
+  <div class="site-lightbox-panel">
+    <button class="site-lightbox-close" type="button" onclick="closeSiteLightbox(event)" aria-label="Close expanded image">×</button>
+    <img id="site-lightbox-img" src="" alt="Expanded visual">
+    <div class="site-lightbox-caption" id="site-lightbox-caption"></div>
+  </div>
+</div>
+<script>
+(function(){
+  function openLightboxFromFigure(figure){
+    var box = document.getElementById('site-lightbox');
+    if(!box || !figure) return;
+    var img = box.querySelector('#site-lightbox-img');
+    var caption = box.querySelector('#site-lightbox-caption');
+    img.src = figure.getAttribute('data-src') || (figure.querySelector('img') ? figure.querySelector('img').src : '');
+    img.alt = figure.getAttribute('data-alt') || (figure.querySelector('img') ? figure.querySelector('img').alt : 'Expanded visual');
+    caption.textContent = figure.getAttribute('data-caption') || '';
+    box.classList.add('open');
+    box.setAttribute('aria-hidden','false');
+    document.body.style.overflow = 'hidden';
+  }
+  window.openSiteLightbox = function(el){ openLightboxFromFigure(el); };
+  window.closeSiteLightbox = function(event){
+    if(event && event.target && event.target.closest('.site-lightbox-panel') && !event.target.classList.contains('site-lightbox-close')) return;
+    var box = document.getElementById('site-lightbox');
+    if(!box) return;
+    box.classList.remove('open');
+    box.setAttribute('aria-hidden','true');
+    document.body.style.overflow = '';
+  };
+  document.querySelectorAll('.inline-visual').forEach(function(fig){
+    fig.addEventListener('click', function(){ openLightboxFromFigure(fig); });
+  });
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape'){ window.closeSiteLightbox(); } });
+})();
+</script>
+
 </body>
 </html>
