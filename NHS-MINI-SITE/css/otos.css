@@ -1175,33 +1175,6 @@ td strong { color: var(--paper-ink); }
   .paper-section, .dark-section, .brown-section { padding: 56px 0; }
   .support-note { padding: 22px 20px; }
 }
-
-
-/* ── SITE DISCLAIMER ──────────────────────────────────────
-   Visible safety banner on every page. Protects against any
-   inference that nhs.otos.digital is an NHS-owned site.
-*/
-.site-header::after {
-  content: "Private OTOS Digital partner briefing. Not an NHS website. No NHS endorsement, procurement or participation is implied.";
-  position: absolute;
-  top: 74px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: min(var(--max), calc(100% - 40px));
-  padding: 8px 16px;
-  border: 1px solid rgba(242,108,13,.28);
-  border-radius: var(--pill);
-  background: rgba(8,10,15,.88);
-  color: rgba(251,247,238,.78);
-  font-size: 11px;
-  font-weight: 800;
-  letter-spacing: .055em;
-  line-height: 1.25;
-  text-align: center;
-  text-transform: uppercase;
-  box-shadow: 0 12px 36px rgba(0,0,0,.22);
-  pointer-events: none;
-}
 .support-cta-row {
   display: flex;
   gap: 10px;
