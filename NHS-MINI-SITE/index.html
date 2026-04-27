@@ -49,43 +49,6 @@
       .home-stat-card { min-height: auto; }
     }
   </style>
-
-  <style>
-    .why-lean-grid {
-      display: grid;
-      grid-template-columns: minmax(0, .85fr) minmax(520px, 1.15fr);
-      gap: 48px;
-      align-items: center;
-    }
-    .why-lean-grid .image-contained {
-      max-width: 720px;
-      margin-left: auto;
-    }
-    .why-mini-proof {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 10px;
-      margin-top: 22px;
-    }
-    .why-mini-proof div {
-      padding: 14px 16px;
-      border-radius: 14px;
-      border: 1px solid var(--line-paper);
-      background: rgba(255,255,255,.42);
-      font-size: 13px;
-      font-weight: 800;
-      line-height: 1.35;
-      color: var(--paper-muted);
-    }
-    @media (max-width: 980px) {
-      .why-lean-grid { grid-template-columns: 1fr; }
-      .why-lean-grid .image-contained { max-width: 100%; margin-left: 0; }
-    }
-    @media (max-width: 680px) {
-      .why-mini-proof { grid-template-columns: 1fr; }
-    }
-  </style>
-
 </head>
 <body>
 
@@ -219,28 +182,22 @@
 
   <!-- ══ WHY THIS EXISTS ════════════════════════════════ -->
   <section class="paper-section paper-section--alt" id="why-this-exists">
-    <div class="container">
-      <div class="why-lean-grid">
-        <div>
-          <span class="kicker"><span class="kicker-icon"></span>Why this exists</span>
-          <h2>The care is real.<br><span class="accent">The thread is not.</span></h2>
-          <p style="font-size:17px;color:var(--paper-muted);margin-top:16px">People do not usually disappear because one service failed. They disappear because referral, waiting, discharge, community support and next contact are held in different places.</p>
-          <p style="font-size:17px;color:var(--paper-muted)">OTOS makes that between-space visible: one person, one continuity thread, enough signal for the right team to see the pathway is still alive.</p>
-          <p style="font-size:17px;font-weight:800;color:var(--paper-ink)">The test is small: 50 people, 12 weeks, one named contact per partner.</p>
-
-          <div class="why-mini-proof">
-            <div>No diagnosis<br>No prescribing</div>
-            <div>No EPR write-back<br>No new clinical record</div>
-            <div>Signals surfaced<br>Humans decide</div>
-          </div>
-
-          <a href="founder-story.html" style="display:inline-block;margin-top:22px;font-size:14px;font-weight:800;color:var(--orange);text-decoration:none">Read the full story →</a>
-        </div>
-
-        <div class="image-contained">
-          <img src="images/Better_Continuity_better_outcomes_in_healthcare.png" alt="Better continuity, better outcomes — OTOS pathway visual" style="width:100%;display:block">
-        </div>
+    <div class="container" style="max-width:1100px">
+      <span class="kicker"><span class="kicker-icon"></span>Why this exists</span>
+      <h2 style="max-width:740px">The care is real.<br><span class="accent">The thread is not.</span></h2>
+      <div style="margin-top:18px">
+        <figure class="inline-visual " onclick="openSiteLightbox(this)" data-src="images/Better_Continuity_better_outcomes_in_healthcare.png" data-alt="Better continuity, better outcomes — OTOS pathway visual" data-caption="A readable OTOS pathway view. Small enough to sit inside the copy, large enough to inspect, and expandable when you want the full detail. Click to enlarge.">
+  <span class="inline-visual-label">Inline visual</span>
+  <img src="images/Better_Continuity_better_outcomes_in_healthcare.png" alt="Better continuity, better outcomes — OTOS pathway visual">
+  <figcaption><strong>A readable OTOS pathway view.</strong>Small enough to sit inside the copy, large enough to inspect, and expandable when you want the full detail.<span>Hover / click to enlarge</span></figcaption>
+</figure>
+        <p style="font-size:17px;color:var(--paper-muted)">People do not usually disappear because one service failed. They disappear because referral, waiting, discharge, community support and next contact are held in different places.</p>
+        <p style="font-size:17px;color:var(--paper-muted)">OTOS makes that between-space visible: one person, one continuity thread, enough signal for the right team to see the pathway is still alive.</p>
+        <p style="font-size:17px;color:var(--paper-muted)">The test is small and bounded: 50 people, 12 weeks, one named contact per partner. OTOS does not diagnose, prescribe, write back to EPRs or replace human judgement.</p>
+        <p style="font-size:17px;font-weight:800;color:var(--paper-ink)">It is not another service. It is the continuity layer around the ones already doing the work.</p>
+        <div class="inline-visual-clear"></div>
       </div>
+      <a href="founder-story.html" style="display:inline-block;margin-top:8px;font-size:14px;font-weight:800;color:var(--orange);text-decoration:none">Read the full story →</a>
     </div>
   </section>
 
@@ -320,6 +277,44 @@
     <a href="mailto:info@otos.life">info@otos.life</a>
   </div>
 </footer>
+
+
+<div class="site-lightbox" id="site-lightbox" aria-hidden="true" onclick="closeSiteLightbox(event)">
+  <div class="site-lightbox-panel">
+    <button class="site-lightbox-close" type="button" onclick="closeSiteLightbox(event)" aria-label="Close expanded image">×</button>
+    <img id="site-lightbox-img" src="" alt="Expanded visual">
+    <div class="site-lightbox-caption" id="site-lightbox-caption"></div>
+  </div>
+</div>
+<script>
+(function(){
+  function openLightboxFromFigure(figure){
+    var box = document.getElementById('site-lightbox');
+    if(!box || !figure) return;
+    var img = box.querySelector('#site-lightbox-img');
+    var caption = box.querySelector('#site-lightbox-caption');
+    img.src = figure.getAttribute('data-src') || (figure.querySelector('img') ? figure.querySelector('img').src : '');
+    img.alt = figure.getAttribute('data-alt') || (figure.querySelector('img') ? figure.querySelector('img').alt : 'Expanded visual');
+    caption.textContent = figure.getAttribute('data-caption') || '';
+    box.classList.add('open');
+    box.setAttribute('aria-hidden','false');
+    document.body.style.overflow = 'hidden';
+  }
+  window.openSiteLightbox = function(el){ openLightboxFromFigure(el); };
+  window.closeSiteLightbox = function(event){
+    if(event && event.target && event.target.closest('.site-lightbox-panel') && !event.target.classList.contains('site-lightbox-close')) return;
+    var box = document.getElementById('site-lightbox');
+    if(!box) return;
+    box.classList.remove('open');
+    box.setAttribute('aria-hidden','true');
+    document.body.style.overflow = '';
+  };
+  document.querySelectorAll('.inline-visual').forEach(function(fig){
+    fig.addEventListener('click', function(){ openLightboxFromFigure(fig); });
+  });
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape'){ window.closeSiteLightbox(); } });
+})();
+</script>
 
 </body>
 </html>

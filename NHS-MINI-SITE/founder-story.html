@@ -145,6 +145,11 @@
         <p>She was brilliant. She cared deeply. But the system had nothing left to give her to give to him. So he gave her his words. He told her what the discharge letter needed to say — and she wrote it exactly as he asked, so he could use it to get back to his private psychiatrist.</p>
         <p>He told her: <strong style="color:#fff">"Next time we meet, I won't be your patient. I'll be your partner."</strong></p>
         <p>He meant it as a promise. He didn't know yet that it would become an infrastructure.</p>
+<figure class="inline-visual " onclick="openSiteLightbox(this)" data-src="images/Connected_care_in_action.png" data-alt="Connected care in action across the OTOS pathway" data-caption="What the bedside promise becomes in operational form. Inserted lower in the story so the narrative still leads, with the visual available when it becomes relevant. Click to enlarge.">
+  <span class="inline-visual-label">Inline visual</span>
+  <img src="images/Connected_care_in_action.png" alt="Connected care in action across the OTOS pathway">
+  <figcaption><strong>What the bedside promise becomes in operational form.</strong>Inserted lower in the story so the narrative still leads, with the visual available when it becomes relevant.<span>Hover / click to enlarge</span></figcaption>
+</figure>
       </div>
     </div>
   </section>
@@ -250,5 +255,43 @@ const io = new IntersectionObserver(entries => {
 items.forEach(el => io.observe(el));
 display.textContent = '£0 — counting as you read';
 </script>
+
+<div class="site-lightbox" id="site-lightbox" aria-hidden="true" onclick="closeSiteLightbox(event)">
+  <div class="site-lightbox-panel">
+    <button class="site-lightbox-close" type="button" onclick="closeSiteLightbox(event)" aria-label="Close expanded image">×</button>
+    <img id="site-lightbox-img" src="" alt="Expanded visual">
+    <div class="site-lightbox-caption" id="site-lightbox-caption"></div>
+  </div>
+</div>
+<script>
+(function(){
+  function openLightboxFromFigure(figure){
+    var box = document.getElementById('site-lightbox');
+    if(!box || !figure) return;
+    var img = box.querySelector('#site-lightbox-img');
+    var caption = box.querySelector('#site-lightbox-caption');
+    img.src = figure.getAttribute('data-src') || (figure.querySelector('img') ? figure.querySelector('img').src : '');
+    img.alt = figure.getAttribute('data-alt') || (figure.querySelector('img') ? figure.querySelector('img').alt : 'Expanded visual');
+    caption.textContent = figure.getAttribute('data-caption') || '';
+    box.classList.add('open');
+    box.setAttribute('aria-hidden','false');
+    document.body.style.overflow = 'hidden';
+  }
+  window.openSiteLightbox = function(el){ openLightboxFromFigure(el); };
+  window.closeSiteLightbox = function(event){
+    if(event && event.target && event.target.closest('.site-lightbox-panel') && !event.target.classList.contains('site-lightbox-close')) return;
+    var box = document.getElementById('site-lightbox');
+    if(!box) return;
+    box.classList.remove('open');
+    box.setAttribute('aria-hidden','true');
+    document.body.style.overflow = '';
+  };
+  document.querySelectorAll('.inline-visual').forEach(function(fig){
+    fig.addEventListener('click', function(){ openLightboxFromFigure(fig); });
+  });
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape'){ window.closeSiteLightbox(); } });
+})();
+</script>
+
 </body>
 </html>
