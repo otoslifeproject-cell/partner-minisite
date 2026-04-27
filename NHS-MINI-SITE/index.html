@@ -6,6 +6,16 @@
   <title>OTOS Continuity™ — When ADHD is left waiting, addiction steps in.</title>
   <meta name="description" content="A private partner briefing for NHS, local authority, addiction, recovery and community partners in Cambridge and Peterborough.">
   <link rel="stylesheet" href="css/otos.css">
+
+  <style>
+    .hero-stats-grid { display:grid; grid-template-columns:repeat(5, minmax(0,1fr)); gap:16px; }
+    .hero-stats-grid .stat-card { min-height: 180px; display:flex; flex-direction:column; justify-content:space-between; }
+    .hero-stats-grid .stat { font-size:clamp(24px,2.3vw,38px); line-height:1; }
+    .hero-stats-grid .stat-card p { margin:0; font-size:14px; line-height:1.45; }
+    .hero-stats-grid .stat-card strong { display:block; margin-top:8px; font-size:12px; letter-spacing:.04em; text-transform:uppercase; color:rgba(251,247,238,.72); }
+    @media (max-width: 1200px) { .hero-stats-grid { grid-template-columns:repeat(3, minmax(0,1fr)); } }
+    @media (max-width: 760px) { .hero-stats-grid { grid-template-columns:1fr; } }
+  </style>
 </head>
 <body>
 
@@ -30,11 +40,11 @@
   <!-- ══ HERO ══════════════════════════════════════════════ -->
   <section class="hero">
     <div class="container">
-      <span class="kicker"><span class="kicker-icon"></span>Private partner briefing — Cambridge &amp; Peterborough</span>
+      <span class="kicker"><span class="kicker-icon"></span>Private partner briefing</span>
 
       <!-- Contained image card — NOT full bleed -->
       <div class="hero-image-card" style="margin-bottom:32px">
-        <img src="images/02-chaos-tunnel.png" alt="A man in distress in a tunnel — the experience of untreated ADHD and addiction" style="max-height:600px;width:100%;object-fit:cover;object-position:center 30%">
+        <img src="images/otos_hero1.png" alt="OTOS Continuity hero image showing one person, one continuous pathway across services" style="max-height:600px;width:100%;object-fit:cover;object-position:center 30%">
         <div class="hero-image-card-overlay"></div>
         <div class="hero-image-card-content">
           <h1>When ADHD is left waiting,<br><span class="accent">addiction steps in.</span><br>And it doesn't come quietly.</h1>
@@ -47,22 +57,26 @@
       </div>
 
       <!-- Metrics strip -->
-      <div class="cards four">
+      <div class="hero-stats-grid">
         <article class="card glass stat-card">
           <span class="stat">23–45%</span>
-          <p>ADHD in addiction cohorts<br><strong>Royal College of Psychiatrists</strong></p>
+          <p>ADHD prevalence across addiction treatment cohorts.<strong>Royal College of Psychiatrists</strong></p>
         </article>
         <article class="card glass stat-card">
           <span class="stat">61.3%</span>
-          <p>Improvement in addiction after 6 months ADHD treatment<br><strong>START study, France 2025</strong></p>
+          <p>Improvement in addictive-disorder outcomes after ADHD diagnosis and treatment.<strong>START study, France 2025</strong></p>
         </article>
         <article class="card glass stat-card">
           <span class="stat">30.2% vs 7.0%</span>
-        <p>Cocaine-free at the end of treatment in ADHD + cocaine-use disorder RCT<br><strong>JAMA Psychiatry, 2015</strong></p>
+          <p>Trial-end abstinence in ADHD + cocaine dependence.<strong>JAMA Psychiatry, 2015</strong></p>
+        </article>
+        <article class="card glass stat-card">
+          <span class="stat">86%</span>
+          <p>Alcohol users also have mental health problems.<strong>Sun Network public figure</strong></p>
         </article>
         <article class="card glass stat-card">
           <span class="stat">800–900</span>
-          <p>Estimated local risk cohort<br><strong>Local cohort estimate</strong></p>
+          <p>Estimated local Cambridge &amp; Peterborough overlap cohort.<strong>Local cohort estimate</strong></p>
         </article>
       </div>
       <p style="margin:16px 0 0;text-align:center;font-size:13px;font-weight:800;color:rgba(251,247,238,.72)">
