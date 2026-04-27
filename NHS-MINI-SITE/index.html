@@ -6,15 +6,48 @@
   <title>OTOS Continuity™ — When ADHD is left waiting, addiction steps in.</title>
   <meta name="description" content="A private partner briefing for NHS, local authority, addiction, recovery and community partners in Cambridge and Peterborough.">
   <link rel="stylesheet" href="css/otos.css">
-
   <style>
-    .hero-stats-grid { display:grid; grid-template-columns:repeat(5, minmax(0,1fr)); gap:16px; }
-    .hero-stats-grid .stat-card { min-height: 180px; display:flex; flex-direction:column; justify-content:space-between; }
-    .hero-stats-grid .stat { font-size:clamp(24px,2.3vw,38px); line-height:1; }
-    .hero-stats-grid .stat-card p { margin:0; font-size:14px; line-height:1.45; }
-    .hero-stats-grid .stat-card strong { display:block; margin-top:8px; font-size:12px; letter-spacing:.04em; text-transform:uppercase; color:rgba(251,247,238,.72); }
-    @media (max-width: 1200px) { .hero-stats-grid { grid-template-columns:repeat(3, minmax(0,1fr)); } }
-    @media (max-width: 760px) { .hero-stats-grid { grid-template-columns:1fr; } }
+    .home-stats-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 8px;
+    }
+    .home-stat-card {
+      min-height: 190px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .home-stat-card .stat {
+      font-size: clamp(34px, 3vw, 48px);
+      line-height: .92;
+      white-space: nowrap;
+      letter-spacing: -.03em;
+      margin-bottom: 16px;
+    }
+    .home-stat-card p {
+      margin: 0;
+      font-size: 14px;
+      line-height: 1.42;
+      color: var(--muted);
+    }
+    .home-stat-card strong {
+      display: block;
+      margin-top: 10px;
+      font-size: 11px;
+      line-height: 1.25;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: rgba(251,247,238,.76);
+    }
+    @media (max-width: 1220px) {
+      .home-stats-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    }
+    @media (max-width: 760px) {
+      .home-stats-grid { grid-template-columns: 1fr; }
+      .home-stat-card { min-height: auto; }
+    }
   </style>
 </head>
 <body>
@@ -40,11 +73,11 @@
   <!-- ══ HERO ══════════════════════════════════════════════ -->
   <section class="hero">
     <div class="container">
-      <span class="kicker"><span class="kicker-icon"></span>Private partner briefing</span>
+      <span class="kicker"><span class="kicker-icon"></span>Private partner briefing — Cambridge &amp; Peterborough</span>
 
       <!-- Contained image card — NOT full bleed -->
       <div class="hero-image-card" style="margin-bottom:32px">
-        <img src="images/otos_hero1.png" alt="OTOS Continuity hero image showing one person, one continuous pathway across services" style="max-height:600px;width:100%;object-fit:cover;object-position:center 30%">
+        <img src="images/02-chaos-tunnel.png" alt="A man in distress in a tunnel — the experience of untreated ADHD and addiction" style="max-height:600px;width:100%;object-fit:cover;object-position:center 30%">
         <div class="hero-image-card-overlay"></div>
         <div class="hero-image-card-content">
           <h1>When ADHD is left waiting,<br><span class="accent">addiction steps in.</span><br>And it doesn't come quietly.</h1>
@@ -57,30 +90,35 @@
       </div>
 
       <!-- Metrics strip -->
-      <div class="hero-stats-grid">
-        <article class="card glass stat-card">
-          <span class="stat">23–45%</span>
-          <p>ADHD prevalence across addiction treatment cohorts.<strong>Royal College of Psychiatrists</strong></p>
+      <div class="home-stats-grid">
+        <article class="card glass home-stat-card">
+          <div class="stat">34%*</div>
+          <p>Median ADHD prevalence across addiction treatment cohorts.
+          <strong>Royal College of Psychiatrists</strong></p>
         </article>
-        <article class="card glass stat-card">
-          <span class="stat">61.3%</span>
-          <p>Improvement in addictive-disorder outcomes after ADHD diagnosis and treatment.<strong>START study, France 2025</strong></p>
+        <article class="card glass home-stat-card">
+          <div class="stat">61%*</div>
+          <p>Improved addictive-disorder outcomes after ADHD diagnosis and treatment.
+          <strong>START study</strong></p>
         </article>
-        <article class="card glass stat-card">
-          <span class="stat">30.2% vs 7.0%</span>
-          <p>Trial-end abstinence in ADHD + cocaine dependence.<strong>JAMA Psychiatry, 2015</strong></p>
+        <article class="card glass home-stat-card">
+          <div class="stat">30%*</div>
+          <p>Trial-end abstinence in ADHD + cocaine dependence.
+          <strong>JAMA Psychiatry</strong></p>
         </article>
-        <article class="card glass stat-card">
-          <span class="stat">86%</span>
-          <p>Alcohol users also have mental health problems.<strong>Sun Network public figure</strong></p>
+        <article class="card glass home-stat-card">
+          <div class="stat">86%*</div>
+          <p>Alcohol users also have mental health problems.
+          <strong>Sun Network public figure</strong></p>
         </article>
-        <article class="card glass stat-card">
-          <span class="stat">800–900</span>
-          <p>Estimated local Cambridge &amp; Peterborough overlap cohort.<strong>Local cohort estimate</strong></p>
+        <article class="card glass home-stat-card">
+          <div class="stat">850*</div>
+          <p>Estimated local Cambridge &amp; Peterborough overlap cohort.
+          <strong>Local planning estimate</strong></p>
         </article>
       </div>
       <p style="margin:16px 0 0;text-align:center;font-size:13px;font-weight:800;color:rgba(251,247,238,.72)">
-        Sources for every figure: <a href="evidence-sources.html" style="color:var(--orange-2);text-decoration:none">Evidence &amp; Sources →</a>
+        *Rounded / median planning figures. Sources and caveats: <a href="evidence-sources.html" style="color:var(--orange-2);text-decoration:none">Evidence &amp; Sources →</a>
       </p>
     </div>
   </section>
@@ -142,23 +180,21 @@
     </div>
   </section>
 
-  <!-- ══ DEAN IN FOUR LINES ════════════════════════════════ -->
-  <section class="paper-section paper-section--alt">
+  <!-- ══ WHY THIS EXISTS ════════════════════════════════ -->
+  <section class="paper-section paper-section--alt" id="why-this-exists">
     <div class="container">
       <div class="split split-wide align-center">
         <div>
           <span class="kicker"><span class="kicker-icon"></span>Why this exists</span>
-          <h2>I was your patient.<br><span class="accent">I built the fix.</span></h2>
-          <p style="font-size:17px;color:var(--paper-muted);margin-top:16px">35 years of successful self-medication. Crossed the invisible line. Six A&amp;E presentations. Three detoxes at Addenbrooke's. Private hospitals, a DayHab, CPFT mental health services and CGL funded £90,000 of residential rehab with my ADHD medication removed on arrival.</p>
-          <p style="font-size:17px;color:var(--paper-muted)">Then a private diagnosis. Three days on Elvanse. Everything made sense. The chaos wasn't a character defect. The addiction wasn't a failure of treatment. It was what happens when the underlying neurological condition stays unresolved while the system treats the visible damage.</p>
-          <p style="font-size:17px;font-weight:800;color:var(--paper-ink)">OTOS is the thread that should have held between the services I moved through.</p>
+          <h2>The care is real.<br><span class="accent">The thread is not.</span></h2>
+          <p style="font-size:17px;color:var(--paper-muted);margin-top:16px">People do not usually disappear because one service failed. They disappear because the next contact, referral, wait, discharge or community touchpoint is held in separate systems, inboxes and memories.</p>
+          <p style="font-size:17px;color:var(--paper-muted)">OTOS exists to make that between-space visible. A partner can log a referral, handoff or support touchpoint. The person stays lightly connected while they wait. Silence or drift becomes visible before the thread goes cold.</p>
+          <p style="font-size:17px;color:var(--paper-muted)">It does not diagnose, prescribe or replace clinical judgement. It simply helps the services already around a person see that the pathway is still alive.</p>
+          <p style="font-size:17px;font-weight:800;color:var(--paper-ink)">That is why OTOS exists: not to add another service, but to connect the ones already doing the work.</p>
           <a href="founder-story.html" style="display:inline-block;margin-top:18px;font-size:14px;font-weight:800;color:var(--orange);text-decoration:none">Read the full story →</a>
         </div>
-        <div class="image-contained" style="max-width:380px;margin-left:auto">
-          <img src="images/06-close-nurse-bedside.png" alt="The bedside moment — Addenbrooke's Alcohol Care">
-          <div style="background:var(--brown);padding:16px 20px">
-            <p style="font-family:Georgia,'Times New Roman',serif;font-size:15px;font-style:italic;font-weight:400;color:rgba(251,247,238,.82);margin:0;line-height:1.6">"Next time we meet, I won't be your patient. I'll be your partner."</p>
-          </div>
+        <div class="image-contained" style="max-width:520px;margin-left:auto">
+          <img src="images/Better_Continuity_better_outcomes_in_healthcare.png" alt="Better continuity, better outcomes — OTOS pathway visual" style="width:100%;display:block">
         </div>
       </div>
     </div>
@@ -263,7 +299,7 @@
           </div>
         </div>
         <div class="image-thumbnail">
-          <img src="images/OTOS_continuity_pilot_dashboard.png" alt="OTOS Continuity pilot overview dashboard — Week 7">
+          <img src="images/Modern_healthcare_Continuity_dashboard_overview.png" alt="Modern OTOS Continuity dashboard overview — pathway visibility across services">
         </div>
       </div>
     </div>
