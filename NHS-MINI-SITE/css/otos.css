@@ -1352,3 +1352,33 @@ td strong { color: var(--paper-ink); }
     margin: 18px auto 20px;
   }
 }
+
+
+/* ── PARTNER HERO IMAGE FRAME WIDENING ────────────────────
+   Wider 4:3 frame so partner images read as scenes, not cropped portraits.
+*/
+.partner-hero-inner {
+  grid-template-columns: minmax(0, 1fr) minmax(430px, 560px);
+  gap: clamp(36px, 5vw, 64px);
+}
+.partner-hero-image {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border-radius: var(--radius-lg);
+}
+.partner-hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
+@media (max-width: 980px) {
+  .partner-hero-inner {
+    grid-template-columns: 1fr;
+  }
+  .partner-hero-image {
+    max-width: 680px;
+    margin: 0 auto;
+    aspect-ratio: 4 / 3;
+  }
+}
