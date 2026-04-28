@@ -41,12 +41,41 @@
       text-transform: uppercase;
       color: rgba(251,247,238,.76);
     }
+    .home-route-wrap {
+      width: 100%;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+      box-sizing: border-box;
+    }
+    .otos-home-signoff {
+      margin: 34px auto 0;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .otos-home-signoff img {
+      width: 56px;
+      height: auto;
+      display: block;
+    }
+    .otos-home-signoff span {
+      display: block;
+      font-size: clamp(32px, 5vw, 64px);
+      line-height: .95;
+      font-weight: 950;
+      letter-spacing: -.04em;
+      color: var(--orange);
+    }
     @media (max-width: 1220px) {
       .home-stats-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
     }
     @media (max-width: 760px) {
       .home-stats-grid { grid-template-columns: 1fr; }
       .home-stat-card { min-height: auto; }
+      .home-route-wrap { padding: 0 18px; }
     }
   </style>
 </head>
@@ -129,17 +158,19 @@
   <section class="paper-section" id="partner-routes" style="padding-top:56px">
     <div class="container">
       <div class="section-head center" style="max-width:1180px;margin:0 auto 42px;text-align:center">
-      <span class="kicker"><span class="kicker-icon"></span>OUT THE OTHER SIDE</span>
+        <span class="kicker"><span class="kicker-icon"></span>Out The Other Side</span>
 
         <h2 style="max-width:1000px;margin-left:auto;margin-right:auto">
-        I've designed a web-based system to help you, the NHS and people like me.
-         People like me with, what I now refer to as, "Neurodiversely-Informed Addiction."<br>
-          <span class="accent">The evidence is out there and sat before you right here, happily...</span
-          <span class="accent"Out The Other Side.</span>
+          I’ve designed a web-based system to help you, the NHS and people like me.<br>
+          People like me with what I now think of as <span class="accent">neurodiversely informed addiction.</span>
         </h2>
 
         <p style="max-width:1040px;margin:18px auto 0;font-size:18px;line-height:1.65;color:var(--paper-ink)">
-                   Something was never right...but i nnow know my addiction to alcohol was a direct result of not being medicated properly for ADHD. And I am not alone in that. One clinical study found a 61.3% improvement in addictive disorders once ADHD was properly identified and treated. i'm convinced mine is not trauma-informed -Corected ADHD medication has literally changed my life and explained it so far. Now,a s promsied, Iamback, ready with s plan. It's extensive so, i'll let your specifically written page do the talking.....but please, click around
+          Something was never right. I now believe my addiction to alcohol was a direct result of not being medicated properly for ADHD. And I am not alone in that. One clinical study found a 61.3% improvement in addictive disorders once ADHD was properly identified and treated.
+        </p>
+
+        <p style="max-width:1040px;margin:18px auto 0;font-size:18px;line-height:1.65;color:var(--paper-ink)">
+          I am convinced mine was not simply trauma-informed. Correct ADHD medication has literally changed my life and explained so much of it. Now, as promised, I am back with a plan. It is extensive, so I will let the pages written for each service do the talking — but please do click around.
         </p>
 
         <p style="max-width:1040px;margin:18px auto 0;font-size:18px;line-height:1.65;color:var(--paper-ink)">
@@ -147,19 +178,26 @@
         </p>
 
         <p style="max-width:1040px;margin:18px auto 0;font-size:18px;line-height:1.65;color:var(--paper-ink)">
-          That is why OTOS exists: to make the pattern visible earlier, before repeated crisis, repeated spend and repeated personal loss become the story.
+          That is why OTOS exists: to make the pattern visible earlier, before repeated crisis, repeated spend, repeated personal loss and system-wide cost become the story.
         </p>
 
-    <p style="max-width:1040px;margin:22px auto 0;font-size:18px;line-height:1.65;font-weight:750;color:var(--paper-ink)">
-  This private site is my starting point and support pack. I need the people who saw this journey to help me take a bounded 50-person OTOS Continuity™ demonstrator to Local Authority, ICB and funder conversations — to prove that this ADHD + addiction cohort needs a priority route, not another blind wait.
-</p>
+        <p style="max-width:1040px;margin:22px auto 0;font-size:18px;line-height:1.65;font-weight:750;color:var(--paper-ink)">
+          This private site is my starting point and support pack. I need the people who saw this journey to help me take a bounded 50-person OTOS Continuity™ demonstrator to Local Authority, ICB and funder conversations — to prove that this ADHD + addiction cohort needs a priority route, not another blind wait.
+        </p>
 
         <p style="max-width:940px;margin:22px auto 0;font-size:17px;line-height:1.6;color:var(--paper-muted)">
           Each partner page includes a short draft note you can edit and send back to me.
         </p>
-      </div>
 
-      <div class="route-grid" style="max-width:1280px;margin:0 auto;padding:0 24px;box-sizing:border-box">
+        <div class="otos-home-signoff" aria-label="Out The Other Side">
+          <img src="images/otos-logo.png" alt="OTOS">
+          <span>Out The Other Side.</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="home-route-wrap">
+      <div class="route-grid">
         <a class="route-card" href="partners-addenbrookes.html">
           <div class="route-card-logo"><img src="images/Addenbrookes_Logo.png" alt="Addenbrooke's NHS Trust"></div>
           <div class="route-card-body">For the team seeing crisis at the bedside, where the next handoff needs to be visible before discharge.</div>
@@ -201,7 +239,7 @@
           <div class="route-card-footer">Open your draft note →</div>
         </a>
       </div>
-
+    </div>
   </section>
 
   <!-- ══ WHY THIS EXISTS ════════════════════════════════ -->
