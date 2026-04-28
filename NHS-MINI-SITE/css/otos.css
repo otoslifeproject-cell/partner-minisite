@@ -1355,3 +1355,54 @@ td strong { color: var(--paper-ink); }
     aspect-ratio: 4 / 3;
   }
 }
+
+
+/* ── Subtle cross-partner routing ────────────────────────── */
+.partner-cross-section {
+  padding-top: 28px;
+  padding-bottom: 28px;
+}
+.partner-crosslinks {
+  padding: clamp(20px, 2.8vw, 30px);
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(242, 108, 13, .18);
+  background:
+    radial-gradient(circle at top left, rgba(242,108,13,.10), transparent 38%),
+    rgba(255,255,255,.035);
+}
+.paper-section .partner-crosslinks {
+  background:
+    radial-gradient(circle at top left, rgba(242,108,13,.10), transparent 38%),
+    rgba(255,255,255,.64);
+}
+.partner-crosslinks p {
+  max-width: 920px;
+  margin: 10px 0 0;
+  color: var(--paper-muted);
+  font-size: 15px;
+  line-height: 1.65;
+}
+.crosslink-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 16px;
+}
+.crosslink-row a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 38px;
+  padding: 8px 12px;
+  border-radius: var(--pill);
+  border: 1px solid rgba(242,108,13,.24);
+  background: rgba(242,108,13,.08);
+  color: var(--orange);
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: .03em;
+  text-transform: uppercase;
+}
+.crosslink-row a:hover {
+  background: rgba(242,108,13,.14);
+}
