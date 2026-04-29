@@ -636,5 +636,49 @@
       });
     })();
   </script>
+  <script>
+(function(){
+  var overlay = document.getElementById('quote-overlay');
+  if(!overlay) return;
+
+  // Show once per browser session
+  var key = 'otosQuoteSeen';
+  var already = sessionStorage.getItem(key);
+
+  function closeOverlay(){
+    overlay.classList.remove('show');
+    sessionStorage.setItem(key, '1');
+    document.body.style.overflow = '';
+  }
+
+  // Only show if not seen this session
+  if(!already){
+    overlay.classList.add('show');
+    document.body.style.overflow = 'hidden';
+
+    // animate timer (3.2s)
+    var fill = overlay.querySelector('.quote-timer-fill');
+    if(fill){
+      fill.style.transition = 'width 3.2s linear';
+      requestAnimationFrame(function(){ fill.style.width = '100%'; });
+    }
+    window.setTimeout(closeOverlay, 3200);
+  }
+
+  // Click to close (button)
+  var btn = overlay.querySelector('.quote-skip');
+  if(btn) btn.addEventListener('click', closeOverlay);
+
+  // ESC to close
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape' && overlay.classList.contains('show')) closeOverlay();
+  });
+
+  // click outside card to close
+  overlay.addEventListener('click', function(e){
+    if(e.target === overlay) closeOverlay();
+  });
+})();
+</script>
 </body>
 </html>
