@@ -6,6 +6,61 @@
   <title>OTOS Continuity™ — When ADHD is left waiting, addiction steps in.</title>
   <meta name="description" content="A private partner briefing for NHS, addiction, recovery, ADHD and community partners in Cambridge and Peterborough.">
   <link rel="stylesheet" href="css/otos.css">
+
+  <!-- FIX PACK (no more edits elsewhere): partner tile typography + bridge spacing -->
+  <style>
+    /* Stop “stretched”/compressed heading look on tiles */
+    .route-card-body{
+      font-size: 13px;
+      line-height: 1.55;
+      letter-spacing: 0;
+    }
+    .route-card-footer{
+      letter-spacing: 0;
+      line-height: 1.3;
+    }
+    /* Keep cards visually consistent at awkward window sizes */
+    .route-card{
+      min-height: 210px;
+    }
+    .route-card-logo{
+      padding-top: 18px;
+      padding-bottom: 12px;
+    }
+
+    /* Bridge block: keep it readable and “premium” */
+    .home-bridge{
+      max-width: 980px;
+      margin: 0 auto 18px;
+    }
+    .home-bridge-lead{
+      margin: 0 0 12px;
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 1.65;
+      color: var(--paper-muted);
+    }
+    .home-bridge-copy{
+      margin: 0 0 12px;
+      font-size: 15px;
+      font-weight: 600;
+      line-height: 1.72;
+      color: var(--paper-muted);
+    }
+    .home-bridge-copy strong{
+      color: var(--paper-ink);
+      font-weight: 900;
+    }
+    .home-bridge-actions{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top: 12px;
+    }
+
+    /* Make sure the anchor scroll never hides behind fixed nav */
+    :root { scroll-padding-top: 110px; }
+  </style>
 </head>
 
 <body>
@@ -42,7 +97,6 @@
   </header>
 
   <main>
-
     <!-- HERO -->
     <section class="hero">
       <div class="container">
@@ -75,7 +129,7 @@
           </div>
         </div>
 
-        <!-- Stats strip (uses your existing CSS classes) -->
+        <!-- Stats strip (plain text: cannot become 0) -->
         <div class="home-stats-grid">
           <article class="card glass home-stat-card">
             <div class="stat">34%*</div>
@@ -118,7 +172,6 @@
     <section class="paper-section" id="partner-routes" style="padding-top:56px">
       <div class="container">
 
-        <!-- THE BRIDGE (the missing follow-up to the hero) -->
         <div class="home-bridge">
           <span class="kicker"><span class="kicker-icon"></span>From Dean — directly to you</span>
 
@@ -127,11 +180,11 @@
           </p>
 
           <p class="home-bridge-copy">
-            The ADHD waiting list is the starting point of this story, but it is not the whole story. If my ADHD had been recognised, treated and held properly earlier, I do not believe alcohol would have become the system-level problem it later became.<br>
+            The ADHD waiting list is the starting point of this story, but it is not the whole story. If my ADHD had been recognised, treated and held properly earlier, I do not believe alcohol would have become the system-level problem it later became.<br><br>
             That is the preventable second battle: people first wait with unmanaged ADHD, then reappear later in A&amp;E, addiction, crisis, therapy, detox, rehab, hospital, housing pressure, police contact, mental health support, total collapse — and sadly on to jail or suicide. By then, the original need has become much more expensive and much harder to unwind.
           </p>
 
-          <p class="home-bridge-copy" style="margin-top:14px">
+          <p class="home-bridge-copy">
             <strong>OTOS Continuity™ is a web-based continuity layer</strong> that targets ADHD-driven addiction by keeping the person visible between CPFT &amp; CGL services, referrals, waiting lists and the next meaningful step — so partners can see where the journey is holding, where it is slipping, and where a human follow-up could prevent relapse, hospital, detox, rehab or another expensive crisis.
           </p>
 
@@ -141,7 +194,6 @@
           </div>
         </div>
 
-        <!-- Slim "Do this next..." line (no boxes) -->
         <div class="home-next-steps" style="margin-top:22px">
           <h3>Do this next…</h3>
           <p>1. Open your role page → 2. Read the draft note → 3. Reply to Dean → or 4. Arrange a quick 30-minute call.</p>
@@ -201,7 +253,6 @@
       </div>
     </section>
 
-    <!-- Bottom CTA -->
     <section class="brown-section">
       <div class="container" style="text-align:center">
         <p style="font-size:16px;font-weight:600;color:rgba(251,247,238,.6);margin-bottom:32px">
@@ -232,7 +283,7 @@
     </div>
   </footer>
 
-  <!-- Quote overlay JS -->
+  <!-- Quote overlay JS (10 seconds) -->
   <script>
   (function(){
     var overlay = document.getElementById('quote-overlay');
@@ -256,7 +307,6 @@
         fill.style.transition = 'width 10s linear';
         requestAnimationFrame(function(){ fill.style.width = '100%'; });
       }
-
       window.setTimeout(closeOverlay, 10000);
     }
 
