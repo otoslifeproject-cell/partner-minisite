@@ -9,7 +9,6 @@
 
   <!-- FIX PACK (no more edits elsewhere): partner tile typography + bridge spacing -->
   <style>
-    /* Stop “stretched”/compressed heading look on tiles */
     .route-card-body{
       font-size: 13px;
       line-height: 1.55;
@@ -19,16 +18,9 @@
       letter-spacing: 0;
       line-height: 1.3;
     }
-    /* Keep cards visually consistent at awkward window sizes */
-    .route-card{
-      min-height: 210px;
-    }
-    .route-card-logo{
-      padding-top: 18px;
-      padding-bottom: 12px;
-    }
+    .route-card{ min-height: 210px; }
+    .route-card-logo{ padding-top: 18px; padding-bottom: 12px; }
 
-    /* Bridge block: keep it readable and “premium” */
     .home-bridge{
       max-width: 980px;
       margin: 0 auto 18px;
@@ -51,14 +43,7 @@
       color: var(--paper-ink);
       font-weight: 900;
     }
-    .home-bridge-actions{
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-      margin-top: 12px;
-    }
 
-    /* Make sure the anchor scroll never hides behind fixed nav */
     :root { scroll-padding-top: 110px; }
   </style>
 </head>
@@ -129,7 +114,7 @@
           </div>
         </div>
 
-        <!-- Stats strip (plain text: cannot become 0) -->
+        <!-- Stats strip -->
         <div class="home-stats-grid">
           <article class="card glass home-stat-card">
             <div class="stat">34%*</div>
@@ -188,21 +173,16 @@
             <strong>OTOS Continuity™ is a web-based continuity layer</strong> that targets ADHD-driven addiction by keeping the person visible between CPFT &amp; CGL services, referrals, waiting lists and the next meaningful step — so partners can see where the journey is holding, where it is slipping, and where a human follow-up could prevent relapse, hospital, detox, rehab or another expensive crisis.
           </p>
 
-          <div class="home-bridge-actions">
-            <a class="btn-primary" href="#partner-menu">Find your page</a>
-            <a class="btn outline" href="partners.html">Read the full briefing</a>
-          </div>
-        </div>
-
-        <div class="home-next-steps" style="margin-top:22px">
-          <h3>Do this next…</h3>
-          <p>1. Open your role page → 2. Read the draft note → 3. Reply to Dean → or 4. Arrange a quick 30-minute call.</p>
+          <p class="home-bridge-copy" style="margin-top:14px">
+            <strong>I’ve written a page specifically for you</strong> — so please dive in below. If you’d rather start with the context first, you can read the full briefing to see the evidence, my journey, and how OTOS Continuity™ is meant to work in practice.
+            <a href="partners.html" style="color:var(--orange);font-weight:900;text-decoration:none">Read the full briefing →</a>
+          </p>
         </div>
 
       </div>
 
       <!-- ROUTES GRID -->
-      <div id="partner-menu" class="home-route-wrap" style="margin-top:30px">
+      <div id="partner-menu" class="home-route-wrap" style="margin-top:22px">
         <div class="route-grid">
           <a class="route-card" href="partners-addenbrookes.html">
             <div class="route-card-logo"><img src="images/Addenbrookes_Logo.png" alt="Addenbrooke's NHS Trust"></div>
