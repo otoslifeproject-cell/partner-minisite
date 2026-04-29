@@ -1457,3 +1457,74 @@ td strong { color: var(--paper-ink); }
 @media (max-width: 700px) {
   .template-action-grid { grid-template-columns: 1fr; }
 }
+/* ── Quote overlay entry (premium) ─────────────────────── */
+.quote-overlay{
+  position:fixed;
+  inset:0;
+  z-index:5000;
+  display:none;
+  place-items:center;
+  padding:24px;
+  background:rgba(8,10,15,.92);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+.quote-overlay.show{ display:grid; }
+
+.quote-card{
+  width:min(860px, 100%);
+  border-radius: var(--radius-lg);
+  border:1px solid rgba(255,255,255,.14);
+  background: linear-gradient(180deg, rgba(18,26,38,.92), rgba(10,14,22,.86));
+  box-shadow: 0 34px 100px rgba(0,0,0,.55);
+  padding: 26px 26px 22px;
+  position:relative;
+  overflow:hidden;
+}
+
+.quote-timer-bar{
+  height:6px;
+  width:100%;
+  border-radius: 999px;
+  background: rgba(255,255,255,.10);
+  overflow:hidden;
+  margin-bottom: 18px;
+}
+.quote-timer-fill{
+  height:100%;
+  width:0%;
+  background: linear-gradient(90deg, var(--orange), var(--orange-2));
+}
+
+.quote-text{
+  margin:0 0 14px;
+  font-size: 18px;
+  line-height: 1.75;
+  color: rgba(251,247,238,.88);
+  font-family: Georgia, 'Times New Roman', serif;
+  font-style: italic;
+}
+.quote-text em{
+  font-style: normal;
+  color: rgba(255,255,255,.95);
+  font-weight: 800;
+}
+
+.quote-attribution{
+  margin:0 0 18px;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: rgba(251,247,238,.52);
+}
+
+.quote-skip{
+  margin-top: 6px;
+}
+
+/* small screens */
+@media (max-width:700px){
+  .quote-text{ font-size:16px; }
+  .quote-card{ padding:22px 18px 18px; }
+}
