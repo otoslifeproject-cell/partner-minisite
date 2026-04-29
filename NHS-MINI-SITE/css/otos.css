@@ -1,8 +1,9 @@
 /* ============================================================
-   OTOS Continuity™ — otos.css  (redesign, v2)
-   Calmer. Cream-dominant. Orange as accent only.
-   Dark sections: max 2 per page.
-   Font: Inter (all weights). Georgia italic: bedside quote only.
+   OTOS Continuity™ — otos.css  (clean full replacement, 2026-04-29)
+   Goal: one coherent system across ALL pages (no per-page layout drift)
+   - Cream-dominant. Orange accent.
+   - Dark sections: use sparingly.
+   - Inter everywhere; Georgia italic only for “quote” / support-note copy.
    ============================================================ */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap');
@@ -162,31 +163,25 @@ strong { font-weight: 800; color: inherit; }
 .nav-links a.cta:hover { background: #ff7a1a; }
 
 /* ── SECTION TYPES ──────────────────────────────────────── */
-/* Cream (default — most sections) */
 .paper-section {
   padding: 80px 0;
   background: var(--paper);
   color: var(--paper-ink);
 }
-.paper-section--alt {
-  background: var(--paper-2);
-}
+.paper-section--alt { background: var(--paper-2); }
 
-/* Dark — use sparingly, max 2 per page */
 .dark-section {
   padding: 80px 0;
   background: var(--bg);
   color: var(--ink);
 }
 
-/* Brown — Dean's voice, founder moments, pull quotes */
 .brown-section {
   padding: 64px 0;
   background: var(--brown);
   color: var(--ink);
 }
 
-/* Hero — dark, with grid texture, always first section */
 .hero {
   padding: calc(var(--nav-h) + 64px) 0 72px;
   background:
@@ -221,7 +216,6 @@ strong { font-weight: 800; color: inherit; }
   flex-shrink: 0;
   opacity: .85;
 }
-/* Kicker on cream uses the same orange but slightly more visible bg */
 .paper-section .kicker,
 .kicker.on-paper {
   color: var(--orange);
@@ -236,12 +230,10 @@ h1, h2, h3, h4 {
   letter-spacing: -.055em;
   margin: 0;
 }
-/* Page H1 — hero only */
 h1 {
   font-size: clamp(38px, 4.8vw, 68px);
   color: var(--ink);
 }
-/* Section H2 — calm, not campaign-size */
 h2 {
   font-size: clamp(26px, 2.8vw, 40px);
   color: var(--paper-ink);
@@ -249,7 +241,6 @@ h2 {
 }
 .dark-section h2,
 .brown-section h2 { color: var(--ink); }
-/* Sub-section H3 */
 h3 {
   font-size: 20px;
   letter-spacing: -.025em;
@@ -259,10 +250,8 @@ h3 {
 .dark-section h3,
 .brown-section h3 { color: var(--ink); }
 
-/* Accent word */
 .accent { color: var(--orange); }
 
-/* Lede — opening paragraph under h1 */
 .lede {
   font-size: 18px;
   font-weight: 500;
@@ -273,7 +262,6 @@ h3 {
 }
 .paper-section .lede { color: var(--paper-muted); }
 
-/* Section header block */
 .section-head { max-width: 820px; margin-bottom: 40px; }
 .section-head.center { text-align: center; margin-left: auto; margin-right: auto; }
 .section-head p {
@@ -319,7 +307,6 @@ h3 {
   transform: translateY(-1px);
   box-shadow: 0 12px 36px rgba(242,108,13,.34);
 }
-/* Ghost — on dark backgrounds */
 .btn, .btn-secondary {
   background: rgba(255,255,255,.07);
   color: var(--ink);
@@ -329,7 +316,6 @@ h3 {
   background: rgba(255,255,255,.11);
   transform: translateY(-1px);
 }
-/* Outlined — on cream backgrounds */
 .btn.outline {
   background: transparent;
   color: var(--paper-ink);
@@ -341,7 +327,6 @@ h3 {
 }
 
 /* ── CARDS ──────────────────────────────────────────────── */
-/* Single unified card style — cream context */
 .card {
   position: relative;
   overflow: hidden;
@@ -359,7 +344,6 @@ h3 {
 }
 .card h3 { margin-bottom: 10px; }
 .card p { font-size: 15px; color: var(--paper-muted); line-height: 1.7; margin: 0; }
-/* Brain watermark on every card */
 .card::after {
   content: '';
   position: absolute;
@@ -370,7 +354,6 @@ h3 {
   pointer-events: none;
 }
 
-/* Dark glass card */
 .card.glass {
   background: linear-gradient(180deg,rgba(18,26,38,.82),rgba(10,14,22,.68));
   border-color: var(--line);
@@ -387,6 +370,9 @@ h3 {
 .cards.two { grid-template-columns: repeat(2, 1fr); }
 .cards.four { grid-template-columns: repeat(4, 1fr); }
 
+/* Added: five-card helper for index stats */
+.cards.five { grid-template-columns: repeat(5, 1fr); }
+
 /* ── STAT DISPLAY ───────────────────────────────────────── */
 .stat {
   display: block;
@@ -400,7 +386,7 @@ h3 {
 .dark-section .stat { color: var(--orange-2); }
 .stat-card { min-height: 180px; display: flex; flex-direction: column; justify-content: space-between; }
 
-/* ── LABEL / META ───────────────────────────────────────── */
+/* ── LABEL ──────────────────────────────────────────────── */
 .label {
   font-size: 11px;
   font-weight: 800;
@@ -411,7 +397,7 @@ h3 {
 }
 .dark-section .label { color: var(--orange-2); }
 
-/* ── CALLOUT BLOCK ──────────────────────────────────────── */
+/* ── CALLOUT ────────────────────────────────────────────── */
 .callout {
   border-left: 3px solid var(--orange);
   background: rgba(242,108,13,.07);
@@ -430,7 +416,6 @@ h3 {
 }
 
 /* ── SUPPORT NOTE ───────────────────────────────────────── */
-/* Identical across all partner pages */
 .support-note {
   background: var(--paper-3);
   border: 1px solid var(--line-paper);
@@ -464,20 +449,14 @@ h3 {
 }
 
 /* ── IMAGE TREATMENTS ───────────────────────────────────── */
-/* Contained — beside text, fixed max width */
 .image-contained {
   border-radius: var(--radius);
   overflow: hidden;
   box-shadow: var(--shadow-lg);
   flex-shrink: 0;
 }
-.image-contained img {
-  width: 100%;
-  display: block;
-  object-fit: cover;
-}
+.image-contained img { width: 100%; display: block; object-fit: cover; }
 
-/* Thumbnail — small inline image */
 .image-thumbnail {
   border-radius: var(--radius-sm);
   overflow: hidden;
@@ -486,7 +465,6 @@ h3 {
 }
 .image-thumbnail img { width: 100%; display: block; }
 
-/* Image banner — only used in exceptional full-width moments */
 .image-banner {
   position: relative;
   overflow: hidden;
@@ -518,7 +496,7 @@ h3 {
 .image-banner-content h2 { color: var(--ink); }
 .image-banner-content p  { color: rgba(251,247,238,.72); font-size: 16px; margin-top: 10px; }
 
-/* ── PARTNER CARDS ──────────────────────────────────────── */
+/* ── ROUTE / PARTNER CARDS (index) ──────────────────────── */
 .route-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -574,7 +552,6 @@ h3 {
 }
 
 /* ── PARTNER PAGE HERO ──────────────────────────────────── */
-/* Contained image beside heading — NOT full-bleed */
 .partner-hero {
   padding: calc(var(--nav-h) + 48px) 0 56px;
   background: var(--bg);
@@ -582,8 +559,8 @@ h3 {
 }
 .partner-hero-inner {
   display: grid;
-  grid-template-columns: 1fr minmax(0, 360px);
-  gap: 44px;
+  grid-template-columns: minmax(0, 1fr) minmax(430px, 560px);
+  gap: clamp(36px, 5vw, 64px);
   align-items: center;
 }
 .partner-hero-copy .partner-logo {
@@ -606,30 +583,24 @@ h3 {
   line-height: 1.7;
 }
 .partner-hero-image {
+  width: 100%;
+  aspect-ratio: 4 / 3;
   border-radius: var(--radius-lg);
   overflow: hidden;
   box-shadow: 0 28px 72px rgba(0,0,0,.34);
-  aspect-ratio: 4 / 5;
 }
 .partner-hero-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center center;
 }
 
-/* ── WHAT OTOS NEEDS — 3 cards ──────────────────────────── */
-.needs-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 14px;
-}
+/* ── WHAT OTOS NEEDS (3 cards) ──────────────────────────── */
+.needs-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
 
 /* ── GUARDRAILS ─────────────────────────────────────────── */
-.guardrail-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-}
+.guardrail-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
 .guardrail-list {
   list-style: none;
   padding: 0;
@@ -646,19 +617,12 @@ h3 {
   color: var(--muted);
   line-height: 1.5;
 }
-.guardrail-list li .icon {
-  font-size: 14px;
-  flex-shrink: 0;
-  margin-top: 2px;
-}
+.guardrail-list li .icon { font-size: 14px; flex-shrink: 0; margin-top: 2px; }
 .guardrail-list li .icon.no { color: var(--red); }
 .guardrail-list li .icon.q { color: var(--orange-2); }
 
 /* ── QUOTE BLOCK ────────────────────────────────────────── */
-/* Georgia italic — Dean's voice, never orange band */
-.quote-block {
-  padding: 48px 0;
-}
+.quote-block { padding: 48px 0; }
 .quote-block blockquote {
   font-family: Georgia, 'Times New Roman', serif;
   font-size: clamp(18px, 1.8vw, 24px);
@@ -678,7 +642,7 @@ h3 {
   color: rgba(251,247,238,.45);
 }
 
-/* ── PARTNER CARDS (detailed, from partners.html) ─────── */
+/* ── PARTNER CARDS (partners.html) ──────────────────────── */
 .partner-card {
   min-height: 220px;
   display: flex;
@@ -713,7 +677,14 @@ h3 {
 }
 
 /* ── LIST STYLES ────────────────────────────────────────── */
-.list { list-style: none; padding: 0; margin: 16px 0 0; display: flex; flex-direction: column; gap: 11px; }
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 16px 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+}
 .list li {
   display: flex;
   gap: 10px;
@@ -732,8 +703,24 @@ h3 {
   margin-top: 3px;
   opacity: .75;
 }
-.list.no li::before { content: '×'; width: auto; height: auto; background: none; color: var(--red); font-weight: 900; font-size: 14px; margin-top: 1px; }
-.list.check li::before { content: '✓'; width: auto; height: auto; background: none; color: #5a9e6a; font-weight: 900; font-size: 14px; margin-top: 1px; }
+.list.no li::before {
+  content: '×';
+  width: auto; height: auto;
+  background: none;
+  color: var(--red);
+  font-weight: 900;
+  font-size: 14px;
+  margin-top: 1px;
+}
+.list.check li::before {
+  content: '✓';
+  width: auto; height: auto;
+  background: none;
+  color: #5a9e6a;
+  font-weight: 900;
+  font-size: 14px;
+  margin-top: 1px;
+}
 
 /* ── TABLES ─────────────────────────────────────────────── */
 .table-wrap { overflow: auto; border: 1px solid var(--line-paper); border-radius: var(--radius); }
@@ -748,7 +735,14 @@ th, td {
   line-height: 1.55;
 }
 .dark-section th, .dark-section td { border-color: var(--line); }
-th { font-size: 11px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: var(--orange); background: rgba(242,108,13,.05); }
+th {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--orange);
+  background: rgba(242,108,13,.05);
+}
 td { color: var(--paper-muted); font-weight: 500; }
 .dark-section td { color: var(--muted); }
 td strong { color: var(--paper-ink); }
@@ -783,7 +777,7 @@ td strong { color: var(--paper-ink); }
 }
 .page-footer a:hover { color: #fff; }
 
-/* ── HERO CARD (for index hero image) ───────────────────── */
+/* ── HERO CARD (index hero image) ───────────────────────── */
 .hero-image-card {
   border-radius: var(--radius-lg);
   overflow: hidden;
@@ -862,10 +856,7 @@ td strong { color: var(--paper-ink); }
   width: 2px;
   background: linear-gradient(to bottom, var(--orange) 0%, rgba(242,108,13,.12) 100%);
 }
-.tl-item {
-  position: relative;
-  padding: 0 0 34px 58px;
-}
+.tl-item { position: relative; padding: 0 0 34px 58px; }
 .tl-item:last-child { padding-bottom: 0; }
 .tl-dot {
   position: absolute;
@@ -911,7 +902,7 @@ td strong { color: var(--paper-ink); }
   border: 2px solid var(--orange);
 }
 .phase-label { font-size: 10px; font-weight: 900; text-transform: uppercase; letter-spacing: .16em; color: var(--orange); margin-bottom: 3px; }
-.phase-title  { font-size: 1.2rem; font-weight: 900; color: var(--paper-ink); letter-spacing: -.02em; line-height: 1.1; }
+.phase-title { font-size: 1.2rem; font-weight: 900; color: var(--paper-ink); letter-spacing: -.02em; line-height: 1.1; }
 .moment-card {
   background: rgba(242,108,13,.06);
   border: 1px solid rgba(242,108,13,.2);
@@ -923,7 +914,6 @@ td strong { color: var(--paper-ink); }
 .moment-card h3 { font-size: 16px; font-weight: 900; color: var(--paper-ink); margin-bottom: 8px; }
 .moment-card p  { font-size: 15px; color: var(--paper-muted); line-height: 1.72; margin: 0; }
 
-/* The shift — brown section, first-person, Georgia */
 .shift-section { background: var(--brown); padding: 72px 0; }
 .shift-inner { max-width: 760px; margin: 0 auto; }
 .shift-big {
@@ -941,7 +931,7 @@ td strong { color: var(--paper-ink); }
 .shift-body p.big { font-size: 17px; font-weight: 700; color: rgba(255,255,255,.85); line-height: 1.65; }
 .shift-body p strong { color: rgba(255,255,255,.88); font-weight: 700; }
 
-/* ── EVIDENCE TABS ───────────────────────────────────────── */
+/* ── EVIDENCE TABS (shared) ─────────────────────────────── */
 .ev-tabs {
   display: flex;
   border: 1px solid var(--line);
@@ -1004,7 +994,7 @@ td strong { color: var(--paper-ink); }
 .source-card p  { font-size: 15px; color: var(--muted); line-height: 1.72; margin: 0; }
 .source-org { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); margin-bottom: 5px; }
 
-/* ── CTA ROW ─────────────────────────────────────────────── */
+/* ── CTA ROW ────────────────────────────────────────────── */
 .cta-row {
   display: flex;
   gap: 12px;
@@ -1014,17 +1004,14 @@ td strong { color: var(--paper-ink); }
 .cta-row.center { justify-content: center; }
 .cta-row.mt { margin-top: 32px; }
 
-/* ── SPLIT LAYOUTS ───────────────────────────────────────── */
+/* ── SPLIT / GRID HELPERS ───────────────────────────────── */
 .split { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
 .split.align-center { align-items: center; }
 .split-wide { grid-template-columns: 1.15fr .85fr; }
 .split-narrow { grid-template-columns: .85fr 1.15fr; }
-
-/* ── GRID HELPERS ────────────────────────────────────────── */
 .stack { display: flex; flex-direction: column; gap: 14px; }
 
-
-/* ── POLISH COMPONENTS — shared replacements for ad-hoc boxes ── */
+/* ── POLISH COMPONENTS (reusable primitives) ────────────── */
 .partner-logo-row {
   display: flex;
   gap: 12px;
@@ -1042,11 +1029,8 @@ td strong { color: var(--paper-ink); }
 }
 .partner-logo-row.wrap img { height: 32px; max-width: 120px; }
 
-.metric-strip {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
-}
+/* Metrics: default is 4-up (used by Numbers); collapses in responsive */
+.metric-strip { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
 .metric-pill {
   padding: 18px 20px;
   border-radius: 16px;
@@ -1086,43 +1070,28 @@ td strong { color: var(--paper-ink); }
 .info-card.accent-card { background: rgba(242,108,13,.07); border-color: rgba(242,108,13,.18); }
 .info-card p { font-size: 15px; color: var(--paper-muted); margin: 0 0 14px; line-height: 1.75; }
 .info-card p:last-child { margin-bottom: 0; }
+
 .strong-line { font-weight: 800 !important; color: var(--paper-ink) !important; }
 .strong-line.center { text-align: center; }
 .accent-text { color: var(--orange); }
+
 .mt-none { margin-top: 0 !important; }
 .mt-sm { margin-top: 16px !important; }
 .mt-md { margin-top: 24px !important; }
 .mt-lg { margin-top: 40px !important; }
 .mb-lg { margin-bottom: 40px !important; }
+
 .compact-section { padding-top: 40px; padding-bottom: 40px; }
 .list.flush { margin-top: 0; }
 
-
-/* Plain explanatory additions — not cards */
-.section-note {
-  margin-top: 40px;
-  max-width: 980px;
-}
+.section-note { margin-top: 40px; max-width: 980px; }
 .section-note + .section-note { margin-top: 22px; }
 .section-note .label { margin-bottom: 12px; }
-.section-note p {
-  font-size: 16px;
-  color: var(--paper-muted);
-  line-height: 1.78;
-  margin: 0 0 12px;
-}
+.section-note p { font-size: 16px; color: var(--paper-muted); line-height: 1.78; margin: 0 0 12px; }
 .section-note p:last-child { margin-bottom: 0; }
-.section-note .strong-line {
-  font-size: 15px;
-  font-weight: 800;
-  color: var(--paper-ink);
-}
+.section-note .strong-line { font-size: 15px; font-weight: 800; color: var(--paper-ink); }
 
-.mini-role-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 14px;
-}
+.mini-role-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
 .mini-role-card {
   border: 1px solid var(--line-paper);
   border-radius: var(--radius-sm);
@@ -1132,12 +1101,7 @@ td strong { color: var(--paper-ink); }
 }
 .mini-role-card p { font-size: 14px; font-weight: 600; color: var(--paper-muted); line-height: 1.65; margin: 0; }
 
-.mini-stat-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 12px;
-  margin: 0 0 20px;
-}
+.mini-stat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: 0 0 20px; }
 .mini-stat-card {
   padding: 16px;
   border-radius: 14px;
@@ -1148,33 +1112,7 @@ td strong { color: var(--paper-ink); }
 .mini-stat-card strong { display: block; font-size: 13px; font-weight: 900; color: var(--paper-ink); margin-bottom: 6px; }
 .mini-stat-card span { display: block; font-size: 12px; color: var(--paper-muted); line-height: 1.5; }
 
-/* ── RESPONSIVE ─────────────────────────────────────────── */
-@media (max-width: 1100px) {
-  :root { --max: 1060px; }
-  .cards.four { grid-template-columns: repeat(2, 1fr); }
-  .route-grid { grid-template-columns: repeat(2, 1fr); }
-}
-@media (max-width: 860px) {
-  .split, .split-wide, .split-narrow { grid-template-columns: 1fr; }
-  .partner-hero-inner { grid-template-columns: 1fr; }
-  .partner-hero-image { display: none; }
-  .guardrail-grid { grid-template-columns: 1fr; }
-  .needs-grid { grid-template-columns: 1fr; }
-  .info-grid.two { grid-template-columns: 1fr; }
-  .mini-role-grid { grid-template-columns: 1fr; }
-  .mini-stat-grid { grid-template-columns: repeat(2, 1fr); }
-}
-@media (max-width: 700px) {
-  body { font-size: 16px; }
-  .cards, .cards.two, .cards.four { grid-template-columns: 1fr; }
-  .route-grid { grid-template-columns: 1fr; }
-  .metric-strip { grid-template-columns: 1fr; }
-  .mini-stat-grid { grid-template-columns: 1fr; }
-  .nav-links { display: none; }
-  .hero { padding-top: 80px; }
-  .paper-section, .dark-section, .brown-section { padding: 56px 0; }
-  .support-note { padding: 22px 20px; }
-}
+/* ── SUPPORT CTA ROW / DISCLAIMERS ──────────────────────── */
 .support-cta-row {
   display: flex;
   gap: 10px;
@@ -1198,17 +1136,8 @@ td strong { color: var(--paper-ink); }
   color: var(--paper-muted);
   opacity: .85;
 }
-@media (max-width: 760px) {
-  .site-header::after {
-    top: 68px;
-    font-size: 9px;
-    letter-spacing: .035em;
-    padding: 7px 10px;
-  }
-}
 
-
-/* ── INLINE VISUALS / LIGHTBOX ─────────────────────────── */
+/* ── INLINE VISUALS / LIGHTBOX (site-wide) ──────────────── */
 .inline-visual {
   position: relative;
   float: right;
@@ -1227,15 +1156,8 @@ td strong { color: var(--paper-ink); }
   box-shadow: var(--shadow);
   border-color: rgba(242,108,13,.24);
 }
-.inline-visual--left {
-  float: left;
-  margin: 8px 28px 22px 0;
-}
-.inline-visual img {
-  width: 100%;
-  display: block;
-  object-fit: cover;
-}
+.inline-visual--left { float: left; margin: 8px 28px 22px 0; }
+.inline-visual img { width: 100%; display: block; object-fit: cover; }
 .inline-visual-label {
   position: absolute;
   top: 12px;
@@ -1261,18 +1183,10 @@ td strong { color: var(--paper-ink); }
   color: var(--paper-muted);
   background: linear-gradient(180deg, rgba(255,255,255,.75), rgba(255,255,255,.52));
 }
-.inline-visual figcaption strong {
-  display: block;
-  margin-bottom: 4px;
-  color: var(--paper-ink);
-}
-.inline-visual figcaption span {
-  display: inline-block;
-  margin-top: 4px;
-  color: var(--orange);
-  font-weight: 800;
-}
+.inline-visual figcaption strong { display: block; margin-bottom: 4px; color: var(--paper-ink); }
+.inline-visual figcaption span { display: inline-block; margin-top: 4px; color: var(--orange); font-weight: 800; }
 .inline-visual-clear { clear: both; }
+
 .site-lightbox {
   position: fixed;
   inset: 0;
@@ -1283,10 +1197,7 @@ td strong { color: var(--paper-ink); }
   background: rgba(8,10,15,.92);
 }
 .site-lightbox.open { display: grid; }
-.site-lightbox-panel {
-  position: relative;
-  width: min(1240px, 100%);
-}
+.site-lightbox-panel { position: relative; width: min(1240px, 100%); }
 .site-lightbox-panel img {
   width: 100%;
   max-height: 88vh;
@@ -1316,51 +1227,8 @@ td strong { color: var(--paper-ink); }
   line-height: 1;
   cursor: pointer;
 }
-@media (max-width: 980px) {
-  .inline-visual,
-  .inline-visual--left {
-    float: none;
-    width: 100%;
-    max-width: 620px;
-    margin: 18px auto 20px;
-  }
-}
 
-
-/* ── PARTNER HERO IMAGE FRAME WIDENING ────────────────────
-   Wider 4:3 frame so partner images read as scenes, not cropped portraits.
-*/
-.partner-hero-inner {
-  grid-template-columns: minmax(0, 1fr) minmax(430px, 560px);
-  gap: clamp(36px, 5vw, 64px);
-}
-.partner-hero-image {
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  border-radius: var(--radius-lg);
-}
-.partner-hero-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center center;
-}
-@media (max-width: 980px) {
-  .partner-hero-inner {
-    grid-template-columns: 1fr;
-  }
-  .partner-hero-image {
-    max-width: 680px;
-    margin: 0 auto;
-    aspect-ratio: 4 / 3;
-  }
-}
-
-
-/* ── SEND-READY TEMPLATE LOCK — 29 APRIL ──────────────────
-   Use these classes for new sections. They normalise spacing, pills, route cards,
-   intro blocks and action boxes across the site without changing the brand.
-*/
+/* ── SEND-READY TEMPLATE LOCK (site-wide section primitives) ── */
 .template-section-head {
   max-width: 980px;
   margin: 0 auto 36px;
@@ -1448,12 +1316,53 @@ td strong { color: var(--paper-ink); }
   color: var(--paper-muted);
 }
 .template-definition strong { color: var(--paper-ink); }
-.route-card-footer { color: var(--orange); }
+
+/* ── RESPONSIVE ─────────────────────────────────────────── */
+@media (max-width: 1100px) {
+  :root { --max: 1060px; }
+  .cards.four { grid-template-columns: repeat(2, 1fr); }
+  .cards.five { grid-template-columns: repeat(3, 1fr); }
+  .route-grid { grid-template-columns: repeat(2, 1fr); }
+  .metric-strip { grid-template-columns: repeat(2, 1fr); }
+}
+
 @media (max-width: 980px) {
   .template-two-col { grid-template-columns: 1fr; }
   .template-visual { max-width: 760px; margin: 0 auto; }
   .template-action-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+  .partner-hero-inner { grid-template-columns: 1fr; }
+  .partner-hero-image { max-width: 680px; margin: 0 auto; }
 }
+
+@media (max-width: 860px) {
+  .split, .split-wide, .split-narrow { grid-template-columns: 1fr; }
+  .guardrail-grid { grid-template-columns: 1fr; }
+  .needs-grid { grid-template-columns: 1fr; }
+  .info-grid.two { grid-template-columns: 1fr; }
+  .mini-role-grid { grid-template-columns: 1fr; }
+  .mini-stat-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
 @media (max-width: 700px) {
+  body { font-size: 16px; }
+  .cards, .cards.two, .cards.four, .cards.five { grid-template-columns: 1fr; }
+  .route-grid { grid-template-columns: 1fr; }
+  .metric-strip { grid-template-columns: 1fr; }
+  .mini-stat-grid { grid-template-columns: 1fr; }
+  .nav-links { display: none; }
+  .hero { padding-top: 80px; }
+  .paper-section, .dark-section, .brown-section { padding: 56px 0; }
+  .support-note { padding: 22px 20px; }
   .template-action-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 980px) {
+  .inline-visual,
+  .inline-visual--left {
+    float: none;
+    width: 100%;
+    max-width: 620px;
+    margin: 18px auto 20px;
+  }
 }
