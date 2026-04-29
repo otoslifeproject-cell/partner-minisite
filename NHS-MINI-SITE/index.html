@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>OTOS Continuity™</title>
-  <meta name="description" content="A private partner briefing for NHS, local authority, addiction, recovery and community partners in Cambridge and Peterborough.">
+  <meta name="description" content="A private partner support pack for NHS, addiction, recovery, ADHD and community partners in Cambridge and Peterborough.">
   <link rel="stylesheet" href="css/otos.css">
   <style>
     .home-stats-grid {
@@ -13,12 +13,14 @@
       gap: 16px;
       margin-top: 8px;
     }
+
     .home-stat-card {
       min-height: 190px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
     }
+
     .home-stat-card .stat {
       font-size: clamp(34px, 3vw, 48px);
       line-height: .92;
@@ -26,12 +28,14 @@
       letter-spacing: -.03em;
       margin-bottom: 16px;
     }
+
     .home-stat-card p {
       margin: 0;
       font-size: 14px;
       line-height: 1.42;
       color: var(--muted);
     }
+
     .home-stat-card strong {
       display: block;
       margin-top: 10px;
@@ -41,6 +45,7 @@
       text-transform: uppercase;
       color: rgba(251,247,238,.76);
     }
+
     .home-route-wrap {
       width: 100%;
       max-width: 1280px;
@@ -48,34 +53,68 @@
       padding: 0 24px;
       box-sizing: border-box;
     }
-    .otos-home-signoff {
-      margin: 34px auto 0;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 16px;
-      flex-wrap: wrap;
+
+    .home-hello-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.06fr) minmax(380px, .94fr);
+      gap: 34px;
+      align-items: start;
+      max-width: 1180px;
+      margin: 30px auto 0;
+      text-align: left;
     }
-    .otos-home-signoff img {
-      width: 56px;
+
+    .home-hello-visual {
+      margin: 0;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      background: #0b0b0b;
+      border: 1px solid rgba(37,26,18,.14);
+      box-shadow: var(--shadow);
+      cursor: pointer;
+    }
+
+    .home-hello-visual img {
+      display: block;
+      width: 100%;
       height: auto;
-      display: block;
     }
-    .otos-home-signoff span {
-      display: block;
-      font-size: clamp(32px, 5vw, 64px);
-      line-height: .95;
-      font-weight: 950;
-      letter-spacing: -.04em;
-      color: var(--orange);
+
+    .home-hello-visual figcaption {
+      padding: 14px 16px 16px;
+      font-size: 13px;
+      line-height: 1.5;
+      font-weight: 700;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      color: var(--paper-muted);
+      background: rgba(255,255,255,.9);
     }
+
     @media (max-width: 1220px) {
-      .home-stats-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .home-stats-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
     }
+
+    @media (max-width: 980px) {
+      .home-hello-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
     @media (max-width: 760px) {
-      .home-stats-grid { grid-template-columns: 1fr; }
-      .home-stat-card { min-height: auto; }
-      .home-route-wrap { padding: 0 18px; }
+      .home-stats-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .home-stat-card {
+        min-height: auto;
+      }
+
+      .home-route-wrap {
+        padding: 0 18px;
+      }
     }
   </style>
 </head>
@@ -125,21 +164,25 @@
           <p>Median ADHD prevalence across addiction treatment cohorts.
           <strong>Royal College of Psychiatrists</strong></p>
         </article>
+
         <article class="card glass home-stat-card">
           <div class="stat">61%*</div>
           <p>Improved addictive-disorder outcomes after ADHD diagnosis and treatment.
           <strong>START study</strong></p>
         </article>
+
         <article class="card glass home-stat-card">
           <div class="stat">30%*</div>
           <p>Trial-end abstinence in ADHD + cocaine dependence.
           <strong>JAMA Psychiatry</strong></p>
         </article>
+
         <article class="card glass home-stat-card">
           <div class="stat">86%*</div>
           <p>Alcohol users also have mental health problems.
           <strong>Sun Network public figure</strong></p>
         </article>
+
         <article class="card glass home-stat-card">
           <div class="stat">850*</div>
           <p>Estimated local Cambridge &amp; Peterborough overlap cohort.
@@ -153,42 +196,60 @@
     </div>
   </section>
 
-  <!-- ══ PARTNER ROUTE CARDS ═══════════════════════════════ -->
+  <!-- ══ OUT THE OTHER SIDE + PARTNER ROUTE CARDS ═══════════════════════════════ -->
   <section class="paper-section" id="partner-routes" style="padding-top:56px">
     <div class="container">
+      <div class="section-head center" style="max-width:1220px;margin:0 auto 42px;text-align:center">
+        <span class="kicker"><span class="kicker-icon"></span>Out The Other Side</span>
 
-<div class="section-head center" style="max-width:1180px;margin:0 auto 42px;text-align:center">
-  <span class="kicker"><span class="kicker-icon"></span>Out The Other Side</span>
+        <h2 style="max-width:1080px;margin:0 auto">
+          The aim is simple:<br>
+          <span class="accent">save lives, reduce repeat crisis and stop paying for preventable collapse.</span>
+        </h2>
 
-  <h2 style="max-width:1080px;margin-left:auto;margin-right:auto">
-    The aim is simple:<br>
-    <span class="accent">save lives, reduce repeat crisis and stop paying for preventable collapse.</span>
-  </h2>
+        <div class="home-hello-grid">
+          <div>
+            <p style="margin:0 0 20px;font-size:19px;line-height:1.68;font-weight:800;color:var(--paper-ink)">
+              OTOS Continuity™ is a web-based continuity layer that keeps a person visible between services, referrals, waiting lists and the next meaningful step — so partners can see where the journey is holding, where it is slipping, and where a human follow-up could prevent relapse, hospital, detox, rehab or another expensive crisis.
+            </p>
 
-  <p style="max-width:1060px;margin:22px auto 0;font-size:19px;line-height:1.65;font-weight:750;color:var(--paper-ink)">
-    OTOS Continuity™ is a web-based continuity layer that keeps a person visible between services, referrals, waiting lists and the next meaningful step — so partners can see where the journey is holding, where it is slipping, and where a human follow-up could prevent relapse, hospital, detox, rehab or another expensive crisis.
-  </p>
+            <p style="margin:0 0 18px;font-size:18px;line-height:1.72;color:var(--paper-ink)">
+              My story is the proof point. Something was never right. I now believe my addiction to alcohol was a direct result of not being medicated properly for ADHD. For years, alcohol worked like medication — until it became dependence, crisis, rehab, relapse, loss and shame. Once my ADHD was correctly reassessed and treated, the chaos stopped, my recovery stabilised and the pattern finally made sense.
+            </p>
 
-  <p style="max-width:1040px;margin:22px auto 0;font-size:18px;line-height:1.65;color:var(--paper-ink)">
-    My story is the proof point. Something was never right. I now believe my addiction to alcohol was a direct result of not being medicated properly for ADHD. For years, alcohol worked like medication — until it became dependence, crisis, rehab, relapse, loss and shame. Once my ADHD was correctly reassessed and treated, the chaos stopped, my recovery stabilised and the pattern finally made sense.
-  </p>
+            <p style="margin:0 0 18px;font-size:18px;line-height:1.72;font-weight:780;color:var(--paper-ink)">
+              This private site is my starting point and support pack for a 12-week, 50-person pre-pilot demonstrator in Cambridgeshire and Peterborough. I need the people who saw this journey to help me take it into ICB and funder conversations — to prove this ADHD + addiction cohort needs a priority route, not another blind wait.
+            </p>
 
-  <p style="max-width:1040px;margin:22px auto 0;font-size:18px;line-height:1.65;font-weight:750;color:var(--paper-ink)">
-    This private site is my starting point and support pack for a 12-week, 50-person pre-pilot demonstrator in Cambridgeshire and Peterborough. I need the people who saw this journey to help me take it into Local Authority, ICB and funder conversations — to prove this ADHD + addiction cohort needs a priority route, not another blind wait.
-  </p>
+            <p style="margin:0;font-size:17px;line-height:1.7;color:var(--paper-muted)">
+              Each partner page includes a short draft note you can edit and send back to me. Please read your page first, then feel free to explore and click around. I really appreciate your time. Please help me, help you, to help others — because if the trajectory can change like mine did, we can help more people get
+            </p>
 
-<p style="max-width:940px;margin:22px auto 0;font-size:17px;line-height:1.6;color:var(--paper-muted)">
-  Each partner page includes a short draft note you can edit and send back to me. Please read your page first, then feel free to explore and click around. I really appreciate your time. Please help me, help you, to help others — because if the trajectory can change like mine did, we can help more people get
-</p>
+            <p style="margin:6px 0 0;font-size:21px;line-height:1.3;font-weight:850;color:var(--paper-ink)">
+              Out The Other Side.
+            </p>
+          </div>
 
-<p style="max-width:940px;margin:4px auto 0;font-size:21px;line-height:1.3;font-weight:850;color:var(--paper-ink)">
-  Out The Other Side.
-</p>
-
+          <figure
+            class="home-hello-visual inline-visual"
+            data-src="images/bedside_handoff_Continuity.png"
+            data-alt="OTOS Continuity bedside handoff — a visible next step"
+            data-caption="A visible OTOS moment: bedside handoff, ADHD referral route, and the next step held in view."
+          >
+            <img
+              src="images/bedside_handoff_Continuity.png"
+              alt="OTOS Continuity bedside handoff — a visible next step"
+              loading="lazy"
+            >
+            <figcaption>
+              Bedside handoff → ADHD referral route → ongoing support in the community
+            </figcaption>
+          </figure>
+        </div>
       </div>
     </div>
 
-    <div class="home-route-wrap">
+    <div class="home-route-wrap" style="margin-top:8px">
       <div class="route-grid">
         <a class="route-card" href="partners-addenbrookes.html">
           <div class="route-card-logo"><img src="images/Addenbrookes_Logo.png" alt="Addenbrooke's NHS Trust"></div>
@@ -230,7 +291,7 @@
           <div class="route-card-logo">
             <img src="images/MIND_Logo.png" alt="Mind">
             <img src="images/WorkWell_Logo.png" alt="WorkWell">
-           <img src="images/Jo_Fenton_Logo.png" alt="Jo Fenton Consultancy" style="max-width:90px;height:auto">
+            <img src="images/Jo_Fenton_Logo.png" alt="Jo Fenton Consultancy" style="max-width:90px;height:auto">
           </div>
           <div class="route-card-body">For community, work and therapy support where recovery starts to hold after crisis.</div>
           <div class="route-card-footer">Open your draft note →</div>
@@ -359,32 +420,32 @@
     </div>
   </section>
 
- <!-- ══ WHAT IT LOOKS LIKE ════════════════════════════════ -->
-<section class="paper-section">
-  <div class="container">
-    <div class="section-head center" style="max-width:1040px;margin:0 auto 34px;text-align:center">
-      <span class="kicker"><span class="kicker-icon"></span>What it looks like in practice</span>
+  <!-- ══ WHAT IT LOOKS LIKE ════════════════════════════════ -->
+  <section class="paper-section">
+    <div class="container">
+      <div class="section-head center" style="max-width:1040px;margin:0 auto 34px;text-align:center">
+        <span class="kicker"><span class="kicker-icon"></span>What it looks like in practice</span>
 
-      <h2>
-        One person.<br>
-        <span class="accent">One continuous pathway.</span>
-      </h2>
+        <h2>
+          One person.<br>
+          <span class="accent">One continuous pathway.</span>
+        </h2>
 
-      <p style="max-width:920px;margin:16px auto 0;font-size:18px;line-height:1.65;color:var(--paper-muted)">
-        The idea is simple: the person stays visible as they move between referral, waiting list, check-in, discharge, community support and next contact. Not one merged clinical record. Not another service. A continuity view that shows where the journey is holding — and where it is starting to break.
-      </p>
+        <p style="max-width:920px;margin:16px auto 0;font-size:18px;line-height:1.65;color:var(--paper-muted)">
+          The idea is simple: the person stays visible as they move between referral, waiting list, check-in, discharge, community support and next contact. Not one merged clinical record. Not another service. A continuity view that shows where the journey is holding — and where it is starting to break.
+        </p>
+      </div>
+
+      <div style="max-width:1180px;margin:0 auto;border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow);border:1px solid rgba(37,26,18,.12);background:#0b0b0b">
+        <img src="images/one-person-one-continuous-pathway.png" alt="OTOS Continuity — one person, one continuous pathway" style="display:block;width:100%;height:auto">
+      </div>
+
+      <div class="cta-row center" style="margin-top:30px">
+        <a class="btn-primary" href="how-it-works-visuals.html">See the full visual library</a>
+        <a class="btn outline" href="numbers.html">View the numbers &amp; model</a>
+      </div>
     </div>
-
-    <div style="max-width:1180px;margin:0 auto;border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow);border:1px solid rgba(37,26,18,.12);background:#0b0b0b">
-      <img src="images/one-person-one-continuous-pathway.png" alt="OTOS Continuity — one person, one continuous pathway" style="display:block;width:100%;height:auto">
-    </div>
-
-    <div class="cta-row center" style="margin-top:30px">
-      <a class="btn-primary" href="how-it-works-visuals.html">See the full visual library</a>
-      <a class="btn outline" href="numbers.html">View the numbers &amp; model</a>
-    </div>
-  </div>
-</section>
+  </section>
 
   <!-- ══ FINAL CTA ══════════════════════════════════════════ -->
   <section class="brown-section">
