@@ -6,233 +6,6 @@
   <title>OTOS Continuity™ — When ADHD is left waiting, addiction steps in.</title>
   <meta name="description" content="A private partner briefing for NHS, addiction, recovery, ADHD and community partners in Cambridge and Peterborough.">
   <link rel="stylesheet" href="css/otos.css">
-
-  <style>
-    /* =========================
-       GLOBAL LAYOUT NORMALISATION
-       ========================= */
-
-    /* Most “thin frame” issues come from .container in otos.css.
-       This override ensures a consistent width across the whole page,
-       without needing to edit the external CSS file. */
-    .container{
-      width:100%;
-      max-width:1280px;
-      margin:0 auto;
-      padding:0 24px;
-      box-sizing:border-box;
-    }
-
-    @media (max-width:760px){
-      .container{ padding:0 18px; }
-    }
-
-    /* =========================
-       HERO STATS
-       ========================= */
-    .home-stats-grid{
-      display:grid;
-      grid-template-columns:repeat(5,minmax(0,1fr));
-      gap:16px;
-      margin-top:8px;
-    }
-    .home-stat-card{
-      min-height:190px;
-      display:flex;
-      flex-direction:column;
-      justify-content:space-between;
-    }
-    .home-stat-card .stat{
-      font-size:clamp(34px,3vw,48px);
-      line-height:.92;
-      white-space:nowrap;
-      letter-spacing:-.03em;
-      margin-bottom:16px;
-    }
-    .home-stat-card p{
-      margin:0;
-      font-size:14px;
-      line-height:1.42;
-      color:var(--muted);
-    }
-    .home-stat-card strong{
-      display:block;
-      margin-top:10px;
-      font-size:11px;
-      line-height:1.25;
-      letter-spacing:.06em;
-      text-transform:uppercase;
-      color:rgba(251,247,238,.76);
-    }
-
-    @media (max-width:1220px){
-      .home-stats-grid{ grid-template-columns:repeat(3,minmax(0,1fr)); }
-    }
-    @media (max-width:760px){
-      .home-stats-grid{ grid-template-columns:1fr; }
-      .home-stat-card{ min-height:auto; }
-    }
-
-    /* =========================
-       SECTION HEADS (uniform look)
-       ========================= */
-    .home-intro-head{
-      max-width:1040px;
-      margin:0 auto 30px;
-      text-align:center;
-    }
-    .home-intro-head .kicker{
-      margin-left:auto;
-      margin-right:auto;
-    }
-    .home-intro-head h2{
-      max-width:1040px;
-      margin:18px auto 0;
-      font-size:clamp(28px,4vw,48px);
-      line-height:.98;
-      letter-spacing:-.045em;
-      color:var(--paper-ink);
-    }
-    .home-intro-head p{
-      max-width:1040px;
-      margin:14px auto 0;
-      font-size:clamp(16px,1.5vw,19px);
-      line-height:1.45;
-      font-weight:750;
-      color:var(--orange);
-    }
-
-    /* =========================
-       INTRO GRID (wider + consistent)
-       ========================= */
-    .home-intro-layout{
-      max-width:1180px;
-      margin:0 auto 30px;
-      display:grid;
-      grid-template-columns:minmax(0,1fr) minmax(360px,460px);
-      gap:36px;
-      align-items:start;
-    }
-    .home-intro-copy{ padding-top:6px; }
-    .home-intro-copy p{
-      margin:0 0 17px;
-      font-size:17px;
-      line-height:1.68;
-      color:var(--paper-muted);
-    }
-    .home-intro-copy .lead-copy{
-      font-size:18px;
-      line-height:1.62;
-      color:var(--paper-ink);
-      font-weight:700;
-    }
-    .home-intro-copy .lead-copy strong{
-      font-weight:900;
-      color:var(--paper-ink);
-    }
-    .home-intro-signoff{
-      margin-top:2px !important;
-      font-size:21px !important;
-      line-height:1.3 !important;
-      font-weight:900 !important;
-      color:var(--paper-ink) !important;
-    }
-    .home-intro-visual{
-      margin:0;
-      width:100%;
-      max-width:460px;
-      justify-self:end;
-    }
-    .home-intro-visual img{
-      display:block;
-      width:100%;
-      height:auto;
-      border-radius:var(--radius-lg);
-      box-shadow:var(--shadow);
-      background:#0b0b0b;
-    }
-
-    @media (max-width:980px){
-      .home-intro-layout{
-        grid-template-columns:1fr;
-        max-width:860px;
-      }
-      .home-intro-visual{
-        justify-self:center;
-        max-width:560px;
-      }
-    }
-
-    /* =========================
-       NEXT STEPS (uniform and centered)
-       ========================= */
-    .home-next-steps{
-      max-width:1180px;
-      margin:18px auto 0;
-      text-align:center;
-      border-top:1px solid rgba(37,26,18,.10);
-      padding-top:18px;
-    }
-    .home-next-steps h3{
-      margin:0 0 8px;
-      font-size:17px;
-      line-height:1.2;
-      color:var(--paper-ink);
-    }
-    .home-next-steps p{
-      margin:0;
-      font-size:15px;
-      line-height:1.6;
-      color:var(--paper-muted);
-      font-weight:650;
-    }
-    .home-next-steps strong{
-      color:var(--paper-ink);
-      font-weight:850;
-    }
-
-    /* =========================
-       ROUTES WRAP (same width as page)
-       ========================= */
-    .home-route-wrap{
-      width:100%;
-      max-width:1280px;
-      margin:0 auto;
-      padding:0 24px;
-      box-sizing:border-box;
-    }
-    @media (max-width:760px){
-      .home-route-wrap{ padding:0 18px; }
-    }
-
-    /* =========================
-       SCROLL CUE
-       ========================= */
-    .scroll-cue{
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      gap:3px;
-      margin:28px auto 0;
-      width:fit-content;
-      color:rgba(242,108,13,.72);
-      text-decoration:none;
-      font-size:10px;
-      line-height:1;
-      letter-spacing:.18em;
-      text-transform:uppercase;
-      font-weight:900;
-    }
-    .scroll-cue span:last-child{
-      font-size:18px;
-      letter-spacing:0;
-      animation:otosScrollBounce 1.8s ease-in-out infinite;
-    }
-    @keyframes otosScrollBounce{
-      0%,100%{ transform:translateY(0); opacity:.55; }
-      50%{ transform:translateY(5px); opacity:1; }
-    }
-  </style>
 </head>
 
 <body>
@@ -251,17 +24,16 @@
   </header>
 
   <main>
-    <!-- =========================
-         HERO
-         ========================= -->
+    <!-- HERO -->
     <section class="hero">
       <div class="container">
         <span class="kicker"><span class="kicker-icon"></span>Private &amp; Confidential Partner Briefing</span>
 
-        <div class="hero-image-card" style="margin-bottom:32px">
-          <img src="images/02-chaos-tunnel.png"
-               alt="A man in distress in a tunnel — the experience of untreated ADHD and addiction"
-               style="max-height:600px;width:100%;object-fit:cover;object-position:center 30%">
+        <div class="hero-image-card" style="margin-top:18px;margin-bottom:26px">
+          <img
+            src="images/02-chaos-tunnel.png"
+            alt="A man in distress in a tunnel — the experience of untreated ADHD and addiction"
+            style="max-height:600px;width:100%;object-fit:cover;object-position:center 30%">
           <div class="hero-image-card-overlay"></div>
 
           <div class="hero-image-card-content">
@@ -283,28 +55,29 @@
           </div>
         </div>
 
-        <div class="home-stats-grid">
-          <article class="card glass home-stat-card">
+        <!-- STATS (use shared cards, no bespoke CSS) -->
+        <div class="cards" style="grid-template-columns:repeat(5,1fr)">
+          <article class="card glass stat-card">
             <div class="stat">34%*</div>
             <p>Median ADHD prevalence across addiction treatment cohorts.<strong>Royal College of Psychiatrists</strong></p>
           </article>
 
-          <article class="card glass home-stat-card">
+          <article class="card glass stat-card">
             <div class="stat">61%*</div>
             <p>Improved addictive-disorder outcomes after ADHD diagnosis and treatment.<strong>START study</strong></p>
           </article>
 
-          <article class="card glass home-stat-card">
+          <article class="card glass stat-card">
             <div class="stat">30%*</div>
             <p>Trial-end abstinence in ADHD + cocaine dependence.<strong>JAMA Psychiatry</strong></p>
           </article>
 
-          <article class="card glass home-stat-card">
+          <article class="card glass stat-card">
             <div class="stat">86%*</div>
             <p>Alcohol users also have mental health problems.<strong>Sun Network public figure</strong></p>
           </article>
 
-          <article class="card glass home-stat-card">
+          <article class="card glass stat-card">
             <div class="stat">850*</div>
             <p>Estimated local Cambridge &amp; Peterborough overlap cohort.<strong>Local planning estimate</strong></p>
           </article>
@@ -315,19 +88,17 @@
           <a href="evidence-sources.html" style="color:var(--orange-2);text-decoration:none">Evidence &amp; Sources →</a>
         </p>
 
-        <a class="scroll-cue" href="#partner-routes" aria-label="Scroll to partner routes">
-          <span>Scroll</span><span>↓</span>
-        </a>
+        <div class="cta-row center" style="margin-top:22px">
+          <a class="btn-primary" href="#partner-routes">Scroll to partner routes</a>
+        </div>
       </div>
     </section>
 
-    <!-- =========================
-         SECTION 2: OUT THE OTHER SIDE / ROUTES
-         ========================= -->
+    <!-- SECTION 2 -->
     <section class="paper-section" id="partner-routes" style="padding-top:56px">
       <div class="container">
 
-        <div class="home-intro-head">
+        <div class="template-section-head">
           <span class="kicker"><span class="kicker-icon"></span>Out The Other Side</span>
           <h2>Services exist. Staff exist. Pathways exist on paper.</h2>
           <p>
@@ -336,8 +107,8 @@
           </p>
         </div>
 
-        <div class="home-intro-layout">
-          <div class="home-intro-copy">
+        <div class="template-two-col">
+          <div class="template-copy">
             <p class="lead-copy">
               <strong>OTOS Continuity™ is a web-based continuity layer that targets ADHD-driven addiction, whilst keeping the person visible between CPFT &amp; CGL services, referrals, waiting lists and the next meaningful step</strong>
               — so partners can see where the journey is holding, where it is slipping, and where a human follow-up could prevent relapse, hospital, detox, rehab or another expensive crisis.
@@ -364,18 +135,36 @@
             <p class="home-intro-signoff">Out The Other Side.</p>
           </div>
 
-          <figure class="home-intro-visual">
+          <div class="template-visual">
             <img src="images/Bedside_adhd_addiction_referral.png" alt="OTOS Continuity bedside handoff with a visible next step">
-          </figure>
+          </div>
         </div>
 
-        <div class="home-next-steps">
-          <h3>Do this next...</h3>
-          <p>1. Open your role page → 2. Read the draft note → 3. Reply to Dean → or 4. Arrange a quick 30-minute call.</p>
+        <div class="template-action-box">
+          <h3 style="text-align:center">Do this next...</h3>
+          <div class="template-action-grid">
+            <div class="template-action-step">
+              <strong>1. Open your page</strong>
+              <span>Choose your role below.</span>
+            </div>
+            <div class="template-action-step">
+              <strong>2. Read the note</strong>
+              <span>Each page has a draft support note.</span>
+            </div>
+            <div class="template-action-step">
+              <strong>3. Reply to Dean</strong>
+              <span>Two minutes to send.</span>
+            </div>
+            <div class="template-action-step">
+              <strong>4. Optional call</strong>
+              <span>30-minute scoping conversation.</span>
+            </div>
+          </div>
         </div>
 
       </div>
 
+      <!-- routes grid -->
       <div class="home-route-wrap" style="margin-top:30px">
         <div class="route-grid">
           <a class="route-card" href="partners-addenbrookes.html">
@@ -427,9 +216,7 @@
       </div>
     </section>
 
-    <!-- =========================
-         WHY THIS EXISTS
-         ========================= -->
+    <!-- WHY THIS EXISTS -->
     <section class="paper-section paper-section--alt" id="why-this-exists">
       <div class="container" style="max-width:1180px">
         <span class="kicker"><span class="kicker-icon"></span>Why this exists</span>
@@ -466,13 +253,10 @@
         </div>
 
         <a href="#the-plan" style="display:inline-block;margin-top:10px;font-size:14px;font-weight:800;color:var(--orange);text-decoration:none">Read the plan →</a>
-        <a class="scroll-cue" href="#the-plan" aria-label="Scroll to the plan"><span>Scroll</span><span>↓</span></a>
       </div>
     </section>
 
-    <!-- =========================
-         THE PLAN
-         ========================= -->
+    <!-- THE PLAN -->
     <section class="paper-section" id="the-plan">
       <div class="container">
         <div class="section-head center">
@@ -513,9 +297,7 @@
       </div>
     </section>
 
-    <!-- =========================
-         HOW IT WORKS
-         ========================= -->
+    <!-- HOW IT WORKS -->
     <section class="paper-section" id="how-it-works">
       <div class="container">
         <div class="section-head center">
@@ -552,9 +334,7 @@
       </div>
     </section>
 
-    <!-- =========================
-         WHAT IT LOOKS LIKE
-         ========================= -->
+    <!-- WHAT IT LOOKS LIKE -->
     <section class="paper-section">
       <div class="container">
         <div class="section-head center" style="max-width:1040px;margin:0 auto 34px;text-align:center">
@@ -579,9 +359,7 @@
       </div>
     </section>
 
-    <!-- =========================
-         BOTTOM CTA
-         ========================= -->
+    <!-- BOTTOM CTA -->
     <section class="brown-section">
       <div class="container" style="text-align:center">
         <p style="font-size:16px;font-weight:600;color:rgba(251,247,238,.6);margin-bottom:32px">
