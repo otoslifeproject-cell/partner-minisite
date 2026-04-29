@@ -6,249 +6,27 @@
   <title>OTOS Continuity™ — When ADHD is left waiting, addiction steps in.</title>
   <meta name="description" content="A private partner briefing for NHS, addiction, recovery, ADHD and community partners in Cambridge and Peterborough.">
   <link rel="stylesheet" href="css/otos.css">
-
-  <style>
-    /* =========================
-       GLOBAL LAYOUT NORMALISATION
-       ========================= */
-
-    /* Most “thin frame” issues come from .container in otos.css.
-       This override ensures a consistent width across the whole page,
-       without needing to edit the external CSS file. */
-    .container{
-      width:100%;
-      max-width:1280px;
-      margin:0 auto;
-      padding:0 24px;
-      box-sizing:border-box;
-    }
-
-    @media (max-width:760px){
-      .container{ padding:0 18px; }
-    }
-
-    /* =========================
-       HERO STATS
-       ========================= */
-    .home-stats-grid{
-      display:grid;
-      grid-template-columns:repeat(5,minmax(0,1fr));
-      gap:16px;
-      margin-top:8px;
-    }
-    .home-stat-card{
-      min-height:190px;
-      display:flex;
-      flex-direction:column;
-      justify-content:space-between;
-    }
-    .home-stat-card .stat{
-      font-size:clamp(34px,3vw,48px);
-      line-height:.92;
-      white-space:nowrap;
-      letter-spacing:-.03em;
-      margin-bottom:16px;
-    }
-    .home-stat-card p{
-      margin:0;
-      font-size:14px;
-      line-height:1.42;
-      color:var(--muted);
-    }
-    .home-stat-card strong{
-      display:block;
-      margin-top:10px;
-      font-size:11px;
-      line-height:1.25;
-      letter-spacing:.06em;
-      text-transform:uppercase;
-      color:rgba(251,247,238,.76);
-    }
-
-    @media (max-width:1220px){
-      .home-stats-grid{ grid-template-columns:repeat(3,minmax(0,1fr)); }
-    }
-    @media (max-width:760px){
-      .home-stats-grid{ grid-template-columns:1fr; }
-      .home-stat-card{ min-height:auto; }
-    }
-
-    /* =========================
-       SECTION HEADS (uniform look)
-       ========================= */
-    .home-intro-head{
-      max-width:1040px;
-      margin:0 auto 30px;
-      text-align:center;
-    }
-    .home-intro-head .kicker{
-      margin-left:auto;
-      margin-right:auto;
-    }
-    .home-intro-head h2{
-      max-width:1040px;
-      margin:18px auto 0;
-      font-size:clamp(28px,4vw,48px);
-      line-height:.98;
-      letter-spacing:-.045em;
-      color:var(--paper-ink);
-    }
-    .home-intro-head p{
-      max-width:1040px;
-      margin:14px auto 0;
-      font-size:clamp(16px,1.5vw,19px);
-      line-height:1.45;
-      font-weight:750;
-      color:var(--orange);
-    }
-
-    /* =========================
-       INTRO GRID (wider + consistent)
-       ========================= */
-    .home-intro-layout{
-      max-width:1180px;
-      margin:0 auto 30px;
-      display:grid;
-      grid-template-columns:minmax(0,1fr) minmax(360px,460px);
-      gap:36px;
-      align-items:start;
-    }
-    .home-intro-copy{ padding-top:6px; }
-    .home-intro-copy p{
-      margin:0 0 17px;
-      font-size:17px;
-      line-height:1.68;
-      color:var(--paper-muted);
-    }
-    .home-intro-copy .lead-copy{
-      font-size:18px;
-      line-height:1.62;
-      color:var(--paper-ink);
-      font-weight:700;
-    }
-    .home-intro-copy .lead-copy strong{
-      font-weight:900;
-      color:var(--paper-ink);
-    }
-    .home-intro-signoff{
-      margin-top:2px !important;
-      font-size:21px !important;
-      line-height:1.3 !important;
-      font-weight:900 !important;
-      color:var(--paper-ink) !important;
-    }
-    .home-intro-visual{
-      margin:0;
-      width:100%;
-      max-width:460px;
-      justify-self:end;
-    }
-    .home-intro-visual img{
-      display:block;
-      width:100%;
-      height:auto;
-      border-radius:var(--radius-lg);
-      box-shadow:var(--shadow);
-      background:#0b0b0b;
-    }
-
-    @media (max-width:980px){
-      .home-intro-layout{
-        grid-template-columns:1fr;
-        max-width:860px;
-      }
-      .home-intro-visual{
-        justify-self:center;
-        max-width:560px;
-      }
-    }
-
-    /* =========================
-       NEXT STEPS (uniform and centered)
-       ========================= */
-    .home-next-steps{
-      max-width:1180px;
-      margin:18px auto 0;
-      text-align:center;
-      border-top:1px solid rgba(37,26,18,.10);
-      padding-top:18px;
-    }
-    .home-next-steps h3{
-      margin:0 0 8px;
-      font-size:17px;
-      line-height:1.2;
-      color:var(--paper-ink);
-    }
-    .home-next-steps p{
-      margin:0;
-      font-size:15px;
-      line-height:1.6;
-      color:var(--paper-muted);
-      font-weight:650;
-    }
-    .home-next-steps strong{
-      color:var(--paper-ink);
-      font-weight:850;
-    }
-
-    /* =========================
-       ROUTES WRAP (same width as page)
-       ========================= */
-    .home-route-wrap{
-      width:100%;
-      max-width:1280px;
-      margin:0 auto;
-      padding:0 24px;
-      box-sizing:border-box;
-    }
-    @media (max-width:760px){
-      .home-route-wrap{ padding:0 18px; }
-    }
-
-    /* =========================
-       SCROLL CUE
-       ========================= */
-    .scroll-cue{
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      gap:3px;
-      margin:28px auto 0;
-      width:fit-content;
-      color:rgba(242,108,13,.72);
-      text-decoration:none;
-      font-size:10px;
-      line-height:1;
-      letter-spacing:.18em;
-      text-transform:uppercase;
-      font-weight:900;
-    }
-    .scroll-cue span:last-child{
-      font-size:18px;
-      letter-spacing:0;
-      animation:otosScrollBounce 1.8s ease-in-out infinite;
-    }
-    @keyframes otosScrollBounce{
-      0%,100%{ transform:translateY(0); opacity:.55; }
-      50%{ transform:translateY(5px); opacity:1; }
-    }
-  </style>
 </head>
 
 <body>
+
+  <!-- ============================================================
+       QUOTE OVERLAY (10s, Inter, solid background)
+       ============================================================ -->
   <div id="quote-overlay" class="quote-overlay" role="dialog" aria-modal="true" aria-label="Welcome">
-  <div class="quote-card" role="document">
-    <div class="quote-timer-bar"><div class="quote-timer-fill"></div></div>
+    <div class="quote-card" role="document">
+      <div class="quote-timer-bar"><div class="quote-timer-fill"></div></div>
 
-    <p class="quote-text">
-      "<em>ADHD, when unsupported, is a potent route into</em> educational failure, long-term unemployment, crime, substance misuse, suicide, mental and physical illness. Economic costs to individuals and the government of <em>at least £17 billion are avoidable</em> as, when appropriately supported, people with ADHD can thrive and fully engage in a working life."
-    </p>
+      <p class="quote-text">
+        "<em>ADHD, when unsupported, is a potent route into</em> educational failure, long-term unemployment, crime, substance misuse, suicide, mental and physical illness. Economic costs to individuals and the government of <em>at least £17 billion are avoidable</em> as, when appropriately supported, people with ADHD can thrive and fully engage in a working life."
+      </p>
 
-    <p class="quote-attribution">— NHS Independent ADHD Taskforce, 2025</p>
+      <p class="quote-attribution">— NHS Independent ADHD Taskforce, 2025</p>
 
-    <button class="btn-primary quote-skip" type="button">Continue →</button>
+      <button class="btn-primary quote-skip" type="button">Continue →</button>
+    </div>
   </div>
-</div>
+
   <header class="site-header">
     <div class="nav-shell">
       <a class="brand" href="index.html"><span class="brand-icon"></span>OTOS Continuity™</a>
@@ -264,17 +42,18 @@
   </header>
 
   <main>
-    <!-- =========================
-         HERO
-         ========================= -->
+
+    <!-- HERO -->
     <section class="hero">
       <div class="container">
         <span class="kicker"><span class="kicker-icon"></span>Private &amp; Confidential Partner Briefing</span>
 
         <div class="hero-image-card" style="margin-bottom:32px">
-          <img src="images/02-chaos-tunnel.png"
-               alt="A man in distress in a tunnel — the experience of untreated ADHD and addiction"
-               style="max-height:600px;width:100%;object-fit:cover;object-position:center 30%">
+          <img
+            src="images/02-chaos-tunnel.png"
+            alt="A man in distress in a tunnel — the experience of untreated ADHD and addiction"
+            style="max-height:600px;width:100%;object-fit:cover;object-position:center 30%">
+
           <div class="hero-image-card-overlay"></div>
 
           <div class="hero-image-card-content">
@@ -290,12 +69,13 @@
             </p>
 
             <div class="hero-actions">
-              <a class="btn-primary" href="#partner-routes">Find your page</a>
+              <a class="btn-primary" href="#partner-menu">Find your page</a>
               <a class="btn" href="founder-story.html">The story behind this</a>
             </div>
           </div>
         </div>
 
+        <!-- Stats strip (uses your existing CSS classes) -->
         <div class="home-stats-grid">
           <article class="card glass home-stat-card">
             <div class="stat">34%*</div>
@@ -334,35 +114,43 @@
       </div>
     </section>
 
-    <!-- =========================
-         SECTION 2: OUT THE OTHER SIDE / ROUTES
-         ========================= -->
-<div class="home-bridge">
-  <span class="kicker"><span class="kicker-icon"></span>From Dean — directly to you</span>
+    <!-- POST-HERO / ROUTES -->
+    <section class="paper-section" id="partner-routes" style="padding-top:56px">
+      <div class="container">
 
-  <p class="home-bridge-lead">
-    This is a private briefing for the people who helped me through the system — and who I promised I would return with something that could help the next person get there faster and with less damage.
-  </p>
+        <!-- THE BRIDGE (the missing follow-up to the hero) -->
+        <div class="home-bridge">
+          <span class="kicker"><span class="kicker-icon"></span>From Dean — directly to you</span>
 
-  <p class="home-bridge-copy">
-    The ADHD waiting list is the starting point of this story, but it is not the whole story. If my ADHD had been recognised, treated and held properly earlier, I do not believe alcohol would have become the system-level problem it later became.
-    <br>
-    That is the preventable second battle: people first wait with unmanaged ADHD, then reappear later in A&amp;E, addiction, crisis, therapy, detox, rehab, hospital, housing pressure, police contact, mental health support, total collapse — and sadly on to jail or suicide. By then, the original need has become much more expensive and much harder to unwind.
-  </p>
+          <p class="home-bridge-lead">
+            This is a private briefing for the people who helped me through the system — and who I promised I would return with something that could help the next person get there faster and with less damage.
+          </p>
 
-  <div class="home-bridge-actions">
-    <a class="btn-primary" href="#partner-menu">Find your page</a>
-    <a class="btn outline" href="partners.html">Read the full briefing</a>
-  </div>
+          <p class="home-bridge-copy">
+            The ADHD waiting list is the starting point of this story, but it is not the whole story. If my ADHD had been recognised, treated and held properly earlier, I do not believe alcohol would have become the system-level problem it later became.<br>
+            That is the preventable second battle: people first wait with unmanaged ADHD, then reappear later in A&amp;E, addiction, crisis, therapy, detox, rehab, hospital, housing pressure, police contact, mental health support, total collapse — and sadly on to jail or suicide. By then, the original need has become much more expensive and much harder to unwind.
+          </p>
 
-        <div class="home-next-steps">
-          <h3>Do this next...</h3>
+          <p class="home-bridge-copy" style="margin-top:14px">
+            <strong>OTOS Continuity™ is a web-based continuity layer</strong> that targets ADHD-driven addiction by keeping the person visible between CPFT &amp; CGL services, referrals, waiting lists and the next meaningful step — so partners can see where the journey is holding, where it is slipping, and where a human follow-up could prevent relapse, hospital, detox, rehab or another expensive crisis.
+          </p>
+
+          <div class="home-bridge-actions">
+            <a class="btn-primary" href="#partner-menu">Find your page</a>
+            <a class="btn outline" href="partners.html">Read the full briefing</a>
+          </div>
+        </div>
+
+        <!-- Slim "Do this next..." line (no boxes) -->
+        <div class="home-next-steps" style="margin-top:22px">
+          <h3>Do this next…</h3>
           <p>1. Open your role page → 2. Read the draft note → 3. Reply to Dean → or 4. Arrange a quick 30-minute call.</p>
         </div>
 
       </div>
 
-      <div class="home-route-wrap" style="margin-top:30px">
+      <!-- ROUTES GRID -->
+      <div id="partner-menu" class="home-route-wrap" style="margin-top:30px">
         <div class="route-grid">
           <a class="route-card" href="partners-addenbrookes.html">
             <div class="route-card-logo"><img src="images/Addenbrookes_Logo.png" alt="Addenbrooke's NHS Trust"></div>
@@ -413,161 +201,7 @@
       </div>
     </section>
 
-    <!-- =========================
-         WHY THIS EXISTS
-         ========================= -->
-    <section class="paper-section paper-section--alt" id="why-this-exists">
-      <div class="container" style="max-width:1180px">
-        <span class="kicker"><span class="kicker-icon"></span>Why this exists</span>
-
-        <h2 style="max-width:940px">
-          Nobody held me in the space between them.<br>
-          <span class="accent">That empty space is where relapse begins.</span>
-        </h2>
-
-        <div style="max-width:980px;margin-top:22px">
-          <p style="font-size:18px;line-height:1.7;color:var(--paper-muted)">
-            The ADHD waiting list is the starting point of this story, but it is not the whole story.
-            If my ADHD had been recognised, treated and held properly earlier, I do not believe alcohol would have become the system-level problem it later became.
-          </p>
-
-          <p style="font-size:18px;line-height:1.7;color:var(--paper-muted)">
-            That is the preventable second battle: people first wait with unmanaged ADHD, then reappear later in addiction, crisis, detox, rehab, hospital, housing pressure, police contact, mental health support or total collapse.
-            By then, the original need has become much more expensive and much harder to unwind.
-          </p>
-
-          <p style="font-size:18px;line-height:1.7;color:var(--paper-muted)">
-            OTOS Continuity™ is built for the gaps: the space between discharge, waiting lists, referrals, recovery appointments, community support and the next real contact.
-            It does not replace services or merge clinical records. It helps the same journey stay visible across the touchpoints where people usually slip.
-          </p>
-
-          <p style="font-size:18px;line-height:1.7;color:var(--paper-muted)">
-            For this ADHD and addiction cohort, every missed handoff matters. Waiting is not neutral when someone is using alcohol or drugs to survive untreated ADHD.
-            The thread needs to hold long enough for the right diagnosis, the right pathway and the right support to meet the same person at the same time.
-          </p>
-
-          <p style="font-size:19px;line-height:1.65;font-weight:850;color:var(--paper-ink)">
-            So the first version is simple: identify the person, connect the next step, keep the thread visible, and show where the pathway is working or failing.
-          </p>
-        </div>
-
-        <a href="#the-plan" style="display:inline-block;margin-top:10px;font-size:14px;font-weight:800;color:var(--orange);text-decoration:none">Read the plan →</a>
-        <a class="scroll-cue" href="#the-plan" aria-label="Scroll to the plan"><span>Scroll</span><span>↓</span></a>
-      </div>
-    </section>
-
-    <!-- =========================
-         THE PLAN
-         ========================= -->
-    <section class="paper-section" id="the-plan">
-      <div class="container">
-        <div class="section-head center">
-          <span class="kicker"><span class="kicker-icon"></span>The plan</span>
-          <h2>12 weeks. 50 people.<br><span class="accent">One clear question.</span></h2>
-          <p>
-            This is not a request to prepare a full rollout. It is a request to answer a clear question:
-            does a receipted continuity thread, applied to this cohort, measurably reduce silent disengagement
-            and increase the likelihood that people reach the next meaningful step?
-          </p>
-        </div>
-
-        <div class="cards four">
-          <article class="card">
-            <div class="label">01 — Identify</div>
-            <h3>Find the cohort already visible</h3>
-            <p>A bounded group of around 50 adults in Cambridgeshire and Peterborough who are already touching addiction, recovery, crisis, ADHD, mental health or community services — where unresolved ADHD may be driving relapse, repeat contact or waiting-list drift.</p>
-          </article>
-
-          <article class="card">
-            <div class="label">02 — Consent</div>
-            <h3>Start with a plain-English ask</h3>
-            <p>A named keyworker introduces OTOS as a continuity check-in that stays with the person between services. Consent is recorded, the person is onboarded with a tokenised journey ID, and the continuity thread begins.</p>
-          </article>
-
-          <article class="card">
-            <div class="label">03 — Hold</div>
-            <h3>Keep the thread alive</h3>
-            <p>OTOS logs handoffs, monitors continuity touchpoints, generates transition receipts and surfaces early drift signals for human review. It does not diagnose, prescribe, replace clinical judgement or own the clinical record.</p>
-          </article>
-
-          <article class="card">
-            <div class="label">04 — Prove</div>
-            <h3>Show what changes</h3>
-            <p>The pre-pilot measures whether silent disengagement becomes visible earlier, whether people reach the next meaningful step, how much partner time is required, and whether this cohort has a case for a priority route.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- =========================
-         HOW IT WORKS
-         ========================= -->
-    <section class="paper-section" id="how-it-works">
-      <div class="container">
-        <div class="section-head center">
-          <span class="kicker"><span class="kicker-icon"></span>How it works</span>
-          <h2>Continuity, not control.<br><span class="accent">A thread between services.</span></h2>
-          <p>OTOS Continuity™ is a non-clinical continuity layer. It strengthens the thread between services without taking over clinical decisions, replacing systems or creating another medical record.</p>
-        </div>
-
-        <div class="cards four">
-          <article class="card">
-            <div class="label">Touchpoints</div>
-            <h3>Receipted handoffs</h3>
-            <p>When a person moves between services, the handoff is logged and receipted. Someone can see whether the next step happened, stalled or disappeared.</p>
-          </article>
-
-          <article class="card">
-            <div class="label">Signals</div>
-            <h3>Early drift made visible</h3>
-            <p>Missed responses, broken contact, delayed next steps and disengagement signals become visible earlier — before they become relapse, crisis, detox or hospital.</p>
-          </article>
-
-          <article class="card">
-            <div class="label">Human review</div>
-            <h3>No autonomous clinical action</h3>
-            <p>Every drift signal requires a human review decision before action. OTOS does not diagnose, prescribe, escalate clinically on its own or tell a service what decision to make.</p>
-          </article>
-
-          <article class="card">
-            <div class="label">Evidence</div>
-            <h3>A local proof point</h3>
-            <p>The demonstrator shows where journeys stall, where drop-off happens, what partner burden looks like, and whether continuity support justifies the next phase.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- =========================
-         WHAT IT LOOKS LIKE
-         ========================= -->
-    <section class="paper-section">
-      <div class="container">
-        <div class="section-head center" style="max-width:1040px;margin:0 auto 34px;text-align:center">
-          <span class="kicker"><span class="kicker-icon"></span>What it looks like in practice</span>
-          <h2>One person.<br><span class="accent">One continuous pathway.</span></h2>
-          <p style="max-width:920px;margin:16px auto 0;font-size:18px;line-height:1.65;color:var(--paper-muted)">
-            The person stays visible as they move between referral, waiting list, check-in, discharge, community support and next contact.
-            Not one merged clinical record. Not another service. A continuity view that shows where the journey is holding — and where it is starting to break.
-          </p>
-        </div>
-
-        <div style="max-width:1180px;margin:0 auto;border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow);border:1px solid rgba(37,26,18,.12);background:#0b0b0b">
-          <img src="images/Better_Continuity_better_outcomes_in_healthcare.png"
-               alt="OTOS Continuity — one person, one continuous pathway"
-               style="display:block;width:100%;height:auto">
-        </div>
-
-        <div class="cta-row center" style="margin-top:30px">
-          <a class="btn-primary" href="how-it-works-visuals.html">See the full visual library</a>
-          <a class="btn outline" href="numbers.html">View the numbers &amp; model</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- =========================
-         BOTTOM CTA
-         ========================= -->
+    <!-- Bottom CTA -->
     <section class="brown-section">
       <div class="container" style="text-align:center">
         <p style="font-size:16px;font-weight:600;color:rgba(251,247,238,.6);margin-bottom:32px">
@@ -585,6 +219,7 @@
         </div>
       </div>
     </section>
+
   </main>
 
   <footer class="page-footer">
@@ -597,88 +232,46 @@
     </div>
   </footer>
 
-  <div class="site-lightbox" id="site-lightbox" aria-hidden="true" onclick="closeSiteLightbox(event)">
-    <div class="site-lightbox-panel">
-      <button class="site-lightbox-close" type="button" onclick="closeSiteLightbox(event)" aria-label="Close expanded image">×</button>
-      <img id="site-lightbox-img" src="" alt="Expanded visual">
-      <div class="site-lightbox-caption" id="site-lightbox-caption"></div>
-    </div>
-  </div>
-
+  <!-- Quote overlay JS -->
   <script>
-    (function(){
-      function openLightboxFromFigure(figure){
-        var box=document.getElementById('site-lightbox');
-        if(!box||!figure)return;
-        var img=box.querySelector('#site-lightbox-img');
-        var caption=box.querySelector('#site-lightbox-caption');
-        img.src=figure.getAttribute('data-src')||(figure.querySelector('img')?figure.querySelector('img').src:'');
-        img.alt=figure.getAttribute('data-alt')||(figure.querySelector('img')?figure.querySelector('img').alt:'Expanded visual');
-        caption.textContent=figure.getAttribute('data-caption')||'';
-        box.classList.add('open');
-        box.setAttribute('aria-hidden','false');
-        document.body.style.overflow='hidden';
-      }
-      window.openSiteLightbox=function(el){ openLightboxFromFigure(el); };
-      window.closeSiteLightbox=function(event){
-        if(event && event.target && event.target.closest('.site-lightbox-panel') && !event.target.classList.contains('site-lightbox-close')) return;
-        var box=document.getElementById('site-lightbox');
-        if(!box)return;
-        box.classList.remove('open');
-        box.setAttribute('aria-hidden','true');
-        document.body.style.overflow='';
-      };
-      document.querySelectorAll('.inline-visual').forEach(function(fig){
-        fig.addEventListener('click',function(){ openLightboxFromFigure(fig); });
-      });
-      document.addEventListener('keydown',function(e){
-        if(e.key==='Escape'){ window.closeSiteLightbox(); }
-      });
-    })();
-  </script>
-  <script>
-(function(){
-  var overlay = document.getElementById('quote-overlay');
-  if(!overlay) return;
+  (function(){
+    var overlay = document.getElementById('quote-overlay');
+    if(!overlay) return;
 
-  // Show once per browser session
-  var key = 'otosQuoteSeen';
-  var already = sessionStorage.getItem(key);
+    var key = 'otosQuoteSeen';
+    var already = sessionStorage.getItem(key);
 
-  function closeOverlay(){
-    overlay.classList.remove('show');
-    sessionStorage.setItem(key, '1');
-    document.body.style.overflow = '';
-  }
-
-  // Only show if not seen this session
-  if(!already){
-    overlay.classList.add('show');
-    document.body.style.overflow = 'hidden';
-
-    // animate timer (3.2s)
-    var fill = overlay.querySelector('.quote-timer-fill');
-    if(fill){
-      fill.style.transition = 'width 3.2s linear';
-      requestAnimationFrame(function(){ fill.style.width = '100%'; });
+    function closeOverlay(){
+      overlay.classList.remove('show');
+      sessionStorage.setItem(key, '1');
+      document.body.style.overflow = '';
     }
-    window.setTimeout(closeOverlay, 3200);
-  }
 
-  // Click to close (button)
-  var btn = overlay.querySelector('.quote-skip');
-  if(btn) btn.addEventListener('click', closeOverlay);
+    if(!already){
+      overlay.classList.add('show');
+      document.body.style.overflow = 'hidden';
 
-  // ESC to close
-  document.addEventListener('keydown', function(e){
-    if(e.key === 'Escape' && overlay.classList.contains('show')) closeOverlay();
-  });
+      var fill = overlay.querySelector('.quote-timer-fill');
+      if(fill){
+        fill.style.transition = 'width 10s linear';
+        requestAnimationFrame(function(){ fill.style.width = '100%'; });
+      }
 
-  // click outside card to close
-  overlay.addEventListener('click', function(e){
-    if(e.target === overlay) closeOverlay();
-  });
-})();
-</script>
+      window.setTimeout(closeOverlay, 10000);
+    }
+
+    var btn = overlay.querySelector('.quote-skip');
+    if(btn) btn.addEventListener('click', closeOverlay);
+
+    document.addEventListener('keydown', function(e){
+      if(e.key === 'Escape' && overlay.classList.contains('show')) closeOverlay();
+    });
+
+    overlay.addEventListener('click', function(e){
+      if(e.target === overlay) closeOverlay();
+    });
+  })();
+  </script>
+
 </body>
 </html>
