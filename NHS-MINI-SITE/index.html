@@ -196,34 +196,163 @@
     </div>
   </section>
 
-  <!-- ══ OUT THE OTHER SIDE + PARTNER ROUTE CARDS ═══════════════════════════════ -->
-  <section class="paper-section" id="partner-routes" style="padding-top:56px">
-    <div class="container">
-      <div class="section-head center" style="max-width:1220px;margin:0 auto 42px;text-align:center">
-        <span class="kicker"><span class="kicker-icon"></span>Out The Other Side</span>
+ <!-- ══ OUT THE OTHER SIDE + PARTNER ROUTE CARDS ═══════════════════════════════ -->
+<section class="paper-section" id="partner-routes" style="padding-top:56px">
+  <style>
+    .home-hello-grid{
+      display:grid;
+      grid-template-columns:minmax(0,1fr) minmax(460px,560px);
+      gap:36px;
+      align-items:start;
+      margin-top:30px;
+      text-align:left;
+    }
+    .home-hello-copy{
+      max-width:720px;
+    }
+    .home-hello-copy p{
+      margin:0 0 18px;
+    }
+    .home-hello-copy strong{
+      color:var(--paper-ink);
+      font-weight:850;
+    }
+    .home-hello-figure{
+      margin:0;
+      border-radius:var(--radius-lg);
+      overflow:hidden;
+      border:1px solid rgba(37,26,18,.12);
+      box-shadow:var(--shadow);
+      background:#0b0b0b;
+      cursor:zoom-in;
+    }
+    .home-hello-figure img{
+      display:block;
+      width:100%;
+      height:auto;
+    }
+    .home-hello-figure figcaption{
+      padding:12px 16px;
+      font-size:13px;
+      line-height:1.45;
+      font-weight:700;
+      letter-spacing:.04em;
+      text-transform:uppercase;
+      color:var(--paper-muted);
+      background:rgba(255,255,255,.78);
+    }
+    .home-hello-signoff{
+      margin-top:6px;
+      font-size:21px;
+      line-height:1.3;
+      font-weight:850;
+      color:var(--paper-ink);
+    }
+    @media (max-width: 1040px){
+      .home-hello-grid{
+        grid-template-columns:1fr;
+      }
+      .home-hello-copy{
+        max-width:none;
+      }
+      .home-hello-figure{
+        max-width:760px;
+        margin:8px auto 0;
+      }
+    }
+  </style>
 
-        <h2 style="max-width:1080px;margin:0 auto">
-         I knew it. You heard it. I said it all along.<br>
-          <span class="accent">And now, evidence to prove and a proposed pilot to solve it.</span>
-        </h2>
+  <div class="container">
+    <div class="section-head center" style="max-width:1220px;margin:0 auto 42px;text-align:center">
+      <span class="kicker"><span class="kicker-icon"></span>Out The Other Side</span>
 
-        <div class="home-hello-grid">
-          <div>
-            <p style="margin:0 0 20px;font-size:19px;line-height:1.68;font-weight:800;color:var(--paper-ink)">
-              OTOS Continuity™ is a web-based, continuity layer that targets ADHD driven Addiction, whilst keeping a person visible between mental health and addiction services, referrals, waiting lists and the next meaningful step — so partners can see where the journey is holding, where it is slipping and where a human follow-up could prevent relapse, hospital, detox, rehab or another expensive crisis.
+      <h2 style="max-width:1080px;margin:0 auto">
+        I knew it all along. You heard me say it. There was nowhere to send me.<br>
+        <span class="accent">So, I built it.</span>
+      </h2>
 
-            <p style="margin:0 0 18px;font-size:18px;line-height:1.72;font-weight:780;color:var(--paper-ink)">
-              This private site is my starting point and support pack for a targetted 12-week, 50-person pre-pilot demonstrator in Cambridgeshire and Peterborough. I need the people who saw this journey to help me take it into ICB and funder conversations — to prove this ADHD + addiction cohort needs a priority route, not another blind wait.
-            </p>
+      <div class="home-hello-grid">
+        <div class="home-hello-copy">
+          <p style="font-size:19px;line-height:1.72;color:var(--paper-ink)">
+            <strong>OTOS Continuity™</strong> is a <strong>web-based continuity layer</strong> that targets <strong>ADHD-driven addiction</strong>, whilst keeping a person visible between mental health and addiction services, referrals, waiting lists and the next meaningful step — so partners can see where the journey is holding, where it is slipping, and where a human follow-up could prevent relapse, hospital, detox, rehab or another expensive crisis.
+          </p>
 
-            <p style="margin:0;font-size:17px;line-height:1.7;color:var(--paper-muted)">
-              Each partner page includes a short draft note you can edit and send back to me. Please read your page first, then feel free to explore and click around. I really appreciate your time. Please help me, help you, to help others — because if the trajectory can change like mine did, we can help more people get
-            </p> <p style="margin:6px 0 0;font-size:21px;line-height:1.3;font-weight:850;color:var(--paper-ink)">
-              Out The Other Side.
-            </p>
-          </div
-        
-            <img src="images/bedside_handoff_Continuity.png"
+          <p style="font-size:18px;line-height:1.72;color:var(--paper-ink)">
+            This private site is my starting point and support pack for a <strong>targeted 12-week, 50-person pre-pilot demonstrator</strong> in Cambridgeshire and Peterborough. I need the people who saw this journey to help me take it into <strong>ICB and funder conversations</strong> — to prove this <strong>ADHD + addiction cohort needs a priority route</strong>, not another blind wait.
+          </p>
+
+          <p style="font-size:17px;line-height:1.72;color:var(--paper-muted)">
+            Each partner page includes a short draft note you can edit and send back to me. Please read your page first, then feel free to explore and click around. I really appreciate your time. Please help me, help you, to help others — because if the trajectory can change like mine did, we can help more people get
+          </p>
+
+          <p class="home-hello-signoff">Out The Other Side.</p>
+        </div>
+
+        <figure
+          class="home-hello-figure inline-visual"
+          onclick="openSiteLightbox(this)"
+          data-src="images/Bedside_adhd_addictionn_referral.png"
+          data-alt="OTOS Continuity bedside ADHD addiction referral visual"
+          data-caption="Bedside handoff — a visible next step."
+          aria-label="Expand bedside referral visual"
+        >
+          <img src="images/Bedside_adhd_addictionn_referral.png" alt="OTOS Continuity bedside ADHD addiction referral visual">
+          <figcaption>Bedside handoff — a visible next step.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+
+  <div class="home-route-wrap">
+    <div class="route-grid">
+      <a class="route-card" href="partners-addenbrookes.html">
+        <div class="route-card-logo"><img src="images/Addenbrookes_Logo.png" alt="Addenbrooke's NHS Trust"></div>
+        <div class="route-card-body">For the team seeing crisis at the bedside, where the next handoff needs to be visible before discharge.</div>
+        <div class="route-card-footer">Open your draft note →</div>
+      </a>
+
+      <a class="route-card" href="partners-cgl-crs.html">
+        <div class="route-card-logo">
+          <img src="images/CGL_Logo.png" alt="Change Grow Live">
+          <img src="images/CRS_Logo.png" alt="Cambridgeshire Recovery Service">
+        </div>
+        <div class="route-card-body">For recovery and aftercare teams holding the thread after intake, relapse, rehab or silence.</div>
+        <div class="route-card-footer">Open your draft note →</div>
+      </a>
+
+      <a class="route-card" href="partners-cpft-adhd.html">
+        <div class="route-card-logo"><img src="images/ADHD_Team_Logo.png" alt="CPFT ADHD Team"></div>
+        <div class="route-card-body">For the ADHD service carrying waiting-list pressure while people drift before assessment.</div>
+        <div class="route-card-footer">Open your draft note →</div>
+      </a>
+
+      <a class="route-card" href="partners-rce.html">
+        <div class="route-card-logo"><img src="images/rce.png" alt="RCE Wellbeing Hub" style="max-height:38px"></div>
+        <div class="route-card-body">For community holding support that keeps people connected while clinical routes catch up.</div>
+        <div class="route-card-footer">Open your draft note →</div>
+      </a>
+
+      <a class="route-card" href="partners-gp-rtc-qbtech.html">
+        <div class="route-card-logo">
+          <img src="images/nhs-rtc.png" alt="NHS Right to Choose">
+          <img src="images/qbtech.png" alt="QbTech">
+        </div>
+        <div class="route-card-body">For the referral and assessment route: visible, receipted, bounded and separate from diagnosis, prescribing or shared-care decisions.</div>
+        <div class="route-card-footer">Open your draft note →</div>
+      </a>
+
+      <a class="route-card" href="partners-mind-workwell-jo-fenton.html">
+        <div class="route-card-logo">
+          <img src="images/MIND_Logo.png" alt="Mind">
+          <img src="images/WorkWell_Logo.png" alt="WorkWell">
+          <img src="images/Jo_Fenton_Logo.png" alt="Jo Fenton Consultancy" style="max-width:90px;height:auto">
+        </div>
+        <div class="route-card-body">For community, work and therapy support where recovery starts to hold after crisis.</div>
+        <div class="route-card-footer">Open your draft note →</div>
+      </a>
+    </div>
+  </div>
+</section>
 
       </div>
     </div>
